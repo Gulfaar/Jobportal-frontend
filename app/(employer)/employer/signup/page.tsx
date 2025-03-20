@@ -10,18 +10,38 @@ const EmployerSignupPage: React.FC = () => {
       {/* Left Side (Branding / Message) */}
       <div className="md:w-1/2 bg-teal-800 text-white flex flex-col justify-center items-center p-8 relative">
         {/* Brand or Logo */}
-        <div className="top left-0 mb-16 ">
+        <div className="mb-16">
           <Image src="/gulfaarlogo.png" alt="logo" height={160} width={160} />
         </div>
 
         {/* Main Title and Text */}
-        <h2 className="text-2xl font-semibold mb-4 uppercase text-center ">
+        <h2 className="text-2xl font-semibold mb-4 uppercase text-center">
           SIGNUP
         </h2>
         <p className="text-sm max-w-xs text-center">
           Create your employer account to connect with top talent and grow your
           business.
         </p>
+
+        {/* Eclipses at the Bottom-Right */}
+        <div className="absolute bottom-0 right-0">
+          {/* First Eclipse (positioned) */}
+          <Image
+            src="/Ellipse1.png"
+            alt="Eclipse 1"
+            width={200}
+            height={200}
+            className="w-32 md:w-40 h-auto"
+          />
+          {/* Second Eclipse (overlapping the first) */}
+          <Image
+            src="/Ellipse2.png"
+            alt="Eclipse 2"
+            width={200}
+            height={200}
+            className="absolute bottom-0 right-0 w-32 md:w-40 h-auto mb-36 mr-24"
+          />
+        </div>
       </div>
 
       {/* Right Side (Form) */}
@@ -167,9 +187,9 @@ const EmployerSignupPage: React.FC = () => {
           </button>
 
           {/* Login Link */}
-          <p className="text-sm text-gray-600 mt-2 ">
+          <p className="text-sm text-gray-600 mt-2">
             Already have an account?{" "}
-            <Link href="/login" className="text-teal-600 hover:underline">
+            <Link href="/employer/login" className="text-teal-600 hover:underline">
               Login
             </Link>
           </p>
