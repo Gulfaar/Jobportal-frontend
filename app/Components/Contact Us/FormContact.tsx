@@ -1,49 +1,95 @@
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+
 const FormContact = () => {
-    return (
-        <section className="flex flex-col md:flex-row items-stretch justify-center p-10 bg-white gap-8">
-          {/* Contact Info Section */}
-          <div className="w-full md:w-1/3 bg-[#2E5F5C] text-white p-8 shadow-lg flex flex-col justify-between relative rounded-lg">
-            <h2 className="text-xl font-bold mb-4">Say something to start a live chat!</h2>
-            <p className="flex items-center gap-2 mb-2">📞 +1012 3456 789</p>
-            <p className="flex items-center gap-2 mb-2">📧 gulfaar@gmail.com</p>
-            <p className="flex items-center gap-2">📍 Kurishupally Road, Ravipuram, Perumanoor, Kochi, Kerala</p>
-            <div className="flex space-x-4 mt-6 text-2xl">
-              <span className="cursor-pointer">🐦</span>
-              <span className="cursor-pointer">📸</span>
-              <span className="cursor-pointer">🔗</span>
-            </div>
-          </div>
-    
-          {/* Contact Form */}
-          <div className="w-full md:w-2/3 bg-gray-100 p-8 shadow-lg rounded-lg">
-            <h2 className="text-2xl font-bold text-center md:text-left mb-6">Let's Connect – <span className="text-[#2E5F5C]">We're Here to Help!</span></h2>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="text" placeholder="First name" className="border p-3 w-full rounded-md" />
-                <input type="text" placeholder="Last name" className="border p-3 w-full rounded-md" />
-                <input type="email" placeholder="E-mail" className="border p-3 w-full rounded-md" />
-                <input type="text" placeholder="Phone Number" className="border p-3 w-full rounded-md" />
-              </div>
-              <div>
-                <p className="mb-2 font-semibold">Select Subject?</p>
-                <div className="flex space-x-6">
-                  <label className="flex items-center gap-2">
-                    <input type="radio" name="subject" className="form-radio text-[#2E5F5C]" /> <span>General Enquiry</span>
-                  </label>
-                  <label className="flex items-center gap-2">
-                    <input type="radio" name="subject" className="form-radio text-[#2E5F5C]" /> <span>General Enquiry</span>
-                  </label>
-                  <label className="flex items-center gap-2">
-                    <input type="radio" name="subject" className="form-radio text-[#2E5F5C]" /> <span>General Enquiry</span>
-                  </label>
-                </div>
-              </div>
-              <textarea placeholder="Write a message" className="border p-3 w-full h-32 rounded-md"></textarea>
-              <button className="bg-[#2E5F5C] text-white px-6 py-3 hover:bg-opacity-80 transition rounded-md">Send Message</button>
-            </form>
-          </div>
-        </section>
-    );
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "General Enquiry",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  export default FormContact;
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Form submitted", formData);
+  };
+
+  return (
+    <section className="p-10 bg-white flex flex-col items-center">
+      {/* Heading */}
+      <h2 className="text-3xl font-bold text-center mb-8">
+        "Let's <span className="text-[#2E5F5C]">Connect</span> – We’re Here to Help!"
+      </h2>
+      
+      <div className="flex flex-col md:flex-row items-stretch w-full max-w-6xl gap-10">
+        {/* Contact Info Section */}
+        <div className="w-full md:w-1/3 bg-[#2E5F5C] text-white p-10 shadow-lg rounded-lg flex flex-col justify-between">
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Say something to start a live chat!</h3>
+            <p className="flex items-center gap-3 mb-3"><span className="text-xl">📞</span> +1012 3456 789</p>
+            <p className="flex items-center gap-3 mb-3"><span className="text-xl">📧</span> gulfaar@gmail.com</p>
+            <p className="flex items-center gap-3 text-sm leading-relaxed"><span className="text-xl">📍</span> Kurishupally Road, Ravipuram, Perumanoor, Kochi, Kerala</p>
+          </div>
+          <div className="flex space-x-4 mt-6 text-2xl">
+            <span className="cursor-pointer">🐦</span>
+            <span className="cursor-pointer">📸</span>
+            <span className="cursor-pointer">🔗</span>
+          </div>
+        </div>
+
+        {/* Contact Form */}
+        <div className="w-full md:w-2/3 bg-white p-10 shadow-lg rounded-lg">
+          <form className="space-y-8" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <input type="text" name="firstName" placeholder="First Name" className="shadow-lg p-3 w-full rounded-md focus:ring-2 focus:ring-[#2E5F5C]" onChange={handleChange} />
+              <input type="text" name="lastName" placeholder="Last Name" className="shadow-lg p-3 w-full rounded-md focus:ring-2 focus:ring-[#2E5F5C]" onChange={handleChange} />
+              <input type="email" name="email" placeholder="E-mail" className="shadow-lg p-3 w-full rounded-md focus:ring-2 focus:ring-[#2E5F5C]" onChange={handleChange} />
+              <input type="text" name="phone" placeholder="Phone Number" className="shadow-lg p-3 w-full rounded-md focus:ring-2 focus:ring-[#2E5F5C]" onChange={handleChange} />
+            </div>
+            
+            <div>
+              <p className="mb-3 font-semibold">Select Subject</p>
+              <div className="flex space-x-6">
+                {["General Enquiry", "Support", "Feedback"].map((subject) => (
+                  <label key={subject} className="flex items-center gap-3 text-sm">
+                    <input
+                      type="radio"
+                      name="subject"
+                      value={subject}
+                      checked={formData.subject === subject}
+                      onChange={handleChange}
+                      className="form-radio text-[#2E5F5C] focus:ring-[#2E5F5C]"
+                    />
+                    <span>{subject}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative">
+              <textarea
+                name="message"
+                placeholder="Write a message"
+                className="border-b p-3 w-full outline-none focus:ring-2 focus:ring-[#2E5F5C]"
+                onChange={handleChange}
+              ></textarea>
+            </div>
+            
+            <button type="submit" className="bg-[#2E5F5C] text-white px-6 py-3 hover:bg-opacity-80 transition rounded-md">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FormContact;
