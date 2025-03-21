@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Gulfaar",
-  description: "Gulfaar Buisenns Solutions",
+  description: "Gulfaar Buisenns Solution",
 };
 
 export default function RootLayout({
