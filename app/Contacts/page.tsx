@@ -12,7 +12,7 @@ const HomePage = () => {
           </Head>
           <Navbar />
           <HeroSection />
-          <div className="flex-1 flex flex-col items-center justify-center px-6 md:px-20 w-full max-w-7xl mx-auto">
+          <div className="flex-1 flex flex-col items-center justify-center px-6 md:px-20 w-full max-w-full mx-auto">
             <FormContact />
           </div>
           <Footer />

@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 const Footer = () => {
     return (
-        <footer className="bg-[#2E5F5C] text-white py-10 px-6 md:px-20 h-[300px] flex items-center">
+        <footer className="bg-[#2E5F5C] text-white py-10 px-20 w-full  h-[300px] flex items-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
             {/* Company Info */}
-            <div className="col-span-1 flex flex-col">
+            <div className="col-span-1 flex flex-col ">
               <Image src="/logo.png" alt="Gulfaar Logo" width={120} height={50} />
               <p className="mt-4 text-sm leading-relaxed">
                 Tharakkandam Building, 1st Floor, Kurishupally Rd, Ravipuram, Perumanoor, Kochi, Kerala 682015
