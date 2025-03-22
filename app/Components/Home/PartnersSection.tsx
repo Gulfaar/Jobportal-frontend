@@ -2,71 +2,52 @@ import React from "react";
 
 const PartnersSection = () => {
   const partnerLogos = [
-    {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/a47ecc747d8e40851927f798d69e99600cbab843?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
-      alt: "Microsoft logo",
-      width: "109px",
-      aspect: "4.5",
-    },
-    {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/6b5b5e37ab357cedb2618e034021508ae32d5532?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
-      alt: "Walmart logo",
-      width: "98px",
-      aspect: "4.08",
-    },
-    {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/b91833ba04b052d2a0d97990a2220558d1621e8f?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
-      alt: "Partner logo",
-      width: "75px",
-      aspect: "3.13",
-    },
-    {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/f78927c49f8bf5a52a9a282bd4f901c5534b941d?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
-      alt: "Partner logo",
-      width: "72px",
-      aspect: "3",
-    },
-    {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/d45f6617de923dd22c3b6800b600ad5b0b61b8e8?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
-      alt: "Partner logo",
-      width: "79px",
-      aspect: "3.29",
-    },
-    {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/683063da7c55f8fc50c8184bb3331297de8d7874?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
-      alt: "Partner logo",
-      width: "94px",
-      aspect: "3.92",
-    },
+    "https://cdn.builder.io/api/v1/image/assets/TEMP/a47ecc747d8e40851927f798d69e99600cbab843",
+    "https://cdn.builder.io/api/v1/image/assets/TEMP/6b5b5e37ab357cedb2618e034021508ae32d5532",
+    "https://cdn.builder.io/api/v1/image/assets/TEMP/b91833ba04b052d2a0d97990a2220558d1621e8f",
+    "https://cdn.builder.io/api/v1/image/assets/TEMP/f78927c49f8bf5a52a9a282bd4f901c5534b941d",
+    "https://cdn.builder.io/api/v1/image/assets/TEMP/d45f6617de923dd22c3b6800b600ad5b0b61b8e8",
+    "https://cdn.builder.io/api/v1/image/assets/TEMP/683063da7c55f8fc50c8184bb3331297de8d7874",
   ];
 
   return (
-    <section className="flex flex-col items-center pt-16 pb-7 mt-6 w-full bg-white rounded-2xl shadow-[0px_0px_5px_rgba(0,0,0,0.25)] max-md:max-w-full">
-      <h2 className="max-w-full text-5xl font-bold text-center text-black w-[285px] max-md:text-4xl">
-        Our <span className="font-semibold text-5xl">Partners</span>
-      </h2>
-      <p className="mt-6 text-2xl leading-none text-black text-ellipsis max-md:max-w-full">
-        We believe in the power of strong partnerships to drive success and
-        create long-lasting value. Our partners play a crucial role in helping
-        us deliver exceptional solutions, innovate continuously, and reach new
-        heights in our industry.
-      </p>
-      <div className="flex overflow-hidden flex-wrap gap-10 justify-center self-stretch px-10 py-6 mt-14 rounded-md bg-white max-md:px-5 max-md:mt-10 max-md:max-w-full">
-        <div className="grow text-base font-medium text-black">Trusted by</div>
+    <section className="flex flex-col items-center w-full py-12 bg-white">
+      {/* Title */}
+      <h2 className="text-3xl font-bold text-black">Our Partners</h2>
 
-        {partnerLogos.map((logo, index) => (
-          <div key={index} className="overflow-hidden min-h-6">
-            <div
-              className={`flex overflow-hidden flex-col justify-center items-center min-h-6 w-[${logo.width}]`}
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className={`object-contain w-full aspect-[${logo.aspect}]`}
-              />
+      {/* Subtitle */}
+      <p className="mt-2 text-gray-600 text-lg text-center max-w-md">
+        We believe in the power of strong partnerships to drive success.
+      </p>
+
+      {/* Partner Logos Carousel */}
+      <div className="relative flex items-center justify-center w-full mt-6">
+        {/* Left Button */}
+        <button className="absolute left-9 p-2 bg-white rounded-full shadow-md">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/1944251e3bb80c3c11396dfeff5daeef5143a85e"
+            alt="Left arrow"
+            className="w-4"
+          />
+        </button>
+
+        {/* Logos Row */}
+        <div className="flex gap-6 overflow-hidden justify-center max-w-4xl">
+          {partnerLogos.map((logo, index) => (
+            <div key={index} className="flex justify-center items-center">
+              <img src={logo} alt="Partner logo" className="h-12 object-contain" />
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Right Button */}
+        <button className="absolute right-9 p-2 bg-white rounded-full shadow-md">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7fa3f780e6aa34568e5c6625822f79507a471f55"
+            alt="Right arrow"
+            className="w-4"
+          />
+        </button>
       </div>
     </section>
   );

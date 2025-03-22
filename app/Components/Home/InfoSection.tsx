@@ -7,7 +7,7 @@ const InfoSection = () => {
       number: "18K+",
       title: "Clients worldwide",
       description:
-        "We proudly serve clients worldwide, providing high-quality solutions tailored to their needs. Our commitment to excellence, innovation, and customer satisfaction has earned us the trust of businesses across industries. With a global presence, we ensure seamless collaboration and timely delivery for successful outcomes.",
+        "We proudly serve clients worldwide, providing high-quality solutions tailored to their needs. Our commitment to excellence, innovation, and customer satisfaction has earned us the trust of businesses across industries.",
     },
     {
       number: "50M+",
@@ -68,16 +68,20 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap gap-10 justify-between items-end mt-32 min-h-[171px] max-md:mt-10 max-md:max-w-full">
-        {stats.map((stat, index) => (
-          <StatCard
-            key={index}
-            number={stat.number}
-            title={stat.title}
-            description={stat.description}
-          />
-        ))}
-      </div>
+      <div className="flex flex-wrap justify-between items-start mt-32 min-h-[171px] max-md:mt-10 max-md:max-w-full  py-12  w-full ">
+  {stats.map((stat, index) => (
+    <StatCard
+      key={index}
+      number={stat.number}
+      title={stat.title}
+      description ={
+        <div className=" max-w-[250px]">
+          {stat.description}
+        </div>
+      }
+    />
+  ))}
+</div>
     </section>
   );
 };

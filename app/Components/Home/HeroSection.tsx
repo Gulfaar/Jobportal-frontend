@@ -1,129 +1,170 @@
 "use client";
-import React from "react";
-import CountrySelector from "./CountrySelector";
-import LocationBadge from "./LocationBadge";
+
+import React, { useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { CiLocationOn, CiSearch } from "react-icons/ci";
+import { FaBars, FaArrowLeft, FaArrowRight,FaTimes  } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <section className="flex relative flex-col items-center px-10 pb-36 w-full min-h-[709px] max-md:px-5 max-md:pb-24 max-md:max-w-full">
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/30eb1b8bf4d7d9b2661d8bd57a37d46f3ba378d8?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-        alt="Hero background"
-        className="object-cover absolute inset-0 size-full"
-      />
-      <nav className="flex relative flex-wrap gap-5 justify-between items-start self-stretch font-semibold max-md:max-w-full">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/9f480e8246011371479ef5bc784f974e672ce211?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          alt="Gulfaar logo"
-          className="object-contain shrink-0 self-start max-w-full aspect-[2.13] w-[213px]"
-        />
-        <div className="flex flex-col self-end mt-6 max-md:max-w-full">
-          <div className="flex gap-5 self-end max-w-full text-base text-white w-[346px] max-md:mr-1">
-            <div className="grow my-auto font-medium">Jobseeker</div>
-            <div className="flex gap-5 items-center capitalize whitespace-nowrap">
-              <button className="overflow-hidden self-stretch px-6 py-4 my-auto bg-teal-800 rounded-lg w-[117px] max-md:pr-5">
-                Employer
-              </button>
-            </div>
-            <button className="overflow-hidden gap-2.5 self-stretch px-5 py-4 text-white bg-teal-800 rounded-lg min-h-10">
-              Post Job
-            </button>
-          </div>
-          <div className="flex gap-6 mt-8 text-xl text-white">
-            <a href="#jobs" className="text-yellow-400">
-              Jobs
-            </a>
-            <a href="#blog">Blog</a>
-            <a href="#training">Training</a>
-            <a href="#workforce" className="grow shrink w-[190px]">
-              Work-Force Solutions
-            </a>
-            <a href="#partners" className="grow shrink w-[130px]">
-              Partner with us
-            </a>
-          </div>
-        </div>
-      </nav>
-      <div className="flex relative flex-col items-start mt-14 max-w-full text-center w-[904px] max-md:mt-10">
-        <h1 className="text-7xl font-bold leading-none text-white max-md:max-w-full max-md:text-4xl">
-          Find Your Dream Job Today!
-        </h1>
-        <p className="mt-3 text-xl font-medium text-white max-md:max-w-full">
-          Connecting Talent with Opportunity: Your Gateway to Career Success
+    <div
+      className="relative w-full h-screen bg-cover bg-center flex flex-col items-center text-white px-6 pt-[100px] md:pt-[150px]"
+      style={{ backgroundImage: "url('/background.png')" }}
+    >
+      <NavBar />
+      <div className="w-full flex justify-end  hidden md:flex">
+        <NavLinks />
+      </div>
+      <div className="flex flex-col items-center justify-center h-full text-center px-4">
+        <h1 className="text-2xl md:text-4xl font-bold">Find Your Dream Job Today!</h1>
+        <p className="text-sm md:text-lg mt-2">
+          Connecting Talent with Opportunity: <span className="block md:inline"> Your Gateway to Career Success</span>
         </p>
+        <SearchBar />
+        <JobLocations />
       </div>
-      <div className="flex relative flex-wrap mt-10 ml-3.5 max-w-full text-base font-medium w-[851px]">
-        <div className="flex flex-wrap flex-auto gap-10 py-4 pr-9 pl-20 text-gray-400 bg-white rounded-2xl max-md:px-5 max-md:mr-0 max-md:max-w-full">
-          <div className="my-auto">Select for the job</div>
-          <div className="flex gap-9 whitespace-nowrap">
-            <div className="shrink-0 w-px border border-gray-400 border-solid h-[50px]" />
-            <CountrySelector />
+    </div>
+  );
+};
+
+const NavBar = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <nav className="absolute top-0 left-0 w-full flex justify-between items-center bg-transparent px-4 md:px-6 py-4">
+      <div className="flex items-center">
+        <img src="./logo.png" alt="Gulfaar Logo" className="w-[120px] md:w-[213px] h-auto" />
+      </div>
+      <div className="flex items-center gap-2 md:hidden lg:hidden">
+        <button className="px-3 py-2 rounded-lg text-white text-sm">Jobseeker</button>
+        <button className="bg-[#2E5F5C] px-3 py-2 rounded-lg text-white text-sm">Employer</button>
+        <button className="text-white text-lg" onClick={() => setIsModalOpen(true)}>
+          <FaBars />
+        </button> 
+      </div>
+
+
+ {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end">
+          <div className="bg-white w-64 h-full p-6 flex flex-col text-black shadow-lg">
+            {/* Close Button */}
+            <button className="self-end text-2xl mb-4" onClick={() => setIsModalOpen(false)}>
+              <FaTimes />
+            </button>
+
+            {/* Navigation Links */}
+            <ul className="font-medium flex flex-col gap-4">
+              <li><a href="#" className="text-gray-900 hover:text-blue-700">Jobs</a></li>
+              <li><a href="#" className="text-gray-900 hover:text-blue-700">Blog</a></li>
+              <li><a href="#" className="text-gray-900 hover:text-blue-700">Training</a></li>
+              <li><a href="#" className="text-gray-900 hover:text-blue-700">Work-Force Solutions</a></li>
+              <li><a href="#" className="text-gray-900 hover:text-blue-700">Partner with us</a></li>
+            </ul>
           </div>
         </div>
-        <div className="text-white">
-          <button
-            className="px-16 py-9 bg-teal-800 rounded-none max-md:px-5"
-            aria-label="Search for jobs"
-          >
-            Search Job
-          </button>
-        </div>
+      )}
+
+
+
+
+      {/* {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end">
+          <div className="bg-white w-64 h-full p-6 flex flex-col text-black shadow-lg">
+            <button className="self-end text-2xl mb-4" onClick={() => setIsModalOpen(false)}>
+              <FaTimes />
+            </button>
+            <NavLinks />
+          </div>
+        </div>)} */}
+
+      <div className="hidden md:flex gap-2 md:gap-4">
+        <button className="px-3 md:px-4 py-2 rounded-lg text-white text-sm md:text-base">Jobseeker</button>
+        <button className="bg-[#2E5F5C] px-3 md:px-4 py-2 rounded-lg text-white text-sm md:text-base">Employer</button>
+        <button className="bg-[#2E5F5C] px-3 md:px-4 py-2 rounded-lg text-white text-sm md:text-base">Post Job</button>
       </div>
-      <div className="flex relative flex-wrap gap-5 justify-between items-start mt-10 mb-0 ml-3.5 w-full max-w-[1089px] max-md:mb-2.5 max-md:max-w-full">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/b173a13110d0e84f7b5e40a8c729091e8e5eed2e?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          alt="Left arrow"
-          className="object-contain shrink-0 mt-6 aspect-[17/14] fill-white w-[34px]"
-        />
-        <LocationBadge
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/e163e990a0c4f4d78beff9baa923d544440fd66b?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          location="PARIS"
-        />
-        <LocationBadge
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/e163e990a0c4f4d78beff9baa923d544440fd66b?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          location="PARIS"
-        />
-        <LocationBadge
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/a6673903b00d10af634e3d5e519941ed514abbce?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          location="UAE"
-        />
-        <LocationBadge
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/9d7eca2bda6d7420aa92c8ccec4b55887b0126bd?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          location="INDIA"
-          iconBg={true}
-        />
-        <LocationBadge
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/df31277f6fc0914069047dfa16c6db294f126ef8?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          location="AMERICA"
-          iconBg={true}
-        />
-        <LocationBadge
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/0a12a5c6887f269120ef82a3ee2a5a1ef41654e7?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          location="GERMANY"
-          iconBg={true}
-        />
-        <LocationBadge
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/b33655dc9afd80a31397d7ec5b881c1fa25e6547?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          location="AMERICA"
-          iconBg={true}
-        />
-        <LocationBadge
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/b33655dc9afd80a31397d7ec5b881c1fa25e6547?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          location="AMERICA"
-          iconBg={true}
-        />
-        <LocationBadge
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/9d9071e097f5fb1629972471fb50474a64683de2?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          location="INDIA"
-          iconBg={true}
-        />
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/677cdf396a83e862af9c19b48796623e42ce7a81?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
-          alt="Right arrow"
-          className="object-contain shrink-0 mt-4 aspect-[17/14] fill-white w-[34px]"
-        />
+    </nav>
+  );
+};
+
+const NavLinks = () => {
+  return (
+    <div className="flex gap-6 text-white font-semibold">
+      <Link href="#" className="hover:text-[#2E5F5C]">Jobs</Link>
+      <Link href="#" className="hover:text-[#2E5F5C]">Blog</Link>
+      <Link href="#" className="hover:text-[#2E5F5C]">Training</Link>
+      <Link href="#" className="hover:text-[#2E5F5C]">Work-Force Solutions</Link>
+      <Link href="#" className="hover:text-[#2E5F5C]">Partner with us</Link>
+    </div>
+  );
+};
+
+const SearchBar = () => {
+  return (
+    <div className="relative flex flex-col md:flex-row bg-white w-[300px] md:w-full max-w-[400px]  md:max-w-full h-auto md:h-[60px] rounded-lg mt-6 shadow-lg text-black items-center p-2 md:p-0">
+      <input
+        type="text"
+        placeholder="Select for the job"
+        className="pl-4 pr-4 py-2 w-full outline-none bg-transparent h-full text-sm md:text-base border border-gray-300 rounded-lg md:rounded-none md:border-none"
+      />
+      <div className="hidden md:block h-[70%] w-[1px] bg-gray-300 mx-2"></div>
+      <input
+        type="text"
+        placeholder="Country"
+        className="pl-4 pr-4 py-2 w-full outline-none bg-transparent h-full text-sm md:text-base border border-gray-300 rounded-lg md:rounded-none md:border-none  md:mt-0"
+      />
+      <button className="bg-[#2E5F5C] px-6 md:h-full flex items-center justify-center text-white rounded-lg md:rounded-lg whitespace-nowrap text-sm md:text-base w-full md:w-auto mt-2 md:mt-0">
+        <CiSearch className="text-white text-lg mr-2" />
+        Search Job
+      </button>
+    </div>
+  );
+};
+
+const JobLocations = () => {
+  const locations = [
+    { name: "AMERICA", img: "/america1.png" },
+    { name: "UAE", img: "/uae.png" },
+    { name: "INDIA", img: "/india.png" },
+    { name: "GERMANY", img: "/germany2.png" },
+    { name: "AUSTRALIA", img: "/austraila2.png" }
+  ];
+
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+    }
+  };
+
+  return (
+    <div className="flex gap-4 mt-6 p-4 justify-center items-center w-full">
+      <button onClick={scrollLeft} className="text-white hidden md:block">
+        <FaArrowLeft />
+      </button>
+      <div
+        ref={scrollRef}
+        className="flex overflow-x-auto scroll-smooth gap-3 p-4 items-center w-full max-w-[90%] md:w-[80%] no-scrollbar"
+        style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
+      >
+        {locations.map((loc, index) => (
+          <div key={index} className="flex flex-col items-center min-w-[80px] md:min-w-[120px]">
+            <Image src={loc.img} alt={loc.name} width={40} height={40} className="md:w-[50px] md:h-[50px]" />
+            <p className="mt-2 text-xs md:text-base">{loc.name}</p>
+          </div>
+        ))}
       </div>
-    </section>
+      <button onClick={scrollRight} className="text-white hidden md:block">
+        <FaArrowRight />
+      </button>
+    </div>
   );
 };
 

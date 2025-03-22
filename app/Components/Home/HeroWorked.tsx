@@ -12,7 +12,7 @@ import Footer from "./Footer";
 
 function HeroWorked() {
   return (
-    <div className="flex flex-col pr-2.5 pl-16 bg-white max-md:pl-5">
+    <div>
       <HeroSection />
       <HowItWorksSection />
       <JobsSection />
