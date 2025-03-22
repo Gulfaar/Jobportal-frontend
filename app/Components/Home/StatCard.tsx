@@ -1,9 +1,9 @@
-import React from "react";
+import React,{ReactNode} from "react";
 
 interface StatCardProps {
   number: string;
   title: string;
-  description: string;
+  description: ReactNode;
 }
 
 const StatCard: React.FC<StatCardProps> = ({ number, title, description }) => {

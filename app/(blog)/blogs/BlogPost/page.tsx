@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-
-
 import Breadcrumb from "@/app/Components/Blogs/Breadcrumb";
 import BlogContent from "@/app/Components/Blogs/BlogContent";
 import TableOfContents from "@/app/Components/Blogs/TableOfContents";

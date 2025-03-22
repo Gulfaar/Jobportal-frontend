@@ -90,8 +90,8 @@ const NavBar = () => {
 const NavLinks = () => {
   return (
     <div className="flex gap-6 text-white font-semibold">
-      <Link href="#" className="hover:text-[#2E5F5C]">Jobs</Link>
-      <Link href="#" className="hover:text-[#2E5F5C]">Blog</Link>
+      <Link href="/jobseeker/joblisting" className="hover:text-[#2E5F5C]">Jobs</Link>
+      <Link href="/blogs/BlogPost" className="hover:text-[#2E5F5C]">Blog</Link>
       <Link href="#" className="hover:text-[#2E5F5C]">Training</Link>
       <Link href="#" className="hover:text-[#2E5F5C]">Work-Force Solutions</Link>
       <Link href="#" className="hover:text-[#2E5F5C]">Partner with us</Link>
@@ -130,7 +130,7 @@ const JobLocations = () => {
     { name: "AUSTRALIA", img: "/austraila2.png" }
   ];
 
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const scrollLeft = () => {
     if (scrollRef.current) {

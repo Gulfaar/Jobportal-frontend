@@ -23,6 +23,8 @@ const InfoSection = () => {
     },
   ];
 
+ 
+
   return (
     <section className="overflow-hidden px-20 py-16 w-full bg-white max-md:px-5 max-md:max-w-full">
       <div className="w-full max-md:mr-2 max-md:max-w-full">
@@ -76,7 +78,7 @@ const InfoSection = () => {
       title={stat.title}
       description ={
         <div className=" max-w-[250px]">
-          {stat.description}
+          {stat.description.toString()}
         </div>
       }
     />
