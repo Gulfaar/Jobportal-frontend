@@ -61,8 +61,8 @@ const NavBar = () => {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end">
-          <div className="bg-white w-64 h-full p-6 flex flex-col text-black shadow-lg">
+        <div className="fixed inset-0 z-10  bg-black bg-opacity-50 flex justify-end">
+          <div className="bg-white w-64 h-full  px-2 flex flex-col text-black shadow-lg">
             {/* Close Button */}
             <button
               className="self-end text-2xl mb-4"
@@ -72,7 +72,7 @@ const NavBar = () => {
             </button>
 
             {/* Navigation Links */}
-            <ul className="font-medium flex flex-col gap-4">
+            <ul className="font-[20px] flex flex-col gap-4">
               <li>
                 <a href="#" className="text-gray-900 hover:text-blue-700">
                   Jobs
@@ -120,20 +120,20 @@ const NavBar = () => {
 
 const NavLinks = () => {
   return (
-    <div className="flex gap-6 text-white font-semibold">
-      <Link href="/jobseeker/joblisting" className="hover:text-[#2E5F5C]">
+    <div className="flex gap-4 text-white font-[20px] w-full justify-end  relative -top-3 ">
+      <Link href="/jobseeker/joblisting" className="hover:text-[#dae470]">
         Jobs
       </Link>
-      <Link href="/blogs/BlogPost" className="hover:text-[#2E5F5C]">
+      <Link href="/blogs/BlogPost" className="hover:text-[#dae470]">
         Blog
       </Link>
-      <Link href="#" className="hover:text-[#2E5F5C]">
+      <Link href="#" className="hover:text-[#dae470]">
         Training
       </Link>
-      <Link href="#" className="hover:text-[#2E5F5C]">
+      <Link href="#" className="hover:text-[#dae470]">
         Work-Force Solutions
       </Link>
-      <Link href="#" className="hover:text-[#2E5F5C]">
+      <Link href="#" className="hover:text-[#dae470]">
         Partner with us
       </Link>
     </div>
@@ -147,17 +147,26 @@ const NavLinks = () => {
 const DesktopSearchBar = () => {
   return (
     <div className="relative flex flex-col md:flex-row bg-white w-[300px] md:w-full max-w-[400px] md:max-w-full h-auto md:h-[60px] rounded-lg mt-6 shadow-lg text-black items-center p-2 md:p-0">
+      <div className="w-full flex items-center justify-between mx-2">
+      <CiSearch/>
+      
       <input
         type="text"
         placeholder="Select for the job"
         className="pl-4 pr-4 py-2 w-full outline-none bg-transparent h-full text-sm md:text-base border border-gray-300 rounded-lg md:rounded-none md:border-none"
       />
+      </div>
       <div className="hidden md:block h-[70%] w-[1px] bg-gray-300 mx-2"></div>
+      <div className="w-full flex items-center justify-between">
+        <CiLocationOn/>
       <input
         type="text"
         placeholder="Country"
         className="pl-4 pr-4 py-2 w-full outline-none bg-transparent h-full text-sm md:text-base border border-gray-300 rounded-lg md:rounded-none md:border-none md:mt-0"
+        
       />
+      </div>
+      
       <button className="bg-[#2E5F5C] px-6 md:h-full flex items-center justify-center text-white rounded-lg md:rounded-lg whitespace-nowrap text-sm md:text-base w-full md:w-auto mt-2 md:mt-0">
         <CiSearch className="text-white text-lg mr-2" />
         Search Job
@@ -193,59 +202,95 @@ const MobileSearchBar = () => {
 
 const JobLocations = () => {
   const locations = [
-    { name: "AMERICA", img: "/america1.png" },
+    { name: "PARIS", img: "/america1.png" },
+    { name: "INDIA", img: "/america1.png" },
+    { name: "GERMANY", img: "/usa.png" },
+    { name: "USA", img: "/usa.png" },
     { name: "UAE", img: "/uae.png" },
-    { name: "INDIA", img: "/india.png" },
-    { name: "GERMANY", img: "/germany2.png" },
-    { name: "AUSTRALIA", img: "/austraila2.png" },
   ];
 
-  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const scrollRefWeb = useRef<HTMLDivElement | null>(null);
+  const scrollRefMobile = useRef<HTMLDivElement | null>(null);
 
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
+  const scrollLeft = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollBy({ left: -150, behavior: "smooth" });
     }
   };
 
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+  const scrollRight = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollBy({ left: 150, behavior: "smooth" });
     }
   };
 
   return (
-    <div className="flex gap-4 mt-6 p-4 justify-center items-center w-full">
-      <button onClick={scrollLeft} className="text-white hidden md:block">
-        <FaArrowLeft />
-      </button>
-      <div
-        ref={scrollRef}
-        className="flex overflow-x-auto scroll-smooth gap-3 p-4 items-center w-full max-w-[90%] md:w-[80%] no-scrollbar"
-        style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
-      >
-        {locations.map((loc, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center min-w-[80px] md:min-w-[120px]"
-          >
-            <Image
-              src={loc.img}
-              alt={loc.name}
-              width={40}
-              height={40}
-              className="md:w-[50px] md:h-[50px]"
-            />
-            <p className="mt-2 text-xs md:text-base">{loc.name}</p>
-          </div>
-        ))}
+    <>
+      {/* Web Version (md and above) */}
+      <div className="hidden md:flex gap-4 mt-6 p-4 justify-center items-center w-full">
+        <button onClick={() => scrollLeft(scrollRefWeb)} className="text-white">
+          <FaArrowLeft />
+        </button>
+        <div
+          ref={scrollRefWeb}
+          className="flex overflow-x-auto scroll-smooth gap-3 p-4 items-center w-full max-w-[90%] md:w-[80%] no-scrollbar"
+          style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
+        >
+          {locations.map((loc, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center min-w-[100px] md:min-w-[120px] overflow-x-hidden"
+            >
+              <Image
+                src={loc.img}
+                alt={loc.name}
+                width={50}
+                height={50}
+                className="md:w-[50px] md:h-[50px]"
+              />
+              <p className="mt-2 text-xs md:text-base">{loc.name}</p>
+            </div>
+          ))}
+        </div>
+        <button onClick={() => scrollRight(scrollRefWeb)} className="text-white">
+          <FaArrowRight />
+        </button>
       </div>
-      <button onClick={scrollRight} className="text-white hidden md:block">
-        <FaArrowRight />
-      </button>
-    </div>
+
+      {/* Mobile Version (sm only) */}
+      <div className="flex md:hidden items-center justify-between w-full px-4 py-3 bg-opacity-75 relative">
+        <button onClick={() => scrollLeft(scrollRefMobile)} className="text-white">
+          <FaArrowLeft />
+        </button>
+        <div
+          ref={scrollRefMobile}
+          className="flex gap-3 items-center overflow-x-auto no-scrollbar"
+          style={{
+            scrollbarWidth: "none",
+            WebkitOverflowScrolling: "touch",
+            maxWidth: "80%",
+          }}
+        >
+          {locations.slice(0, 4).map((loc, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center">
+                <Image src={loc.img} alt={loc.name} width={40} height={40} />
+              </div>
+              <p className="text-xs mt-1">{loc.name}</p>
+            </div>
+          ))}
+        </div>
+        <button onClick={() => scrollRight(scrollRefMobile)} className="text-white">
+          <FaArrowRight />
+        </button>
+      </div>
+    </>
   );
 };
+
+
+
+
 
 export default HeroSection;
 
