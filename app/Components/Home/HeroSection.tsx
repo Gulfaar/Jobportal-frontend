@@ -267,6 +267,7 @@ const JobLocations = () => {
         </button>
         <div
         
+
           ref={scrollRefMobile}
           className="flex gap-3 items-center overflow-x-auto no-scrollbar"
           style={{
