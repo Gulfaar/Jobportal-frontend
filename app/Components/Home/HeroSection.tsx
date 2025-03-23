@@ -68,6 +68,9 @@ const NavBar = () => {
               className="self-end text-2xl mb-4"
               onClick={() => setIsModalOpen(false)}
             >
+
+
+              
               <FaTimes />
             </button>
 
