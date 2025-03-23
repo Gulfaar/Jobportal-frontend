@@ -42,7 +42,7 @@ const InfoSection = () => {
                 Empowering Workforce, Connecting Businesses, Building Global
                 Success
               </h2>
-              <p className="mt-16 text-xl leading-7 text-black max-md:mt-10 max-md:max-w-full">
+              <p className="mt-16 text-[20px] leading-7 font-normal text-black max-md:mt-10 max-md:max-w-full">
                 At Gulfaar, we are more than just a recruitment agency—we are a
                 global workforce solutions provider committed to bridging the
                 gap between talent and opportunity. With our AI-driven hiring
@@ -55,7 +55,7 @@ const InfoSection = () => {
                   href="#search-job"
                   className="self-stretch my-auto text-white capitalize w-[122px]"
                 >
-                  <div className="px-3 py-4 rounded-lg bg-slate-800">
+                  <div className="flex px-3 py-4 rounded-lg bg-slate-800 justify-center items-center">
                     Search Job
                   </div>
                 </a>

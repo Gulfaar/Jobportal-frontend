@@ -23,31 +23,22 @@ const PartnersSection = () => {
       {/* Partner Logos Carousel */}
       <div className="relative flex items-center justify-center w-full mt-6">
         {/* Left Button */}
-        <button className="absolute left-9 p-2 bg-white rounded-full shadow-md">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/1944251e3bb80c3c11396dfeff5daeef5143a85e"
-            alt="Left arrow"
-            className="w-4"
-          />
-        </button>
+        
 
         {/* Logos Row */}
-        <div className="flex gap-6 overflow-hidden justify-center max-w-4xl">
+        <div className="flex gap-20 overflow-hidden md:mr-10 items-center justify-center max-w-6xl">
+        <span className="flex justify-end items-center w-full text-sm font-semibold text-black ">Trusted by</span>
+          
           {partnerLogos.map((logo, index) => (
+            
             <div key={index} className="flex justify-center items-center">
-              <img src={logo} alt="Partner logo" className="h-12 object-contain" />
+              <img src={logo} alt="Partner logo" className="h-18 w-full object-contain" />
             </div>
           ))}
         </div>
 
         {/* Right Button */}
-        <button className="absolute right-9 p-2 bg-white rounded-full shadow-md">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7fa3f780e6aa34568e5c6625822f79507a471f55"
-            alt="Right arrow"
-            className="w-4"
-          />
-        </button>
+       
       </div>
     </section>
   );

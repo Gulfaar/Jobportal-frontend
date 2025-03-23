@@ -4,22 +4,22 @@ import JobCard from "./JobCard";
 
 const JobsSection = () => {
   return (
-    <section className="flex flex-col px-20 pt-16 pb-9 mt-16 w-full bg-teal-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <section className="flex flex-col px-20 bg-[#2E5F5C] pt-16 pb-9 mt-16    w-full h-full  max-md:max-w-full">
       <h2 className="self-start text-5xl font-semibold text-center text-white max-md:text-4xl">
         Recent Jobs
       </h2>
-      <div className="flex justify-between items-center w-full px-1   mt-9 text-2xl  max-md:max-w-full">
-        <p className="text-white max-md:max-w-full">
+      <div className="flex justify-between items-start w-full px-1   mt-9 font-normal text-[12px]   md:text-2xl  max-md:max-w-full">
+        <p className="text-white md:inline-flex  md:whitespace-nowrap max-md:max-w-full">
           Explore the latest job opportunities across various industries
         </p>
-        <a href="#all-jobs" className="flex justify-end items-end font-bold text-red-400">
+        <a href="#all-jobs" className="flex justify-end items-end text-[12px] md:text-2xl w-full font-noraml text-white">
           View all
         </a>
       </div>
 
       <div className="mt-14 max-md:mt-10 max-md:max-w-full">
       {/* Use Grid Layout for 3 Columns */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
         {[1, 2, 3, 4, 5, 6].map((index) => (
           <JobCard key={index} />
         ))}
