@@ -1,11 +1,19 @@
 "use client";
 import React from "react";
 import { ArrowRightIcon } from "./Icons";
+import Link from "next/link";
+import { useRouter } from "next/navigation"; 
 
 interface BlogCardProps {
   category: string;
   date: string;
   title: string;
+}
+
+const Blogdetails = () =>{
+
+  const router = useRouter()
+  router.push('/blogs/BlogPost');
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ category, date, title }) => {
@@ -27,14 +35,14 @@ const BlogCard: React.FC<BlogCardProps> = ({ category, date, title }) => {
         {date}
       </time>
       <h3 className="mb-8 text-2xl font-semibold leading-8">{title}</h3>
-      <a
-        href="#"
+      <Link
+        href="/blogs/BlogPost"
         className="flex gap-3 items-center font-semibold text-teal-800"
         aria-label={`Read more about ${title}`}
       >
         <span>Read more</span>
         <ArrowRightIcon />
-      </a>
+      </Link>
     </article>
   );
 };
