@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import JobCard from "./JobCard";
+import Link from "next/link";
 
 const JobsSection = () => {
   return (
@@ -12,9 +13,9 @@ const JobsSection = () => {
         <p className="text-white md:inline-flex  md:whitespace-nowrap max-md:max-w-full">
           Explore the latest job opportunities across various industries
         </p>
-        <a href="#all-jobs" className="flex justify-end items-end text-[12px] md:text-2xl w-full font-noraml text-white">
+        <Link  href="/jobseeker/joblisting" className="flex justify-end items-end text-[12px] md:text-2xl w-full font-noraml text-white">
           View all
-        </a>
+        </Link>
       </div>
 
       <div className="flex mt-14 max-md:mt-10 max-md:max-w-full">

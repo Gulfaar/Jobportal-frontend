@@ -3,7 +3,7 @@ import BlogCard from "./BlogCard";
 
 const BlogSection = () => {
   return (
-    <section className=" px-6 max-md:mt-10">
+    <section className="mt-16 px-6 max-md:mt-10">
   {/* Title */}
   <h2 className="text-center text-4xl font-semibold text-black max-md:text-3xl">
     News and Blog
@@ -14,7 +14,7 @@ const BlogSection = () => {
     <p className="text-gray-600 text-start text-lg max-md:text-base">
       Stay informed with the latest updates, trends, and insights...
     </p>
-    <a href="#view-all" className="items-end font-bold text-teal-800 max-md:mt-2">
+    <a href="#view-all" className="hidden md:block items-end font-bold text-teal-800 max-md:mt-2">
       View all
     </a>
   </div>
@@ -32,7 +32,7 @@ const BlogSection = () => {
     </button>
 
     {/* Blog Cards */}
-    <div className="flex  overflow-hidden  md:gap-15 mb-10 max-w-5xl mx-auto max-md:flex-col max-md:w-full">
+    <div className="flex  overflow-hidden  gap-6 md:gap-15 mb-10 max-w-5xl mx-auto max-md:flex-col max-md:w-full">
       <BlogCard />
       <BlogCard />
       <BlogCard />

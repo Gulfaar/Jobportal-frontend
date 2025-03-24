@@ -70,7 +70,7 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between items-start mt-32 min-h-[171px] max-md:mt-5 max-md:max-w-full  py-5  w-full ">
+      <div className="flex flex-wrap justify-between items-start mt-20 min-h-[171px] max-md:mt-5 max-md:max-w-full  py-5  w-full ">
   {stats.map((stat, index) => (
     <StatCard
       key={index}

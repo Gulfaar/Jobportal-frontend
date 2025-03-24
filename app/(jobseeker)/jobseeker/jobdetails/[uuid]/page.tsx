@@ -9,9 +9,14 @@ import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import JobOverview from "@/app/Components/jobdetails/JobOverview";
 import RelatedJobs from "@/app/Components/jobdetails/RelatedJobs";
 import SendMessage from "@/app/Components/jobdetails/SendMessage";
+import Header from "@/app/Components/Header/Header";
+import Footer from "@/app/Components/Home/Footer";
 
 const JobDetailsPage: React.FC = () => {
   return (
+    <>
+    <Header title="JOBS DETAILS"
+     subtitle="Explore a wide range of job opportunities available"/>
     <div className="bg-gray-50 py-6 md:py-8">
       <div className="max-w-7xl mx-auto px-2 md:px-4">
         {/* Main Layout */}
@@ -209,6 +214,8 @@ const JobDetailsPage: React.FC = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

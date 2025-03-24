@@ -16,7 +16,7 @@ import WhyPartnerWithGulfaar from "../Components/PartnerWithUs/WhyPartner";
 
 
 
-const CookiePage = () => {
+const PartnerPage = () => {
     return (
         <div className="flex flex-col w-full  min-h-screen">
             <Head>
@@ -41,4 +41,4 @@ const CookiePage = () => {
       );
     };
 
-export default CookiePage;
+export default PartnerPage;

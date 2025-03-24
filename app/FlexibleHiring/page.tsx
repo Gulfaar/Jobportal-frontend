@@ -9,12 +9,6 @@ import WhyChooseGulfaar from "../Components/FlexibleHiring/Choose";
 import HireSmarterCTA from "../Components/FlexibleHiring/HireSmartCTA";
 import Footer from "../Components/Contact Us/Footer";
 
-
-
-
-
-
-
 const FlexibleHiringPage = () => {
     return (
         <div className="flex flex-col w-full  min-h-screen">
