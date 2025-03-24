@@ -3,7 +3,7 @@ import React from "react";
 const JobCard = () => {
   return (
     <article className="w-full">
-      <div className="bg-transparent border border-gray-200 shadow-lg rounded-lg p-6 w-full">
+      <div className="bg-transparent border border-gray-200 shadow-lg rounded-lg px-6 py-5 pl-2 md:p-6 w-full">
         {/* Company Logo */}
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ca7ad0b376c734ce05060b2fcef8aa61a10817c?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"

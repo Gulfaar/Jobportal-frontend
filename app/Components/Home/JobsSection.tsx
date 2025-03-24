@@ -17,9 +17,9 @@ const JobsSection = () => {
         </a>
       </div>
 
-      <div className="mt-14 max-md:mt-10 max-md:max-w-full">
+      <div className="mt-14 max-md:mt-10  max-md:max-w-full">
       {/* Use Grid Layout for 3 Columns */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2  gap-5">
         {[1, 2, 3, 4, 5, 6].map((index) => (
           <JobCard key={index} />
         ))}
