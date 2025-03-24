@@ -130,7 +130,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
               </Link>
             </li>
             <li>
-              <Link href="#blog" className="hover:text-gray-200 transition">
+              <Link href="/blog/Bloglisting" className="hover:text-gray-200 transition">
                 Blog
               </Link>
             </li>
