@@ -4,7 +4,12 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  title: string;
+  subtitle: string;
+}
+
+const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -13,7 +18,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className="relative w-full h-[400px] md:h-[500px] bg-center bg-cover bg-no-repeat"
+      className="relative w-full h-[300px] md:h-[400px] bg-center bg-cover bg-no-repeat"
       style={{
         backgroundImage: 'url("/Heroimage.png")', // Replace with your actual background image
       }}
@@ -22,14 +27,14 @@ const Header: React.FC = () => {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content Wrapper */}
-      <div className="relative z-10 flex flex-col h-full px-6 py-4">
+      <div className="relative z-10 flex flex-col  h-full px-6 py-4">
         
         {/* Top Row: Logo on the left, buttons on the right, burger menu on mobile */}
         <div className="flex items-center justify-between">
           {/* Logo - Larger size */}
           <div className="flex items-center">
             <Image
-              src="/logo.png" // Replace with your actual logo
+              src="/newlogo.png" // Replace with your actual logo
               alt="Gulfaar Logo"
               width={200}
               height={80}
@@ -77,6 +82,11 @@ const Header: React.FC = () => {
               Post Job
             </button>
             <ul className="flex flex-col space-y-4 text-white">
+            <li>
+                <Link href="#jobs" className="block hover:text-gray-200 transition">
+                  Home
+                </Link>
+              </li>
               <li>
                 <Link href="#jobs" className="block hover:text-gray-200 transition">
                   Jobs
@@ -107,8 +117,13 @@ const Header: React.FC = () => {
         )}
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="hidden md:flex justify-end mt-8">
+        <nav className="hidden md:flex justify-end mt-0">
           <ul className="flex items-center space-x-8 text-white font-medium">
+          <li>
+                <Link href="/" className="block hover:text-gray-200 transition">
+                  Home
+                </Link>
+              </li>
             <li>
               <Link href="#jobs" className="hover:text-gray-200 transition">
                 Jobs
@@ -147,11 +162,11 @@ const Header: React.FC = () => {
           <h1 className="font-bold uppercase tracking-wide mb-5">
             {/* Mobile (2 lines) */}
             <span className="block md:hidden text-4xl leading-tight">
-              Tailored<br />Candidates
+              {title}
             </span>
             {/* Desktop (1 line) */}
-            <span className="hidden md:inline text-5xl lg:text-6xl whitespace-nowrap">
-              Tailored Candidates
+            <span className="hidden md:inline text-[64px] lg:text-6xl whitespace-nowrap">
+              {title}
             </span>
           </h1>
 
@@ -159,13 +174,11 @@ const Header: React.FC = () => {
           <p className="leading-relaxed max-w-2xl mx-auto">
             {/* Mobile (2 lines) */}
             <span className="block md:hidden text-xl">
-              The Right Talent,<br />Screened Smarter
-              <br />
-              AI-Driven Recruitment
+              {subtitle}
             </span>
             {/* Desktop (1 line) */}
-            <span className="hidden md:inline text-2xl lg:text-3xl">
-              The Right Talent, Screened Smarter — AI-Driven Recruitment
+            <span className="hidden md:inline   justify-center items-center text-[24px] lg:text-3xl">
+              {subtitle}
             </span>
           </p>
         </div>

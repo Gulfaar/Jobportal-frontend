@@ -45,7 +45,7 @@ const NavBar = () => {
     <nav className="absolute top-0 left-0 w-full flex justify-between items-center bg-transparent px-4 md:px-6 py-4">
       <div className="flex items-center">
         <img
-          src="./logo.png"
+          src="./newlogo.png"
           alt="Gulfaar Logo"
           className="w-[120px] md:w-[213px] h-auto"
         />
@@ -123,7 +123,10 @@ const NavBar = () => {
 
 const NavLinks = () => {
   return (
-    <div className="flex gap-4 text-white font-[20px] w-full justify-end  relative -top-3 ">
+    <div className="flex gap-4 text-white font-[20px] w-full justify-end  relative -top-9 ">
+       <Link href="/" className="hover:text-[#dae470]">
+        Home
+      </Link>
       <Link href="/jobseeker/joblisting" className="hover:text-[#dae470]">
         Jobs
       </Link>
