@@ -3,8 +3,8 @@ import HeroWorked from "./Components/Home/HeroWorked";
 
 export default function Home() {
   return (
-    <div>
-      <HeroWorked />
-    </div>
+   <div>
+    <HeroWorked/>
+   </div>
   );
 }

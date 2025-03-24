@@ -7,7 +7,7 @@ const InfoSection = () => {
       number: "18K+",
       title: "Clients worldwide",
       description:
-        "We proudly serve clients worldwide, providing high-quality solutions tailored to their needs. Our commitment to excellence, innovation, and customer satisfaction has earned us the trust of businesses across industries. With a global presence, we ensure seamless collaboration and timely delivery for successful outcomes.",
+        "We proudly serve clients worldwide, providing high-quality solutions tailored to their needs. Our commitment to excellence, innovation, and customer satisfaction has earned us the trust of businesses across industries.",
     },
     {
       number: "50M+",
@@ -22,6 +22,8 @@ const InfoSection = () => {
         "With years of experience, our company has built a strong foundation of expertise, innovation, and customer-focused solutions. We've successfully delivered projects across various sectors, consistently exceeding client expectations",
     },
   ];
+
+ 
 
   return (
     <section className="overflow-hidden px-20 py-16 w-full bg-white max-md:px-5 max-md:max-w-full">
@@ -40,7 +42,7 @@ const InfoSection = () => {
                 Empowering Workforce, Connecting Businesses, Building Global
                 Success
               </h2>
-              <p className="mt-16 text-xl leading-7 text-black max-md:mt-10 max-md:max-w-full">
+              <p className="mt-16 text-[20px] leading-7 font-normal text-black max-md:mt-10 max-md:max-w-full">
                 At Gulfaar, we are more than just a recruitment agency—we are a
                 global workforce solutions provider committed to bridging the
                 gap between talent and opportunity. With our AI-driven hiring
@@ -53,7 +55,7 @@ const InfoSection = () => {
                   href="#search-job"
                   className="self-stretch my-auto text-white capitalize w-[122px]"
                 >
-                  <div className="px-3 py-4 rounded-lg bg-slate-800">
+                  <div className="flex px-3 py-4 rounded-lg bg-slate-800 justify-center items-center">
                     Search Job
                   </div>
                 </a>
@@ -68,16 +70,20 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap gap-10 justify-between items-end mt-32 min-h-[171px] max-md:mt-10 max-md:max-w-full">
-        {stats.map((stat, index) => (
-          <StatCard
-            key={index}
-            number={stat.number}
-            title={stat.title}
-            description={stat.description}
-          />
-        ))}
-      </div>
+      <div className="flex flex-wrap justify-between items-start mt-32 min-h-[171px] max-md:mt-10 max-md:max-w-full  py-12  w-full ">
+  {stats.map((stat, index) => (
+    <StatCard
+      key={index}
+      number={stat.number}
+      title={stat.title}
+      description ={
+        <div className=" max-w-[250px]">
+          {stat.description.toString()}
+        </div>
+      }
+    />
+  ))}
+</div>
     </section>
   );
 };

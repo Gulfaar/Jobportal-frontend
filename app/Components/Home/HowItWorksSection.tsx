@@ -1,29 +1,40 @@
-import React from "react";
-import WorkStep from "./WorkStep";
+import { useEffect, useState } from "react";
 
 const HowItWorksSection = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   const steps = [
     {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d7f3fcddd9c092ac3217dd15d649a5399205fe1b?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
+      icon: "/userrr.png",
       title: "Sign Up & Optimize Resume",
       description:
         "Register, create your profile & upload your resume. AI enhances your resume for better job visibility.",
     },
     {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/5e8a4d9e9d87fc5675b39584544ed24901445e32?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
+      icon: "/iconnew.png",
       title: "Find Jobs & Identify Skill Gaps",
       description:
         "AI job search matches you with the best roles. Detects knowledge/tech gaps & suggests upskilling.",
-      highlighted: true,
     },
     {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/8a9ae577ffd2aeca1ce09b07dc5407e9f7c8e603?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
+      icon: "/what.png",
       title: "AI Screening & Pre-Interview",
       description:
         "Take AI-driven tests & pre-video interviews. Get an AI match score for faster shortlisting.",
     },
     {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/875438be9bee2af59cf6e70b25e79e10cfe6c381?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
+      icon: "/tick.png",
       title: "Get Hired & Grow",
       description:
         "Receive interview invites via WhatsApp, SMS, email & notification. Track applications, accept offers & upskill.",
@@ -31,22 +42,46 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="mt-16 ml-7 max-md:mt-10 max-md:max-w-full">
-      <h2 className="self-center text-5xl font-semibold leading-none text-center text-zinc-900 max-md:mt-10 max-md:max-w-full max-md:text-4xl">
-        HOW GULFAAR WORK
-      </h2>
-      <div className="self-center mt-20 ml-6 w-full max-w-[1320px] max-md:mt-10 max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col">
-          {steps.map((step, index) => (
-            <WorkStep
-              key={index}
-              icon={step.icon}
-              title={step.title}
-              description={step.description}
-              highlighted={step.highlighted}
-            />
-          ))}
-        </div>
+    <section className="flex flex-col items-center text-black bg-white px-6 py-16 w-full">
+      <h2 className="text-4xl font-bold text-center mb-16">HOW GULFAAR WORKS</h2>
+      <div className={`relative w-full ${isMobile ? "flex flex-col items-center" : "flex justify-between"}`}>
+        {steps.map((step, index) => (
+          <div key={index} className={`relative flex flex-col items-center text-center ${isMobile ? "mb-10" : "w-1/4"}`}>
+            <div className="relative flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-md border border-gray-300">
+              <img src={step.icon} alt={step.title} className="w-8 h-8" />
+            </div>
+
+            {index < steps.length - 1 && (
+              <div
+                className={`absolute ${isMobile ? "top-full mt-4" : "top-1/4 transform -translate-y-1/2 left-full"}`}
+              >
+                <svg
+                  width={isMobile ? "2" : "100"}
+                  height={isMobile ? "50" : "50"}
+                  viewBox="0 0 100 50"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d={isMobile ? "M1 0 V50" : "M0 25 Q50 0 100 25"}
+                    stroke="#4A90E2"
+                    strokeWidth="2"
+                    strokeDasharray="6,6"
+                    fill="transparent"
+                  />
+                  {isMobile ? (
+                    <polygon points="1,50 5,45 0,45" fill="#4A90E2" />
+                  ) : (
+                    <polygon points="100,25 90,23 95,22, 90,30 " fill="#4A90E2" />
+                  )}
+                </svg>
+              </div>
+            )}
+
+            <h3 className="mt-4 text-lg font-semibold text-gray-900">{step.title}</h3>
+            <p className="mt-2 text-sm text-gray-600 max-w-xs">{step.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
