@@ -3,7 +3,7 @@ import HeroWorked from "./Components/Home/HeroWorked";
 
 export default function Home() {
   return (
-   <div>
+   <div >
     <HeroWorked/>
    </div>
   );

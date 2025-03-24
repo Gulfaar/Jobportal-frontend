@@ -2,7 +2,7 @@ import React from "react";
 
 const JobCard = () => {
   return (
-    <article className="w-full">
+    <article className="w-[90%] sm md:w-full mx-auto ">
       <div className="bg-transparent border border-gray-200 shadow-lg rounded-lg px-6 py-5 pl-2 md:p-6 w-full">
         {/* Company Logo */}
         <img

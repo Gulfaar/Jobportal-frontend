@@ -3,18 +3,18 @@ import BlogCard from "./BlogCard";
 
 const BlogSection = () => {
   return (
-    <section className="mt-16 px-6 max-md:mt-10">
+    <section className=" px-6 max-md:mt-10">
   {/* Title */}
   <h2 className="text-center text-4xl font-semibold text-black max-md:text-3xl">
     News and Blog
   </h2>
 
   {/* Subtitle & View All */}
-  <div className="flex justify-between items-center md:pl-60 mt-4 max-w-4xl mx-auto max-md:flex-col max-md:items-center">
-    <p className="text-gray-600 text-center text-lg max-md:text-base">
+  <div className="flex justify-between  md:pl-60 mt-4 max-w-4xl mx-auto max-md:flex-col max-md:items-center">
+    <p className="text-gray-600 text-start text-lg max-md:text-base">
       Stay informed with the latest updates, trends, and insights...
     </p>
-    <a href="#view-all" className="font-bold text-teal-800 max-md:mt-2">
+    <a href="#view-all" className="items-end font-bold text-teal-800 max-md:mt-2">
       View all
     </a>
   </div>

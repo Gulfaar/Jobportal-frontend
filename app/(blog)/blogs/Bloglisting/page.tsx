@@ -13,11 +13,11 @@ const BlogPage: React.FC = () => {
     <main className="w-full bg-white min-h-[screen]">
       <Header title="Blogs"
       subtitle="Explore a wide range of explore our blogs" />
-
-     
+      
+      <div className="flex gap-10 px-10 py-16 max-md:flex-col">
         <BlogSidebar />
         <BlogGrid />
-      
+      </div>
       <Footer/>
     </main>
   );

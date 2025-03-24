@@ -9,7 +9,7 @@ import { FaBars, FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 const HeroSection = () => {
   return (
     <div
-      className="relative w-full h-screen bg-cover bg-center flex flex-col items-center text-white px-6 pt-[100px] md:pt-[150px]"
+      className="relative w-full h-screen bg-cover bg-center flex flex-col items-center text-white px-10 pt-[100px] md:pt-[150px]"
       style={{ backgroundImage: "url('/background.png')" }}
     >
       <NavBar />
@@ -42,7 +42,7 @@ const NavBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 w-full flex justify-between items-center bg-transparent px-4 md:px-6 py-4">
+    <nav className="absolute top-0 left-0 w-full flex justify-between items-center bg-transparent px-10 md:px-6 py-4">
       <div className="flex items-center">
         <img
           src="./newlogo.png"
