@@ -5,8 +5,6 @@ import OperatingRegions from "@/app/Components/Global/OperatingRegions";
 import ServiceFeatures from "@/app/Components/Global/ServiceFeatures";
 import Header from "@/app/Components/Header/Header";
 import Footer from "@/app/Components/Home/Footer";
-
-import HeroSection from "@/app/Components/Home/HeroSection";
 import * as React from "react";
 
 
