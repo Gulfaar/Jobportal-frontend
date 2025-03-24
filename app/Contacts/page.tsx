@@ -4,7 +4,7 @@ import HeroSection from "../Components/Contact Us/HeroSection";
 import FormContact from "../Components/Contact Us/FormContact";
 import Footer from "../Components/Contact Us/Footer";
 
-const HomePage = () => {
+const ContactUSPage = () => {
     return (
         <div className="flex flex-col min-h-screen">
           <Head>
@@ -20,4 +20,4 @@ const HomePage = () => {
       );
     };
 
-export default HomePage;
+export default ContactUSPage;
