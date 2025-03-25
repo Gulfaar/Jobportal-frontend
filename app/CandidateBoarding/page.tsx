@@ -8,7 +8,6 @@ const CandidateOnboardingPage = () => {
       <div className="flex-1 flex flex-col items-center justify-center px-6 md:px-20 w-full max-w-full mx-auto">
         <CandidateOnboardingSteps1 />
       </div>
-      <Footer />
     </div>
   );
 };

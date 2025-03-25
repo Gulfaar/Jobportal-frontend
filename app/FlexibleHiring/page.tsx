@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Navbar from "../Components/Contact Us/Navbar";
-import HeroSection from "../Components/Contact Us/HeroSection";
+import Header from '../Components/Header/Header'
 import FlexibleHead from "../Components/FlexibleHiring/FlexibleHead";
 import FlexibleHiringModels from "../Components/FlexibleHiring/HiringModels";
 import ModernHiringSystem from "../Components/FlexibleHiring/ModernHiring";
@@ -15,8 +14,7 @@ const FlexibleHiringPage = () => {
             <Head>
             <title>FlexibleHiring</title>
           </Head>
-          <Navbar />
-          <HeroSection />
+          <Header />
           <div className="flex-1 flex  flex-col items-center justify-center  w-full">
             <FlexibleHead />
             <FlexibleHiringModels />

@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Navbar from "../Components/Contact Us/Navbar";
-import HeroSection from "../Components/Contact Us/HeroSection";
+import Header from '../Components/Header/Header'
 import CookiesInfo from "../Components/Cookie/CookieInfo";
 import CookiesUsage from "../Components/Cookie/CookieUsage";
 import CookieChoice from "../Components/Cookie/CookieChoice";
@@ -16,8 +15,7 @@ const CookiePage = () => {
             <Head>
             <title>Cookies</title>
           </Head>
-          <Navbar />
-          <HeroSection />
+          <Header />
           <div className="flex-1 flex  flex-col items-center justify-center  w-full">
             <CookiesInfo />
             <CookiesUsage />

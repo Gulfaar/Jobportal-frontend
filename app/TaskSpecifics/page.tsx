@@ -1,6 +1,5 @@
   import Head from "next/head";
-  import Navbar from "../Components/Contact Us/Navbar";
-  import HeroSection from "../Components/Contact Us/HeroSection";
+  import Header from '../Components/Header/Header'
   import Workforce from "../Components/TaskSpecific/WorkForce";
   import IndustriesAndServices from "../Components/TaskSpecific/IndustryAndService";
   import HiringProcess from "../Components/TaskSpecific/HiringProcess";
@@ -20,8 +19,7 @@
               <Head>
               <title>SpecificTask</title>
             </Head>
-            <Navbar />
-            <HeroSection />
+            <Header />
             <div className="flex-1 flex  flex-col items-center justify-center  w-full">
               <Workforce />
               <IndustriesAndServices />
