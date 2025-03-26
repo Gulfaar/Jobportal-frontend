@@ -12,6 +12,7 @@ const Navbar = () => {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
+        
       }
     };
 

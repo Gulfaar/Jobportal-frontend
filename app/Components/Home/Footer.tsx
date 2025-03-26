@@ -2,13 +2,13 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-teal-900 text-white">
+    <footer className="bg-teal-900 w-full text-white">
       <div className="container mx-auto px-6 py-8 md:px-16 md:py-10">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start">
           {/* Logo & Address Section */}
           <div className="mb-8 md:mb-0 md:w-1/4">
             <img
-              src="/logo.png"
+              src="/newlogo.png"
               alt="Gulfaar"
               className="h-8 mb-4"
             />

@@ -166,6 +166,22 @@ const EmployerSignupPage: React.FC = () => {
             />
           </div>
 
+          <div>
+            <label
+              htmlFor="password"
+              className="block mb-1 font-medium text-gray-700"
+            >
+              Confirm Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="********"
+              className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
+            />
+          </div>
+
           {/* Terms of Service */}
           <div className="flex items-center space-x-2">
             <input

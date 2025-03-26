@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import JobCard from "./JobCard";
+import Link from "next/link";
 
 const JobsSection = () => {
   return (
-    <section className="flex flex-col px-20 bg-[#2E5F5C] pt-16 pb-9 mt-16    w-full h-full  max-md:max-w-full">
+    <section className="flex flex-col px-10 bg-[#2E5F5C] pt-16 pb-9 mt-16    w-full h-full  max-md:max-w-full">
       <h2 className="self-start text-5xl font-semibold text-center text-white max-md:text-4xl">
         Recent Jobs
       </h2>
@@ -12,14 +13,14 @@ const JobsSection = () => {
         <p className="text-white md:inline-flex  md:whitespace-nowrap max-md:max-w-full">
           Explore the latest job opportunities across various industries
         </p>
-        <a href="#all-jobs" className="flex justify-end items-end text-[12px] md:text-2xl w-full font-noraml text-white">
+        <Link  href="/jobseeker/joblisting" className="flex justify-end items-end text-[12px] md:text-2xl w-full font-noraml text-white">
           View all
-        </a>
+        </Link>
       </div>
 
-      <div className="mt-14 max-md:mt-10  max-md:max-w-full">
+      <div className="flex mt-14 max-md:mt-10 max-md:max-w-full">
       {/* Use Grid Layout for 3 Columns */}
-      <div className="grid grid-cols-1 md:grid-cols-2  gap-5">
+      <div className="  grid grid-cols-1 md:grid-cols-2  gap-5">
         {[1, 2, 3, 4, 5, 6].map((index) => (
           <JobCard key={index} />
         ))}

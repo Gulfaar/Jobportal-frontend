@@ -1,8 +1,22 @@
+import Link from "next/link";
 import React from "react";
+import { useRouter } from 'next/navigation'
+
+
 
 const JobCard = () => {
+
+  const router = useRouter()
+
+  const applyNow = () =>{
+
+    console.log('Apply now clicked');
+    
+   router.push('/jobseeker/jobdetails/12345')
+  }
+
   return (
-    <article className="w-full">
+    <article className="w-[90%] sm md:w-full mx-auto ">
       <div className="bg-transparent border border-gray-200 shadow-lg rounded-lg px-6 py-5 pl-2 md:p-6 w-full">
         {/* Company Logo */}
         <img
@@ -35,7 +49,7 @@ const JobCard = () => {
 
         {/* Action Buttons */}
         <div className="flex gap-4 mt-4">
-          <button className="px-4 py-2 bg-red-400 hover:bg-red-900 text-white rounded text-sm">
+          <button onClick={applyNow} className="px-4 py-2 bg-red-400 hover:bg-red-900 text-white rounded text-sm">
             Apply now
           </button>
           <button className="px-4 py-2 border border-white text-white rounded text-sm">

@@ -8,7 +8,8 @@ const CountryPresence: React.FC = () => {
   return (
     <main className="w-full bg-white min-h-screen">
       
-      <Header/>
+      <Header title="COUNTRIES"
+      subtitle="Register today to unlock exciting job opportunities"/>
       <PresenceSection />
       <BranchesSection />
       <TeamSection />

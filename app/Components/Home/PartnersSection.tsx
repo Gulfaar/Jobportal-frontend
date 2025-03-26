@@ -20,25 +20,29 @@ const PartnersSection = () => {
         We believe in the power of strong partnerships to drive success.
       </p>
 
-      {/* Partner Logos Carousel */}
+      {/* Partner Logos Section */}
       <div className="relative flex items-center justify-center w-full mt-6">
-        {/* Left Button */}
-        
+        {/* Mobile (Stacked Layout) */}
+        <div className="max-md:flex max-md:flex-col max-md:items-center max-md:gap-4 md:hidden">
+          <span className="text-black text-sm font-semibold  whitespace-nowrap flex-inline">Trusted by</span>
+          <div className="flex items-center justify-center">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/6b5b5e37ab357cedb2618e034021508ae32d5532"
+              alt="Microsoft"
+              className="h-10 w-auto object-contain"
+            />
+          </div>
+        </div>
 
-        {/* Logos Row */}
-        <div className="flex gap-20 overflow-hidden md:mr-10 items-center justify-center max-w-6xl">
-        <span className="flex justify-end items-center w-full text-sm font-semibold text-black ">Trusted by</span>
-          
+        {/* Desktop (Unchanged Layout) */}
+        <div className="hidden md:flex gap-20 items-center justify-center max-w-6xl">
+          <span className="text-black text-sm font-semibold">Trusted by</span>
           {partnerLogos.map((logo, index) => (
-            
             <div key={index} className="flex justify-center items-center">
               <img src={logo} alt="Partner logo" className="h-18 w-full object-contain" />
             </div>
           ))}
         </div>
-
-        {/* Right Button */}
-       
       </div>
     </section>
   );

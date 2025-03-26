@@ -17,7 +17,8 @@ const BlogPost = () => {
                 rel="stylesheet"
             />
 
-            <Header/>
+            <Header title="Blogs"
+              subtitle="Explore a wide range of explore our blogs" />
 
             <main className="flex-grow">
                 <Breadcrumb />
