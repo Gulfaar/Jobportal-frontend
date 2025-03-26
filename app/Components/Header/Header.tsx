@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
 
   return (
     <header
-      className="relative w-full h-[300px] md:h-[400px] bg-center bg-cover bg-no-repeat"
+      className="relative w-full h-[300px] md:h-[300px] bg-center bg-cover bg-no-repeat"
       style={{
         backgroundImage: 'url("/Heroimage.png")', // Replace with your actual background image
       }}
@@ -165,7 +165,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
               {title}
             </span>
             {/* Desktop (1 line) */}
-            <span className="hidden md:inline text-[64px] lg:text-6xl whitespace-nowrap">
+            <span className="hidden md:inline text-[54px] lg:text-5xl whitespace-nowrap">
               {title}
             </span>
           </h1>
@@ -177,7 +177,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
               {subtitle}
             </span>
             {/* Desktop (1 line) */}
-            <span className="hidden md:inline   justify-center items-center text-[24px] lg:text-3xl">
+            <span className="hidden md:inline   justify-center items-center text-[14px] lg:text-2xl">
               {subtitle}
             </span>
           </p>
