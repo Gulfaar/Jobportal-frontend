@@ -129,9 +129,9 @@ const Joblisting = () => {
                         </div>
 
                         {/* Job Cards Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 justify-items-center">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3  justify-items-center">
                             {[...Array(6)].map((_, index) => (
-                                <div key={index} className="bg-white rounded-lg shadow-md w-[280px] h-[320px] p-6 border relative">
+                                <div key={index} className="bg-white rounded-lg shadow-md  md:w-[380px] md:h-[320px] p-8 border relative">
                                     <div className="flex items-center gap-3 mb-3">
                                         <Image src="/google.png" alt="Google" width={24} height={24} />
                                         <h3 className="font-semibold">Software Tester</h3>
@@ -145,7 +145,7 @@ const Joblisting = () => {
                                         As a Software Tester, you will play a critical role in ensuring the quality and reliability of our software applications...
                                     </p>
                                     
-                                    <div className="flex gap-2">
+                                    <div className="flex md:mt-20    gap-3">
                                         <button className="flex-1 bg bg-[#2E5F5C] border border-[#2E5F5C] text-white  px-3 py-1.5 rounded text-sm hover:bg-[#2E5F5C] hover:text-white transition-colors">
                                             Apply now
                                         </button>
