@@ -220,13 +220,13 @@ const JobLocations = () => {
 
   const scrollLeft = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
-      ref.current.scrollBy({ left: -150, behavior: "smooth" });
+      ref.current.scrollBy({ left: -200, behavior: "smooth" }); // Increased offset
     }
   };
 
   const scrollRight = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
-      ref.current.scrollBy({ left: 150, behavior: "smooth" });
+      ref.current.scrollBy({ left: 200, behavior: "smooth" }); // Increased offset
     }
   };
 
@@ -264,22 +264,21 @@ const JobLocations = () => {
       </div>
 
       {/* Mobile Version (sm only) */}
-      <div className="flex md:hidden items-center justify-between w-full px-4 py-3 bg-opacity-75 relative">
+      <div className="flex md:hidden items-center justify-between w-full px-2 py-3 bg-opacity-75 relative">
         <button onClick={() => scrollLeft(scrollRefMobile)} className="text-white">
           <FaArrowLeft />
         </button>
         <div
-        
-
           ref={scrollRefMobile}
-          className="flex gap-3 items-center overflow-x-auto no-scrollbar"
+          className="flex gap-3 items-center overflow-x-auto scroll-smooth no-scrollbar"
           style={{
             scrollbarWidth: "none",
             WebkitOverflowScrolling: "touch",
             maxWidth: "80%",
+            scrollBehavior: "smooth", // Ensuring smooth scrolling
           }}
         >
-          {locations.slice(0, 4).map((loc, index) => (
+          {locations.map((loc, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center">
                 <Image src={loc.img} alt={loc.name} width={40} height={40} />
@@ -295,6 +294,8 @@ const JobLocations = () => {
     </>
   );
 };
+
+
 
 
 

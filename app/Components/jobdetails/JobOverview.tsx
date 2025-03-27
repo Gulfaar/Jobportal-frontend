@@ -5,7 +5,7 @@ import { BiDollar } from 'react-icons/bi';
 
 const JobOverview = () => {
   return (
-    <div className=" bg-[#EBF5F4] rounded-lg p-6 mb-6">
+    <div className=" bg-[#EBF5F4]  rounded-lg p-6 mb-6">
       <h3 className="text-lg text-black  font-semibold mb-4">Job Overview</h3>
       
       <div className="space-y-4">
