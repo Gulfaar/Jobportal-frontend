@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const JobsSection = () => {
   return (
-    <section className="flex flex-col px-10 bg-[#2E5F5C] pt-16 pb-9 mt-16    w-full h-full  max-md:max-w-full">
+    <section className="flex flex-col px-5 md:px-18 bg-[#2E5F5C] pt-16 pb-9 mt-16    w-full h-full  max-md:max-w-full">
       <h2 className="self-start text-5xl font-semibold text-center text-white max-md:text-4xl">
         Recent Jobs
       </h2>

@@ -13,7 +13,7 @@ interface BlogCardProps {
 const Blogdetails = () =>{
 
   const router = useRouter()
-  router.push('/blogs/BlogPost');
+  router.push('/blogs/BlogPost'); 
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ category, date, title }) => {
@@ -34,7 +34,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ category, date, title }) => {
       >
         {date}
       </time>
-      <h3 className="mb-8 text-2xl font-semibold leading-8">{title}</h3>
+      <h3 className="mb-8 text-1xl font-semibold leading-8">{title}</h3>
       <Link
         href="/blogs/BlogPost"
         className="flex gap-3 items-center font-semibold text-teal-800"

@@ -6,11 +6,11 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-8 md:px-16 md:py-10">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start">
           {/* Logo & Address Section */}
-          <div className="mb-8 md:mb-0 md:w-1/4">
+          <div className="mb-8 md:mb-0 md:w-1/3">
             <img
               src="/newlogo.png"
               alt="Gulfaar"
-              className="h-8 mb-4"
+              className="h-18 mb-4"
             />
             <p className="text-sm">
               Tharakkandam Building, 1st Floor, Kurishupally<br />

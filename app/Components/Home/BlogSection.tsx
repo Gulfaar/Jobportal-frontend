@@ -32,7 +32,7 @@ const BlogSection = () => {
     </button>
 
     {/* Blog Cards */}
-    <div className="flex  overflow-hidden  gap-6 md:gap-15 mb-10 max-w-5xl mx-auto max-md:flex-col max-md:w-full">
+    <div className="flex  overflow-hidden px-8  gap-6 md:gap-15 mb-10 max-w-5xl mx-auto max-md:flex-col max-md:w-full">
       <BlogCard />
       <BlogCard />
       <BlogCard />
