@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CiLocationOn, CiSearch } from "react-icons/ci";
@@ -9,7 +9,7 @@ import { FaBars, FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 const HeroSection = () => {
   return (
     <div
-      className="relative w-full h-screen bg-cover bg-center flex flex-col items-center text-white px-10 pt-[100px] md:pt-[150px]"
+      className="relative w-full h-screen bg-cover bg-center flex flex-col items-center overflow-hidden text-white px-12 pt-[100px] md:pt-[150px]"
       style={{ backgroundImage: "url('/background.png')" }}
     >
       <NavBar />
@@ -41,16 +41,19 @@ const HeroSection = () => {
 const NavBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [isTrainingOpen, setIsTrainingOpen] = useState(false);
+  const [isWorkForceOpen, setIsWorkForceOpen] = useState(false);  
+
   return (
-    <nav className="absolute top-0 left-0 w-full flex justify-between items-center bg-transparent px-10 md:px-6 py-4">
-      <div className="flex items-center">
+    <nav className="absolute  top-0 left-0 w-full flex justify-between items-center  px-10  py-7">
+      <div className="flex  mt-[-30px] items-center">
         <img
           src="./newlogo.png"
           alt="Gulfaar Logo"
-          className="w-[120px] md:w-[213px] h-auto"
+          className="w-[120px] md:w-[315px]  h-auto"
         />
       </div>
-      <div className="flex items-center gap-2 md:hidden lg:hidden">
+      <div className="flex  items-center gap-2 md:hidden lg:hidden">
         <button className="px-3 py-2 rounded-lg text-white text-sm">Jobseeker</button>
         <button className="bg-[#2E5F5C] px-3 py-2 rounded-lg text-white text-sm">
           Employer
@@ -68,9 +71,7 @@ const NavBar = () => {
               className="self-end text-2xl mb-4"
               onClick={() => setIsModalOpen(false)}
             >
-
-
-              
+  
               <FaTimes />
             </button>
 
@@ -106,39 +107,79 @@ const NavBar = () => {
         </div>
       )}
 
-      <div className="hidden md:flex gap-2 md:gap-4">
+      <div className="hidden w-full justify-end mt-[-50px] md:flex gap-2 md:gap-4">
         <button className="px-3 md:px-4 py-2 rounded-lg text-white text-sm md:text-base">
           Jobseeker
         </button>
-        <button className="bg-[#2E5F5C] px-3 md:px-4 py-2 rounded-lg text-white text-sm md:text-base">
+        <button className="bg-[#2E5F5C] mt-1 md:px-4  md:h-8 rounded-lg text-white text-sm md:text-base">
           Employer
         </button>
-        <button className="bg-[#2E5F5C] px-3 md:px-4 py-2 rounded-lg text-white text-sm md:text-base">
+        {/* <button className="bg-[#2E5F5C] px-3 md:px-4 py-2 rounded-lg text-white text-sm md:text-base">
           Post Job
-        </button>
+        </button> */}
       </div>
     </nav>
   );
 };
 
 const NavLinks = () => {
+
+  const [isTrainingOpen, setIsTrainingOpen] = useState(false);
+  const [isWorkForceOpen, setIsWorkForceOpen] = useState(false);
+
   return (
-    <div className="flex gap-4 text-white font-[20px] w-full justify-end  relative -top-9 ">
+    <div className="flex gap-4  text-white font-[20px] w-full justify-end  md:mt-[-45px]   lg:mt-[-35px] relative -top-9 ">
        <Link href="/" className="hover:text-[#dae470]">
         Home
       </Link>
       <Link href="/jobseeker/joblisting" className="hover:text-[#dae470]">
         Jobs
       </Link>
-      <Link href="/blogs/BlogPost" className="hover:text-[#dae470]">
+      <Link href="/blogs/Bloglisting" className="hover:text-[#dae470]">
         Blog
       </Link>
-      <Link href="#" className="hover:text-[#dae470]">
+      <div
+        className="relative group"
+        onMouseOver={() => setIsTrainingOpen(true)}
+        onMouseLeave={() => setIsTrainingOpen(false)}
+      >
+      <Link href="#" className="hover:text-[#dae470]" onMouseOver={() => setIsTrainingOpen(true)} onMouseLeave={()=> setIsTrainingOpen(false)}>
         Training
       </Link>
+
+      {isTrainingOpen && (
+          <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded-lg shadow-lg p-2">
+            <Link href="/training/courses" className="block px-4 py-2 hover:bg-gray-700 rounded">
+             Language Training
+            </Link>
+            <Link href="/training/workshops" className="block px-4 py-2 hover:bg-gray-700 rounded">
+              Exam Prepration
+            </Link>
+          </div>
+        )}
+          </div>
+
+          <div
+        className="relative group"
+        onMouseEnter={() => setIsWorkForceOpen(true)}
+        onMouseLeave={() => setIsWorkForceOpen(false)}
+      >
       <Link href="#" className="hover:text-[#dae470]">
         Work-Force Solutions
       </Link>
+
+      {isWorkForceOpen && (
+          <div className="absolute left-0 mt-2 w-56 bg-gray-800 text-white rounded-lg shadow-lg p-2">
+            <Link href="/workforce/recruitment" className="block px-4 py-2 hover:bg-gray-700 rounded">
+              Tailored Candidates
+            </Link>
+            <Link href="/workforce/consulting" className="block px-4 py-2 hover:bg-gray-700 rounded">
+              Direct Placement
+            </Link>
+          </div>
+        )}
+        </div>
+
       <Link href="#" className="hover:text-[#dae470]">
         Partner with us
       </Link>
@@ -152,18 +193,18 @@ const NavLinks = () => {
 */
 const DesktopSearchBar = () => {
   return (
-    <div className="relative flex flex-col md:flex-row bg-white w-[300px] md:w-full max-w-[400px] md:max-w-full h-auto md:h-[60px] rounded-lg mt-6 shadow-lg text-black items-center p-2 md:p-0">
-      <div className="w-full flex items-center justify-between mx-2">
+    <div className="relative flex md:flex-row bg-white w-[700px]  max-w-[900px] md:w- h-auto md:h-[60px] rounded-lg mt-6 shadow-lg text-black items-center p-5 md:p-0">
+      <div className="w-full flex  items-center mx-2">
       <CiSearch/>
       
       <input
         type="text"
         placeholder="Select for the job"
-        className="pl-4 pr-4 py-2 w-full outline-none bg-transparent h-full text-sm md:text-base border border-gray-300 rounded-lg md:rounded-none md:border-none"
+        className="flex pl-4 pr-4 py-2 w-full outline-none  bg-transparent h-full justify-center items-center text-sm md:text-base border border-gray-300 rounded-lg md:rounded-none md:border-none"
       />
       </div>
-      <div className="hidden md:block h-[70%] w-[1px] bg-gray-300 mx-2"></div>
-      <div className="w-full flex items-center justify-between">
+      {/* <div className="hidden md:block h-[70%] w-[1px] bg-gray-300 mx-2"></div> */}
+      {/* <div className="w-full flex items-center justify-between">
         <CiLocationOn/>
       <input
         type="text"
@@ -171,7 +212,7 @@ const DesktopSearchBar = () => {
         className="pl-4 pr-4 py-2 w-full outline-none bg-transparent h-full text-sm md:text-base border border-gray-300 rounded-lg md:rounded-none md:border-none md:mt-0"
         
       />
-      </div>
+      </div> */}
       
       <button className="bg-[#2E5F5C] px-6 md:h-full flex items-center justify-center text-white rounded-lg md:rounded-lg whitespace-nowrap text-sm md:text-base w-full md:w-auto mt-2 md:mt-0">
         <CiSearch className="text-white text-lg mr-2" />
@@ -215,83 +256,79 @@ const JobLocations = () => {
     { name: "UAE", img: "/uae.png" },
   ];
 
-  const scrollRefWeb = useRef<HTMLDivElement | null>(null);
-  const scrollRefMobile = useRef<HTMLDivElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const scrollLeft = (ref: React.RefObject<HTMLDivElement | null>) => {
-    if (ref.current) {
-      ref.current.scrollBy({ left: -200, behavior: "smooth" }); // Increased offset
+  const scrollLeft = () => {
+    if (scrollRef.current instanceof HTMLElement) {
+      scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
     }
   };
 
-  const scrollRight = (ref: React.RefObject<HTMLDivElement | null>) => {
-    if (ref.current) {
-      ref.current.scrollBy({ left: 200, behavior: "smooth" }); // Increased offset
+  const scrollRight = () => {
+    if (scrollRef.current instanceof HTMLElement) {
+      scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    const autoScroll = () => {
+      if (scrollRef.current) {
+        let direction = -1;
+        const interval = setInterval(() => {
+          if (scrollRef.current) {
+            scrollRef.current.scrollBy({ left: direction * 2, behavior: "smooth" });
+            if (scrollRef.current.scrollLeft <= 0) {
+              scrollRef.current.scrollLeft = scrollRef.current.scrollWidth / 2;
+            }
+          }
+        }, 50);
+        return interval;
+      }
+    };
+
+    const interval = autoScroll();
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <>
-      {/* Web Version (md and above) */}
-      <div className="hidden md:flex gap-4 mt-6 p-4 justify-center items-center w-full">
-        <button onClick={() => scrollLeft(scrollRefWeb)} className="text-white">
-          <FaArrowLeft />
-        </button>
+    <div className="flex flex-col items-center w-full px-5 py-6 overflow-hidden">
+      <div className="relative w-full flex justify-center px-5  items-center mt-4">
+          {/* <button onClick={scrollLeft} className="text-white z-20 absolute left-2">
+            <FaArrowLeft />
+          </button> */}
         <div
-          ref={scrollRefWeb}
-          className="flex overflow-x-auto scroll-smooth gap-3 p-4 items-center w-full max-w-[90%] md:w-[80%] no-scrollbar"
+          ref={scrollRef}
+          className="flex  overflow-hidden whitespace-nowrap no-scrollbar w-full max-w-[80%]"
           style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
         >
-          {locations.map((loc, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center min-w-[100px] md:min-w-[120px] overflow-x-hidden"
-            >
-              <Image
-                src={loc.img}
-                alt={loc.name}
-                width={50}
-                height={50}
-                className="md:w-[50px] md:h-[50px]"
-              />
-              <p className="mt-2 text-xs md:text-base">{loc.name}</p>
-            </div>
-          ))}
-        </div>
-        <button onClick={() => scrollRight(scrollRefWeb)} className="text-white">
-          <FaArrowRight />
-        </button>
-      </div>
-
-      {/* Mobile Version (sm only) */}
-      <div className="flex md:hidden items-center justify-between w-full px-2 py-3 bg-opacity-75 relative">
-        <button onClick={() => scrollLeft(scrollRefMobile)} className="text-white">
-          <FaArrowLeft />
-        </button>
-        <div
-          ref={scrollRefMobile}
-          className="flex gap-3 items-center overflow-x-auto scroll-smooth no-scrollbar"
-          style={{
-            scrollbarWidth: "none",
-            WebkitOverflowScrolling: "touch",
-            maxWidth: "80%",
-            scrollBehavior: "smooth", // Ensuring smooth scrolling
-          }}
-        >
-          {locations.map((loc, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center">
-                <Image src={loc.img} alt={loc.name} width={40} height={40} />
-              </div>
+          {[...locations, ...locations].map((loc, index) => (
+            <div key={index} className="flex flex-col items-center min-w-[120px] overflow-hidden">
+              <Link href={"/country/CountryPresence"}>
+                <Image src={loc.img} alt={loc.name} width={50} height={50} className="w-12 h-12 md:w-16 md:h-16" />
+              </Link>
               <p className="text-xs mt-1">{loc.name}</p>
             </div>
           ))}
         </div>
-        <button onClick={() => scrollRight(scrollRefMobile)} className="text-white">
+        {/* <button onClick={scrollRight} className="text-white z-10 absolute right-2">
           <FaArrowRight />
-        </button>
+        </button> */}
       </div>
-    </>
+
+      <style>
+        {`
+          @keyframes infiniteScroll {
+            from { transform: translateX(0%); }
+            to { transform: translateX(50%); }
+          }
+          .animate-infinite {
+            display: flex;
+            animation: infiniteScroll 20s linear infinite;
+          }
+        `}
+      </style>
+    </div>
   );
 };
 
