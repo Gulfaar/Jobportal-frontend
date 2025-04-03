@@ -8,8 +8,7 @@ const ContactUSPage = () => {
     return (
         <div className=" ">
        
-        <Header title="Contact us" subtitle="Have questions about hiring, job opportunities, workforce solutions, or partnerships?
-         Get in touch with Gulfaar—our team is ready to assist you "/>
+        <Header title="Contact us" subtitle="For hiring, jobs, or partnerships, contact Gulfaar!"/>
 
           
           <div className="flex-1  flex flex-col items-center justify-center px-6 md:px-20 w-full max-w-full mx-auto">

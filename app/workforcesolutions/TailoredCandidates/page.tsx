@@ -1,13 +1,23 @@
 import Header from '@/app/Components/Header/Header'
 import Footer from '@/app/Components/Home/Footer'
-import TailoredCandidatesPage from '@/app/Components/tailoredcandidates/TailoredCandidates'
+import CallToActionSectionTailored from '@/app/Components/Tailored/CallToActionSectionTailored'
+import HiringProcessSection from '@/app/Components/Tailored/HiringProcessTailored'
+import IntroductionSection from '@/app/Components/Tailored/IntroductionSection'
+import JobCategoriesSection from '@/app/Components/Tailored/JobCategoriesSectionTailored'
+import WhyChooseGulfaarTailored from '@/app/Components/Tailored/WhyChooseGulfaarTailored'
+
 import React from 'react'
 
 const page = () => {
   return (
     <div>
       <Header title='TAILORED CANDIDATES' subtitle='The Right Talent, Screened Smarter – AI-Driven Recruitment!'/>
-      <TailoredCandidatesPage/>
+      <IntroductionSection/>
+      <HiringProcessSection/>
+      <JobCategoriesSection/>
+      <WhyChooseGulfaarTailored/>
+      <CallToActionSectionTailored/>
+      
       <Footer/>
       
     </div>

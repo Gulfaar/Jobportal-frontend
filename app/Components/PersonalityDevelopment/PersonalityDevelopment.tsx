@@ -223,9 +223,9 @@ const PersonalityDevelopment = () => {
   <div className="container mx-auto px-4">
     <div className="flex flex-col md:flex-row items-start justify-between max-w-6xl mx-auto">
       {/* Left Side - Heading */}
-      <div className="w-full md:w-3/5 mt-16 md:mt-36">
+      <div className="w-full md:w-2/3 mt-16 md:mt-36">
         <h2 className="text-3xl md:text-[48px] font-semibold text-[#204E47]">
-          <span className="ml-4 md:ml-22">Our Personality</span>
+          <span className="ml-2  md:ml-22">Our Personality</span>
           <br />
           <span>Development Programs</span>
         </h2>

@@ -4,7 +4,8 @@ import CookiesInfo from "../Components/Cookie/CookieInfo";
 import CookiesUsage from "../Components/Cookie/CookieUsage";
 import CookieChoice from "../Components/Cookie/CookieChoice";
 import CookieManag from "../Components/Cookie/CookieManag";
-import Footer from "../Components/Contact Us/Footer";
+import Footer from "../Components/Home/Footer";
+
 
 
 
@@ -21,7 +22,7 @@ const CookiePage = () => {
             <CookieChoice />
             <CookieManag />
            
-            <Footer />
+           <Footer/>
           </div>
         </div>
       );

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const CallToActionSection: React.FC = () => {
+const CallToActionSectionTailored: React.FC = () => {
   return (
     <section className="relative px-16 py-16 text-black overflow-hidden max-lg:px-10 max-sm:px-6 max-sm:py-12">
       {/* Background Overlay */}
@@ -23,15 +23,14 @@ const CallToActionSection: React.FC = () => {
 
         {/* Description Text */}
         <p className="mx-auto mb-8 text-xl max-w-[580px] md:text-justify leading-relaxed text-center max-sm:text-lg max-sm:leading-snug">
-          With Gulfaar's AI-powered direct placement system, hiring is faster, smarter, and more effective than ever before. 
-          Communicating with candidates is seamless—whether via WhatsApp, mobile apps, or instant alerts,  
-          you're always just a click away from your next great hire.
+        Whether you need permanent hires, project-based specialists, or contract employees,
+         Gulfaar  ensures you get the best talent from our AI-screened global database.
         </p>
 
         {/* CTA Button and Text */}
         <div className="flex justify-center items-center gap-6 max-sm:flex-col max-sm:text-center">
           <p className="text-xl font-medium max-sm:text-lg">
-            Let our technology find your perfect hire
+          Find your perfect candidate today 
           </p>
           <button
             className="px-10 py-4 text-xl font-medium text-white bg-teal-800 rounded-[12px] hover:bg-teal-700 transition-colors max-sm:w-full max-sm:py-3"
@@ -45,4 +44,4 @@ const CallToActionSection: React.FC = () => {
   );
 };
 
-export default CallToActionSection;
+export default CallToActionSectionTailored;

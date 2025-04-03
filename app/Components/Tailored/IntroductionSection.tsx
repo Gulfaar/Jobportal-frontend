@@ -12,14 +12,10 @@ const IntroductionSection: React.FC = () => {
           {/* Text Content */}
           <div className="flex-1 w-full text-center max-lg:text-left">
             <p className="text-[#2E5F5C] text-[18px] leading-[32px] text-justify max-w-[600px] mx-auto max-lg:mx-0 max-sm:text-[16px] max-sm:leading-[28px]">
-              At Gulfaar, we leverage cutting-edge AI and modern recruitment
-              technology to streamline the hiring process. Our advanced AI-powered
-              pre-video interviews and automated screening system ensure that you
-              receive only the most qualified, pre-vetted candidates for direct
-              placement. With minimal effort on your end, our system shortlists,
-              evaluates, and ranks candidates, allowing you to focus only on the final
-              interviews and hiring decisions. Plus, with our modern communication
-              tools, reaching the right candidate has never been easier!
+            At Gulfaar, we don’t just provide a database of candidates—we deliver the right talent through AI powered 
+            pre-video interviews and intelligent talent-matching. Our advanced AI screening ensures  that every candidate 
+            is pre-assessed based on skills, experience, personality, and job-specific  aptitude, saving recruiters valuable
+             time while ensuring the best possible hire
             </p>
           </div>
 
@@ -27,7 +23,7 @@ const IntroductionSection: React.FC = () => {
                <div className="flex-1 w-full">
             <div className="relative w-full min-h-[270px] h-auto rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/dpcover.png"
+                src="/tailoredcover.png"
                 alt="Team meeting in modern office"
                 fill
                 className="object-cover"

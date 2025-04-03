@@ -2,7 +2,6 @@
 
 import BenefitsSection from "@/app/Components/direct/BenefitsSection";
 import CallToActionSection from "@/app/Components/direct/CallToActionSection";
-import HeroSection from "@/app/Components/direct/HeroSection";
 import HiringSystemSection from "@/app/Components/direct/HiringSystemSection";
 import IntroductionSection from "@/app/Components/direct/IntroductionSection";
 import JobCategoriesSection from "@/app/Components/direct/JobCategoriesSection";
