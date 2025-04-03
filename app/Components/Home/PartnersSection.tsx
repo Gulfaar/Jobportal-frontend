@@ -15,7 +15,7 @@ const PartnersSection = () => {
   return (
     <section className="flex flex-col items-center px-5  w-full py-12 ">
       {/* Title */}
-      <h2 className="text-3xl font-bold text-black group-hover:text-white transition-colors duration-300">
+      <h2 className="text-3xl font-bold text-black  transition-colors duration-300">
         Our Partners
       </h2>
 

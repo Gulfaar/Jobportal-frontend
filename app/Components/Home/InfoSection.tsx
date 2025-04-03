@@ -1,7 +1,13 @@
 import React from "react";
 import StatCard from "./StatCard";
+import useScrollAnimation from "@/app/Hooks/useScrollAnimation";
+import { motion } from "framer-motion";
 
 const InfoSection = () => {
+
+
+  const { ref, scaleProgress, opacityProgress } = useScrollAnimation();
+
   const stats = [
     {
       number: "18K+",
@@ -26,23 +32,31 @@ const InfoSection = () => {
  
 
   return (
-    <section className="overflow-hidden px-20 py-16 w-full bg-white max-md:px-5 max-md:max-w-full">
+    <motion.section 
+
+    ref={ref}
+    style={{
+      scale: scaleProgress,
+      opacity: opacityProgress,
+    }}
+    
+    className="overflow-hidden px-20 py-5 w-full bg-white max-md:px-5 max-md:max-w-full">
       <div className="w-full max-md:mr-2 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
-          <div className="w-6/12 max-md:ml-0 max-md:w-full">
+          <div className="md:w-1.5 lg:w-2xl max-md:ml-0 ">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a931bcd0a3f2d9b102765f1b8874e6d68071708?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
+              src="/robo.jpg"
               alt="Company overview"
               className="object-contain grow gap-2.5 py-2.5 w-full rounded-3xl aspect-[1.07] max-md:mt-10 max-md:max-w-full"
             />
           </div>
-          <div className="ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col self-stretch my-auto w-full font-semibold max-md:mt-10 max-md:max-w-full">
+          <div className="ml-5 md:w-6/10 md:py-1    max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col self-stretch my-auto w-full font-semibold   max-md:max-w-full">
               <h2 className="max-w-full text-4xl text-black w-[605px] max-md:max-w-full">
                 Empowering Workforce, Connecting Businesses, Building Global
                 Success
               </h2>
-              <p className="mt-16 text-[20px] leading-7 font-normal text-black max-md:mt-10 max-md:max-w-full">
+              <p className="leading-7 font-medium  text-black mt-10 text-[15px] max-md:mt-20 max-md:max-w-full md:text-[20px]">
                 At Gulfaar, we are more than just a recruitment agency—we are a
                 global workforce solutions provider committed to bridging the
                 gap between talent and opportunity. With our AI-driven hiring
@@ -84,7 +98,7 @@ const InfoSection = () => {
     />
   ))}
 </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -49,9 +49,11 @@ const JobCard = () => {
 
         {/* Action Buttons */}
         <div className="flex gap-4 mt-4">
-          <button onClick={applyNow} className="px-4 py-2 bg-red-400 hover:bg-red-900 text-white rounded text-sm">
+        <Link href="/jobseeker/jobdetails/12345">
+          <button  className="px-4 py-2 bg-red-400 hover:bg-red-900 text-white rounded text-sm">
             Apply now
           </button>
+          </Link>
           <button className="px-4 py-2 border border-white text-white rounded text-sm">
             Learn more
           </button>

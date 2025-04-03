@@ -103,7 +103,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
                 </Link>
               </li>
               <li>
-                <Link href="#workforce" className="block text-yellow-400 hover:text-yellow-300 transition">
+                <Link href="#workforce" className="block  hover:text-yellow-300 transition">
                   Work-Force Solutions
                 </Link>
               </li>
@@ -140,7 +140,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
               </Link>
             </li>
             <li>
-              <Link href="#workforce" className="text-yellow-400 hover:text-yellow-300 transition">
+              <Link href="#workforce" className=" hover:text-yellow-300 transition">
                 Work-Force Solutions
               </Link>
             </li>
