@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 
-const JobCategoriesSection: React.FC = () => {
+const JobCategoriesSectionTailored: React.FC = () => {
   const categories = [
     {
       image: "/engineericon.svg",
@@ -72,4 +72,4 @@ const JobCategoriesSection: React.FC = () => {
   );
 };
 
-export default JobCategoriesSection;
+export default JobCategoriesSectionTailored;

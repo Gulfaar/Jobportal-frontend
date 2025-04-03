@@ -9,10 +9,29 @@ const BenefitsSection: React.FC = () => {
       description: "AI instantly screens and ranks candidates for you",
     },
     {
+      icon: "ti ti-brain",
+      title: "AI-Driven Smart Selection",
+      description: "Bias-free hiring with real-time data insights",
+    },
+    {
+      icon: "ti ti-messages",
+      title: "Instant Communication",
+      description: "Connect with candidates anytime, anywhere using WhatsApp, SMS, in-app messaging, and real-time notifications.",
+    },
+    {
       icon: "ti ti-user-check",
       title: "Interview-Ready Candidates",
-      description:
-        "Every candidate is assessed and pre-qualified before reaching you.",
+      description: "Every candidate is assessed and pre-qualified before reaching you.",
+    },
+    {
+      icon: "ti ti-chart-arrows",
+      title: "Effortless & Scalable",
+      description: "Whether hiring one or a hundred employees, our AI system delivers efficiently.",
+    },
+    {
+      icon: "ti ti-rocket",
+      title: "Faster Hiring, Better Matches",
+      description: "Reduce time-to-hire with automated talent matching.",
     },
   ];
 

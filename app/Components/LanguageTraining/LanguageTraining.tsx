@@ -16,26 +16,27 @@ const LanguageTraining = () => {
             <h1 className="text-2xl md:text-[48px] font-semibold text-black leading-tight text-center md:text-left">
               <span className="block md:inline">Master Languages,</span>
               <span className="block md:inline">Expand Opportunities,</span>
-              <span className="block md:ml-[280px]">Succeed Globally</span>
+              <span className="block ">Succeed Globally</span>
             </h1>
               <p className="text-lg md:text-[24px] text-gray-700 mt-2 text-center md:text-left">
                 {/* Mobile: Centered paragraph */}
-                <span className="block md:hidden">
-                  In today's interconnected world, language is more than just communication it's the key to unlocking global opportunities.
+                <span className="block ">
+                  In today's interconnected world, language is more than just communication it's the key to<br/>
+                  unlocking global opportunities.
                 </span>
                 {/* Desktop: Specific layout with margins */}
-                <span className="hidden md:block">
+                {/* <span className="hidden md:block">
                   <span className="inline-block ml-[150px]">In today's interconnected world, language is more than</span>
                   <br />
-                  <span className="inline-block ml-[156px]">just communication it's the key to unlocking global</span>
+                  <span className=" ml-[156px]">just communication it's the key to unlocking global</span>
                   <br />
                   <span className="inline-block ml-[320px]">opportunities.</span>
-                </span>
+                </span> */}
               </p>
 
-              <button className="mt-10 bg-[#2E6D65] text-white px-6 py-2 rounded-full hover:bg-[#245a53] transition-colors text-lg font-medium block mx-auto md:mx-0 md:ml-[330px]">
+              {/* <button className="mt-10 bg-[#2E6D65] text-white px-6 py-2 rounded-full hover:bg-[#245a53] transition-colors text-lg font-medium block mx-auto md:mx-0 md:ml-[330px]">
                 Enroll Now
-              </button>
+              </button> */}
             </div>
 
             {/* Right Image */}
@@ -245,13 +246,13 @@ const LanguageTraining = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 items-start">
       {/* Left Column: Heading */}
    
-      <div className="flex items-center mt-10 md:mt-24">
-        <h2 className="text-[28px] md:text-[48px] font-semibold text-black text-center w-full">
-          <span className="block md:mb-4">International Language</span>
-          <div className="flex justify-start md:justify-center  md:ml-0">
-            <span className="block md:mb-4 whitespace-nowrap">Training For Global Career</span>
+      <div className="flex flex-col mt-10 md:mt-24">
+        <h2 className="text-[28px] md:text-[48px] font-semibold text-black  w-full">
+          <span className="">International Language</span>
+          <div className="    ">
+            <span className="">Training For Global Career</span>
           </div>
-          <span className="block">&amp; Communication</span>
+          <span className="">&amp; Communication</span>
         </h2>
       </div>
 
