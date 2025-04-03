@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CiLocationOn, CiSearch } from "react-icons/ci";
 import { FaBars, FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -40,6 +41,7 @@ const HeroSection = () => {
 
 const NavBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
   const [isTrainingOpen, setIsTrainingOpen] = useState(false);
   const [isWorkForceOpen, setIsWorkForceOpen] = useState(false);  
@@ -54,7 +56,7 @@ const NavBar = () => {
         />
       </div>
       <div className="flex  items-center gap-2 md:hidden lg:hidden">
-        <button className="px-3 py-2 rounded-lg text-white text-sm">Jobseeker</button>
+        <button className="px-2 py-2   rounded-lg text-white text-sm">Jobseeker</button>
         <button className="bg-[#2E5F5C] px-3 py-2 rounded-lg text-white text-sm">
           Employer
         </button>
@@ -108,7 +110,7 @@ const NavBar = () => {
       )}
 
       <div className="hidden w-full justify-end mt-[-50px] md:flex gap-2 md:gap-4">
-        <button className="px-3 md:px-4 py-2 rounded-lg text-white text-sm md:text-base">
+        <button className=" md:px-2 py-2  rounded-lg text-white text-sm md:text-base">
           Jobseeker
         </button>
         <button className="bg-[#2E5F5C] mt-1 md:px-4  md:h-8 rounded-lg text-white text-sm md:text-base">
@@ -126,64 +128,205 @@ const NavLinks = () => {
 
   const [isTrainingOpen, setIsTrainingOpen] = useState(false);
   const [isWorkForceOpen, setIsWorkForceOpen] = useState(false);
+  const [isContract, setIsContractOpen] = useState(false)
+  const [isOutsourcing,setIsOutsourcing] = useState(false)
+
+  
+
+  const [isRecruitmentOpen, setIsRecruitmentOpen] = useState(false)
+
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const [isSkillDevelopement, setSkillDevelopement] = useState(false)
+  const [isPersonality,setPersonality] = useState(false)
+  const [Language,setLanguage] = useState(false)
+  const [Exam,setExam] = useState(false)
+
+
 
   return (
-    <div className="flex gap-4  text-white font-[20px] w-full justify-end  md:mt-[-45px]   lg:mt-[-35px] relative -top-9 ">
-       <Link href="/" className="hover:text-[#dae470]">
-        Home
-      </Link>
-      <Link href="/jobseeker/joblisting" className="hover:text-[#dae470]">
-        Jobs
-      </Link>
-      <Link href="/blogs/Bloglisting" className="hover:text-[#dae470]">
-        Blog
-      </Link>
-      <div
-        className="relative group"
-        onMouseOver={() => setIsTrainingOpen(true)}
-        onMouseLeave={() => setIsTrainingOpen(false)}
-      >
-      <Link href="#" className="hover:text-[#dae470]" onMouseOver={() => setIsTrainingOpen(true)} onMouseLeave={()=> setIsTrainingOpen(false)}>
+    <div className="flex gap-4 text-white font-[20px] w-full justify-end md:mt-[-45px] lg:mt-[-35px] relative -top-9">
+    <Link href="/" className="hover:text-[#dae470]">
+      Home
+    </Link>
+    <Link href="/jobseeker/joblisting" className="hover:text-[#dae470]">
+      Jobs
+    </Link>
+    <Link href="/blogs/Bloglisting" className="hover:text-[#dae470]">
+      Blog
+    </Link>
+
+    {/* Training Dropdown */}
+    <div
+      className="relative group"
+      onMouseEnter={() => setIsTrainingOpen(true)}
+      onMouseLeave={() => setIsTrainingOpen(false)}
+    >
+      <Link href="#" className="hover:text-[#dae470]">
         Training
       </Link>
 
       {isTrainingOpen && (
-          <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded-lg shadow-lg p-2">
-            <Link href="/training/courses" className="block px-4 py-2 hover:bg-gray-700 rounded">
-             Language Training
+        <div
+          className="absolute left-0 mt-2 w-[48] bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+          onMouseEnter={() => setIsTrainingOpen(true)}
+          onMouseLeave={() => setIsTrainingOpen(false)}
+        >
+          {/* Language Training with Nested Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsLanguageOpen(true)}
+            onMouseLeave={() => setIsLanguageOpen(false)}
+          >
+            <Link
+              href="/developement/skilldevelopement"
+              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+              onMouseEnter={() => setSkillDevelopement(true)}
+              onMouseLeave={() => setSkillDevelopement(false)}
+            >
+              Skill Development
             </Link>
-            <Link href="/training/workshops" className="block px-4 py-2 hover:bg-gray-700 rounded">
-              Exam Prepration
+          </div>
+
+          <Link
+            href="/training/workshops"
+            className=" px-4 py-2 inline-flex whitespace-nowrap  hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+            onMouseOver={() => setPersonality(true)}
+            onMouseLeave={() => setPersonality(false)}
+          >
+            Personality Development
+            
+          </Link>
+
+
+
+          <Link
+            href="/training/workshops"
+            className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+          >
+           Language Training
+          </Link>
+          <Link
+            href="/training/workshops"
+            className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+          >
+            Exam Preparation
+          </Link>
+        </div>
+      )}
+    </div>
+
+    {/* Work-Force Solutions Dropdown */}
+    <div
+  className="relative group"
+  onMouseEnter={() => setIsWorkForceOpen(true)}
+  onMouseLeave={() => setIsWorkForceOpen(false)}
+>
+  <Link href="#" className="hover:text-[#dae470]">
+    Work-Force Solutions
+  </Link>
+
+  {isWorkForceOpen && (
+    <div
+      className="absolute left-0 mt-2 w-56 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+      onMouseEnter={() => setIsWorkForceOpen(true)}
+      onMouseLeave={() => setIsWorkForceOpen(false)}
+    >
+      <Link
+        href="/workforce/recruitment"
+        className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded relative"
+        onMouseEnter={() => setIsRecruitmentOpen(true)}
+        onMouseLeave={() => setIsRecruitmentOpen(false)}
+      >
+        Recruitment solutions
+        {isRecruitmentOpen && (
+          <div
+            className="absolute left-[-170px] top-0 w-40 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+            onMouseEnter={() => setIsRecruitmentOpen(true)}
+            onMouseLeave={() => setIsRecruitmentOpen(false)}
+          >
+            <Link
+              href="/training/courses/french"
+              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+            >
+              French Training
+            </Link>
+            <Link
+              href="/training/courses/spanish"
+              className=" inline-flex whitespace-nowrap px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+            >
+              Spanish Training
             </Link>
           </div>
         )}
-          </div>
-
-          <div
-        className="relative group"
-        onMouseEnter={() => setIsWorkForceOpen(true)}
-        onMouseLeave={() => setIsWorkForceOpen(false)}
-      >
-      <Link href="#" className="hover:text-[#dae470]">
-        Work-Force Solutions
       </Link>
 
-      {isWorkForceOpen && (
-          <div className="absolute left-0 mt-2 w-56 bg-gray-800 text-white rounded-lg shadow-lg p-2">
-            <Link href="/workforce/recruitment" className="block px-4 py-2 hover:bg-gray-700 rounded">
-              Tailored Candidates
+      <Link
+        href="/workforce/consulting"
+        className="px-4 py-2 inline-flex whitespace-nowrap w-full hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+        onMouseEnter={() => setIsContractOpen(true)}
+        onMouseLeave={() => setIsContractOpen(false)}
+      >
+        Contract-based workforce
+
+        {isContract && (
+          <div
+            className="absolute left-[-195px] top-0 w-48 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+            onMouseEnter={() => setIsRecruitmentOpen(true)}
+            onMouseLeave={() => setIsRecruitmentOpen(false)}
+          >
+            <Link
+              href="/training/courses/french"
+              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+            >
+              Payroll Management
             </Link>
-            <Link href="/workforce/consulting" className="block px-4 py-2 hover:bg-gray-700 rounded">
-              Direct Placement
+            <Link
+              href="/training/courses/spanish"
+              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+            >
+              Flexible Hiring
             </Link>
           </div>
         )}
-        </div>
+      </Link>
+      <Link
+        href="/workforce/consulting"
+        className="px-4 py-2 inline-flex whitespace-nowrap w-full hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+        onMouseEnter={() => setIsOutsourcing(true)}
+        onMouseLeave={() => setIsOutsourcing(false)}
+      >
+        Outsourcing solutions
 
-      <Link href="#" className="hover:text-[#dae470]">
-        Partner with us
+        {isOutsourcing && (
+          <div
+            className="absolute left-[-290px] top-0 w-auto   bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+            onMouseEnter={() => setIsOutsourcing(true)}
+            onMouseLeave={() => setIsOutsourcing(false)}
+          >
+            <Link
+              href="/training/courses/french"
+              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+            >
+              On-Demand skilled Professionals 
+            </Link>
+            <Link
+              href="/training/courses/spanish"
+              className=" px-4 py-2 inline-flex whitespace-nowrap hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+            >
+             Task Specific Experts
+            </Link>
+          </div>
+        )}
+
       </Link>
     </div>
+  )}
+</div>
+
+    <Link href="#" className="hover:text-[#dae470]">
+      Partner with us
+    </Link>
+  </div>
   );
 };
 
@@ -254,89 +397,81 @@ const JobLocations = () => {
     { name: "GERMANY", img: "/usa.png" },
     { name: "USA", img: "/usa.png" },
     { name: "UAE", img: "/uae.png" },
+    { name: "CANADA", img: "/germany2.png" },
+    { name: "AUSTRALIA", img: "/usa.png" },
+    { name: "BRAZIL", img: "/america1.png" },
+    { name: "JAPAN", img: "/usa.png" },
+    { name: "CHINA", img: "/america1.png" },
+    { name: "UK", img: "/usa.png" },
+    { name: "SPAIN", img: "/america1.png" },
+    { name: "PARIS", img: "/america1.png" },
+    { name: "INDIA", img: "/america1.png" },
+    { name: "GERMANY", img: "/usa.png" },
+    { name: "USA", img: "/usa.png" },
+    { name: "UAE", img: "/uae.png" },
+    { name: "CANADA", img: "/germany2.png" },
+    { name: "AUSTRALIA", img: "/usa.png" },
+    { name: "BRAZIL", img: "/america1.png" },
+    { name: "JAPAN", img: "/usa.png" },
+    { name: "CHINA", img: "/america1.png" },
+    { name: "JAPAN", img: "/usa.png" },
+    { name: "CHINA", img: "/america1.png" },
   ];
 
-  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [index, setIndex] = useState(0);
+  const itemsPerSlide = 6;
+  const totalSlides = Math.ceil(locations.length / itemsPerSlide);
 
-  const scrollLeft = () => {
-    if (scrollRef.current instanceof HTMLElement) {
-      scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
-    }
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % totalSlides);
   };
 
-  const scrollRight = () => {
-    if (scrollRef.current instanceof HTMLElement) {
-      scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
-    }
+  const prevSlide = () => {
+    setIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
   useEffect(() => {
-    const autoScroll = () => {
-      if (scrollRef.current) {
-        let direction = -1;
-        const interval = setInterval(() => {
-          if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: direction * 2, behavior: "smooth" });
-            if (scrollRef.current.scrollLeft <= 0) {
-              scrollRef.current.scrollLeft = scrollRef.current.scrollWidth / 2;
-            }
-          }
-        }, 50);
-        return interval;
-      }
-    };
-
-    const interval = autoScroll();
-
+    const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="flex flex-col items-center w-full px-5 py-6 overflow-hidden">
-      <div className="relative w-full flex justify-center px-5  items-center mt-4">
-          {/* <button onClick={scrollLeft} className="text-white z-20 absolute left-2">
-            <FaArrowLeft />
-          </button> */}
-        <div
-          ref={scrollRef}
-          className="flex  overflow-hidden whitespace-nowrap no-scrollbar w-full max-w-[80%]"
-          style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
-        >
-          {[...locations, ...locations].map((loc, index) => (
-            <div key={index} className="flex flex-col items-center min-w-[120px] overflow-hidden">
-              <Link href={"/country/CountryPresence"}>
-                <Image src={loc.img} alt={loc.name} width={50} height={50} className="w-12 h-12 md:w-16 md:h-16" />
-              </Link>
-              <p className="text-xs mt-1">{loc.name}</p>
-            </div>
-          ))}
+    <div className="relative flex flex-col items-center w-full px-5 py-6 overflow-hidden">
+      <div className="relative flex items-center w-full max-w-4xl">
+        {/* Left Arrow */}
+        <button onClick={prevSlide} className="absolute left-0 z-10 p-2  rounded-full shadow-md">
+          <FaArrowLeft size={24} />
+        </button>
+        
+        {/* Slider Container */}
+        <div className="flex overflow-hidden w-full px-10">
+          <div
+            className="flex transition-transform ease-in-out duration-700 gap-4"
+            style={{ transform: `translateX(-${index * 100}%)` }}
+          >
+            {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+              <div key={slideIndex} className="flex min-w-full md:gap-5 px-3">
+                {locations.slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide).map((loc) => (
+                  <div key={loc.name} className="flex flex-col  px-5 md:ml-2 items-center min-w-[80px] md:min-w-[100px]">
+                    <Link href="/country/CountryPresence">
+                      <Image src={loc.img} alt={loc.name} width={50} height={50} className="w-full h-full md:w-16 md:h-16" />
+                    </Link>
+                    <p className="text-xs mt-1">{loc.name}</p>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-        {/* <button onClick={scrollRight} className="text-white z-10 absolute right-2">
-          <FaArrowRight />
-        </button> */}
-      </div>
 
-      <style>
-        {`
-          @keyframes infiniteScroll {
-            from { transform: translateX(0%); }
-            to { transform: translateX(50%); }
-          }
-          .animate-infinite {
-            display: flex;
-            animation: infiniteScroll 20s linear infinite;
-          }
-        `}
-      </style>
+        {/* Right Arrow */}
+        <button onClick={nextSlide} className="absolute right-0 z-10 p-2  rounded-full shadow-md">
+          <FaArrowRight size={24} />
+        </button>
+      </div>
     </div>
   );
 };
-
-
-
-
-
-
 
 export default HeroSection;
 

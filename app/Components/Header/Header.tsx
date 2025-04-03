@@ -27,18 +27,18 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content Wrapper */}
-      <div className="relative z-10 flex flex-col  h-full px-6 py-4">
+      <div className="relative z-10 flex flex-col  h-full px-10 py-7">
         
         {/* Top Row: Logo on the left, buttons on the right, burger menu on mobile */}
-        <div className="flex items-center justify-between">
+        <div className="flex md:mt-[-30px] items-center justify-between">
           {/* Logo - Larger size */}
-          <div className="flex items-center">
+          <div className="relative w-[120px] md:w-[260px]">
             <Image
               src="/newlogo.png" // Replace with your actual logo
               alt="Gulfaar Logo"
-              width={200}
-              height={80}
-              className="object-contain"
+              width={260} // Set appropriate width
+              height={10} 
+              className="object-contain h-auto"
               priority
             />
           </div>
@@ -46,17 +46,17 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
           {/* Right Side: Buttons + Burger */}
           <div className="flex items-center">
             {/* Action Buttons - Smaller size */}
-            <div className="flex items-center">
-              <span className="text-white text-sm px-3 py-1 font-normal mr-2">
+            <div className="hidden w-full justify-end mt-[-20px] md:flex gap-2 md:gap-4">
+              <span className="md:px-2 py-2  rounded-lg text-white text-sm md:text-base">
                 Jobseeker
               </span>
-              <button className="bg-teal-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-teal-700 transition mr-2">
+              <button className="bg-[#2E5F5C] mt-1 md:px-4  md:h-8 rounded-lg text-white text-sm md:text-base">
                 Employer
               </button>
               {/* Post Job button - visible only on desktop */}
-              <button className="hidden md:block bg-teal-700 text-white text-sm px-3 py-1 rounded-lg hover:bg-teal-800 transition mr-2">
+              {/* <button className="hidden md:block bg-teal-700 text-white text-sm px-3 py-1 rounded-lg hover:bg-teal-800 transition mr-2">
                 Post Job
-              </button>
+              </button> */}
             </div>
 
             {/* Burger Menu Button - Visible on mobile only */}
@@ -78,9 +78,9 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-20 right-6 bg-black/80 rounded p-4 w-64 z-50">
             {/* Post Job button in mobile menu */}
-            <button className="bg-teal-700 text-white text-sm px-3 py-1 rounded-lg hover:bg-teal-800 transition w-full mb-4">
+            {/* <button className="bg-teal-700 text-white text-sm px-3 py-1 rounded-lg hover:bg-teal-800 transition w-full mb-4">
               Post Job
-            </button>
+            </button> */}
             <ul className="flex flex-col space-y-4 text-white">
             <li>
                 <Link href="#jobs" className="block hover:text-gray-200 transition">
@@ -117,8 +117,8 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
         )}
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="hidden md:flex justify-end mt-0">
-          <ul className="flex items-center space-x-8 text-white font-medium">
+        <nav className="hidden md:px-2 md:flex justify-end md:mt-[-40px]">
+          <ul className="flex items-center space-x-4 text-white font-medium">
           <li>
                 <Link href="/" className="block hover:text-gray-200 transition">
                   Home
@@ -135,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
               </Link>
             </li>
             <li>
-              <Link href="#training" className="hover:text-gray-200 transition">
+              <Link href="/" className="hover:text-gray-200 transition">
                 Training
               </Link>
             </li>
