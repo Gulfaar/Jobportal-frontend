@@ -1,54 +1,107 @@
-'use client'
+// components/TypesOfPartnershipOpportunities.tsx
+import React from 'react';
+import Image from 'next/image';
 
-import { useState } from "react";
-
-const PartnershipOpportunities = () => {
-  const [activeTab, setActiveTab] = useState("overview");
-
-  const tabs = [
-    { id: "overview", label: "Overview", content: "Become the exclusive Gulfaar partner in your country. Operate recruitment, training, and workforce outsourcing solutions under Gulfaar's brand. Access global resources, business strategies, and AI-driven technology." },
-    { id: "feature", label: "Feature", content: "Gulfaar provides AI-driven recruitment tools, seamless workforce solutions, and exclusive training programs to help franchise partners scale their businesses." },
-    { id: "benefits", label: "Benefits", content: "Partners enjoy access to a global talent pool, innovative business strategies, and ongoing support from Gulfaar's expert team." },
-  ];
-
+const TypesOfPartnershipOpportunities: React.FC = () => {
   return (
-    <section className="py-16 px-6 flex justify-center w-[80%] mx-auto rounded-lg">
-      <div className="max-w-5xl w-full">
+    <div className="w-full py-12 bg-[#2A5F5F]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <h2 className="text-center text-lg font-semibold text-[#B0453E] mb-6">Types of Partnership Opportunities</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+          Types of Partnership Opportunities
+        </h2>
 
-        {/* Main Card */}
-        <div className="rounded-lg overflow-hidden">
-          {/* Top Section */}
-          <div className="bg-[#94A8A7] p-8">
-            <h3 className="text-2xl font-semibold text-white">Country-Based Franchise Partnership</h3>
-            <p className="text-gray-200">Become the exclusive Gulfaar partner in your country.</p>
-          </div>
-          
-          {/* Bottom Section */}
-          <div className="bg-[#2E5F5C] p-8">
-            {/* Tabs */}
-            <div className="flex space-x-4 mb-6">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  className={`px-6 py-2 rounded-lg text-white font-medium transition ${activeTab === tab.id ? 'bg-black' : 'border border-white'}`}
-                  onClick={() => setActiveTab(tab.id)}
-                >
-                  {tab.label}
-                </button>
-              ))}
+        {/* Two-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left Column */}
+          <div className="space-y-6">
+            <div className="flex items-start space-x-3">
+              <div className="w-6 h-6 flex-shrink-0 mt-1">
+                <Image
+                  src="/icons/Gulfaar-icon2.svg"
+                  alt="Gulfaar Icon"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Country-Based Franchise Partnership
+                </h3>
+                <p className="text-base text-white opacity-80">
+                  Become the exclusive Gulfaar partner in your country. Operate the exclusive Gulfaar partner in your country. Operate the recruitment, training, and workforce outsourcing solutions under Gulfaar’s brand. Access global resources, business strategies, and AI-driven technology.
+                </p>
+              </div>
             </div>
 
-            {/* Tab Content */}
-            <div className="text-white p-6 rounded-lg">
-              <p>{tabs.find((tab) => tab.id === activeTab)?.content}</p>
+            <div className="flex items-start space-x-3">
+              <div className="w-6 h-6 flex-shrink-0 mt-1">
+                <Image
+                  src="/icons/Gulfaar-icon2.svg"
+                  alt="Gulfaar Icon"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Utility App & Digital Platform Partnership
+                </h3>
+                <p className="text-base text-white opacity-80">
+                  Expand into fast-growing digital industries with minimal investment. Collaborate with us to launch and operate on-demand services such as food delivery, ride hailing, and home services. Use Gulfaar’s technology and AI-driven workforce platform for seamless operations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-6">
+            <div className="flex items-start space-x-3">
+              <div className="w-6 h-6 flex-shrink-0 mt-1">
+                <Image
+                  src="/icons/Gulfaar-icon2.svg"
+                  alt="Gulfaar Icon"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Service-Based Franchise Partnership
+                </h3>
+                <p className="text-base text-white opacity-80">
+                  Specialize in a specific service, such as BPO, IT staffing, or skill training. Offer customized hiring and workforce solutions in a chosen industry. Operate independently while benefiting from Gulfaar’s brand and infrastructure.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3">
+              <div className="w-6 h-6 flex-shrink-0 mt-1">
+                <Image
+                  src="/icons/Gulfaar-icon2.svg"
+                  alt="Gulfaar Icon"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Strategic Business & Outsourcing Partnership
+                </h3>
+                <p className="text-base text-white opacity-80">
+                  Get access to trained, AI-screened candidates for your workforce. Partner with us to outsource business processes, recruit skilled professionals, and expand global operations. Increase efficiency and cut hiring costs through our AI-powered talent solutions.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default PartnershipOpportunities;
+export default TypesOfPartnershipOpportunities;

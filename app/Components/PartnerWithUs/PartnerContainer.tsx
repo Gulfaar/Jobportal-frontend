@@ -1,25 +1,32 @@
+import Image from "next/image";
+
 const PartnerWithGulfaar = () => {
     return (
-      <section className="py-16 px-6 flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
-        {/* Text Content */}
-        <div className="max-w-lg text-left">
-          <h2 className="text-2xl font-bold text-black">
-            Partner with <span className="text-[#DA6B64]">Gulfaar</span>
-          </h2>
-          <p className="text-gray-700 mt-4">
-            At <span className="text-[#DA6B64]">Gulfaar</span>, we believe in building strong partnerships that create mutual growth and long-term success.
-          </p>
-          
-          {/* Buttons */}
-          <div className="mt-6 flex space-x-4">
-            <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg shadow-md hover:bg-orange-200 transition">Apply now</button>
-            <button className="text-gray-700 px-6 py-2 border border-gray-400 rounded-lg hover:bg-gray-100 transition">Learn More</button>
-          </div>
-        </div>
-        
-        {/* Image Placeholder */}
-        <div className="w-40 h-40 md:w-56 md:h-56 bg-black rounded-lg"></div>
-      </section>
+      <section className="bg-white py-12 w-full">
+            <div className="max-w-6xl mx-auto px-6">
+              <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                {/* Text Column - Adjusted for better alignment */}
+                <div className="md:w-1/2">
+                  <p className="text-gray-900 leading-relaxed text-base md:text-[15px]">
+                  At <span className="font-semibold text-[#e9530e]">Gulfaar</span>, we believe in building strong partnerships that create mutual growth and long-term  success. Whether you're an entrepreneur, business owner, recruitment agency, training institute, or  investor, we offer diverse collaboration opportunities that allow you to expand your business while  leveraging our cutting-edge AI-powered workforce solutions and global reach.  By partnering with <span className="font-semibold text-[#e9530e]">Gulfaar</span> , you become part of a global ecosystem that connects businesses,  skilled professionals, training institutions, and industry leaders.
+                  </p>
+                </div>
+                
+                {/* Image Column - Tightened to text */}
+                <div className="md:w-1/2 flex justify-end">
+                  <div className="w-full max-w-[400px]">
+                    <Image
+                      src="/images/Partner-hero.svg" // Replace with your actual image URL
+                      alt="Person working at a desk with a laptop"
+                      width={400}
+                      height={240}
+                      className="rounded-lg object-cover w-full h-auto"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
     );
   };
   
