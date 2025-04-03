@@ -22,7 +22,7 @@ const FormContact = () => {
   };
 
   return (
-    <section className="p-10 bg-white flex flex-col items-center">
+    <section className="p-10 bg-white flex flex-col items-center ">
       {/* Heading */}
       <h2 className="text-3xl font-bold text-center mb-8">
         "Let's <span className="text-[#2E5F5C]">Connect</span> – We’re Here to Help!"
@@ -33,9 +33,12 @@ const FormContact = () => {
         <div className="w-full md:w-1/3 bg-[#2E5F5C] text-white p-10 shadow-lg rounded-lg flex flex-col justify-between">
           <div>
             <h3 className="text-lg font-semibold mb-4">Say something to start a live chat!</h3>
-            <p className="flex items-center gap-3 mb-3"><span className="text-xl">📞</span> +1012 3456 789</p>
-            <p className="flex items-center gap-3 mb-3"><span className="text-xl">📧</span> gulfaar@gmail.com</p>
-            <p className="flex items-center gap-3 text-sm leading-relaxed"><span className="text-xl">📍</span> Kurishupally Road, Ravipuram, Perumanoor, Kochi, Kerala</p>
+            <p className="flex items-center gap-3 mb-3"><span className="text-xl">
+              <Image src='/contactusphoneicon.svg' alt="contactus" height={20} width={20}/></span> +1012 3456 789</p>
+            <p className="flex items-center gap-3 mb-3"><span className="text-xl">
+            <Image src='/contactusemailicon.svg' alt="contactus" height={20} width={20}/></span> gulfaar@gmail.com</p>
+            <p className="flex items-center gap-3 text-sm leading-relaxed"><span className="text-xl">
+            <Image src='/contactuslocaicon.svg' alt="contactus" height={20} width={20}/></span> Kurishupally Road, Ravipuram, Perumanoor, Kochi, Kerala</p>
           </div>
           <div className="flex space-x-4 mt-6 text-2xl">
             <span className="cursor-pointer">🐦</span>
