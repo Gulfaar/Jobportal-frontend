@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import TestimonialCard from "./TestimonialCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {  FaArrowLeft, FaArrowRight, FaChevronLeft, FaChevronRight  } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,7 +16,7 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const updateCardsPerView = () => {
       setIsMobile(window.innerWidth < 768);
-      console.log('mobile',isMobile);
+      console.log('mobile',isMobile); 
       
       if (window.innerWidth >= 1024) {
         setCardsPerView(3);
@@ -101,7 +102,41 @@ const TestimonialsSection = () => {
       role: "Happy Client",
       avatar: "https://randomuser.me/api/portraits/men/3.jpg",
     },
+    {
+      title: "Awesome experience!",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      title: "Awesome experience!",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      title: "Awesome experience!",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
   ];
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : prevIndex
+    );
+  };
+
+  const handleNext = () => {
+    const maxIndex = Math.ceil(testimonials.length / cardsPerView) - 1;
+    setCurrentIndex((prevIndex) =>
+      prevIndex < maxIndex ? prevIndex + 1 : prevIndex
+    );
+  };
 
   return (
     <section
@@ -110,25 +145,47 @@ const TestimonialsSection = () => {
       style={{ backgroundImage: "url('/Testimonial.png')" }}
     >
       <h2 className="text-3xl font-bold">Testimonials from Our Customers</h2>
-      <p className="mt-4 text-lg text-gray-700 max-w-2xl">
+      <p className="mt-4 text-lg text-black max-w-2xl">
         Exceptional service and professionalism! The team understood our needs perfectly and delivered beyond our expectations.
       </p>
       {
+        
         !isMobile ?(
-          <div className="w-full overflow-hidden px-15 mt-10 relative">
-        <div
-          ref={trackRef}
-          className="flex transition-transform duration-1000 justify-center items-center ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)` }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="w-full flex justify-center items-center sm:w-full md:w-1/3 lg:w-1/3 flex-shrink-0">
-              <TestimonialCard {...testimonial} />
-            </div>
-          ))}
-        </div>
-      </div>
+          
+         <div className="w-full flex justify-center items-center max-w-[78%] h-[350px]  mt-10 overflow-hidden">
+          <button 
+          onClick={handlePrev}
+        
+        className="absolute md:left-12  z-10 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+      >
+        <FaChevronLeft size={15} />
+      </button>
 
+      <div
+        ref={trackRef}
+        className="flex transition-transform ml-10 duration-1000 ease-in-out"
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+          width: `${(testimonials.length / cardsPerView) * 100}%`,
+        }}
+      >
+        
+        {Array.from({ length: Math.ceil(testimonials.length / cardsPerView) }).map((_, index) => (
+          <div key={index} className="grid grid-cols-1 md:grid-cols-3  w-full flex-shrink-0">
+            {testimonials.slice(index * cardsPerView, (index + 1) * cardsPerView).map((testimonial, idx) => (
+              <TestimonialCard key={idx} {...testimonial} />
+            ))}
+          </div>
+        ))}
+      </div>
+      <button
+
+      onClick={handleNext}
+        className="absolute right-14 z-10 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+      >
+        <FaChevronRight size={15} />
+      </button>
+    </div>
         ):(
           <div className="md:hidden flex flex-col gap-6 mt-10 w-full max-w-md">
         {testimonials.map((testimonial, index) => (

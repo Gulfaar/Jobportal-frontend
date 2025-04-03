@@ -2,6 +2,8 @@ import React from "react";
 import StatCard from "./StatCard";
 import useScrollAnimation from "@/app/Hooks/useScrollAnimation";
 import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import Animationimage from '../../../assets/animation.json'
 
 const InfoSection = () => {
 
@@ -43,14 +45,14 @@ const InfoSection = () => {
     className="overflow-hidden px-20 py-5 w-full bg-white max-md:px-5 max-md:max-w-full">
       <div className="w-full max-md:mr-2 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
-          <div className="md:w-1.5 lg:w-2xl max-md:ml-0 ">
-            <img
-              src="/robo.jpg"
-              alt="Company overview"
-              className="object-contain grow gap-2.5 py-2.5 w-full rounded-3xl aspect-[1.07] max-md:mt-10 max-md:max-w-full"
-            />
-          </div>
-          <div className="ml-5 md:w-6/10 md:py-1    max-md:ml-0 max-md:w-full">
+        <div className="md:w-1.5 lg:w-2xl max-md:ml-0">
+      <Lottie 
+        animationData={Animationimage} 
+        loop={true} 
+        className="object-contain grow gap-2.5 py-2.5 w-full rounded-3xl aspect-[1.07] max-md:mt-10 max-md:max-w-full"
+      />
+    </div>
+          <div className="flex ml-5 justify-center items-center md:w-6/10 md:py-1    max-md:ml-0 max-md:w-full">
             <div className="flex flex-col self-stretch my-auto w-full font-semibold   max-md:max-w-full">
               <h2 className="max-w-full text-4xl text-black w-[605px] max-md:max-w-full">
                 Empowering Workforce, Connecting Businesses, Building Global
@@ -84,7 +86,7 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between item-start gap-6 md:gap-0   mt-20 min-h-[171px] max-md:mt-5 max-md:max-w-full  py-5  w-full ">
+      <div className="flex flex-wrap justify-between item-start gap-6 md:gap-0   mt-5 min-h-[171px] max-md:mt-2 max-md:max-w-full  py-5  w-full ">
   {stats.map((stat, index) => (
     <StatCard
       key={index}

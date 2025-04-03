@@ -16,7 +16,7 @@ const Joblisting = () => {
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col md:flex-row gap-6">
                     {/* Left Sidebar */}
-                    <div className="w-full md:w-1/3 space-y-6 bg-[#EBF5F4] p-6 rounded-lg text-black">
+                    <div className="w-full md:w-1/6 space-y-6 bg-[#EBF5F4] p-4 rounded-lg text-black">
                         {/* Search */}
                         <div>
                             <h3 className="font-medium mb-2">Search by Job Title</h3>
@@ -129,9 +129,9 @@ const Joblisting = () => {
                         </div>
 
                         {/* Job Cards Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3  justify-items-center">
-                            {[...Array(6)].map((_, index) => (
-                                <div key={index} className="bg-white rounded-lg shadow-md  md:w-[380px] md:h-[320px] p-8 border relative">
+                        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-9  justify-items-center">
+                            {[...Array(9)].map((_, index) => (
+                                <div key={index} className="bg-white rounded-lg shadow-md  md:w-[360px] md:h-[320px] p-8 border relative">
                                     <div className="flex items-center gap-3 mb-3">
                                         <Image src="/google.png" alt="Google" width={24} height={24} />
                                         <h3 className="font-semibold">Software Tester</h3>

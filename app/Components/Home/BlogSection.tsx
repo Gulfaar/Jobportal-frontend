@@ -3,7 +3,7 @@ import BlogCard from "./BlogCard";
 
 const BlogSection = () => {
   return (
-    <section className="mt-16 px-6 py-3   max-md:mt-10">
+    <section className="mt-16 px-10 py-3   max-md:mt-10">
   {/* Title */}
   <h2 className="text-center text-4xl font-semibold text-black max-md:text-3xl">
     News and Blog

@@ -16,7 +16,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   avatar,
 }) => {
   return (
-    <article className="flex flex-col items-start p-8  bg-white rounded-2xl shadow-md w-80 min-h-[350px] text-left relative">
+    <article className="flex flex-col items-start p-8  bg-white rounded-2xl shadow-md w-70 min-h-[300px] text-left relative">
     <div className="flex gap-1">
       {[...Array(5)].map((_, i) => (
         <span key={i} className="text-yellow-400 text-lg">★</span>
