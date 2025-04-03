@@ -188,7 +188,7 @@ const NavLinks = () => {
           </div>
 
           <Link
-            href="/training/workshops"
+            href="/Training/PersonalityDevelopment"
             className=" px-4 py-2 inline-flex whitespace-nowrap  hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
             onMouseOver={() => setPersonality(true)}
             onMouseLeave={() => setPersonality(false)}
@@ -200,7 +200,7 @@ const NavLinks = () => {
 
 
           <Link
-            href="/training/workshops"
+            href="/Training/LanguageTraining"
             className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
           >
            Language Training

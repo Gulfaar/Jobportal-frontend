@@ -41,8 +41,8 @@ const GulfaarFeatures = () => {
               key={index}
               className="flex items-start gap-4 p-4 border-b border-gray-300 max-w-3xl"
             >
-              <div className="bg-blue-100 p-3 rounded-full">
-                <ChevronRight size={20} className="text-[#0B1C3F]" />
+              <div className="bg-[#2E5F5C] p-3 rounded-full">
+                <ChevronRight size={20} className="text-[#ffff]" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-[#0B1C3F]">{feature.title}</h3>

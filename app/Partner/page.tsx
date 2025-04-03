@@ -2,9 +2,6 @@ import Head from "next/head";
 import Navbar from "../Components/Contact Us/Navbar";
 import HeroSection from "../Components/Contact Us/HeroSection";
 import PartnerWithGulfaar from "../Components/PartnerWithUs/PartnerContainer";
-import PartnershipOptions from "../Components/PartnerWithUs/PartnerShipOption";
-import PartnershipSteps from "../Components/PartnerWithUs/PartnerShipSteps";
-import BusinessOpportunities from "../Components/PartnerWithUs/BuisnessOpertunity";
 import PartnerUs from "../Components/PartnerWithUs/PartnerUS";
 import PartnershipOpportunities from "../Components/PartnerWithUs/PartnerShipOpertunitys";
 import PartnershipTypes from "../Components/PartnerWithUs/PartnerType";
@@ -26,10 +23,8 @@ const PartnerPage = () => {
           <HeroSection />
           <div className="flex-1 flex  flex-col items-center justify-center  w-full">
                 <PartnerWithGulfaar />
-                <PartnershipOptions />
-                <PartnershipSteps />
                 <WhyPartnerWithGulfaar />
-                <BusinessOpportunities />
+                
                 <PartnerUs />
                 <PartnershipOpportunities />
                 <PartnershipTypes />
