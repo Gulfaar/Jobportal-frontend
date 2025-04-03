@@ -176,6 +176,7 @@ const NavLinks = () => {
             className="relative"
             onMouseEnter={() => setIsLanguageOpen(true)}
             onMouseLeave={() => setIsLanguageOpen(false)}
+            
           >
             <Link
               href="/developement/skilldevelopement"
