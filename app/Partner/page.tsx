@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Navbar from "../Components/Contact Us/Navbar";
+import Header from '../Components/Header/Header'
 import HeroSection from "../Components/Contact Us/HeroSection";
 import PartnerWithGulfaar from "../Components/PartnerWithUs/PartnerContainer";
 import PartnerUs from "../Components/PartnerWithUs/PartnerUS";
@@ -19,7 +19,7 @@ const PartnerPage = () => {
             <Head>
             <title>Cookies</title>
           </Head>
-          <Navbar />
+          <Header title={"Partner With Us"} subtitle={""} />
           <HeroSection />
           <div className="flex-1 flex  flex-col items-center justify-center  w-full">
                 <PartnerWithGulfaar />
