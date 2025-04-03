@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const JobsSection = () => {
   return (
-    <section className="flex flex-col px-10 bg-[#2E5F5C] pt-16 pb-9 mt-16    w-full h-full  max-md:max-w-full">
+    <section className="flex flex-col px-5 md:px-18 bg-[#2E5F5C] pt-16 pb-9 mt-16    w-full h-full  max-md:max-w-full">
       <h2 className="self-start text-5xl font-semibold text-center text-white max-md:text-4xl">
         Recent Jobs
       </h2>
@@ -20,7 +20,7 @@ const JobsSection = () => {
 
       <div className="flex mt-14 max-md:mt-10 max-md:max-w-full">
       {/* Use Grid Layout for 3 Columns */}
-      <div className="  grid grid-cols-1 md:grid-cols-2  gap-5">
+      <div className="  grid grid-cols-1 md:grid-cols-3  gap-5">
         {[1, 2, 3, 4, 5, 6].map((index) => (
           <JobCard key={index} />
         ))}
@@ -29,7 +29,7 @@ const JobsSection = () => {
 
       
 
-      <div className="flex gap-4 self-center mt-10 ml-3 max-w-full text-base text-center text-white w-[152px]">
+      <div className="flex gap-4 self-center mt-10 ml-3 max-w-full text-base text-center text-white w-[142px]">
         <button className=" px-4 rounded border-solid bg-white border border-gray-300 h-[40px] min-h-[40px] text-teal-800">
           1
         </button>

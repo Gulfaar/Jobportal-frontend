@@ -16,8 +16,8 @@ const JobCard = () => {
   }
 
   return (
-    <article className="w-[90%] sm md:w-full mx-auto ">
-      <div className="bg-transparent border border-gray-200 shadow-lg rounded-lg px-6 py-5 pl-2 md:p-6 w-full">
+    <article className="w-[90%]  sm md:w-full mx-auto ">
+      <div className="bg-transparent border border-gray-200 shadow-lg rounded-lg px-8 py-5  md:p-6 w-full">
         {/* Company Logo */}
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ca7ad0b376c734ce05060b2fcef8aa61a10817c?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970"
@@ -49,9 +49,11 @@ const JobCard = () => {
 
         {/* Action Buttons */}
         <div className="flex gap-4 mt-4">
-          <button onClick={applyNow} className="px-4 py-2 bg-red-400 hover:bg-red-900 text-white rounded text-sm">
+        <Link href="/jobseeker/jobdetails/12345">
+          <button  className="px-4 py-2 bg-red-400 hover:bg-red-900 text-white rounded text-sm">
             Apply now
           </button>
+          </Link>
           <button className="px-4 py-2 border border-white text-white rounded text-sm">
             Learn more
           </button>

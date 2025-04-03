@@ -17,7 +17,7 @@ const JobDetailsPage: React.FC = () => {
     <>
     <Header title="JOBS DETAILS"
      subtitle="Explore a wide range of job opportunities available"/>
-    <div className="bg-gray-50 py-6 md:py-8">
+    <div className="bg-gray-50 px-3 md:px-15  py-6 md:py-8">
       <div className="max-w-7xl mx-auto px-2 md:px-4">
         {/* Main Layout */}
         <div className="flex flex-col md:flex-row gap-6 mb-6 md:mb-8">

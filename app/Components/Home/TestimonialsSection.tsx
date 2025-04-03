@@ -1,54 +1,205 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TestimonialCard from "./TestimonialCard";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {  FaArrowLeft, FaArrowRight, FaChevronLeft, FaChevronRight  } from "react-icons/fa";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const TestimonialsSection = () => {
+  const sectionRef = useRef(null);
+  const trackRef = useRef(null);
+  const [cardsPerView, setCardsPerView] = useState(3);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      setIsMobile(window.innerWidth < 768);
+      console.log('mobile',isMobile); 
+      
+      if (window.innerWidth >= 1024) {
+        setCardsPerView(3);
+      } else if (window.innerWidth >= 768) {
+        setCardsPerView(3);
+      } else {
+        setCardsPerView(1);
+      }
+    };
+    updateCardsPerView();
+    window.addEventListener("resize", updateCardsPerView);
+    return () => window.removeEventListener("resize", updateCardsPerView);
+  }, []);
+
+  useEffect(() => {
+    if (window.innerWidth >= 768) {
+      gsap.fromTo(
+        trackRef.current,
+        { x: 200, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.3,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(testimonials.length / cardsPerView));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [cardsPerView]);
+
   const testimonials = [
     {
       title: "Amazing services",
-      content:
-        "Metus faucibus sed turpis lectus feugiat tincidunt. Rhoncus sed tristique in dolor. Mus etiam et vestibulum venenatis",
+      content: "Exceptional support and top-notch service. Highly recommend!",
       author: "Marco Kihn",
       role: "Happy Client",
-      avatar:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/0a9a43fdb5b4860b7018ed7f925b068c1e81705c?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
+      avatar: "https://randomuser.me/api/portraits/men/1.jpg",
     },
     {
       title: "Everything simple",
-      content:
-        "Mus etiam et vestibulum venenatis viverra ut. Elit morbi bibendum ullamcorper augue faucibus",
+      content: "The process was seamless and efficient. Love it!",
       author: "Kristin Hester",
       role: "Happy Client",
-      avatar:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/b7717d3a2816443393b4493a51056817b4e954e2?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
+      avatar: "https://randomuser.me/api/portraits/women/2.jpg",
     },
     {
-      title: "Awesome, thank you!",
-      content:
-        "Rhoncus sed tristique in dolor. Mus etiam et vestibulum venenatis viverra ut. Elit morbi bibendum ullamcorper augue faucibus. Nulla et tempor montes",
+      title: "Awesome experience!",
+      content: "From start to finish, a delightful experience!",
       author: "Zion Cisneros",
       role: "Happy Client",
-      avatar:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/008ce2dc3309397e4f8ad6e09efd5a09edb2bc93?placeholderIfAbsent=true&apiKey=928cdaf2e24e4e0f8ced4d57597d6970",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      title: "Awesome experience!",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      title: "Awesome experience!",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      title: "Awesome experience!",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      title: "Awesome experience!",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      title: "Awesome experience!",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      title: "Awesome experience!",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
     },
   ];
 
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : prevIndex
+    );
+  };
+
+  const handleNext = () => {
+    const maxIndex = Math.ceil(testimonials.length / cardsPerView) - 1;
+    setCurrentIndex((prevIndex) =>
+      prevIndex < maxIndex ? prevIndex + 1 : prevIndex
+    );
+  };
+
   return (
     <section
-  className="flex flex-col items-center mt-6 px-6 py-16 w-full text-center bg-cover bg-center"
-  style={{ backgroundImage: "url('/Testimonial.png')" }}
->
-  <h2 className="text-3xl font-bold">Testimonials from Our Customers</h2>
-  <p className="mt-4 text-lg text-gray-700 max-w-2xl">
-    Exceptional service and professionalism! The team understood our needs
-    perfectly and delivered beyond our expectations.
-  </p>
-  <div className="flex flex-wrap gap-6 justify-center mt-10">
-    {testimonials.map((testimonial, index) => (
-      <TestimonialCard key={index} {...testimonial} />
-    ))}
-  </div>
-</section>
+      ref={sectionRef}
+      className="flex flex-col items-center mt-6 px-6 py-16 w-full text-center bg-cover bg-center overflow-hidden"
+      style={{ backgroundImage: "url('/Testimonial.png')" }}
+    >
+      <h2 className="text-3xl font-bold">Testimonials from Our Customers</h2>
+      <p className="mt-4 text-lg text-black max-w-2xl">
+        Exceptional service and professionalism! The team understood our needs perfectly and delivered beyond our expectations.
+      </p>
+      {
+        
+        !isMobile ?(
+          
+         <div className="w-full flex justify-center items-center max-w-[78%] h-[350px]  mt-10 overflow-hidden">
+          <button 
+          onClick={handlePrev}
+        
+        className="absolute md:left-12  z-10 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+      >
+        <FaChevronLeft size={15} />
+      </button>
 
+      <div
+        ref={trackRef}
+        className="flex transition-transform ml-10 duration-1000 ease-in-out"
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+          width: `${(testimonials.length / cardsPerView) * 100}%`,
+        }}
+      >
+        
+        {Array.from({ length: Math.ceil(testimonials.length / cardsPerView) }).map((_, index) => (
+          <div key={index} className="grid grid-cols-1 md:grid-cols-3  w-full flex-shrink-0">
+            {testimonials.slice(index * cardsPerView, (index + 1) * cardsPerView).map((testimonial, idx) => (
+              <TestimonialCard key={idx} {...testimonial} />
+            ))}
+          </div>
+        ))}
+      </div>
+      <button
+
+      onClick={handleNext}
+        className="absolute right-14 z-10 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+      >
+        <FaChevronRight size={15} />
+      </button>
+    </div>
+        ):(
+          <div className="md:hidden flex flex-col gap-6 mt-10 w-full max-w-md">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} className="w-full flex justify-center items-center">
+            <TestimonialCard {...testimonial} />
+          </div>
+        ))}
+      </div>
+        ) 
+      }
+      
+    </section>
+
+    
   );
 };
 
