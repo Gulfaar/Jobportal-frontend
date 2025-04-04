@@ -4,6 +4,7 @@ import Footer from "@/app/Components/Home/Footer";
 import AIFeature from "@/app/Components/SkillDevelopement/AIFeature";
 import FeatureCard from "@/app/Components/SkillDevelopement/FeatureCard";
 import ProcessStep from "@/app/Components/SkillDevelopement/ProcessStep";
+import StepsSection from "@/app/Components/SkillDevelopement/StepsSection";
 import TargetAudience from "@/app/Components/SkillDevelopement/TargetAudience";
 import React from "react";
 
@@ -61,14 +62,14 @@ const SkillDevelopment: React.FC = () => {
 
       {/* Why Choose Gulfaar Section */}
       <section className="px-20 py-12 mt-7 w-full bg-teal-800 max-md:px-5 max-md:max-w-full">
-        <div className="max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col">
+        <div className="max-md:max-w-full ">
+          <div className="flex gap-5 max-md:flex-col justify-center items-center">
             <div className="w-[76%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col self-stretch my-auto text-white max-md:mt-10 max-md:max-w-full">
                 <h2 className="text-5xl font-semibold tracking-tight leading-snug max-md:max-w-full max-md:text-4xl">
-                  Why Choose Gulfaar for skill Development?
+                  Why Choose Gulfaar for skill Development ?
                 </h2>
-                <p className="self-start mt-10 text-xl leading-9 max-md:max-w-full">
+                <p className="self-start mt-2 text-xl leading-9 max-md:max-w-full">
                   Courses tailored to meet current market demands. Personalized
                   learning experiences, real-time feedback, and adaptive
                   testing. Training that prepares you for opportunities
@@ -163,10 +164,10 @@ const SkillDevelopment: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="ml-5 md:mt-50 w-[41%] max-md:ml-0 max-md:w-full ">
+            <div className="ml-8 md:mt-60  w-[51%] max-md:ml-0 max-md:w-full ">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/756486e9bbca25b3eb005760ba6e6802399beaf4?placeholderIfAbsent=true"
-                className="object-contain w-full aspect-[0.75] max-md:mt-10 max-md:max-w-full"
+                className="object-contain w-full h-full aspect-[0.75] max-md:mt-10 max-md:max-w-full"
                 alt="AI-enhanced learning illustration"
               />
             </div>
@@ -175,7 +176,7 @@ const SkillDevelopment: React.FC = () => {
       </section>
 
       {/* Technical Skills Section */}
-      <section className="mt-14 w-full bg-yellow-400 bg-opacity-50 max-md:mt-10 max-md:max-w-full">
+      <section className=" w-full bg-yellow-400 bg-opacity-50 max-md:mt-10 max-md:max-w-full">
         <div className="flex relative flex-col px-20 py-12 w-full min-h-[759px] max-md:px-5 max-md:max-w-full">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/06f503cd746c831444541c86d7c0cf5d11fc1d19?placeholderIfAbsent=true"
@@ -184,13 +185,13 @@ const SkillDevelopment: React.FC = () => {
             aria-hidden="true"
           />
           <div className="relative max-md:max-w-full">
-            <div className="flex gap-5 max-md:flex-col">
+            <div className="flex gap-5 max-md:flex-col justify-center items-center">
               <div className="w-9/12 max-md:ml-0 max-md:w-full">
                 <div className="flex relative flex-col mt-10  font-semibold tracking-tight text-indigo-950 max-md:max-w-full">
                   <p className="self-start text-2xl  max-md:max-w-full">
                     OUR SKILL DEVELOPEMENT PROGRAMS
                   </p>
-                  <h2 className="mt-12 text-5xl leading-snug max-md:mt-10 gap-3 max-md:max-w-full max-md:text-4xl">
+                  <h2 className="mt-5 text-5xl leading-snug max-md:mt-10 gap-3 max-md:max-w-full max-md:text-4xl">
                     Technical Skills For High-Demand Industries
                   </h2>
                 </div>
@@ -239,13 +240,13 @@ const SkillDevelopment: React.FC = () => {
       {/* Non-Technical Skills Section */}
       <section className="px-20 py-11 w-full bg-white max-md:px-5 max-md:max-w-full">
         <div className="max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col">
+          <div className="flex gap-5 max-md:flex-col justify-center items-center">
             <div className="w-[71%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col self-stretch my-auto font-semibold text-black max-md:mt-10 max-md:max-w-full">
                 <p className="self-start text-2xl tracking-tight  max-md:max-w-full">
                   OUR SKILL DEVELOPEMENT PROGRAMS
                 </p>
-                <h2 className="bg mt-12 text-5xl  w-full leading-[50px] max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-10">
+                <h2 className="bg mt-5 text-5xl  w-full leading-[50px] max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-10">
                   Non-Technical Skills For General & Specialized Roles
                 </h2>
               </div>
@@ -375,14 +376,14 @@ const SkillDevelopment: React.FC = () => {
               </div>
             </div>
             <div className="ml-5 w-3/12 max-md:ml-0 max-md:w-full">
-              <div className="flex overflow-hidden flex-col grow px-14 py-11 pb-17 w-full text-2xl font-semibold leading-7 text-center text-black bg-white rounded-3xl border border-solid border-black border-opacity-10 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:px-5 max-md:mt-5">
+              <div className="flex overflow-hidden flex-col grow  px-14 py-5 pb-12 w-full text-2xl font-semibold leading-7 text-center text-black bg-white rounded-3xl border border-solid border-black border-opacity-10 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:px-5 max-md:mt-5">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/5a2fd982d7466141a240d44f0e80c9c3bd7bc96b?placeholderIfAbsent=true"
-                  className="object-contain self-center w-20 aspect-square rounded-[100px]"
+                  className="object-contain self-center mt-4 w-20 aspect-square rounded-[100px]"
                   alt="Emotional intelligence icon"
                 />
-                <p className="mt-13 max-md:mt-10">
-                  Emotional Intelligence & Conflict Resolution
+                <p className="mt-13 max-md:mt-10 max-w-xs">
+                  Emotional Intelligence  & Conflict Resolution
                 </p>
               </div>
             </div>
@@ -439,7 +440,11 @@ const SkillDevelopment: React.FC = () => {
           </div>
         </div>
       </section>
-
+<section>
+  <div className="px-10 py-12">
+<StepsSection/>
+</div>
+</section>
       {/* Process Steps Section */}
       {/* <section className="flex flex-wrap gap-5 justify-between items-start self-center mt-12 w-full px-5 text-1xl font-semibold leading-tight text-teal-800 max-w-[1325px] max-md:mt-10 max-md:max-w-full">
         <ProcessStep

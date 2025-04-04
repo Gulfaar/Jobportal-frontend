@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProfileForm() {
   const [formData, setFormData] = useState({
@@ -138,12 +139,14 @@ export default function ProfileForm() {
               >
                 Back
               </button>
+              <Link href="/CandidateBoarding/Step5">
               <button
                 type="submit"
                 className="px-6 py-2 bg-rose-500 text-white rounded-md hover:bg-rose-600"
               >
                 Continue
               </button>
+              </Link>
             </div>
           </form>
         </div>

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image'; // Import Next.js Image component
+import Link from 'next/link';
 
 const AddEducationForm = () => {
   // State to manage form inputs
@@ -148,12 +149,14 @@ const AddEducationForm = () => {
               >
                 Back
               </button>
+              <Link href="/CandidateBoarding/Step9">
               <button
                 type="submit"
                 className="bg-[#DA6B64] text-white px-6 py-2 rounded hover:bg-[#c95a56]"
               >
                 Continue
               </button>
+              </Link>
             </div>
           </form>
         </div>
