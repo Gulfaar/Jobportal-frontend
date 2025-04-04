@@ -30,21 +30,23 @@ const WhyChooseGulfaarTailored: React.FC = () => {
   return (
     <section className="bg-[#2E5D55] px-10 py-16 text-white max-md:px-6">
       <div className="max-w-[1100px] mx-auto text-center">
-        <h2 className="text-[36px] font-semibold mb-10 max-md:text-[32px]">
+        <h2 className="text-[36px] font-semibold mb-12 max-md:text-[32px]">
           Why Choose Gulfaar’s AI-Powered Recruitment
         </h2>
 
-        <div className="grid grid-cols-2 gap-8 max-md:grid-cols-1">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-2 gap-x-16 gap-y-10 max-lg:grid-cols-1">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-start gap-4">
-              
-                 <Image src="/langbulleticon.svg" alt="Bullet Icon" height={10}  width={10} className="w-4 h-4 mt-1 rounded-full"  />
-              
+            <div key={index} className="flex items-start gap-3 text-left max-md:flex-col max-md:items-center max-md:text-center">
+              {/* Bullet Icon */}
+              <div className="flex-shrink-0">
+                <Image src="/langbulleticon.svg" alt="Bullet Icon" height={18} width={18} className="w-5 h-5 mt-[5px] max-md:mt-0" />
+              </div>
 
               {/* Text Content */}
               <div>
-                <h3 className="text-xl font-semibold">{feature.title}</h3>
-                <p className="text-lg opacity-90">{feature.description}</p>
+                <h3 className="text-[22px] font-semibold leading-tight max-md:text-[20px]">{feature.title}</h3>
+                <p className="text-lg opacity-90 max-md:text-[18px]">{feature.description}</p>
               </div>
             </div>
           ))}
