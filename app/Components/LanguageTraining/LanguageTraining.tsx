@@ -366,10 +366,10 @@ const LanguageTraining = () => {
 
 
       {/* Regional & Work-Specific Language Training Section */}
-      <div className="w-full bg-[#2E5F5C]">
+      <div className="w-full ">
         <div className="container mx-auto px-5 md:px-20 py-16 md:py-24">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
               Regional & Work-Specific Language<br />
               Training For Job Placement & Relocation
             </h2>
@@ -378,24 +378,27 @@ const LanguageTraining = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Hospitality Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-semibold mb-2">
-                Hospitality & Customer Service Language
-              </h3>
-              <p className="text-lg mb-6 opacity-90">
-                English, French, Arabic, German
-              </p>
+              <div className="flex justify-center items-center w-full">
+                <h3 className="text-2xl font-semibold mb-2">
+                  Hospitality & Customer Service Language
+                </h3>
+              </div>
+              <div className="flex justify-center items-center">
+                <p className="text-lg mb-6 opacity-90">
+                  English, French, Arabic, German
+                </p>
+              </div>
               <ul className="space-y-4">
                 <li className="flex items-center gap-2">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-                  
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Handling complaints and requests</span>
                 </li>
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Customer interaction vocabulary</span>
                 </li>
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Service industry terminology</span>
                 </li>
               </ul>
@@ -403,24 +406,27 @@ const LanguageTraining = () => {
 
             {/* Healthcare Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-semibold mb-2">
-                Healthcare & Medical Language
-              </h3>
-              <p className="text-lg mb-6 opacity-90">
-                German for Nurses, English for Doctors, Medical French
-              </p>
+              <div className="flex justify-center items-center w-full">
+                <h3 className="text-2xl font-semibold mb-2">
+                  Healthcare & Medical Language
+                </h3>
+              </div>
+              <div className="flex justify-center items-center">
+                <p className="text-lg mb-6 opacity-90">
+                  German for Nurses, English for Doctors, Medical French
+                </p>
+              </div>
               <ul className="space-y-4">
                 <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Medical terminology and procedures</span>
                 </li>
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Patient communication</span>
                 </li>
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Healthcare documentation</span>
                 </li>
               </ul>
@@ -428,25 +434,27 @@ const LanguageTraining = () => {
 
             {/* Corporate Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
-              <div className="text-center mb-6">
+              <div className="flex justify-center items-center w-full">
                 <h3 className="text-2xl font-semibold mb-2">
                   Corporate & Business Language Skills
                 </h3>
-                <p className="text-lg opacity-90">
+              </div>
+              <div className="flex justify-center items-center">
+                <p className="text-lg mb-6 opacity-90">
                   Negotiation, Email Writing, Public Speaking
                 </p>
               </div>
-              <ul className="space-y-4 px-6">
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Business negotiation techniques</span>
                 </li>
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Professional correspondence</span>
                 </li>
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Presentation and public speaking</span>
                 </li>
               </ul>
@@ -454,25 +462,27 @@ const LanguageTraining = () => {
 
             {/* Construction Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
-              <div className="text-center mb-6">
+              <div className="flex justify-center items-center w-full">
                 <h3 className="text-2xl font-semibold mb-2">
                   Construction & Labor Industry Language
                 </h3>
-                <p className="text-lg opacity-90">
+              </div>
+              <div className="flex justify-center items-center">
+                <p className="text-lg mb-6 opacity-90">
                   Basic Arabic, German, English for Foreign Workers
                 </p>
               </div>
-              <ul className="space-y-4 px-6">
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Safety instructions and procedures</span>
                 </li>
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Construction terminology</span>
                 </li>
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full"/>
                   <span>Basic workplace communication</span>
                 </li>
               </ul>
@@ -626,87 +636,48 @@ const LanguageTraining = () => {
 
       {/* Invest in Yourself Section */}
       <div className="w-full bg-white">
-      <div className="container mx-auto px-5 md:px-20 py-16 md:py-24">
-        <div
-          className={`flex flex-col md:flex-row gap-8 md:gap-16 transition-all duration-500 ${
-            showForm ? "justify-between" : "justify-center"
-          }`}
-        >
-          {/* Left Content - Yellow Box */}
-          <div
-            className={`w-full md:w-1/2 bg-[#F8E449] rounded-3xl p-12 flex flex-col items-start justify-center transition-all duration-500 transform ${
-              showForm ? "md:translate-x-[-50px]" : "md:translate-x-0"
-            }`}
-          >
-            <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
-              Invest in Yourself
-            </h2>
-            <p className="text-xl md:text-2xl text-black mb-8">
-              You Will Grow, You Will Succeed. We Promise That
-            </p>
-            
-              <button
-                onClick={() => setShowForm(true)}
-                className="bg-[#2E6D65] text-white px-8 py-3 rounded-full hover:bg-[#245a53] transition-colors text-lg font-medium flex items-center gap-2"
-              >
+        <div className="container mx-auto px-5 md:px-20 py-16 md:py-24">
+          <div className={`flex flex-col md:flex-row gap-8 md:gap-16 transition-all duration-500 ${showForm ? "justify-between" : "justify-center"}`}>
+            {/* Left Content - Yellow Box */}
+            <div className={`w-full md:w-1/2 bg-[#F8E449] rounded-3xl p-12 flex flex-col items-start justify-center transition-all duration-500 transform ${showForm ? "md:translate-x-[-50px]" : "md:translate-x-0"}`}>
+              <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
+                Invest in Yourself
+              </h2>
+              <p className="text-xl md:text-2xl text-black mb-8">
+                You Will Grow, You Will Succeed. We Promise That
+              </p>
+              <button onClick={() => setShowForm(true)} className="bg-[#2E6D65] text-white px-8 py-3 rounded-full hover:bg-[#245a53] transition-colors text-lg font-medium flex items-center gap-2">
                 Join with us
                 <div className="w-8 h-8 bg-white rounded-full">
-                  <Image
-                    src="/arrowtrainingicon.svg"
-                    alt=""
-                    height={20}
-                    width={20}
-                    className="ml-1.5 mt-2"
-                  />
+                  <Image src="/arrowtrainingicon.svg" alt="" height={20} width={20} className="ml-1.5 mt-2" />
                 </div>
               </button>
-            
-          </div>
-
-          {/* Right Content - Contact Form (conditionally rendered) */}
-          {showForm && (
-            <div className="w-full md:w-1/2 bg-[#2E6D65] rounded-3xl p-12 transition-all duration-500">
-              <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Name Input */}
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400"
-                  />
-
-                  {/* Contact Number Input */}
-                  <input
-                    type="tel"
-                    placeholder="Contact number"
-                    className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400"
-                  />
-                </div>
-
-                {/* Email Input */}
-                <input
-                  type="email"
-                  placeholder="E-mail"
-                  className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400"
-                />
-
-                {/* Enquiry Input */}
-                <input
-                  type="text"
-                  placeholder="Type field of enquiry"
-                  className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400"
-                />
-
-                {/* Submit Button */}
-                <button className="bg-[#E57373] text-white px-12 py-3 rounded-lg hover:bg-[#d46868] transition-colors text-lg font-medium mx-auto block">
-                  Submit
-                </button>
-              </div>
             </div>
-          )}
+
+            {/* Right Content - Contact Form (conditionally rendered) */}
+            {showForm && (
+              <div className="w-full md:w-1/2 bg-[#2E6D65] rounded-3xl p-12 transition-all duration-500">
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Name Input */}
+                    <input type="text" placeholder="Name" className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400" />
+                    {/* Contact Number Input */}
+                    <input type="tel" placeholder="Contact number" className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400" />
+                  </div>
+                  {/* Email Input */}
+                  <input type="email" placeholder="E-mail" className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400" />
+                  {/* Enquiry Input */}
+                  <input type="text" placeholder="Type field of enquiry" className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400" />
+                  {/* Submit Button */}
+                  <button className="bg-[#E57373] text-white px-12 py-3 rounded-lg hover:bg-[#d46868] transition-colors text-lg font-medium mx-auto block">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   )
 }
