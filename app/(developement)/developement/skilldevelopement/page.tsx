@@ -25,7 +25,7 @@ const SkillDevelopment: React.FC = () => {
                   Gulfaar's Skill Development Programs
                 </span>
               </h2>
-              <p className="mt-6 max-md:max-w-full">
+              <p className="mt-1 max-md:max-w-full">
                 Transform Your Career with Industry-Leading Skill Development
               </p>
               <p className="mt-9 max-w-full leading-9 text-black font-normal text-[24px] w-[672px] max-md:max-w-full">

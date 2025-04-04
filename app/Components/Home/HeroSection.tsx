@@ -206,7 +206,7 @@ const NavLinks = () => {
            Language Training
           </Link>
           <Link
-            href="/training/workshops"
+            href="/exam"
             className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
           >
             Exam Preparation
@@ -246,15 +246,15 @@ const NavLinks = () => {
           >
             <Link
               href="/training/courses/french"
-              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+              className=" px-2 py-2 inline-flex whitespace-nowrap w-auto hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
             >
-              French Training
+              Tailored candidates
             </Link>
             <Link
               href="/training/courses/spanish"
               className=" inline-flex whitespace-nowrap px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
             >
-              Spanish Training
+              Direct placement
             </Link>
           </div>
         )}
