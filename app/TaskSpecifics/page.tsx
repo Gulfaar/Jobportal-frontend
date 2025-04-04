@@ -6,7 +6,7 @@
   import BenefitsOfHiring from "../Components/TaskSpecific/BenifitsOfHiring";
   import GulfaarFeaturess from "../Components/TaskSpecific/GulfaarFeatures";
   import HireExperts from "../Components/TaskSpecific/HireExpert";
-  import Footer from "../Components/Contact Us/Footer";
+  import Footer from "../Components/Home/Footer";
 
 
 
@@ -19,7 +19,7 @@
               <Head>
               <title>SpecificTask</title>
             </Head>
-            <Header title={"Task-Specific Experts – Drivers | Construction, Maintenance  & Cleaning Specialists"} subtitle={"Skilled Experts, On Demand – The Right People for the Right Job"} />
+            <Header title={"Task-Specific Experts:"} subtitle={"Skilled Experts, On Demand – The Right People for the Right Job"} />
             <div className="flex-1 flex  flex-col items-center justify-center  w-full">
               <Workforce />
               <IndustriesAndServices />

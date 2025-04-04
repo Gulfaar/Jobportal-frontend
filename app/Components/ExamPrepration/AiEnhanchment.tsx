@@ -47,7 +47,7 @@ const AIEnhancements: React.FC<AIEnhancementsProps> = ({
   ],
 }) => {
   return (
-    <section className="bg-[#00695C] py-12 px-4 sm:px-6 lg:px-8 w-full">
+    <section className="bg-[#2E5F5C] py-12 px-4 sm:px-6 lg:px-8 w-full">
       <div className="max-w-7xl mx-auto text-center">
         {/* Heading and Subheading */}
         <h2 className="text-3xl sm:text-4xl font-bold text-white uppercase mb-4">

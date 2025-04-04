@@ -1,5 +1,5 @@
 
-import Footer from "../Components/Home/Footer"
+
 import CandidateOnboardingSteps1 from "../Components/CandidateOnBording/Step1";
 
 const CandidateOnboardingPage = () => {

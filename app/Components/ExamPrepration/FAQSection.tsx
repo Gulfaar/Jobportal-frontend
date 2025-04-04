@@ -73,7 +73,7 @@ const FAQSection: FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-indigo-100 to-white py-12 w-full">
+    <section className="bg-white py-12 w-full">
       <div className="max-w-3xl mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>

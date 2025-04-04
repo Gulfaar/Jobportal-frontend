@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image'; // Import Next.js Image component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBold, faItalic, faUnderline, faListUl } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const SkillsForm = () => {
   // State to manage selected skills
@@ -165,12 +166,14 @@ const SkillsForm = () => {
             >
               Back
             </button>
+
+            <Link href="/CandidateBoarding/Step10">
             <button
-              onClick={handleSubmit}
               className="bg-[#DA6B64] text-white px-6 py-2 rounded hover:bg-[#c95a56]"
             >
               Continue
             </button>
+            </Link>
           </div>
         </div>
       </div>

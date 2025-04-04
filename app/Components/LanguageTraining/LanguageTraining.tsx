@@ -366,10 +366,10 @@ const LanguageTraining = () => {
 
 
       {/* Regional & Work-Specific Language Training Section */}
-      <div className="w-full bg-white">
+      <div className="w-full bg-[#2E5F5C]">
         <div className="container mx-auto px-5 md:px-20 py-16 md:py-24">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
               Regional & Work-Specific Language<br />
               Training For Job Placement & Relocation
             </h2>
@@ -378,17 +378,16 @@ const LanguageTraining = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Hospitality Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold mb-2">
-                  Hospitality & Customer Service Language
-                </h3>
-                <p className="text-lg opacity-90">
-                  English, French, Arabic, German
-                </p>
-              </div>
-              <ul className="space-y-4 px-6">
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+              <h3 className="text-2xl font-semibold mb-2">
+                Hospitality & Customer Service Language
+              </h3>
+              <p className="text-lg mb-6 opacity-90">
+                English, French, Arabic, German
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-2">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
+                  
                   <span>Handling complaints and requests</span>
                 </li>
                 <li className="flex items-center gap-3 pl-4">
@@ -404,17 +403,16 @@ const LanguageTraining = () => {
 
             {/* Healthcare Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold mb-2">
-                  Healthcare & Medical Language
-                </h3>
-                <p className="text-lg opacity-90">
-                  German for Nurses, English for Doctors, Medical French
-                </p>
-              </div>
-              <ul className="space-y-4 px-6">
-                <li className="flex items-center gap-3 pl-4">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
+              <h3 className="text-2xl font-semibold mb-2">
+                Healthcare & Medical Language
+              </h3>
+              <p className="text-lg mb-6 opacity-90">
+                German for Nurses, English for Doctors, Medical French
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-2">
+                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
+
                   <span>Medical terminology and procedures</span>
                 </li>
                 <li className="flex items-center gap-3 pl-4">

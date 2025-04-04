@@ -59,14 +59,14 @@ const EnrollSection: FC = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-indigo-100 to-white py-12 w-full">
+    <section className="bg-[#2E5F5C] py-12 w-full">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-900">
+          <h2 className="text-3xl font-bold text-white">
             Who Should Enroll?
           </h2>
-          <p className="text-gray-600 mt-2">
+          <p className="text-white mt-2">
             Our programs are designed for individuals seeking to advance their
             education and career globally.
           </p>

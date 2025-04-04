@@ -56,7 +56,7 @@ const ExamPrograms: React.FC<ExamProgramsProps> = ({
               className="bg-white rounded-lg shadow-lg ] text-left transition-transform transform hover:scale-105 hover:shadow-xl duration-300"
             >
               {/* Category Title */}
-              <div className="bg-[#00695C] text-white text-lg font-bold py-4 px-6 w-full rounded-t-lg">
+              <div className="bg-[#2E5F5C] text-white text-lg font-bold py-4 px-6 w-full rounded-t-lg">
                 {category.title}
               </div>
               <div className="p-6">

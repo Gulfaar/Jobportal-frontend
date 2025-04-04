@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image'; // Import Next.js Image component
+import Link from 'next/link';
 
 const EducationSection = () => {
   const educationEntries = [
@@ -65,9 +66,11 @@ const EducationSection = () => {
           <div className="bg-[#F5D5D3] rounded-xl p-8">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-[#DA6B64] font-semibold text-sm">Education</h3>
+              <Link href="/CandidateBoarding/Step8">
               <button className="border border-[#DA6B64] text-[#DA6B64] px-4 py-1.5 rounded hover:bg-red-100 text-sm">
                 Add more education
               </button>
+              </Link>
             </div>
 
             {/* Education Entries */}

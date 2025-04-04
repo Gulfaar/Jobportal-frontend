@@ -1,7 +1,7 @@
 "use client";
 import Header from "@/app/Components/Header/Header";
 import Footer from "@/app/Components/Home/Footer";
-import ContactSection from "@/app/Components/PartnerWithUs/ContactSection";
+
 import DataSecuritySection from "@/app/Components/privacypolicy/DataSecuritySection";
 import DataSharingSection from "@/app/Components/privacypolicy/DataSharingSection";
 import InfoCollectionSection from "@/app/Components/privacypolicy/InfoCollectionSection";
@@ -24,7 +24,7 @@ const PrivacyPolicy: React.FC = () => {
       <DataSharingSection />
       <DataSecuritySection />
       <RightsCookiesSection />
-      <ContactSection />
+   
       <Footer />
     </main>
   );

@@ -1,8 +1,11 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 
 const CandidateOnboardingSteps1 = () => {
 
+
+  const router = useRouter();
 
   const steps = [
     {
@@ -62,11 +65,11 @@ const CandidateOnboardingSteps1 = () => {
           <span>🌍</span> Select country
         </button>
         <button
-          className="bg-[#D67268] text-white px-6 py-2 rounded-lg"
-           // ✅ Navigates to Step 2
-        >
-          Continue
-        </button>
+      className="bg-[#D67268] text-white px-6 py-2 rounded-lg"
+      onClick={() => router.push("/CandidateBoarding/Step2")} // ✅ Navigate to Step2
+    >
+      Continue
+    </button>
       </div>
     </section>
   );
