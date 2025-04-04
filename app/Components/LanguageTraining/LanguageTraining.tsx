@@ -8,56 +8,72 @@ const LanguageTraining = () => {
   return (
     <div className="w-full sm:px-5">
       {/* Hero Section */}
-      <div className="w-full bg-white">
-        <div className="container mx-auto px-1 md:px-12 py-12 md:py-16">
-          <div className="flex flex-col md:flex-row items-start justify-between gap-8">
-            {/* Left Content */}
-            <div className="w-full md:w-3/2">
-            <h1 className="text-2xl md:text-[48px] font-semibold text-black leading-tight text-center md:text-left">
-              <span className="block md:inline">Master Languages,</span>
-              <span className="block md:inline">Expand Opportunities,</span>
-              <span className="block ">Succeed Globally</span>
-            </h1>
-              <p className="text-lg md:text-[24px] text-gray-700 mt-2 text-center md:text-left">
-                {/* Mobile: Centered paragraph */}
-                <span className="block ">
-                  In today's interconnected world, language is more than just communication it's the key to<br/>
-                  unlocking global opportunities.
+      
+      <section className="self-center px-15 mt-9 py-10 w-full max-w-[1294px] max-md:max-w-full">
+        <div className="flex gap-5 max-md:flex-col">
+          <div className="w-[63%] max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-10 max-md:max-w-full">
+              <h2 className="self-stretch text-3xl tracking-tight leading-[50px] max-md:max-w-full">
+                Unlock Your Career Potential with <br />
+                <span className="text-[48px]">
+                Master Languages,  Expand Opportunities, Succeed Globally
                 </span>
-                {/* Desktop: Specific layout with margins */}
-                {/* <span className="hidden md:block">
-                  <span className="inline-block ml-[150px]">In today's interconnected world, language is more than</span>
-                  <br />
-                  <span className=" ml-[156px]">just communication it's the key to unlocking global</span>
-                  <br />
-                  <span className="inline-block ml-[320px]">opportunities.</span>
-                </span> */}
+              </h2>
+              <p className="mt-6 max-md:max-w-full">
+                Transform Your Career with Industry-Leading Skill Development
               </p>
-
-              {/* <button className="mt-10 bg-[#2E6D65] text-white px-6 py-2 rounded-full hover:bg-[#245a53] transition-colors text-lg font-medium block mx-auto md:mx-0 md:ml-[330px]">
-                Enroll Now
-              </button> */}
-            </div>
-
-            {/* Right Image */}
-            <div className="w-full md:w-[600px]">
-              <div className="relative w-full aspect-[5/4] rounded-3xl overflow-hidden">
-                <Image
-                  src="/LANGUAGE.png"
-                  alt="Language Training"
-                  fill
-                  className="object-cover"
-                  priority
+              <p className="mt-9 max-w-full leading-9 text-black font-normal text-[24px] w-[672px] max-md:max-w-full">
+              In today's interconnected world, language is more than just communication it's the key to<br/>
+              unlocking global opportunities.
+              </p>
+              <button
+                className="flex gap-3 px-8 py-4 mt-12 text-sm leading-tight text-center text-white uppercase bg-teal-800 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
+                aria-label="Get Started"
+              >
+                <span className="grow my-auto">Get Started</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/6307c969f4753633a930c857def46cbf555e5466?placeholderIfAbsent=true"
+                  className="object-contain shrink-0 w-3.5 aspect-[0.87]"
+                  alt="Arrow icon"
                 />
-              </div>
+              </button>
             </div>
           </div>
+          <div className="ml-5 w-[37%] max-md:ml-0 max-md:w-full">
+            <img
+              src="/LANGUAGE.png"
+              className="object-contain grow w-full rounded-3xl aspect-[0.77] max-md:mt-10 max-md:max-w-full"
+              alt="Career development illustration"
+            />
+          </div>
         </div>
-      </div>
+      </section>
+
+
+
 
       {/* AI Features Section */}
-      <div className="w-full bg-[#FFF87F]">
-        <div className="container mx-auto px-5 md:px-20 py-16 md:py-24">
+      <div className="w-full bg-[#f8f059ef] relative">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 w-full h-full">
+        <Image 
+            src='/Rectanglelanguage.png' 
+            alt='AI Enhancement Background' 
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <Image 
+            src='/LanguageTrainingcover2.png' 
+            alt='AI Enhancement Background' 
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+        </div>
+
+        {/* Content Container */}
+        <div className="relative z-10 container mx-auto px-5 md:px-20 py-16 md:py-24">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-12">
             How AI Enhances Language Training at Gulfaar
           </h2>
@@ -66,66 +82,56 @@ const LanguageTraining = () => {
             {/* Left Features List */}
             <div className="w-full md:w-3/5 space-y-8">
               {/* Feature 1 */}
-              <div className="flex items-start gap-4">
-              <div className="w-16 h-16 rounded-full bg-[#2E6D65] flex items-center justify-center flex-shrink-0 relative">
-                  
-                  <Image src='/speechicon.svg' alt='speechicon' height={8} width={8} className=' object-contain w-8 h-8'/>
-                
-              </div>
+              <div className="flex items-start gap-4 bg-white/80 backdrop-blur-sm rounded-xl p-6">
+                <div className="w-16 h-16 rounded-full bg-[#2E6D65] flex items-center justify-center flex-shrink-0 relative">
+                  <Image src='/speechicon.svg' alt='speechicon' height={8} width={8} className='object-contain w-8 h-8'/>
+                </div>
                 <div>
-                  <h3 className="text-[24px] font-semibold mb-2 text-black ">AI-Powered Speech Recognition</h3>
-                  <p className="text-gray-800 text-[20px] ">Real-time analysis of pronunciation, fluency, and accent correction.</p>
+                  <h3 className="text-[24px] font-semibold mb-2 text-black">AI-Powered Speech Recognition</h3>
+                  <p className="text-gray-800 text-[20px]">Real-time analysis of pronunciation, fluency, and accent correction.</p>
                 </div>
               </div>
 
               {/* Feature 2 */}
-              <div className="flex items-start gap-4">
-              <div className="w-16 h-16 rounded-full bg-[#2E6D65] flex items-center justify-center flex-shrink-0 relative">
-                  
-                  <Image src='/roboicon.svg' alt='speechicon' height={8} width={8} className=' object-contain w-8 h-8'/>
-                
-              </div>
+              <div className="flex items-start gap-4 bg-white/80 backdrop-blur-sm rounded-xl p-6">
+                <div className="w-16 h-16 rounded-full bg-[#2E6D65] flex items-center justify-center flex-shrink-0 relative">
+                  <Image src='/roboicon.svg' alt='speechicon' height={8} width={8} className='object-contain w-8 h-8'/>
+                </div>
                 <div>
-                  <h3 className="text-[24px] font-semibold mb-2 text-black ">Personalized AI Learning Paths</h3>
+                  <h3 className="text-[24px] font-semibold mb-2 text-black">Personalized AI Learning Paths</h3>
                   <p className="text-gray-800 text-[20px]">AI adapts lessons based on your progress, focusing on areas that need improvement.</p>
                 </div>
               </div>
 
               {/* Feature 3 */}
-              <div className="flex items-start gap-4">
-              <div className="w-16 h-16 rounded-full bg-[#2E6D65] flex items-center justify-center flex-shrink-0 relative">
-                  
-                  <Image src='/messageicon.svg' alt='speechicon' height={8} width={8} className=' object-contain w-8 h-8'/>
-                
-              </div>
+              <div className="flex items-start gap-4 bg-white/80 backdrop-blur-sm rounded-xl p-6">
+                <div className="w-16 h-16 rounded-full bg-[#2E6D65] flex items-center justify-center flex-shrink-0 relative">
+                  <Image src='/messageicon.svg' alt='speechicon' height={8} width={8} className='object-contain w-8 h-8'/>
+                </div>
                 <div>
-                  <h3 className="text-[24px] font-semibold mb-2 text-black ">Live AI Conversation Practice</h3>
+                  <h3 className="text-[24px] font-semibold mb-2 text-black">Live AI Conversation Practice</h3>
                   <p className="text-gray-800 text-[20px]">Engage in AI-driven conversations that simulate real-life scenarios, improving fluency and confidence.</p>
                 </div>
               </div>
 
               {/* Feature 4 */}
-              <div className="flex items-start gap-4 text-black ">
+              <div className="flex items-start gap-4 bg-white/80 backdrop-blur-sm rounded-xl p-6">
                 <div className="w-16 h-16 rounded-full bg-[#2E6D65] flex items-center justify-center flex-shrink-0 relative">
-                  
-                    <Image src='/performicon.svg' alt='speechicon' height={8} width={8} className=' object-contain w-8 h-8'/>
-                  
+                  <Image src='/performicon.svg' alt='speechicon' height={8} width={8} className='object-contain w-8 h-8'/>
                 </div>
                 <div>
-                  <h3 className="text-[24px] font-semibold mb-2 text-black ">Instant Feedback & Performance Analysis</h3>
+                  <h3 className="text-[24px] font-semibold mb-2 text-black">Instant Feedback & Performance Analysis</h3>
                   <p className="text-gray-800 text-[20px]">AI evaluates your speaking, listening, and writing skills, providing actionable insights.</p>
                 </div>
               </div>
 
               {/* Feature 5 */}
-              <div className="flex items-start gap-4 ">
-              <div className="w-16 h-16 rounded-full bg-[#2E6D65] flex items-center justify-center flex-shrink-0 relative">
-                  
-                  <Image src='/exampreicon.svg' alt='speechicon' height={8} width={8} className=' object-contain w-8 h-8'/>
-                
-              </div>
+              <div className="flex items-start gap-4 bg-white/80 backdrop-blur-sm rounded-xl p-6">
+                <div className="w-16 h-16 rounded-full bg-[#2E6D65] flex items-center justify-center flex-shrink-0 relative">
+                  <Image src='/exampreicon.svg' alt='speechicon' height={8} width={8} className='object-contain w-8 h-8'/>
+                </div>
                 <div>
-                  <h3 className="text-[24px] font-semibold mb-2 text-black ">AI-Based Exam Preparation</h3>
+                  <h3 className="text-[24px] font-semibold mb-2 text-black">AI-Based Exam Preparation</h3>
                   <p className="text-gray-800 text-[20px]">Targeted practice tests and personalized study plans for language certification exams.</p>
                 </div>
               </div>
@@ -133,10 +139,9 @@ const LanguageTraining = () => {
 
             {/* Right Image Card */}
             <div className="w-full md:w-2/5 text-black mt-26">
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden ">
-                <div className="absolute inset-0  flex flex-col items-center justify-center text-white p-8 text-center">
-
-                  <Image src='/languagetraining2cover.png' alt='' fill  className=' '/>
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-white/80 backdrop-blur-sm">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 text-center">
+                  <Image src='/languagetraining2cover.png' alt='' fill className='object-cover'/>
                 </div>
               </div>
             </div>
@@ -373,27 +378,25 @@ const LanguageTraining = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Hospitality Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-semibold mb-2">
-                Hospitality & Customer Service Language
-              </h3>
-              <p className="text-lg mb-6 opacity-90">
-                English, French, Arabic, German
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-2">
-                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-                  
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-semibold mb-2">
+                  Hospitality & Customer Service Language
+                </h3>
+                <p className="text-lg opacity-90">
+                  English, French, Arabic, German
+                </p>
+              </div>
+              <ul className="space-y-4 px-6">
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Handling complaints and requests</span>
                 </li>
-                <li className="flex items-center gap-2">
-                
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Customer interaction vocabulary</span>
                 </li>
-                <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Service industry terminology</span>
                 </li>
               </ul>
@@ -401,26 +404,25 @@ const LanguageTraining = () => {
 
             {/* Healthcare Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-semibold mb-2">
-                Healthcare & Medical Language
-              </h3>
-              <p className="text-lg mb-6 opacity-90">
-                German for Nurses, English for Doctors, Medical French
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-semibold mb-2">
+                  Healthcare & Medical Language
+                </h3>
+                <p className="text-lg opacity-90">
+                  German for Nurses, English for Doctors, Medical French
+                </p>
+              </div>
+              <ul className="space-y-4 px-6">
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Medical terminology and procedures</span>
                 </li>
-                <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Patient communication</span>
                 </li>
-                <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Healthcare documentation</span>
                 </li>
               </ul>
@@ -428,26 +430,25 @@ const LanguageTraining = () => {
 
             {/* Corporate Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-semibold mb-2">
-                Corporate & Business Language Skills
-              </h3>
-              <p className="text-lg mb-6 opacity-90">
-                Negotiation, Email Writing, Public Speaking
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-semibold mb-2">
+                  Corporate & Business Language Skills
+                </h3>
+                <p className="text-lg opacity-90">
+                  Negotiation, Email Writing, Public Speaking
+                </p>
+              </div>
+              <ul className="space-y-4 px-6">
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Business negotiation techniques</span>
                 </li>
-                <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Professional correspondence</span>
                 </li>
-                <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Presentation and public speaking</span>
                 </li>
               </ul>
@@ -455,26 +456,25 @@ const LanguageTraining = () => {
 
             {/* Construction Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-semibold mb-2">
-                Construction & Labor Industry Language
-              </h3>
-              <p className="text-lg mb-6 opacity-90">
-                Basic Arabic, German, English for Foreign Workers
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-semibold mb-2">
+                  Construction & Labor Industry Language
+                </h3>
+                <p className="text-lg opacity-90">
+                  Basic Arabic, German, English for Foreign Workers
+                </p>
+              </div>
+              <ul className="space-y-4 px-6">
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Safety instructions and procedures</span>
                 </li>
-                <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Construction terminology</span>
                 </li>
-                <li className="flex items-center gap-2">
-                <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full "/>
-
+                <li className="flex items-center gap-3 pl-4">
+                  <Image src='/langbulleticon.svg' alt='nah' height={20} width={20} className="w-5 h-5 rounded-full flex-shrink-0"/>
                   <span>Basic workplace communication</span>
                 </li>
               </ul>

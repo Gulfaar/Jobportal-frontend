@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { FaArrowRightLong } from 'react-icons/fa6';
 
 type TabKey = 'communication' | 'career' | 'confident' | 'personal' | 'leadership';
 
@@ -163,15 +164,15 @@ const PersonalityDevelopment = () => {
             {/* First Row: Heading + First Card */}
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 mb-8">
               {/* Main Heading */}
-              <div className="lg:w-1/2">
-                <h2 className="text-[48px] font-semibold text-white leading-tight">
+              <div className="lg:w-2/2">
+                <h2 className="text-[40px] font-semibold text-white leading-tight">
                   How AI Enhances Personality Development at Gulfaar?
                 </h2>
               </div>
 
               {/* First Card */}
               <div className="lg:w-1/2">
-                <div className="bg-white rounded-[20px] p-8 h-full">
+                <div className="bg-white  rounded-[20px] p-8 min-h-[180px] flex flex-col">
                   <h3 className="text-[24px] font-semibold text-[#204E47] mb-4">
                     Real-Time Speech Analysis
                   </h3>
@@ -185,7 +186,7 @@ const PersonalityDevelopment = () => {
             {/* Second Row: Three Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Card 2 */}
-              <div className="bg-white rounded-[20px] p-8">
+              <div className="bg-white rounded-[20px] p-8 min-h-[180px] flex flex-col">
                 <h3 className="text-[24px] font-semibold text-[#204E47] mb-4">
                   AI-Based Personal Coaching
                 </h3>
@@ -195,7 +196,7 @@ const PersonalityDevelopment = () => {
               </div>
 
               {/* Card 3 */}
-              <div className="bg-white rounded-[20px] p-8">
+              <div className="bg-white rounded-[20px] p-8 min-h-[180px] flex flex-col">
                 <h3 className="text-[24px] font-semibold text-[#204E47] mb-4">
                   Behavioral Assessment
                 </h3>
@@ -205,7 +206,7 @@ const PersonalityDevelopment = () => {
               </div>
 
               {/* Card 4 */}
-              <div className="bg-white rounded-[20px] p-8">
+              <div className="bg-white rounded-[20px] p-8 min-h-[180px] flex flex-col">
                 <h3 className="text-[24px] font-semibold text-[#204E47] mb-4">
                   Personalized Roadmap
                 </h3>
@@ -220,112 +221,112 @@ const PersonalityDevelopment = () => {
 
       {/* Our Personality Development Programs Section */}
       <section className="py-16 bg-white">
-  <div className="container mx-auto px-4">
-    <div className="flex flex-col md:flex-row items-start justify-between max-w-6xl mx-auto">
-      {/* Left Side - Heading */}
-      <div className="w-full md:w-2/3 mt-16 md:mt-36">
-        <h2 className="text-3xl md:text-[48px] font-semibold text-[#204E47]">
-          <span className="ml-2  md:ml-22">Our Personality</span>
-          <br />
-          <span>Development Programs</span>
-        </h2>
-      </div>
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-start justify-between max-w-6xl mx-auto">
+            {/* Left Side - Heading */}
+            <div className="w-full md:w-2/5 mt-16">
+              <h2 className="text-3xl md:text-[48px] font-semibold text-[#204E47] text-left">
+                Our Personality
+                <br />
+                Development Programs
+              </h2>
+            </div>
 
-      {/* Right Side - Tabs and Content */}
-      <div className="w-full md:w-3/5 mt-8 md:mt-0">
-        <div className="flex flex-col md:flex-row">
-          {/* Left Column - Tabs */}
-          <div className="w-full md:w-[250px] flex flex-col">
-            <button 
-              onClick={() => setActiveTab('communication')}
-              className={`w-full text-left px-4 md:px-6 py-2 md:py-4 rounded-l-xl whitespace-nowrap ${
-                activeTab === 'communication'
-                  ? 'bg-white text-[#204E47] border-6 border-[#204E47]'
-                  : 'bg-[#204E47] text-white'
-              }`}
-            >
-              <span className="font-semibold text-sm md:text-[20px]">
-                Communication &<br />Public Speaking
-              </span>
-            </button>
+            {/* Right Side - Tabs and Content */}
+            <div className="w-full md:w-3/5 mt-8 md:mt-0">
+              <div className="flex flex-col md:flex-row">
+                {/* Left Column - Tabs */}
+                <div className="w-full md:w-[280px] flex flex-col">
+                  <button 
+                    onClick={() => setActiveTab('communication')}
+                    className={`w-full text-left px-4 md:px-6 py-2 md:py-4 rounded-l-xl whitespace-nowrap ${
+                      activeTab === 'communication'
+                        ? 'bg-white text-[#204E47] border-6 border-[#204E47]'
+                        : 'bg-[#204E47] text-white'
+                    }`}
+                  >
+                    <span className="font-semibold text-sm md:text-[20px]">
+                      Communication &<br />Public Speaking
+                    </span>
+                  </button>
 
-            <button 
-              onClick={() => setActiveTab('career')}
-              className={`w-full text-left px-4 md:px-6 py-2 md:py-4 mt-2 md:mt-3 rounded-l-xl whitespace-nowrap ${
-                activeTab === 'career'
-                  ? 'bg-white text-[#204E47] border-6 border-[#204E47]'
-                  : 'bg-[#204E47] text-white'
-              }`}
-            >
-              <span className="font-semibold text-sm md:text-[20px]">
-                Career Readiness
-              </span>
-            </button>
+                  <button 
+                    onClick={() => setActiveTab('career')}
+                    className={`w-full text-left px-4 md:px-6 py-2 md:py-4 mt-2 md:mt-3 rounded-l-xl whitespace-nowrap ${
+                      activeTab === 'career'
+                        ? 'bg-white text-[#204E47] border-6 border-[#204E47]'
+                        : 'bg-[#204E47] text-white'
+                    }`}
+                  >
+                    <span className="font-semibold text-sm md:text-[20px]">
+                      Career Readiness
+                    </span>
+                  </button>
 
-            <button 
-              onClick={() => setActiveTab('confident')}
-              className={`w-full text-left px-4 md:px-6 py-2 md:py-4 mt-2 md:mt-3 rounded-l-xl whitespace-nowrap ${
-                activeTab === 'confident'
-                  ? 'bg-white text-[#204E47] border-6 border-[#204E47]'
-                  : 'bg-[#204E47] text-white'
-              }`}
-            >
-              <span className="font-semibold text-sm md:text-[20px]">
-                Confident & Self-<br />Growth
-              </span>
-            </button>
+                  <button 
+                    onClick={() => setActiveTab('confident')}
+                    className={`w-full text-left px-4 md:px-6 py-2 md:py-4 mt-2 md:mt-3 rounded-l-xl whitespace-nowrap ${
+                      activeTab === 'confident'
+                        ? 'bg-white text-[#204E47] border-6 border-[#204E47]'
+                        : 'bg-[#204E47] text-white'
+                    }`}
+                  >
+                    <span className="font-semibold text-sm md:text-[20px]">
+                      Confident & Self-<br />Growth
+                    </span>
+                  </button>
 
-            <button 
-              onClick={() => setActiveTab('personal')}
-              className={`w-full text-left px-4 md:px-6 py-2 md:py-4 mt-2 md:mt-3 rounded-l-xl whitespace-nowrap ${
-                activeTab === 'personal'
-                  ? 'bg-white text-[#204E47] border-6 border-[#204E47]'
-                  : 'bg-[#204E47] text-white'
-              }`}
-            >
-              <span className="font-semibold text-sm md:text-[20px]">
-                Personal Branding
-              </span>
-            </button>
+                  <button 
+                    onClick={() => setActiveTab('personal')}
+                    className={`w-full text-left px-4 md:px-6 py-2 md:py-4 mt-2 md:mt-3 rounded-l-xl whitespace-nowrap ${
+                      activeTab === 'personal'
+                        ? 'bg-white text-[#204E47] border-6 border-[#204E47]'
+                        : 'bg-[#204E47] text-white'
+                    }`}
+                  >
+                    <span className="font-semibold text-sm md:text-[20px]">
+                      Personal Branding
+                    </span>
+                  </button>
 
-            <button 
-              onClick={() => setActiveTab('leadership')}
-              className={`w-full text-left px-4 md:px-6 py-2 md:py-4 mt-2 md:mt-3 rounded-l-xl whitespace-nowrap ${
-                activeTab === 'leadership'
-                  ? 'bg-white text-[#204E47] border-6 border-[#204E47]'
-                  : 'bg-[#204E47] text-white'
-              }`}
-            >
-              <span className="font-semibold text-sm md:text-[20px]">
-                Leadership Excellence
-              </span>
-            </button>
-          </div>
-
-          {/* Right Column - Content */}
-          <div className="flex-1 border-6  border-l-[6px] md:border-l-0 border-[#204E47] rounded-r-xl p-4 md:p-8 mt-6 md:mt-0">
-            <div className="mt-4 md:mt-10">
-              {tabContents[activeTab].map((content: string, index: number) => (
-                <div key={index} className="flex items-start gap-2 md:gap-4 mt-4 md:mt-10 mb-2 last:mb-0">
-                  <Image
-                    src="/langbulleticongreen.svg"
-                    alt="bullet"
-                    width={14}
-                    height={14}
-                    className="mt-1"
-                  />
-                  <p className="text-[#204E47] text-[13px] md:text-[15px]">
-                    {content}
-                  </p>
+                  <button 
+                    onClick={() => setActiveTab('leadership')}
+                    className={`w-full text-left px-4 md:px-6 py-2 md:py-4 mt-2 md:mt-3 rounded-l-xl whitespace-nowrap ${
+                      activeTab === 'leadership'
+                        ? 'bg-white text-[#204E47] border-6 border-[#204E47]'
+                        : 'bg-[#204E47] text-white'
+                    }`}
+                  >
+                    <span className="font-semibold text-sm md:text-[20px]">
+                      Leadership Excellence
+                    </span>
+                  </button>
                 </div>
-              ))}
+
+                {/* Right Column - Content */}
+                <div className="flex-1 border-6 border-l-[6px] md:border-l-0 border-[#204E47] rounded-r-xl p-4 md:p-8 mt-6 md:mt-0">
+                  <div className="mt-18">
+                    {tabContents[activeTab].map((content: string, index: number) => (
+                      <div key={index} className="flex items-start gap-2 md:gap-4 mt-4 first:mt-0 mb-2 last:mb-0">
+                        <Image
+                          src="/langbulleticongreen.svg"
+                          alt="bullet"
+                          width={14}
+                          height={14}
+                          className="mt-1"
+                        />
+                        <p className="text-[#204E47] gap-6 text-[13px] md:text-[15px]">
+                          {content}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
       
@@ -337,9 +338,9 @@ const PersonalityDevelopment = () => {
             How It Works?
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-6xl mx-auto">
+          <div className="flex flex-nowrap items-start justify-between max-w-7xl mx-auto overflow-x-auto">
             {/* Step 1 */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center min-w-[200px]">
               <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
                 1
               </div>
@@ -351,8 +352,10 @@ const PersonalityDevelopment = () => {
               </p>
             </div>
 
+            <FaArrowRightLong className="text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
+
             {/* Step 2 */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center min-w-[200px]">
               <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
                 2
               </div>
@@ -364,8 +367,10 @@ const PersonalityDevelopment = () => {
               </p>
             </div>
 
+            <FaArrowRightLong className="text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
+
             {/* Step 3 */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center min-w-[200px]">
               <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
                 3
               </div>
@@ -377,8 +382,10 @@ const PersonalityDevelopment = () => {
               </p>
             </div>
 
+            <FaArrowRightLong className="text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
+
             {/* Step 4 */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center min-w-[200px]">
               <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
                 4
               </div>
@@ -390,8 +397,10 @@ const PersonalityDevelopment = () => {
               </p>
             </div>
 
+            <FaArrowRightLong className="text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
+
             {/* Step 5 */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center min-w-[200px]">
               <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
                 5
               </div>

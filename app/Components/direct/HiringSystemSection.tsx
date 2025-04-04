@@ -13,7 +13,7 @@ const HiringSystemSection: React.FC = () => {
           {/* Left Column */}
           <div className="space-y-8 max-md:text-center">
             <div className="space-y-4">
-              <h3 className="text-white text-2xl">Easier Candidate Communication with Modern Tools</h3>
+              <h3 className="text-white text-2xl text-center mb-6">Simplified Candidate Communication</h3>
               <ul className="space-y-4">
                 {[
                   "WhatsApp API Integration – Connect instantly with candidates via automated messages and quick responses.",
@@ -31,7 +31,7 @@ const HiringSystemSection: React.FC = () => {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-white text-2xl">AI-Powered Candidate Screening</h3>
+              <h3 className="text-white text-2xl text-center mb-6">AI-Powered Candidate Screening</h3>
               <ul className="space-y-4">
                 {[
                   "Our smart algorithm scans thousands of profiles in seconds, matching skills, experience, and job fit.",
@@ -49,7 +49,7 @@ const HiringSystemSection: React.FC = () => {
           {/* Right Column */}
           <div className="space-y-8 max-md:text-center">
             <div className="space-y-4">
-              <h3 className="text-white text-2xl">Seamless Interview Scheduling & Hiring</h3>
+              <h3 className="text-white text-2xl text-center mb-6">Seamless Interview Scheduling & Hiring</h3>
               <ul className="space-y-4">
                 {[
                   "Shortlisted candidates are instantly ready for interviews.",
@@ -64,7 +64,7 @@ const HiringSystemSection: React.FC = () => {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-white text-2xl">Instant AI Performance Scores & Ranking</h3>
+              <h3 className="text-white text-2xl text-center mb-6">Instant AI Performance Scores & Ranking</h3>
               <ul className="space-y-4">
                 {[
                   "Our AI scoring system (out of 10) helps prioritize top candidates.",
@@ -79,7 +79,7 @@ const HiringSystemSection: React.FC = () => {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-white text-2xl">AI-Driven Pre-Video Interviews</h3>
+              <h3 className="text-white text-2xl text-center mb-6">AI-Driven Pre-Video Interviews</h3>
               <ul className="space-y-4">
                 {[
                   "AI generates performance scores (out of 10) and asks industry-specific questions in a structured interview format.",
