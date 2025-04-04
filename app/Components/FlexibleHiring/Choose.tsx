@@ -41,14 +41,14 @@ export default function WhyChooseGulfaar() {
               {/* Replace CheckCircle with custom SVG */}
               <Image
                 src="/images/Gulfaar-icon.svg" // Temporary path, replace with your actual SVG path
-                alt="Check Icon"
+                alt="Gulfaar-icon"
                 width={20}
                 height={20}
                 className="mt-1"
               />
               <div>
                 <h3 className="font-semibold text-sm">{feature.title}</h3>
-                <p className="text-xs text-gray-600">{feature.description}</p>
+                <p className="text-xs text-white">{feature.description}</p>
               </div>
             </div>
           ))}
