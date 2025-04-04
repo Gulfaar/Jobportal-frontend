@@ -4,8 +4,7 @@ import PartnerWithGulfaar from "../Components/PartnerWithUs/PartnerContainer";
 import PartnerUs from "../Components/PartnerWithUs/PartnerUS";
 import PartnershipOpportunities from "../Components/PartnerWithUs/PartnerShipOpertunitys";
 import PartnershipTypes from "../Components/PartnerWithUs/PartnerType";
-import ContactSection from "../Components/PartnerWithUs/ContactSection";
-import LaunchAndGrow from "../Components/PartnerWithUs/LaunchGrow";
+import SuccessNetwork from "../Components/PartnerWithUs/SuccessNetwork";
 import WhyPartnerWithGulfaar from "../Components/PartnerWithUs/WhyPartner";
 import Footer from '../Components/Home/Footer'
 
@@ -19,15 +18,14 @@ const PartnerPage = () => {
             <title>Cookies</title>
           </Head>
           <Header title={"Partner With Us"} subtitle={""} />
-          <div className="flex-1 flex  flex-col items-center justify-center  w-full">
+          <div className="flex-1 flex  flex-col items-center justify-center ">
                 <PartnerWithGulfaar />
                 <WhyPartnerWithGulfaar />
                 
                 <PartnerUs />
                 <PartnershipOpportunities />
                 <PartnershipTypes />
-                <ContactSection />
-                <LaunchAndGrow />
+                <SuccessNetwork />
                 <Footer />
           </div>
         </div>
