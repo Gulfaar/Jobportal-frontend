@@ -1,4 +1,8 @@
+'use client'
+import { useRouter } from "next/router";
+
 const CandidateOnboardingSteps2 = () => {
+    const router = useRouter();
     return (
       <section className="flex flex-col md:flex-row items-center justify-center w-[80%] mx-auto py-16 gap-12">
         {/* Left Side: Image */}
@@ -39,7 +43,8 @@ const CandidateOnboardingSteps2 = () => {
             <button className="flex items-center gap-2 bg-[#2E5F5C] text-white px-6 py-3 rounded-lg shadow-md">
               <span>📂</span> Upload CV
             </button>
-            <button className="bg-[#D67268] text-white px-6 py-3 rounded-lg shadow-md">
+            <button className="bg-[#D67268] text-white px-6 py-3 rounded-lg shadow-md"
+            onClick={() => router.push("/CandidateBoarding/Step6")}>
               Enter Details Manually
             </button>
           </div>

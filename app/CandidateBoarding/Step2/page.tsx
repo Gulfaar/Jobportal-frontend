@@ -1,7 +1,7 @@
 
-import Footer from "../../Components/Home/Footer"
+
 import CandidateOnboardingSteps2 from "../../Components/CandidateOnBording/Step2";
-import Header from "@/app/Components/Header/Header";
+
 
 const CandidateOnboarding2 = () => {
   return (

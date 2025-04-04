@@ -15,7 +15,7 @@ const CookiePage = () => {
             <Head>
             <title>Cookies</title>
           </Head>
-          <Header title={"COOKIES"} subtitle={"At Gulfaar, we use cookies and similar technologies to enhance your experience, improve our services, and provide you with relevant content. This Cookie Policy explains what cookies are, how we use them, and your choices regarding their use."} />
+          <Header title={"COOKIES"} subtitle={"We use cookies to improve your experience, enhance services, and deliver relevant content."} />
           <div className="flex-1 flex  flex-col items-center justify-center  w-full">
             <CookiesInfo />
             <CookiesUsage />

@@ -1,5 +1,5 @@
 
-import Footer from "../../Components/Home/Footer"
+
 import WelcomeOnBoarding3 from "../../Components/CandidateOnBording/Step3";
 
 const WelcomeOnBoarding = () => {

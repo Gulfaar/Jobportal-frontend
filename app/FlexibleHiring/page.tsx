@@ -6,7 +6,7 @@ import ModernHiringSystem from "../Components/FlexibleHiring/ModernHiring";
 import FlexibleHiringIndustries from "../Components/FlexibleHiring/HiringIndustrys";
 import WhyChooseGulfaar from "../Components/FlexibleHiring/Choose";
 import HireSmarterCTA from "../Components/FlexibleHiring/HireSmartCTA";
-import Footer from "../Components/Contact Us/Footer";
+import Footer from "../Components/Home/Footer";
 
 const FlexibleHiringPage = () => {
     return (
