@@ -3,29 +3,34 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Home } from "lucide-react"; // or use your own icon or svg
 
 const EmployerSignupPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
+    <div className="h-screen flex flex-col md:flex-row overflow-hidden">
       {/* Left Side (Branding / Message) */}
       <div className="md:w-1/2 bg-teal-800 text-white flex flex-col justify-center items-center p-8 relative">
+        {/* Home Icon Link */}
+        <Link
+          href="/"
+          className="absolute top-4 left-4 text-white hover:text-teal-200 transition-all"
+        >
+          <Home size={28} />
+        </Link>
+
         {/* Brand or Logo */}
-        <div className="mb-16">
+        <div className="mb-16 mt-8">
           <Image src="/gulfaarlogo.png" alt="logo" height={160} width={160} />
         </div>
 
         {/* Main Title and Text */}
-        <h2 className="text-2xl font-semibold mb-4 uppercase text-center">
-          SIGNUP
-        </h2>
+        <h2 className="text-2xl font-semibold mb-4 uppercase text-center">SIGNUP</h2>
         <p className="text-sm max-w-xs text-center">
-          Create your employer account to connect with top talent and grow your
-          business.
+          Create your employer account to connect with top talent and grow your business.
         </p>
 
         {/* Eclipses at the Bottom-Right */}
         <div className="absolute bottom-0 right-0">
-          {/* First Eclipse (positioned) */}
           <Image
             src="/Ellipse1.png"
             alt="Eclipse 1"
@@ -33,7 +38,6 @@ const EmployerSignupPage: React.FC = () => {
             height={200}
             className="w-32 md:w-40 h-auto"
           />
-          {/* Second Eclipse (overlapping the first) */}
           <Image
             src="/Ellipse2.png"
             alt="Eclipse 2"
@@ -44,17 +48,12 @@ const EmployerSignupPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Right Side (Form) */}
-      <div className="md:w-1/2 bg-white flex flex-col justify-center p-8">
+      {/* Right Side (Form, scrollable) */}
+      <div className="md:w-1/2 bg-white overflow-y-auto p-8">
         <form className="max-w-md w-full mx-auto space-y-4">
           {/* Username */}
           <div>
-            <label
-              htmlFor="username"
-              className="block mb-1 font-medium text-gray-700"
-            >
-              Username
-            </label>
+            <label htmlFor="username" className="block mb-1 font-medium text-gray-700">Username</label>
             <input
               id="username"
               name="username"
@@ -66,12 +65,7 @@ const EmployerSignupPage: React.FC = () => {
 
           {/* Company Name */}
           <div>
-            <label
-              htmlFor="company"
-              className="block mb-1 font-medium text-gray-700"
-            >
-              Company Name
-            </label>
+            <label htmlFor="company" className="block mb-1 font-medium text-gray-700">Company Name</label>
             <input
               id="company"
               name="company"
@@ -83,12 +77,7 @@ const EmployerSignupPage: React.FC = () => {
 
           {/* Email */}
           <div>
-            <label
-              htmlFor="email"
-              className="block mb-1 font-medium text-gray-700"
-            >
-              Email
-            </label>
+            <label htmlFor="email" className="block mb-1 font-medium text-gray-700">Email</label>
             <input
               id="email"
               name="email"
@@ -100,29 +89,19 @@ const EmployerSignupPage: React.FC = () => {
 
           {/* Phone No */}
           <div>
-            <label
-              htmlFor="phone"
-              className="block mb-1 font-medium text-gray-700"
-            >
-              Phone No
-            </label>
+            <label htmlFor="phone" className="block mb-1 font-medium text-gray-700">Phone No</label>
             <input
               id="phone"
               name="phone"
               type="tel"
               placeholder="+1 123 456 7890"
-              className="w-full border border-gray-300  text-black rounded-md p-2 focus:outline-teal-500"
+              className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
             />
           </div>
 
           {/* Industry */}
           <div>
-            <label
-              htmlFor="industry"
-              className="block mb-1 font-medium text-gray-700"
-            >
-              Industry
-            </label>
+            <label htmlFor="industry" className="block mb-1 font-medium text-gray-700">Industry</label>
             <input
               id="industry"
               name="industry"
@@ -134,29 +113,19 @@ const EmployerSignupPage: React.FC = () => {
 
           {/* Address */}
           <div>
-            <label
-              htmlFor="address"
-              className="block mb-1 font-medium text-gray-700"
-            >
-              Address
-            </label>
+            <label htmlFor="address" className="block mb-1 font-medium text-gray-700">Address</label>
             <input
               id="address"
               name="address"
               type="text"
               placeholder="Location, Building no..."
-              className="w-full border border-gray-300  text-black text-blackrounded-md p-2 focus:outline-teal-500"
+              className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
             />
           </div>
 
           {/* Password */}
           <div>
-            <label
-              htmlFor="password"
-              className="block mb-1 font-medium text-gray-700"
-            >
-              Password
-            </label>
+            <label htmlFor="password" className="block mb-1 font-medium text-gray-700">Password</label>
             <input
               id="password"
               name="password"
@@ -167,15 +136,10 @@ const EmployerSignupPage: React.FC = () => {
           </div>
 
           <div>
-            <label
-              htmlFor="password"
-              className="block mb-1 font-medium text-gray-700"
-            >
-              Confirm Password
-            </label>
+            <label htmlFor="confirm-password" className="block mb-1 font-medium text-gray-700">Confirm Password</label>
             <input
-              id="password"
-              name="password"
+              id="confirm-password"
+              name="confirm-password"
               type="password"
               placeholder="********"
               className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
