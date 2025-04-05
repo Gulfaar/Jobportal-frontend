@@ -44,7 +44,7 @@ export default function FlexibleHiringIndustries() {
           </div>
 
           {/* Two Cards (Right Side) */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="grid grid-cols-2 sm:grid-cols gap-11 justify-center">
             {industries.slice(0, 2).map((industry, index) => (
               <div
                 key={index}
@@ -63,7 +63,7 @@ export default function FlexibleHiringIndustries() {
         </div>
 
         {/* Second Row: 4 Cards in 2x2 Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-11 justify-center mx-auto">
           {industries.slice(2).map((industry, index) => (
             <div
               key={index}

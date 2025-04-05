@@ -37,9 +37,9 @@ const BenefitsOfHiring = () => {
   
     return (
       
-      <section className="py-16 px-6 flex justify-center w-full bg-gradient-to-b from-[#FFF200] bg-opacity-20 to-white relative">
+      <section className="py-16 px-6 flex justify-center w-full bg-gradient-to-b from-[#FFF200] bg-opacity-50 to-white relative">
         <Image
-                src="/images/Benifit.svg" // Replace with your actual image path
+                src="/images/Benifits.png" // Replace with your actual image path
                 alt="Background"
                 layout="fill"
                 objectFit="cover"

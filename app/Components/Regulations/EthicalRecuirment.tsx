@@ -30,14 +30,14 @@ const  EthicalSection = () => {
         {/* First Row: Heading + First Card */}
         <div className="flex flex-col lg:flex-row gap-12 mb-12">
           {/* Left: Heading */}
-          <div className="flex-1">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Ethical Recruitment & Anti-Exploitation Policies            </h1>
+          <div className="flex-1  ">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 mt-[36px]">
+            Ethical Recruitment & Anti-Exploitation Policies</h1>
           </div>
           
           {/* Right: First Card */}
-          <div className="flex-1 max-w-xl">
-            <div className="bg-[#2E5F5C] rounded-xl p-8 h-full border-l-4">
+          <div className="grid-1 max-w-xl">
+            <div className="bg-[#2E5F5C] rounded-xl p-8 h-full border-l-4 w-[71%] ml-[165px]">
               <h2 className="text-2xl font-semibold text-white mb-1">
                 {cards[0].title}
               </h2>
