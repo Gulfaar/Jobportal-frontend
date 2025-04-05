@@ -1,3 +1,10 @@
+"use client";
+
+import React from 'react';
+import Image from 'next/image';
+import icon from "../../../public/images/Task-side.svg"
+
+
 const WorkforceSolutions = () => {
   return (
     <section className="py-16 px-8 flex justify-center w-full bg-white">
@@ -45,11 +52,13 @@ const WorkforceSolutions = () => {
         {/* Image Section */}
         <div className="w-full md:w-[40%] flex justify-end">
           <div className="w-full h-full flex items-center">
-            <img
-              src="/images/Task-side.svg"
-              alt="Skill Development Programs"
-              className="w-full h-full max-h-[400px] object-cover rounded-lg "
-            />
+          <Image
+  src={icon}
+  alt="Skill Development Programs"
+  width={800} // Set an appropriate width
+  height={400} // Set an appropriate height
+  className="w-full h-full max-h-[400px] object-cover rounded-lg"
+/>
           </div>
         </div>
         

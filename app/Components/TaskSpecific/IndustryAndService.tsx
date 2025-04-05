@@ -1,3 +1,5 @@
+"use client";
+
 import { Truck, Wrench, Users, Warehouse, Shield, Brush } from "lucide-react";
 
 const IndustriesAndServices = () => {
