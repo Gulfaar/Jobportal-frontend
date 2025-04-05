@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const ExperienceSection = () => {
   const experiences = [
@@ -60,9 +61,11 @@ const ExperienceSection = () => {
 
           {/* Add Experience Button */}
           <div className="flex justify-end mt-4">
+            <Link href="/CandidateBoarding/Step6">
             <button className="border border-[#DA6B64] text-[#DA6B64] px-4 py-1.5 rounded hover:bg-red-100 text-sm">
               Add more experience
             </button>
+            </Link>
           </div>
 
           {/* Experience Section */}
@@ -98,9 +101,11 @@ const ExperienceSection = () => {
             <button className="border border-[#DA6B64] text-[#DA6B64] px-6 py-2 rounded hover:bg-red-100">
               Back
             </button>
+            <Link href="/CandidateBoarding/Step7">
             <button className="bg-[#DA6B64] text-white px-6 py-2 rounded hover:bg-[#c95a56]">
               Continue
             </button>
+            </Link>
           </div>
         </div>
       </div>

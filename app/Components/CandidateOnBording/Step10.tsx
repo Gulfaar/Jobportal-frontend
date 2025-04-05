@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { FaPlusCircle, FaMinusCircle, FaBold, FaItalic, FaUnderline } from "react-icons/fa";
+import Link from "next/link";
 
 interface Summary {
   id: number;
@@ -104,9 +105,11 @@ const PersonalSummary = () => {
             <button className="px-4 py-2 border border-[#FF6F61] text-[#FF6F61] rounded-lg hover:bg-red-50">
               Back
             </button>
+            <Link href="/CandidateBoarding/Step11">
             <button className="px-4 py-2 bg-[#FF6F61] text-white rounded-lg hover:bg-red-500">
               Continue
             </button>
+            </Link>
           </div>
         </div>
 

@@ -206,7 +206,7 @@ const NavLinks = () => {
            Language Training
           </Link>
           <Link
-            href="/training/workshops"
+            href="/exam"
             className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
           >
             Exam Preparation
@@ -227,7 +227,7 @@ const NavLinks = () => {
 
   {isWorkForceOpen && (
     <div
-      className="absolute left-0 mt-2 w-56 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+      className="absolute left-0  w-56 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
       onMouseEnter={() => setIsWorkForceOpen(true)}
       onMouseLeave={() => setIsWorkForceOpen(false)}
     >
@@ -240,21 +240,21 @@ const NavLinks = () => {
         Recruitment solutions
         {isRecruitmentOpen && (
           <div
-            className="absolute left-[-170px] top-0 w-40 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+            className="absolute left-[-202px] mt-[-40px] w-48 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
             onMouseEnter={() => setIsRecruitmentOpen(true)}
             onMouseLeave={() => setIsRecruitmentOpen(false)}
           >
             <Link
               href="/training/courses/french"
-              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+              className=" px-3 py-2 inline-flex whitespace-nowrap w-42 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
             >
-              French Training
+              Tailored candidates
             </Link>
             <Link
               href="/training/courses/spanish"
               className=" inline-flex whitespace-nowrap px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
             >
-              Spanish Training
+              Direct placement
             </Link>
           </div>
         )}

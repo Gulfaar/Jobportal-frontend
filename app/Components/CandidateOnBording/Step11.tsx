@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ResumeBuilderStep = () => {
   return (
@@ -124,9 +125,11 @@ const ResumeBuilderStep = () => {
             <button className="px-4 py-2 border border-red-400 text-red-400 rounded-lg hover:bg-red-50">
               Back
             </button>
+            <Link href="/CandidateBoarding/Step12">
             <button className="px-4 py-2 bg-red-400 text-white rounded-lg hover:bg-red-500">
               Continue
             </button>
+            </Link>
           </div>
         </div>
       </div>

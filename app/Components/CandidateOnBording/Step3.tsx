@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const WelcomeSection = () => {
     return (
       <section className="py-16 w-[80%] mx-auto flex items-center gap-12 bg-[#F5FAFA] rounded-lg p-8">
@@ -19,6 +21,14 @@ const WelcomeSection = () => {
             We will tailor your resume-building experience to emphasize your background in collaborative design practices 
             and your passion for creating intuitive user experiences.
           </p>
+        </div>
+        
+       <div className="flex" >
+       <Link href="/CandidateBoarding/Step4">
+            <button className="bg-[#D67268] text-white px-6 py-3 rounded-lg shadow-md">
+             Next
+            </button>
+          </Link>
         </div>
       </section>
     );
