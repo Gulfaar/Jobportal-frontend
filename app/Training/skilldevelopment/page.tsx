@@ -163,7 +163,7 @@ const SkillDevelopment: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="ml-5 md:mt-50 w-[41%] max-md:ml-0 max-md:w-full ">
+            <div className="ml-5 md:mt-50 w-[41%] max-md:ml-0 max-md:w-full  ">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/756486e9bbca25b3eb005760ba6e6802399beaf4?placeholderIfAbsent=true"
                 className="object-contain w-full aspect-[0.75] max-md:mt-10 max-md:max-w-full"
@@ -175,7 +175,7 @@ const SkillDevelopment: React.FC = () => {
       </section>
 
       {/* Technical Skills Section */}
-      <section className="mt-14 w-full bg-yellow-400 bg-opacity-50 max-md:mt-10 max-md:max-w-full">
+      <section className="mt-5 w-full bg-yellow-400 bg-opacity-50 max-md:mt-10 max-md:max-w-full">
         <div className="flex relative flex-col px-20 py-12 w-full min-h-[759px] max-md:px-5 max-md:max-w-full">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/06f503cd746c831444541c86d7c0cf5d11fc1d19?placeholderIfAbsent=true"

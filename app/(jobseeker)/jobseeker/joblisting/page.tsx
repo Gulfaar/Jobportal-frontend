@@ -129,9 +129,9 @@ const Joblisting = () => {
                         </div>
 
                         {/* Job Cards Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-9  justify-items-center">
+                        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-7  justify-items-center">
                             {[...Array(9)].map((_, index) => (
-                                <div key={index} className="bg-white rounded-lg shadow-md  md:w-[360px] md:h-[320px] p-8 border relative">
+                                <div key={index} className="bg-white rounded-lg shadow-md   md:w-full md:h-full p-7 border relative">
                                     <div className="flex items-center gap-3 mb-3">
                                         <Image src="/google.png" alt="Google" width={24} height={24} />
                                         <h3 className="font-semibold">Software Tester</h3>

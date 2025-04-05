@@ -104,7 +104,7 @@ const ResumeBuilderStep = () => {
             </div>
 
             {/* Step Sidebar */}
-            <div className="flex flex-col items-center justify-center space-y-4 ml-6">
+            {/* <div className="flex flex-col items-center justify-center space-y-4 ml-6">
               {[1, 2, 3, 4, 5, 6].map((step) => (
                 <div
                   key={step}
@@ -117,7 +117,7 @@ const ResumeBuilderStep = () => {
                   {step}
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Navigation Buttons */}
