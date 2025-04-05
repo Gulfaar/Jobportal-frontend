@@ -21,7 +21,6 @@ const PartnerPage = () => {
           <div className="flex-1 flex  flex-col items-center justify-center ">
                 <PartnerWithGulfaar />
                 <WhyPartnerWithGulfaar />
-                
                 <PartnerUs />
                 <PartnershipOpportunities />
                 <PartnershipTypes />

@@ -38,7 +38,7 @@ const FlexibleHiringModels = () => {
     <section className="bg-[#F4F8F9] py-16 px-4 w-full">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-[#1E3A56]">Our Flexible Hiring Models</h2>
-        <p className="text-gray-500 mt-2">
+        <p className="text-black mt-2">
           With our modern workforce management tools, automated candidate matching, and seamless payroll integration, hiring contract-based employees has never been more efficient, scalable, and hassle-free.
         </p>
       </div>

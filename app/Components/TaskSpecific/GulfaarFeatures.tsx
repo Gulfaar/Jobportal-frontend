@@ -1,4 +1,7 @@
+'use client'
+import Lottie from "lottie-react";
 import { ChevronRight } from "lucide-react";
+import TaskAnimation from '../../../assets/Task-Animation.json'
 
 const GulfaarFeatures = () => {
   const features = [
@@ -54,8 +57,13 @@ const GulfaarFeatures = () => {
       </div>
 
       {/* Background Circle Positioned */}
-      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] opacity-40">
-        <img src="/bgCircle.svg" alt="Background Circle" className="w-full h-auto" />
+      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px]">
+        {/* <img src="/bgCircle.svg" alt="Background Circle" className="w-full h-auto" /> */}
+              <Lottie 
+                animationData={TaskAnimation} 
+                loop={true} 
+                className="object-contain grow gap-2.5 py-2.5 w-full rounded-3xl aspect-[1.07] max-md:mt-10 max-md:max-w-full"
+              />
       </div>
     </section>
   );

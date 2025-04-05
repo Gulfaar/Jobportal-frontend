@@ -29,7 +29,7 @@ const DataProtectionSection = () => {
     <div className="bg-white py-16 px-6 md:px-12 lg:px-24 font-figtree">
       <div className="max-w-7xl mx-auto">
         {/* Section Heading */}
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 ml-[200px]">
           Data Protection & Privacy Compliance
         </h1>
 

@@ -1,15 +1,13 @@
 import React from "react";
 import Image from "next/image";
 
-// Define the type for each enhancement
 interface Enhancement {
-  iconSrc: string; // Path to the icon image
-  iconAlt: string; // Alt text for the icon image
+  iconSrc: string;
+  iconAlt: string;
   title: string;
   description: string;
 }
 
-// Define the props for the component (optional, for reusability)
 interface AIEnhancementsProps {
   heading?: string;
   subheading?: string;
@@ -53,25 +51,33 @@ const AIEnhancements: React.FC<AIEnhancementsProps> = ({
         <h2 className="text-3xl sm:text-4xl font-bold text-white uppercase mb-4">
           {heading}
         </h2>
-        <p className="text-lg text-white mb-12 max-w-3xl mx-auto">{subheading}</p>
+        <p className="text-lg text-white mb-12 max-w-3xl mx-auto">
+          {subheading}
+        </p>
 
-        {/* Grid of Enhancement Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-9 ml-14">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {enhancements.map((enhancement, index) => (
-            <div key={index} className="flex items-start space-x-4">
+            <div
+              key={index}
+              className="flex items-start gap-4 text-left px-2 sm:px-0"
+            >
               {/* Icon Image */}
               <div className="flex-shrink-0">
                 <Image
                   src={enhancement.iconSrc}
                   alt={enhancement.iconAlt}
-                  width={48} // Adjust size to match the design
+                  width={48}
                   height={48}
                   className="object-contain"
                 />
               </div>
+
               {/* Text Content */}
-              <div className="text-left">
-                <h3 className="text-xl font-bold text-white mb-2">{enhancement.title}</h3>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {enhancement.title}
+                </h3>
                 <p className="text-white">{enhancement.description}</p>
               </div>
             </div>
