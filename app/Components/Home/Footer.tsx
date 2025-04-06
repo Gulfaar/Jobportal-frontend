@@ -15,10 +15,10 @@ const Footer = () => {
             />
             </div>
            <ul className="space-y-1 md:px-4 md:py-4">
-                <li><a href="#about-us" className="text-sm hover:text-gray-300">About Us</a></li>
-                <li><a href="#contact-us" className="text-sm hover:text-gray-300">Contact Us</a></li>
-                <li><a href="#contact-us" className="text-sm hover:text-gray-300">Our Global presence</a></li>
-                <li><a href="#contact-us" className="text-sm hover:text-gray-300">Partner with us</a></li>
+                <li><a href="/AboutUs" className="text-sm hover:text-gray-300">About Us</a></li>
+                <li><a href="/ContactUs" className="text-sm hover:text-gray-300">Contact Us</a></li>
+                <li><a href="/global" className="text-sm hover:text-gray-300">Our Global presence</a></li>
+                <li><a href="/Partner" className="text-sm hover:text-gray-300">Partner with us</a></li>
               </ul>
           </div>
 
@@ -66,9 +66,9 @@ const Footer = () => {
               <h3 className="text-base font-bold mt-3 mb-1">Information</h3>
               <ul className="space-y-1">
                 
-                <li><a href="#telecommunications" className="text-sm hover:text-gray-300">Regulations</a></li>
-                <li><a href="#hotels-tourism" className="text-sm hover:text-gray-300">Privacy policy</a></li>
-                <li><a href="#construction" className="text-sm hover:text-gray-300">Cookie Policy</a></li>
+                <li><a href="/Regulations" className="text-sm hover:text-gray-300">Regulations</a></li>
+                <li><a href="/privacypolicy" className="text-sm hover:text-gray-300">Privacy policy</a></li>
+                <li><a href="/Cookie" className="text-sm hover:text-gray-300">Cookie Policy</a></li>
               </ul>
             </div>
           </div>
