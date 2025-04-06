@@ -35,21 +35,10 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F5F9FA] px-4 py-12 w-full">
-      <div className="relative w-full max-w-3xl">
+    <div className="min-h-screen bg-gray-50 p-6 flex justify-center items-center">
+      <div className="flex max-w-6xl w-full bg-[#f6fafa] rounded-lg shadow-md p-2 relative">
         {/* Stepper Sidebar */}
-        <div className="absolute top-0 right-[-60px] flex flex-col items-center space-y-4">
-          {[1, 2, 3, 4, 5].map((step, index) => (
-            <div
-              key={index}
-              className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${
-                index === 0 ? 'bg-[#DA6B64] text-white' : 'border-[#DA6B64] text-[#DA6B64] bg-[#F5D5D3]'
-              }`}
-            >
-              {step}
-            </div>
-          ))}
-        </div>
+        
 
         {/* Main Content */}
         <div className="w-full bg-white rounded-xl p-8">
@@ -98,10 +87,12 @@ const ExperienceSection = () => {
 
           {/* Buttons */}
           <div className="mt-6 flex justify-between">
+            <Link href="/CandidateBoarding/Step4">
             <button className="border border-[#DA6B64] text-[#DA6B64] px-6 py-2 rounded hover:bg-red-100">
               Back
             </button>
-            <Link href="/CandidateBoarding/Step7">
+            </Link>
+            <Link href="/CandidateBoarding/Step6">
             <button className="bg-[#DA6B64] text-white px-6 py-2 rounded hover:bg-[#c95a56]">
               Continue
             </button>

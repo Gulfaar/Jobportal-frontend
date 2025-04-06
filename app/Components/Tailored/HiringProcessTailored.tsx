@@ -1,8 +1,16 @@
 "use client";
+
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HiringProcessTailored: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const robotRef = useRef<HTMLDivElement | null>(null);
+
   const steps = [
     {
       number: "1",
@@ -39,15 +47,46 @@ const HiringProcessTailored: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    if (!sectionRef.current || !robotRef.current) return;
+
+    const animation = gsap.fromTo(robotRef.current, 
+      {
+        y: -300, // Increased upward position (more negative value)
+      },
+      {
+        y: 400, // Keep the same lower position
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top center",
+          end: "bottom center",
+          scrub: 1,
+          markers: false,
+        },
+      }
+    );
+
+    return () => {
+      animation.kill();
+    };
+  }, []);
+
   return (
-    <section className="bg-[#2E5F5C] px-16 py-20 max-md:px-8 max-sm:px-6">
+    <section
+      ref={sectionRef}
+      className="bg-[#2E5F5C] px-16 py-20 max-md:px-8 max-sm:px-6 overflow-hidden relative"
+    >
       <h2 className="text-[48px] font-semibold text-center text-white mb-16 max-md:text-4xl max-sm:text-3xl">
         How We Find & Screen the Right Talent for You
       </h2>
 
-      <div className="relative max-w-[1200px] mx-auto ">
-        {/* Right Section - Robot Image */}
-        <div className="absolute right-0 top-3/5 -translate-y-1/2  h-[600px] w-[500px] max-lg:hidden">
+      <div className="relative max-w-[1200px] mx-auto min-h-[1000px]">
+        {/* Robot Image with scroll animation */}
+        <div
+          ref={robotRef}
+          className="absolute right-0 top-1/2 -translate-y-1/2 h-[600px] w-[500px] z-10 hidden lg:block"
+        >
           <Image
             src="/tailoredrobot.png"
             alt="AI Robot"
@@ -57,32 +96,27 @@ const HiringProcessTailored: React.FC = () => {
           />
         </div>
 
-        {/* Left Section - Steps */}
-        <div className="relative max-w-[750px]">
+        {/* Left Steps */}
+        <div className="relative max-w-[750px] z-20">
           {steps.map((step, index) => (
             <div key={index} className="relative pl-24 pb-16 last:pb-0">
-              {/* Timeline Line */}
               {index !== steps.length - 1 && (
                 <div className="absolute left-[35px] top-[60px] bottom-0 w-[2px] bg-white opacity-20"></div>
               )}
-
-              {/* Number Circle */}
               <div className="absolute left-0 top-0 flex items-center justify-center w-[70px] h-[70px] rounded-full bg-white">
                 <span className="text-[28px] font-medium text-[#2E5F5C]">{step.number}</span>
               </div>
-
-              {/* Step Content */}
               <div className="pt-2">
                 <h3 className="text-[24px] font-semibold text-white mb-6">{step.title}</h3>
                 <ul className="space-y-4">
                   {step.details.map((detail, i) => (
-                    <li key={i} className="flex items-center gap-3 whitespace-nowrap">
-                      <Image 
-                        src="/langbulleticon.svg" 
-                        alt="Bullet Icon" 
-                        height={10} 
-                        width={10} 
-                        className="w-4 h-4 flex-shrink-0" 
+                    <li key={i} className="flex items-center gap-3">
+                      <Image
+                        src="/langbulleticon.svg"
+                        alt="Bullet Icon"
+                        height={10}
+                        width={10}
+                        className="w-4 h-4 flex-shrink-0"
                       />
                       <p className="text-[20px] text-white/90">{detail}</p>
                     </li>

@@ -1,8 +1,11 @@
+"use client"
+
 import React, { useEffect, useRef, useState } from "react";
 import TestimonialCard from "./TestimonialCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {  FaArrowLeft, FaArrowRight, FaChevronLeft, FaChevronRight  } from "react-icons/fa";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,13 +14,13 @@ const TestimonialsSection = () => {
   const trackRef = useRef(null);
   const [cardsPerView, setCardsPerView] = useState(3);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(false); // default value
 
   useEffect(() => {
     const updateCardsPerView = () => {
-      setIsMobile(window.innerWidth < 768);
-      console.log('mobile',isMobile); 
-      
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+  
       if (window.innerWidth >= 1024) {
         setCardsPerView(3);
       } else if (window.innerWidth >= 768) {
@@ -26,6 +29,7 @@ const TestimonialsSection = () => {
         setCardsPerView(1);
       }
     };
+  
     updateCardsPerView();
     window.addEventListener("resize", updateCardsPerView);
     return () => window.removeEventListener("resize", updateCardsPerView);

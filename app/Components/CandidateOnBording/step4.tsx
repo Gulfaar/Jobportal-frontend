@@ -17,29 +17,45 @@ export default function ProfileForm() {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6 flex justify-center items-center">
-      <div className="flex max-w-4xl w-full bg-white rounded-lg shadow-md p-8 relative">
+      <div className="flex max-w-6xl w-full bg-[#f6fafa] rounded-lg shadow-md p-8 relative">
         {/* Left Section - Form */}
-        <div className="w-3/4">
+        <div className="w-full">
           {/* Header Card */}
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-            <div className="flex items-center gap-4">
-              <div className="relative w-16 h-16">
-                <Image
-                  src="/images/profile.svg"
-                  alt="Profile"
-                  fill
-                  className="rounded-full object-cover"
-                />
-              </div>
-              <div>
-                <h2 className="text-lg font-medium">Amanda Rawles</h2>
-                <p className="text-gray-500 text-sm">alicerawles@gmail.com</p>
-              </div>
-              <button className="ml-auto text-sm text-emerald-600 hover:text-emerald-700">
-                Change photo
-              </button>
-            </div>
-          </div>
+          <div className="py-10 px-4">
+  <div className="bg-white rounded-xl shadow-sm px-6 py-5 w-full max-w-4xl mx-auto">
+    <div className="flex justify-between items-start flex-wrap gap-y-4">
+      {/* Left top: Welcome */}
+      <p className="text-sm text-gray-500 font-medium">Welcome, <span className="text-gray-800">Amanda</span></p>
+
+      {/* Right top: Date */}
+      <p className="text-sm text-gray-400">Tue, 07 June 2022</p>
+    </div>
+
+    <div className="flex flex-col md:flex-row items-center justify-between mt-4 gap-4">
+      {/* Profile section */}
+      <div className="flex items-center gap-4">
+        <div className="relative w-16 h-16">
+          <Image
+            src="/images/profile.svg"
+            alt="Profile"
+            fill
+            className="rounded-full object-cover"
+          />
+        </div>
+        <div>
+          <h2 className="text-base font-medium text-gray-800">Amanda Rawles</h2>
+          <p className="text-sm text-gray-500">alexarawles@gmail.com</p>
+        </div>
+      </div>
+
+      {/* Button */}
+      <button className="text-sm text-emerald-600 hover:text-emerald-700 border border-emerald-600 px-4 py-1.5 rounded-md">
+        Change photo
+      </button>
+    </div>
+  </div>
+</div>
+
 
           {/* Form */}
           <form className="space-y-6">
@@ -133,12 +149,16 @@ export default function ProfileForm() {
             </div>
 
             <div className="flex justify-between pt-4">
+
+              <Link href="/CandidateBoarding/Step3">
               <button
-                type="button"
+                type="submit"
                 className="px-4 py-2 text-rose-600 hover:text-rose-700"
               >
                 Back
               </button>
+              </Link>
+
               <Link href="/CandidateBoarding/Step5">
               <button
                 type="submit"
@@ -152,13 +172,7 @@ export default function ProfileForm() {
         </div>
 
         {/* Right Section - Progress Steps */}
-        <div className="w-1/4 flex flex-col items-center justify-center space-y-4">
-          {[1, 2, 3, 4, 5, 6].map((step, index) => (
-            <div key={index} className={`w-10 h-10 flex items-center justify-center rounded-full border border-[#D67268] text-[#D67268] ${step === 1 ? 'bg-[#D67268] text-white' : 'bg-white'}`}>
-              {step}
-            </div>
-          ))}
-        </div>
+        
       </div>
     </div>
   );

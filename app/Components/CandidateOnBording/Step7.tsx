@@ -29,7 +29,7 @@ const EducationSection = () => {
     <div className="min-h-screen flex items-center justify-center bg-[#F5F9FA] px-4 py-12 w-full">
       <div className="relative w-full max-w-4xl">
         {/* Stepper Sidebar */}
-        <div className="absolute top-0 right-[-60px] flex flex-col items-center space-y-4">
+        {/* <div className="absolute top-0 right-[-60px] flex flex-col items-center space-y-4">
           {[1, 2, 3, 4, 5].map((step, index) => (
             <div
               key={index}
@@ -40,7 +40,7 @@ const EducationSection = () => {
               {step}
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Main Content */}
         <div className="w-full">
@@ -96,9 +96,11 @@ const EducationSection = () => {
             <button className="border border-[#DA6B64] text-[#DA6B64] px-6 py-2 rounded hover:bg-red-100">
               Back
             </button>
+            <Link href='/CandidateBoarding/Step8'>
             <button className="bg-[#DA6B64] text-white px-6 py-2 rounded hover:bg-[#c95a56]">
               Continue
             </button>
+            </Link>
           </div>
         </div>
       </div>

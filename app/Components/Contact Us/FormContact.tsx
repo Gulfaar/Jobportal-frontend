@@ -26,7 +26,7 @@ const FormContact = () => {
       {/* Heading */}
       <h2 className="text-[40px] font-normal ml-[17rem] mb-12">
         <span className="text-[#2E5F5C]">Let's Connect</span>
-        <span className="text-black"> – We're Here to Help!</span>
+        <span className="text-black"> – We're Here to Help You!</span>
       </h2>
       
       <div className="flex flex-col md:flex-row gap-8">
@@ -38,20 +38,13 @@ const FormContact = () => {
             <div className="space-y-6">
               <p className="flex items-center gap-4">
                 <Image src="/contactusphoneicon.svg" alt="phone" width={24} height={24} className="opacity-90" />
-                +1012 3456 789
+                +18-555-169-667
               </p>
               <p className="flex items-center gap-4">
                 <Image src="/contactusemailicon.svg" alt="email" width={24} height={24} className="opacity-90" />
-                gulfaar@gmail.com
+                info@gulfaar.com
               </p>
-              <p className="flex items-start gap-4">
-                <Image src="/contactuslocaicon.svg" alt="location" width={24} height={24} className="opacity-90 mt-1" />
-                <span>
-                  Kurishupally Road, Ravipuram,
-                  <br />
-                  Perumanoor, Kochi, Kerala
-                </span>
-              </p>
+            
             </div>
           </div>
 

@@ -1,5 +1,8 @@
+"use client";
+
 import { HardHat, Wrench, Brush, Truck, ShoppingBag, Stethoscope } from "lucide-react";
 import Image from "next/image";
+import Befenit from "../../../public/images/Benifits.png"
 
 const BenefitsOfHiring = () => {
     const benefits = [
@@ -39,7 +42,7 @@ const BenefitsOfHiring = () => {
       
       <section className="py-16 px-6 flex justify-center w-full bg-gradient-to-b from-[#FFF200] bg-opacity-50 to-white relative">
         <Image
-                src="/images/Benifits.png" // Replace with your actual image path
+                src={Befenit} // Replace with your actual image path
                 alt="Background"
                 layout="fill"
                 objectFit="cover"
