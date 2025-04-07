@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const AddExperienceForm = () => {
@@ -158,12 +159,14 @@ const AddExperienceForm = () => {
               >
                 Back
               </button>
+              <Link href="/CandidateBoarding/Step7">
               <button
                 type="submit"
                 className="bg-[#DA6B64] text-white px-6 py-2 rounded hover:bg-[#c95a56]"
               >
                 Continue
               </button>
+              </Link>
             </div>
           </form>
         </div>
