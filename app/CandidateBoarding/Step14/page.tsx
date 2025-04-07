@@ -1,5 +1,4 @@
 import ProfileSummary from "@/app/Components/CandidateOnBording/Step14"
-import Header from "@/app/Components/Header/Header"
 
 const ProfileSummaryPage = () => {
     return (
