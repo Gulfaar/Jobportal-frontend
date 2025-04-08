@@ -17,7 +17,7 @@ const CandidateOnboardingSteps1 = () => {
         "AI job search matches you with the best roles.",
         "Detects knowledge/tech gaps & suggests upskilling."
       ],
-      icon: "/icons/step1.png",
+      icon: "/profile1.png",
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ const CandidateOnboardingSteps1 = () => {
         "Take AI-driven tests & pre-video interviews.",
         "Get an AI match score for faster shortlisting."
       ],
-      icon: "/icons/step2.png",
+      icon: "/profile2.png",
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ const CandidateOnboardingSteps1 = () => {
         "Receive interview invites via WhatsApp, SMS & email.",
         "Track applications, accept offers & upskill for career growth."
       ],
-      icon: "/icons/step3.png",
+      icon: "/profile3.png",
     }
   ];
 

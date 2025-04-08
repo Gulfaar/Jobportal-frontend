@@ -167,7 +167,7 @@ const SkillDevelopment: React.FC = () => {
             <div className="ml-8 md:mt-60  w-[51%] max-md:ml-0 max-md:w-full ">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/756486e9bbca25b3eb005760ba6e6802399beaf4?placeholderIfAbsent=true"
-                className="object-contain w-full h-full aspect-[0.75] max-md:mt-10 max-md:max-w-full"
+                className="object-contain object-bottom w-full h-full aspect-[0.75] max-md:mt-10 max-md:max-w-full"
                 alt="AI-enhanced learning illustration"
               />
             </div>
@@ -376,7 +376,7 @@ const SkillDevelopment: React.FC = () => {
               </div>
             </div>
             <div className="ml-5 w-3/12 max-md:ml-0 max-md:w-full">
-              <div className="flex overflow-hidden flex-col grow  px-14 py-5 pb-12 w-full text-2xl font-semibold leading-7 text-center text-black bg-white rounded-3xl border border-solid border-black border-opacity-10 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:px-5 max-md:mt-5">
+              <div className="flex overflow-hidden flex-col grow  px-14 py-5 pb-21 w-full text-2xl font-semibold leading-7 text-center text-black bg-white rounded-3xl border border-solid border-black border-opacity-10 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:px-5 max-md:mt-5">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/5a2fd982d7466141a240d44f0e80c9c3bd7bc96b?placeholderIfAbsent=true"
                   className="object-contain self-center mt-4 w-20 aspect-square rounded-[100px]"

@@ -39,7 +39,7 @@ const SkillsForm = () => {
     <div className="min-h-screen flex items-center justify-center bg-[#F5F9FA] px-4 py-12 w-full">
       <div className="relative w-full max-w-3xl">
         {/* Stepper Sidebar */}
-        <div className="absolute top-0 right-[-80px] flex flex-col items-center space-y-14">
+        {/* <div className="absolute top-0 right-[-80px] flex flex-col items-center space-y-14">
           {[1, 2, 3, 4, 5].map((step, index) => (
             <div
               key={index}
@@ -54,7 +54,7 @@ const SkillsForm = () => {
               {step}
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Main Content */}
         <div className="w-full">

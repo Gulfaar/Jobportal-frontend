@@ -21,7 +21,7 @@ const LegalResponsibilities: React.FC = () => {
               <li className="flex md:justify-end items-start gap-2">
                 <Image 
                   src="/images/Gulfaar-icon.svg" 
-                  alt="•" 
+                  alt="Gulfaar-icon" 
                   width={16} 
                   height={16}
                   className="w-4 h-4 mt-1.5"
@@ -33,7 +33,7 @@ const LegalResponsibilities: React.FC = () => {
               <li className="flex md:justify-end items-start gap-2">
                 <Image 
                   src="/images/Gulfaar-icon.svg" 
-                  alt="•" 
+                  alt="Gulfaar-icon" 
                   width={16} 
                   height={16}
                   className="w-4 h-4 mt-1.5"
@@ -45,7 +45,7 @@ const LegalResponsibilities: React.FC = () => {
               <li className="flex md:justify-end items-start gap-2">
                 <Image 
                   src="/images/Gulfaar-icon.svg" 
-                  alt="•" 
+                  alt="Gulfaar-icon" 
                   width={16} 
                   height={16}
                   className="w-4 h-4 mt-1.5"
@@ -69,7 +69,7 @@ const LegalResponsibilities: React.FC = () => {
               <li className="flex items-start gap-2">
                 <Image 
                   src="/images/Gulfaar-icon.svg" 
-                  alt="•" 
+                  alt="Gulfaar-icon" 
                   width={16} 
                   height={16}
                   className="w-4 h-4 mt-1.5"
@@ -81,7 +81,7 @@ const LegalResponsibilities: React.FC = () => {
               <li className="flex items-start gap-2">
                 <Image 
                   src="/images/Gulfaar-icon.svg" 
-                  alt="•" 
+                  alt="Gulfaar-icon" 
                   width={16} 
                   height={16}
                   className="w-4 h-4 mt-1.5"
@@ -93,7 +93,7 @@ const LegalResponsibilities: React.FC = () => {
               <li className="flex items-start gap-2">
                 <Image 
                   src="/images/Gulfaar-icon.svg" 
-                  alt="•" 
+                  alt="Gulfaar-icon" 
                   width={16} 
                   height={16}
                   className="w-4 h-4 mt-1.5"

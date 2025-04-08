@@ -5,7 +5,7 @@ const ContactUs = () => {
     {
       icon: <Phone size={28} className="text-[#2E5F5C]" />,
       title: "Call for inquiry",
-      info: "+257 388-6895",
+      info: "+18-555-169-667",
     },
     {
       icon: <Clock size={28} className="text-[#2E5F5C]" />,
@@ -15,12 +15,12 @@ const ContactUs = () => {
     {
       icon: <Mail size={28} className="text-[#2E5F5C]" />,
       title: "Send us email",
-      info: "gulfaar@gmail.com",
+      info: "info@gulfaar.com",
     },
     {
       icon: <MapPin size={28} className="text-[#2E5F5C]" />,
       title: "Office",
-      info: "19 North Road Piscataway, NY 08854",
+      info: "Gulfaar Tours & Travels,Revipuram,Kochi,Kerala",
     },
   ];
 

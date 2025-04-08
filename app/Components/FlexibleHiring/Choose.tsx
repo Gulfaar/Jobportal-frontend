@@ -40,15 +40,15 @@ export default function WhyChooseGulfaar() {
             <div key={index} className="flex gap-3">
               {/* Replace CheckCircle with custom SVG */}
               <Image
-                src="/images/Gulfaar-icon.svg" // Temporary path, replace with your actual SVG path
-                alt="Check Icon"
+                src="/icons/Gulfaar-icon2.svg" // Temporary path, replace with your actual SVG path
+                alt="Gulfaar-icon"
                 width={20}
                 height={20}
                 className="mt-1"
               />
               <div>
                 <h3 className="font-semibold text-sm">{feature.title}</h3>
-                <p className="text-xs text-gray-600">{feature.description}</p>
+                <p className="text-xs text-white">{feature.description}</p>
               </div>
             </div>
           ))}

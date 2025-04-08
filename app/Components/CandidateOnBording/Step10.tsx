@@ -114,7 +114,7 @@ const PersonalSummary = () => {
         </div>
 
         {/* Step Sidebar */}
-        <div className="flex flex-col items-center space-y-4 ml-2">
+        {/* <div className="flex flex-col items-center space-y-4 ml-2">
           {[1, 2, 3, 4, 5].map((step) => (
             <div
               key={step}
@@ -125,7 +125,7 @@ const PersonalSummary = () => {
               {step}
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

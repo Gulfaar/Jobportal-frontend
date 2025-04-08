@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const AddExperienceForm = () => {
@@ -34,7 +35,7 @@ const AddExperienceForm = () => {
     <div className="min-h-screen flex items-center justify-center bg-[#F5F9FA] px-4 py-12 w-full">
       <div className="relative w-full max-w-3xl">
         {/* Stepper Sidebar */}
-        <div className="absolute top-0 right-[-60px] flex flex-col items-center space-y-4">
+        {/* <div className="absolute top-0 right-[-60px] flex flex-col items-center space-y-4">
           {[1, 2, 3, 4, 5].map((step, index) => (
             <div
               key={index}
@@ -45,7 +46,7 @@ const AddExperienceForm = () => {
               {step}
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Main Content */}
         <div className="w-full bg-white rounded-xl p-8">
@@ -158,12 +159,14 @@ const AddExperienceForm = () => {
               >
                 Back
               </button>
+              <Link href="/CandidateBoarding/Step7">
               <button
                 type="submit"
                 className="bg-[#DA6B64] text-white px-6 py-2 rounded hover:bg-[#c95a56]"
               >
                 Continue
               </button>
+              </Link>
             </div>
           </form>
         </div>

@@ -23,13 +23,7 @@ const WelcomeSection = () => {
           </p>
         </div>
         
-       <div className="flex" >
-       <Link href="/CandidateBoarding/Step4">
-            <button className="bg-[#D67268] text-white px-6 py-3 rounded-lg shadow-md">
-             Next
-            </button>
-          </Link>
-        </div>
+       
       </section>
     );
   };

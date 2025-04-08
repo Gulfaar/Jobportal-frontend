@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const WhoBenefits: React.FC = () => {
   const benefits = [
     {
-      title: 'Staffing & Recruitment Agencies',
+      title: 'Staffing & Recruitment',
       description: 'Efficient payroll processing for high-volume hiring.',
     },
     {
@@ -51,7 +51,7 @@ const WhoBenefits: React.FC = () => {
     <div className="bg-teal-800 py-16 px-6 md:px-12 font-figtree w-full overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* First Row: Heading + First Card */}
-        <motion.div 
+        <motion.div
           className="flex flex-col lg:flex-row gap-8 mb-12"
           initial="hidden"
           whileInView="show"
@@ -60,18 +60,19 @@ const WhoBenefits: React.FC = () => {
         >
           {/* Left: Heading and Subtitle */}
           <motion.div className="flex-1" variants={fadeInUp}>
-            <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl font-semibold text-white mb-8">
               Who Benefits From Our Payroll Management Services?
             </h1>
             <p className="text-teal-100 text-xl font-normal max-w-2xl">
               Hassle-free payroll for contract workers & remote teams. Efficient payroll processing for high-volume hiring. Scalable payroll solutions to manage growing teams.
             </p>
           </motion.div>
-          
+
+
           {/* Right: First Card */}
           <motion.div className="flex-1 max-w-md" variants={item}>
-            <div className="bg-white rounded-xl p-8 h-full hover:shadow-lg transition-shadow duration-300">
-              <motion.div 
+            <div className="bg-white rounded-xl p-8 h-full hover:shadow-lg transition-shadow duration-300 ml-44 w-3/5">
+              <motion.div
                 className="w-16 h-16 bg-teal-100 rounded-full mb-6 flex items-center justify-center"
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -89,7 +90,7 @@ const WhoBenefits: React.FC = () => {
         </motion.div>
 
         {/* Second Row: 4 Cards */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           initial="hidden"
           whileInView="show"
@@ -103,7 +104,7 @@ const WhoBenefits: React.FC = () => {
               variants={item}
               whileHover={{ y: -5 }}
             >
-              <motion.div 
+              <motion.div
                 className="w-16 h-16 bg-teal-100 rounded-full mb-6 flex items-center justify-center"
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}

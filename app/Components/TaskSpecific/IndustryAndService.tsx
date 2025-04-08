@@ -1,3 +1,5 @@
+"use client";
+
 import { Truck, Wrench, Users, Warehouse, Shield, Brush } from "lucide-react";
 
 const IndustriesAndServices = () => {
@@ -44,7 +46,7 @@ const IndustriesAndServices = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
           {services.map((service, index) => (
-            <div key={index} className="relative p-6 rounded-lg shadow-md flex items-start gap-4 bg-amber-50 bg-opacity-50">
+            <div key={index} className="relative p-6 rounded-lg shadow-md flex items-start gap-4 bg-white bg-opacity-50">
               <div className="bg-[#2E5F5C] p-3 rounded-full shadow-lg flex items-center justify-center">{service.icon}</div>
               <div>
                 <h3 className="text-lg font-semibold text-[#1E3A56]">{service.title}</h3>

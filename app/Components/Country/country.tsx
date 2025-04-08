@@ -68,6 +68,55 @@ export const HeroSection = () => {
   );
 };
 
+
+export const PresenceHeroSection = () =>{
+  return(
+    <section className="self-center px-15 mt-9 py-10 w-full max-w-[1294px] max-md:max-w-full">
+        <div className="flex gap-5 max-md:flex-col">
+          <div className="w-[63%] max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-10 max-md:max-w-full">
+              <h2 className="self-stretch text-3xl tracking-tight leading-[50px] max-md:max-w-full">
+                USA - Gulfaar's Presence  <br />
+                <span className="text-[48px]">
+                Connecting Talent & Businesses Across USA
+                </span>
+              </h2>
+              <p className="mt-1 max-md:max-w-full">
+                Transform Your Career with Industry-Leading Skill Development
+              </p>
+              <p className="mt-9 max-w-full leading-9 text-black font-normal text-[24px] w-[672px] max-md:max-w-full">
+              Gulfaar is proud to be a leading *workforce solutions provider* in
+            USA, offering **recruitment, outsourcing, skill
+            development, and contract-based hiring* across multiple industries.
+            With a *strong local team and AI-powered hiring technology*, we
+            ensure that businesses find the right talent and job seekers access
+            the best career opportunities
+              </p>
+              <button
+                className="flex gap-3 px-8 py-4 mt-12 text-sm leading-tight text-center text-white uppercase bg-teal-800 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
+                aria-label="Get Started"
+              >
+                <span className="grow my-auto">Get Started</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/6307c969f4753633a930c857def46cbf555e5466?placeholderIfAbsent=true"
+                  className="object-contain shrink-0 w-3.5 aspect-[0.87]"
+                  alt="Arrow icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div className="ml-5 w-[37%] max-md:ml-0 max-md:w-full">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c59f9f64f3d931e65c3207dc47edd4bcc02e16?placeholderIfAbsent=true"
+              className="object-contain grow w-full rounded-3xl aspect-[0.77] max-md:mt-10 max-md:max-w-full"
+              alt="Career development illustration"
+            />
+          </div>
+        </div>
+      </section>
+  )
+}
+
 export const PresenceSection = () => {
   return (
     <section className="flex relative flex-col w-full  text-black min-h-[549px] max-md:max-w-full">
