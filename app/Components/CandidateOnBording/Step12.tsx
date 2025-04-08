@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image'; // Import Next.js Image component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBold, faItalic, faUnderline, faListUl } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const PositionForm = () => {
   // State to manage selected skills
@@ -28,11 +29,7 @@ const PositionForm = () => {
   };
 
   // Handle form submission (you can customize this)
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    console.log('Selected Skills:', selectedSkills);
-    // Add your submission logic here
-  };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#F5F9FA] px-4 py-12 w-full">
@@ -163,12 +160,13 @@ const PositionForm = () => {
             >
               Back
             </button>
+            <Link href="/CandidateBoarding/Step14">
             <button
-              onClick={handleSubmit}
               className="bg-[#DA6B64] text-white px-6 py-2 rounded hover:bg-[#c95a56]"
             >
               Continue
             </button>
+            </Link>
           </div>
         </div>
       </div>

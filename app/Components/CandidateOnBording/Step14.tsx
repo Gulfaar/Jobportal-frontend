@@ -107,8 +107,8 @@ export default function ProfileSummary() {
 
       {/* Navigation buttons */}
       <div className="flex justify-between w-full max-w-4xl mt-6">
-        <button className="border border-red-400 text-red-500 px-4 py-1 rounded-md text-sm">Back</button>
-        <button className="bg-red-400 text-white px-4 py-1 rounded-md text-sm">Continue</button>
+        <button className="border border-[#FF6F61] text-[#DA6B64] px-4 py-1 rounded-md text-sm">Back</button>
+        <button className="bg-[#DA6B64] text-white px-4 py-1 rounded-md text-sm">Continue</button>
       </div>
     </div>
   );
