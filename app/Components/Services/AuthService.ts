@@ -5,12 +5,12 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5
 export const loginUser = async (email: string, password: string) => {
   try {
     const response = await axios.post(
-      `${API_BASE_URL}/user/login`,
+      `${API_BASE_URL}/user/login`, 
       { email, password }, 
       {
-        withCredentials: true,
+        withCredentials: true, 
         headers: {
-          "Content-Type": "application/json", 
+          "Content-Type": "application/json",
         },
       }
     );
