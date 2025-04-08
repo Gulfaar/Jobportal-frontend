@@ -153,7 +153,7 @@ export default function ProfileForm() {
               <Link href="/CandidateBoarding/Step3">
               <button
                 type="submit"
-                className="px-4 py-2 text-rose-600 hover:text-rose-700"
+                className="px-4 py-2 text-[#DA6B64] hover:text-rose-700"
               >
                 Back
               </button>
@@ -162,7 +162,7 @@ export default function ProfileForm() {
               <Link href="/CandidateBoarding/Step5">
               <button
                 type="submit"
-                className="px-6 py-2 bg-rose-500 text-white rounded-md hover:bg-rose-600"
+                className="px-6 py-2 bg-[#DA6B64] text-white rounded-md hover:bg-[#dea5a0]"
               >
                 Continue
               </button>

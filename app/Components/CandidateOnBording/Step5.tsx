@@ -35,8 +35,8 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 flex justify-center items-center">
-      <div className="flex max-w-6xl w-full bg-[#f6fafa] rounded-lg shadow-md p-2 relative">
+    <div className="min-h-screen p-6 flex justify-center items-center">
+   
         {/* Stepper Sidebar */}
         
 
@@ -99,7 +99,7 @@ const ExperienceSection = () => {
             </Link>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 };

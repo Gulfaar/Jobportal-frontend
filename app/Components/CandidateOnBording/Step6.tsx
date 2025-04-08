@@ -49,7 +49,7 @@ const AddExperienceForm = () => {
         </div> */}
 
         {/* Main Content */}
-        <div className="w-full bg-white rounded-xl p-8">
+        <div className="w-[113%] bg-white rounded-xl p-8 items-center ml-[-53px]">
           {/* Header */}
           <h2 className="text-xl font-semibold text-gray-900">Reflect on your experience.</h2>
           <p className="text-sm text-gray-600 mt-1">

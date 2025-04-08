@@ -126,7 +126,7 @@ const ResumeBuilderStep = () => {
               Back
             </button>
             <Link href="/CandidateBoarding/Step12">
-            <button className="px-4 py-2 bg-red-400 text-white rounded-lg hover:bg-red-500">
+            <button className="px-4 py-2 bg-[#DA6B64] text-white rounded-lg hover:bg-[#FF6F61]">
               Continue
             </button>
             </Link>
