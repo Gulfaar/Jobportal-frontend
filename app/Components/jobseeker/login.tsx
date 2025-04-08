@@ -1,9 +1,37 @@
 // pages/login.tsx
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { loginUser } from "../Services/AuthService";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const LoginPage: React.FC = () => {
+
+  const navigate = useNavigate();
+ 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  
+    const result = await loginUser(email, password);
+
+    if (result.success) {
+      toast.success("Login Successful! Redirecting...");
+      navigate("/dashboard");
+    } else {
+      toast.error(result.message || "Login failed. Please try again.");
+    }
+  };
+
+
+
+
   return (
     <div className="min-h-screen flex flex-col lg:flex-row bg-white">
       {/* Left Side (Branding / Message) */}
@@ -71,6 +99,8 @@ const LoginPage: React.FC = () => {
               name="email"
               type="email"
               placeholder="example@gmail.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full border border-gray-300 text-black rounded-md p-2.5 text-sm sm:text-base focus:outline-teal-500"
             />
           </div>
@@ -88,6 +118,8 @@ const LoginPage: React.FC = () => {
               name="password"
               type="password"
               placeholder="********"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full border border-gray-300 text-black rounded-md p-2.5 text-sm sm:text-base focus:outline-teal-500"
             />
           </div>
@@ -111,7 +143,8 @@ const LoginPage: React.FC = () => {
 
           {/* Login Button */}
           <button
-            type="submit"
+          type="button"
+            onClick={handleSubmit}
             className="w-full bg-teal-700 text-white py-2.5 sm:py-3 rounded-md font-medium hover:bg-teal-800 transition-colors text-sm sm:text-base"
           >
             LOGIN
