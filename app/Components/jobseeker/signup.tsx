@@ -1,9 +1,38 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Home } from "lucide-react";
+import { registerUser } from "../Services/RegisterService";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import "react-toastify/dist/ReactToastify.css";
 
 const EmployerSignupPage: React.FC = () => {
+
+   const router = useRouter();
+
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+
+
+      const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault(); // Prevent default form submission
+    
+        const result = await registerUser(username ,email, password , confirmPassword );
+    
+        if (result.success) {
+          toast.success("Login Successful! Redirecting...");
+          router.push("/"); // Redirect using Next.js router
+        } else {
+          toast.error(result.message || "Login failed. Please try again.");
+        }
+      };
+
   return (
     <div className="h-screen flex flex-col md:flex-row overflow-hidden relative font-sans">
       {/* Left Section */}
@@ -51,7 +80,7 @@ const EmployerSignupPage: React.FC = () => {
 
       {/* Right Section */}
       <div className="md:w-1/2 bg-white flex flex-col justify-center p-10 relative">
-        <form className="max-w-2xl w-full mx-auto space-y-6">
+        <form className="max-w-2xl w-full mx-auto space-y-6" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Username */}
             <div>
@@ -62,6 +91,8 @@ const EmployerSignupPage: React.FC = () => {
                 type="text"
                 id="username"
                 placeholder="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 className="w-full border-b text-black border-gray-400 focus:outline-none text-sm py-2"
               />
             </div>
@@ -75,6 +106,8 @@ const EmployerSignupPage: React.FC = () => {
                 type="email"
                 id="email"
                 placeholder="example@gmail.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full border-b text-black border-gray-400 focus:outline-none text-sm py-2"
               />
             </div>
@@ -88,6 +121,8 @@ const EmployerSignupPage: React.FC = () => {
                 type="password"
                 id="password"
                 placeholder="********"
+                value={password}
+               onChange={(e) => setPassword(e.target.value)}
                 className="w-full border-b text-black border-gray-400 focus:outline-none text-sm py-2"
               />
             </div>
@@ -101,6 +136,8 @@ const EmployerSignupPage: React.FC = () => {
                 type="password"
                 id="confirm-password"
                 placeholder="********"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 className="w-full border-b text-black border-gray-400 focus:outline-none text-sm py-2"
               />
             </div>

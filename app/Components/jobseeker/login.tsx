@@ -20,7 +20,7 @@ const LoginPage: React.FC = () => {
 
     if (result.success) {
       toast.success("Login Successful! Redirecting...");
-      router.push("/dashboard"); // Redirect using Next.js router
+      router.push("/"); // Redirect using Next.js router
     } else {
       toast.error(result.message || "Login failed. Please try again.");
     }
