@@ -2,7 +2,6 @@ import Image from "next/image";
 import { FaRegEdit } from "react-icons/fa";
 
 export default function ProfileSummary() {
-  // Sample dynamic data (replace this with real API or props data)
   const profile = {
     name: "Sneha S",
     email: "wwdjgst@gmail.com",
@@ -41,74 +40,79 @@ export default function ProfileSummary() {
   ];
 
   const Card = ({ title, children }: { title: string; children: React.ReactNode }) => (
-    <div className="bg-white rounded-md p-4 mb-4 relative">
-      <button className="text-[#1C4B4B] absolute top-2 right-2">
+    <div className="bg-white rounded-lg shadow p-6 mb-6 relative">
+      <button className="text-[#1C4B4B] absolute top-4 right-4 text-xl">
         <FaRegEdit />
       </button>
-      <p className="font-semibold text-[#1C4B4B] mb-2">{title}</p>
+      <h3 className="text-lg font-bold text-[#1C4B4B] mb-4">{title}</h3>
       {children}
     </div>
   );
 
   return (
-    <div className="min-h-screen bg-white p-4 flex flex-col mt-14 w-full mr-[318px]">
-      {/* Top profile section */}
-      <div className="flex items-center gap-4 bg-[#EDF6F5] rounded-md p-4 mr-[349px] w-[27%]">
-        <Image src="/images/profile.svg" alt="Profile" width={60} height={60} className="rounded-full" />
-        <div>
-          <h2 className="text-sm font-semibold text-black">Amanda Rawles</h2>
-          <p className="text-xs text-black">alexarawles@gmail.com</p>
+    <div className="flex items-center justify-center min-h-screen bg-[#F8FAFC] p-4">
+      <div className="w-full max-w-5xl">
+        {/* Profile Header */}
+        <div className="flex items-center gap-4 bg-[#EDF6F5] rounded-xl p-6 max-w-76">
+          <Image src="/images/profile.svg" alt="Profile" width={70} height={70} className="rounded-full" />
+          <div>
+            <h2 className="text-xl font-semibold text-black">Amanda Rawles</h2>
+            <p className="text-base text-black">alexarawles@gmail.com</p>
+          </div>
         </div>
-      </div>
 
-      {/* Main content */}
-      <div className="w-[137%] max-w-4xl mt-6 bg-[#AEC1C1] p-4 rounded-lg">
-        <div className="bg-[#1C4B4B] h-[400px] rounded-md overflow-y-scroll custom-scrollbar p-4">
+        {/* Main Card Section */}
+        <div className="mt-8 bg-[#AEC1C1] p-6 rounded-xl shadow-lg">
+          <div className="bg-[#1C4B4B] rounded-lg overflow-y-auto max-h-[500px] p-6 space-y-6">
 
-          {/* Profile Section */}
-          <Card title="Profile">
-            <div className="text-sm text-gray-800 space-y-1">
-              <p>Name : {profile.name}</p>
-              <p>Country : {profile.country}</p>
-              <p>Email : {profile.email}</p>
-              <p>City : {profile.city}</p>
-              <p>Phone number : {profile.phone}</p>
-              <p>Pincode : {profile.pincode}</p>
-            </div>
-          </Card>
+            {/* Profile Info */}
+            <Card title="Profile">
+              <div className="text-base text-black space-y-2">
+                <p><strong>Name:</strong> {profile.name}</p>
+                <p><strong>Country:</strong> {profile.country}</p>
+                <p><strong>Email:</strong> {profile.email}</p>
+                <p><strong>City:</strong> {profile.city}</p>
+                <p><strong>Phone number:</strong> {profile.phone}</p>
+                <p><strong>Pincode:</strong> {profile.pincode}</p>
+              </div>
+            </Card>
 
-          {/* Experience Section */}
-          <Card title="Experience">
-            <div className="text-sm text-gray-800 grid grid-cols-2 gap-4">
-              {experiences.map((exp, idx) => (
-                <div key={idx}>
-                  <p>{exp.title}</p>
-                  <p>Company name: {exp.company}</p>
-                  <p>{exp.location}</p>
-                </div>
-              ))}
-            </div>
-          </Card>
+            {/* Experience Info */}
+            <Card title="Experience">
+              <div className="text-base text-black grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {experiences.map((exp, idx) => (
+                  <div key={idx}>
+                    <p><strong>Role:</strong> {exp.title}</p>
+                    <p><strong>Company:</strong> {exp.company}</p>
+                    <p><strong>Location:</strong> {exp.location}</p>
+                  </div>
+                ))}
+              </div>
+            </Card>
 
-          {/* Education Section */}
-          <Card title="Education">
-            <div className="text-sm text-gray-800 grid grid-cols-3 gap-4">
-              {education.map((edu, idx) => (
-                <div key={idx}>
-                  <p>{edu.course}</p>
-                  <p>{edu.institute}</p>
-                </div>
-              ))}
-            </div>
-          </Card>
-
+            {/* Education Info */}
+            <Card title="Education">
+              <div className="text-base text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {education.map((edu, idx) => (
+                  <div key={idx}>
+                    <p><strong>Course:</strong> {edu.course}</p>
+                    <p><strong>Institute:</strong> {edu.institute}</p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
         </div>
-      </div>
 
-      {/* Navigation buttons */}
-      <div className="flex justify-between w-full max-w-4xl mt-6">
-        <button className="border border-[#FF6F61] text-[#DA6B64] px-4 py-1 rounded-md text-sm">Back</button>
-        <button className="bg-[#DA6B64] text-white px-4 py-1 rounded-md text-sm">Continue</button>
+        {/* Buttons */}
+        <div className="flex justify-between mt-6">
+          <button className="border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
+            Back
+          </button>
+          <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
+            Continue
+          </button>
+        </div>
       </div>
     </div>
   );
