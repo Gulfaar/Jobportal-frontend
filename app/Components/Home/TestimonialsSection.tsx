@@ -1,8 +1,11 @@
+"use client"
+
 import React, { useEffect, useRef, useState } from "react";
 import TestimonialCard from "./TestimonialCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {  FaArrowLeft, FaArrowRight, FaChevronLeft, FaChevronRight  } from "react-icons/fa";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,13 +14,13 @@ const TestimonialsSection = () => {
   const trackRef = useRef(null);
   const [cardsPerView, setCardsPerView] = useState(3);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(false); // default value
 
   useEffect(() => {
     const updateCardsPerView = () => {
-      setIsMobile(window.innerWidth < 768);
-      console.log('mobile',isMobile); 
-      
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+  
       if (window.innerWidth >= 1024) {
         setCardsPerView(3);
       } else if (window.innerWidth >= 768) {
@@ -26,6 +29,7 @@ const TestimonialsSection = () => {
         setCardsPerView(1);
       }
     };
+  
     updateCardsPerView();
     window.addEventListener("resize", updateCardsPerView);
     return () => window.removeEventListener("resize", updateCardsPerView);
@@ -124,6 +128,7 @@ const TestimonialsSection = () => {
       avatar: "https://randomuser.me/api/portraits/men/3.jpg",
     },
   ];
+  const mobileTrackRef = useRef(null);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -187,13 +192,45 @@ const TestimonialsSection = () => {
       </button>
     </div>
         ):(
-          <div className="md:hidden flex flex-col gap-6 mt-10 w-full max-w-md">
+          <div className="md:hidden relative w-full max-w-md mt-10 overflow-hidden">
+      {/* Left Button */}
+      <button
+        onClick={handlePrev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+      >
+        <FaChevronLeft size={10} />
+      </button>
+
+      {/* Carousel Track */}
+      <div
+        ref={mobileTrackRef}
+        className="flex transition-transform justify-center items-center ml-3 md:ml-0 duration-500 ease-out"
+        style={{
+          transform: `translateX(-${currentIndex * (100 / testimonials.length)}%)`,
+          width: `${testimonials.length * 100}%`,
+          willChange: "transform",
+        }}
+      >
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="w-full flex justify-center items-center">
+          <div
+            key={index}
+            className="flex-shrink-0 px-10"
+            style={{ width: `${100 / testimonials.length}%` }}
+          >
             <TestimonialCard {...testimonial} />
           </div>
         ))}
       </div>
+
+      {/* Right Button */}
+      <button
+        onClick={handleNext}
+        className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+      >
+        <FaChevronRight size={10} />
+      </button>
+    </div>
+
         ) 
       }
       

@@ -4,7 +4,7 @@ const hiringModels = [
   {
     title: "Project-Based Hiring",
     subtitle: "For Short-Term Assignments & Specialized Tasks",
-    icon: <Briefcase className="text-blue-500" size={24} />,
+    icon: <Briefcase className="text-white" size={24} />,
     points: [
       "Hire skilled professionals for specific projects with a fixed timeline.",
       "Best suited for IT, construction, engineering, consulting, and creative industries.",
@@ -14,7 +14,7 @@ const hiringModels = [
   {
     title: "Short-Term Hiring",
     subtitle: "For Temporary & Seasonal Workforce Needs",
-    icon: <CalendarDays className="text-blue-500" size={24} />,
+    icon: <CalendarDays className="text-white" size={24} />,
     points: [
       "Get immediate staffing solutions for events, seasonal demands, and urgent tasks.",
       "Ideal for retail, hospitality, logistics, BPO, customer service, and manufacturing.",
@@ -24,7 +24,7 @@ const hiringModels = [
   {
     title: "Long-Term Contract Hiring",
     subtitle: "For Workforce Stability & Cost Optimization",
-    icon: <UserCheck className="text-blue-500" size={24} />,
+    icon: <UserCheck className="text-white" size={24} />,
     points: [
       "Access dedicated employees on contract for extended periods.",
       "Best for businesses requiring continuous workforce support without full-time commitments.",
@@ -38,7 +38,7 @@ const FlexibleHiringModels = () => {
     <section className="bg-[#F4F8F9] py-16 px-4 w-full">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-[#1E3A56]">Our Flexible Hiring Models</h2>
-        <p className="text-gray-500 mt-3">
+        <p className="text-black mt-2">
           With our modern workforce management tools, automated candidate matching, and seamless payroll integration, hiring contract-based employees has never been more efficient, scalable, and hassle-free.
         </p>
       </div>
@@ -46,10 +46,10 @@ const FlexibleHiringModels = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {hiringModels.map((model, idx) => (
           <div key={idx} className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="h-4 bg-gray-400" />
+            <div className="h-4 bg-[#2E5F5C]" />
             <div className="p-6">
               <div className="mb-4 flex items-center">
-                <div className="bg-blue-100 p-2 rounded-md mr-3">
+                <div className="bg-[#2E5F5C] p-2 rounded-md mr-3">
                   {model.icon}
                 </div>
                 <div className="text-left">
@@ -60,7 +60,7 @@ const FlexibleHiringModels = () => {
               <ul className="list-disc pl-6 space-y-2 text-gray-700 text-sm text-left">
                 {model.points.map((point, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className="mt-1 w-1 h-1 bg-blue-500 rounded-full" />
+                    <span className="mt-1 w-1 h-1 bg-[#2E5F5C] rounded-full" />
                     {point}
                   </li>
                 ))}

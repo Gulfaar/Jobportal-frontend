@@ -1,3 +1,8 @@
+"use client";
+
+import React from "react";
+import illustration from "../../../public/illustration.svg"
+
 const HireExperts = () => {
     return (
       <section className="bg-gradient-to-b from-[#ECF4F3] to-white py-16 px-6 flex justify-center w-full">
@@ -15,7 +20,7 @@ const HireExperts = () => {
   
             {/* Right Image */}
             <div className="max-w-sm">
-              <img src="/illustration.svg" alt="Illustration" className="w-full h-auto" />
+              <img src={illustration} alt="Illustration" className="w-full h-auto" />
             </div>
           </div>
         </div>

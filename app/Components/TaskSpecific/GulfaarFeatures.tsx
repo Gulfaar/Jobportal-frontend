@@ -1,4 +1,7 @@
+'use client'
+import Lottie from "lottie-react";
 import { ChevronRight } from "lucide-react";
+import TaskAnimation from '../../../assets/Task-Animation.json'
 
 const GulfaarFeatures = () => {
   const features = [
@@ -41,8 +44,8 @@ const GulfaarFeatures = () => {
               key={index}
               className="flex items-start gap-4 p-4 border-b border-gray-300 max-w-3xl"
             >
-              <div className="bg-blue-100 p-3 rounded-full">
-                <ChevronRight size={20} className="text-[#0B1C3F]" />
+              <div className="bg-[#2E5F5C] p-3 rounded-full">
+                <ChevronRight size={20} className="text-[#ffff]" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-[#0B1C3F]">{feature.title}</h3>
@@ -54,8 +57,13 @@ const GulfaarFeatures = () => {
       </div>
 
       {/* Background Circle Positioned */}
-      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] opacity-40">
-        <img src="/bgCircle.svg" alt="Background Circle" className="w-full h-auto" />
+      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px]">
+        {/* <img src="/bgCircle.svg" alt="Background Circle" className="w-full h-auto" /> */}
+              <Lottie 
+                animationData={TaskAnimation} 
+                loop={true} 
+                className="hidden md:block object-contain grow gap-2.5 py-2.5 w-full rounded-3xl aspect-[1.07] max-md:mt-10 max-md:max-w-full"
+              />
       </div>
     </section>
   );

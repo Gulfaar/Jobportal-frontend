@@ -1,5 +1,5 @@
 "use client";
-import { BranchesSection, HeroSection, PresenceSection, TeamSection , IndustriesSection, BenefitsSection } from "@/app/Components/Country/country";
+import { BranchesSection, HeroSection, PresenceSection, TeamSection , IndustriesSection, BenefitsSection, PresenceHeroSection } from "@/app/Components/Country/country";
 import Header from "@/app/Components/Header/Header";
 import Footer from "@/app/Components/Home/Footer";
 import * as React from "react";
@@ -11,7 +11,7 @@ const ConturyPresence  = () => {
     <main className="overflow-hidden bg-white">
        <Header title="COUNTRIES"
         subtitle="Register today to unlock exciting job opportunities"/>
-       <PresenceSection/>
+       <PresenceHeroSection/>
        <BranchesSection/>
        <TeamSection/>
        <IndustriesSection/>

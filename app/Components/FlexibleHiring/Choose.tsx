@@ -1,4 +1,4 @@
-import { CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 const features = [
   {
@@ -29,19 +29,26 @@ const features = [
 
 export default function WhyChooseGulfaar() {
   return (
-    <section className="w-full bg-[#f9fbfd] py-16 px-4">
+    <section className="w-full bg-[#2E5F5C] py-16 px-4">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">
-          Why Choose Gulfaar&apos;s AI-Powered Flexible Hiring?
+        <h2 className="text-3xl text-white md:text-4xl font-bold mb-10">
+          Why Choose Gulfaar's AI-Powered Flexible Hiring?
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
           {features.map((feature, index) => (
             <div key={index} className="flex gap-3">
-              <CheckCircle className="text-blue-500 w-5 h-5 mt-1" />
+              {/* Replace CheckCircle with custom SVG */}
+              <Image
+                src="/icons/Gulfaar-icon2.svg" // Temporary path, replace with your actual SVG path
+                alt="Gulfaar-icon"
+                width={20}
+                height={20}
+                className="mt-1"
+              />
               <div>
-                <h3 className="font-semibold text-sm">{feature.title}</h3>
-                <p className="text-xs text-gray-600">{feature.description}</p>
+                <h3 className="font-semibold text-white text-sm">{feature.title}</h3>
+                <p className="text-xs text-white">{feature.description}</p>
               </div>
             </div>
           ))}

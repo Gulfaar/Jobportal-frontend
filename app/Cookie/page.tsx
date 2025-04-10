@@ -1,13 +1,12 @@
 import Head from "next/head";
-import Navbar from "../Components/Contact Us/Navbar";
-import HeroSection from "../Components/Contact Us/HeroSection";
+import Header from '../Components/Header/Header'
 import CookiesInfo from "../Components/Cookie/CookieInfo";
 import CookiesUsage from "../Components/Cookie/CookieUsage";
 import CookieChoice from "../Components/Cookie/CookieChoice";
 import CookieManag from "../Components/Cookie/CookieManag";
-import Footer from "../Components/Contact Us/Footer";
+import Footer from "../Components/Home/Footer";
 
-import ContactUS from "../Components/ContactUS";
+
 
 
 const CookiePage = () => {
@@ -16,15 +15,14 @@ const CookiePage = () => {
             <Head>
             <title>Cookies</title>
           </Head>
-          <Navbar />
-          <HeroSection />
+          <Header title={"COOKIES"} subtitle={"We use cookies to improve your experience, enhance services, and deliver relevant content."} />
           <div className="flex-1 flex  flex-col items-center justify-center  w-full">
             <CookiesInfo />
             <CookiesUsage />
             <CookieChoice />
             <CookieManag />
-            <ContactUS />
-            <Footer />
+           
+           <Footer/>
           </div>
         </div>
       );

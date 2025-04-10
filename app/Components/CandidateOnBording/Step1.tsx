@@ -1,8 +1,11 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 
 const CandidateOnboardingSteps1 = () => {
 
+
+  const router = useRouter();
 
   const steps = [
     {
@@ -14,7 +17,7 @@ const CandidateOnboardingSteps1 = () => {
         "AI job search matches you with the best roles.",
         "Detects knowledge/tech gaps & suggests upskilling."
       ],
-      icon: "/icons/step1.png",
+      icon: "/profile1.png",
     },
     {
       id: 2,
@@ -23,7 +26,7 @@ const CandidateOnboardingSteps1 = () => {
         "Take AI-driven tests & pre-video interviews.",
         "Get an AI match score for faster shortlisting."
       ],
-      icon: "/icons/step2.png",
+      icon: "/profile2.png",
     },
     {
       id: 3,
@@ -32,7 +35,7 @@ const CandidateOnboardingSteps1 = () => {
         "Receive interview invites via WhatsApp, SMS & email.",
         "Track applications, accept offers & upskill for career growth."
       ],
-      icon: "/icons/step3.png",
+      icon: "/profile3.png",
     }
   ];
 
@@ -57,17 +60,17 @@ const CandidateOnboardingSteps1 = () => {
         ))}
       </div>
 
-      <div className="mt-8 flex justify-center gap-4">
-        <button className="border border-gray-400 px-4 py-2 rounded-lg flex items-center gap-2">
-          <span>🌍</span> Select country
-        </button>
-        <button
-          className="bg-[#D67268] text-white px-6 py-2 rounded-lg"
-           // ✅ Navigates to Step 2
-        >
-          Continue
-        </button>
-      </div>
+  <div className="mt-18 md:mt-10 flex flex-col items-center gap-4">
+  <button className="border border-gray-400 px-16 py-4 rounded-lg flex items-center gap-2">
+    <span>🌍</span> Select country
+  </button>
+  <button
+    className="bg-[#D67268] text-white px-10 py-3 rounded-lg"
+    onClick={() => router.push("/CandidateBoarding/Step2")} // ✅ Navigate to Step2
+  >
+    Continue
+  </button>
+</div>
     </section>
   );
 };
