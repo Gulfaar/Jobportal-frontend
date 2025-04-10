@@ -21,6 +21,7 @@ const FlexibleHiringPage = () => {
             <ModernHiringSystem />
             <FlexibleHiringIndustries />
             <WhyChooseGulfaar />
+            
             <Footer />
           </div>
         </div>

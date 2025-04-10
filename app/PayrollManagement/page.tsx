@@ -22,7 +22,7 @@ import PayrollHero from "../Components/PayrollMangments/PayrollHero";
                 <PayrollSystemSection />
                 <PayrollBenifits />
                 <PayrollChooseGulf />
-                <PayrollHero />
+              
             <Footer />
           </div>
         );

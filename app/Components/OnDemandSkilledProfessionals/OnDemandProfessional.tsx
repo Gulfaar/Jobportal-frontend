@@ -40,7 +40,7 @@ const OnDemandProfessional = () => {
       <div className="max-w-[1400px] mx-auto">
         {/* Main Heading */}
         <h1 className="text-[44px] font-semibold text-[#1E1B4B] text-center mb-16 leading-[1.2] max-md:text-3xl max-sm:text-2xl">
-          Why Gulfaar's AI-Powered On-Demand Professionals ?
+          Why Gulfaar's AI-Powered On-Demand <br/> Professionals ?
         </h1>
 
         {/* Benefits Grid */}

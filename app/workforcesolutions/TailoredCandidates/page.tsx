@@ -16,7 +16,7 @@ const page = () => {
       <HiringProcessSection/>
       <JobCategoriesSection/>
       <WhyChooseGulfaarTailored/>
-      <CallToActionSectionTailored/>
+      
       
       <Footer/>
       

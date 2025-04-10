@@ -53,7 +53,7 @@ const HeroSection = () => {
         />
 
         <JobLocations />
-    
+
       </div>
     </div>
   );
@@ -274,8 +274,8 @@ const NavLinks = () => {
               Tailored candidates
             </Link>
             <Link
-              href="/workforcesolutions/DirectPlacement"
-              className=" inline-flex whitespace-nowrap px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+              href="/ExamPreprations"
+              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
             >
               Direct placement
             </Link>

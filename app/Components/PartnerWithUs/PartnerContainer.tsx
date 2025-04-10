@@ -8,7 +8,7 @@ const PartnerWithGulfaar = () => {
                 {/* Text Column - Adjusted for better alignment */}
                 <div className="md:w-1/2">
                   <p className="text-gray-900 leading-relaxed text-base md:text-[15px]">
-                  At <span className="font-semibold text-[#e9530e]">Gulfaar</span>, we believe in building strong partnerships that create mutual growth and long-term  success. Whether you're an entrepreneur, business owner, recruitment agency, training institute, or  investor, we offer diverse collaboration opportunities that allow you to expand your business while  leveraging our cutting-edge AI-powered workforce solutions and global reach.  By partnering with <span className="font-semibold text-[#e9530e]">Gulfaar</span> , you become part of a global ecosystem that connects businesses,  skilled professionals, training institutions, and industry leaders.
+                  At <span className="font-semibold ">Gulfaar</span>, we believe in building strong partnerships that create mutual growth and long-term  success. Whether you're an entrepreneur, business owner, recruitment agency, training institute, or  investor, we offer diverse collaboration opportunities that allow you to expand your business while  leveraging our cutting-edge AI-powered workforce solutions and global reach.  By partnering with <span className="font-semibold ">Gulfaar</span> , you become part of a global ecosystem that connects businesses,  skilled professionals, training institutions, and industry leaders.
                   </p>
                 </div>
                 

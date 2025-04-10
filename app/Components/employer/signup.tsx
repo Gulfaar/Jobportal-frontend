@@ -26,7 +26,13 @@ const EmployerSignupPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent default form submission
 
-    const result = await registerEmployeer (username ,email,phone,company,industry,address, password , confirmPassword) ;
+    const phoneNumber = Number(phone);
+    if (isNaN(phoneNumber)) {
+      toast.error("Phone number must be numeric.");
+      return;
+    }
+
+    const result = await registerEmployeer (username ,email,phoneNumber,company,industry,address, password , confirmPassword) ;
 
     if (result.success) {
       toast.success("Login Successful! Redirecting...");

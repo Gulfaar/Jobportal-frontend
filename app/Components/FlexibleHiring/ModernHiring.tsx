@@ -4,7 +4,7 @@ export default function ModernHiringSystem() {
   return (
     <section className="w-full bg-[#2E5F5C] py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-3xl text-white md:text-4xl font-bold mb-4">
           How Our Modern System Simplifies Hiring?
         </h2>
 

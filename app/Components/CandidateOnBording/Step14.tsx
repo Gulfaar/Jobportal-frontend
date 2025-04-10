@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaRegEdit } from "react-icons/fa";
 
 export default function ProfileSummary() {
@@ -106,9 +107,11 @@ export default function ProfileSummary() {
 
         {/* Buttons */}
         <div className="flex justify-between mt-6">
+        <Link href="/CandidateBoarding/Step12">
           <button className="border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
             Back
           </button>
+        </Link>
           <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
             Continue
           </button>

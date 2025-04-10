@@ -51,13 +51,13 @@ const AboutUs = () => {
     
       
 
-      <section className="self-center px-15 mt-9 py-10 w-full max-w-[1294px] max-md:max-w-full">
+      <section className="self-center px-15 md:mt-9 py-10 w-full max-w-[1294px] max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
           <div className="w-[63%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-10 max-md:max-w-full">
               <h2 className="self-stretch text-3xl tracking-tight leading-[50px] max-md:max-w-full">
               Empowering Talent, Connecting Opportunities <br />
-                <span className="text-[48px]">
+                <span className="text-[28px] md:text-[48px]">
                 Empowering Workforce  Connecting Businesses
                 </span>
               </h2>
@@ -491,7 +491,13 @@ const AboutUs = () => {
 
                 {/* Right Image Placeholder */}
                 <div className="w-full md:w-[400px] aspect-[4/3] bg-white/20 rounded-2xl backdrop-blur-sm flex items-center justify-center">
-                  <p className="text-[#1E1E1E] text-lg font-medium">Image Placeholder</p>
+                <Image
+                src="/bus.jpg"
+                alt="Background"
+                fill
+                className='object-cover rounded-2xl'
+                priority
+              />
 
                 </div>
               </div>

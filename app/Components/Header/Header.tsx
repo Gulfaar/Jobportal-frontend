@@ -56,12 +56,15 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
           <div className="flex items-center">
             {/* Action Buttons - Smaller size */}
             <div className="hidden w-full justify-end mt-[-20px] md:flex gap-2 md:gap-4">
+            
               <span className="md:px-2 py-2  rounded-lg text-white text-sm md:text-base">
                 Jobseeker
               </span>
+              <Link href="/employer/signup">
               <button className="bg-[#2E5F5C] mt-1 md:px-4  md:h-8 rounded-lg text-white text-sm md:text-base">
                 Employer
               </button>
+              </Link>
               {/* Post Job button - visible only on desktop */}
               {/* <button className="hidden md:block bg-teal-700 text-white text-sm px-3 py-1 rounded-lg hover:bg-teal-800 transition mr-2">
                 Post Job
@@ -190,7 +193,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
            Language Training
           </Link>
           <Link
-            href="/exam"
+            href="/ExamPreprations"
             className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
           >
             Exam Preparation
@@ -311,7 +314,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
   )}
 </div>
             <li>
-              <Link href="/PartnerWithUs" className="hover:text-gray-200 transition">
+              <Link href="/Partner" className="hover:text-gray-200 transition">
                 Partner with us
               </Link>
             </li>

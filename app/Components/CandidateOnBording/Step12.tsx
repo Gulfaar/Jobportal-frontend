@@ -151,12 +151,14 @@ const PositionForm = () => {
 
           {/* Action Buttons */}
           <div className="mt-6 flex flex-col sm:flex-row justify-between gap-4">
+          <Link href="/CandidateBoarding/Step10">
             <button
               type="button"
               className="border border-[#DA6B64] text-[#DA6B64] px-6 py-2 rounded hover:bg-red-100 w-full sm:w-auto"
             >
               Back
             </button>
+            </Link>
 
             <Link href="/CandidateBoarding/Step14">
               <button className="bg-[#DA6B64] text-white px-6 py-2 rounded hover:bg-[#c95a56] w-full sm:w-auto">

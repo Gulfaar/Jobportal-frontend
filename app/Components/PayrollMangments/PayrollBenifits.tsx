@@ -68,10 +68,9 @@ const WhoBenefits: React.FC = () => {
             </p>
           </motion.div>
 
-
           {/* Right: First Card */}
-          <motion.div className="flex-1 max-w-md" variants={item}>
-            <div className="bg-white rounded-xl p-8 h-full hover:shadow-lg transition-shadow duration-300 ml-44 w-3/5">
+          <motion.div className="flex-1 max-w-md md:ml-44 md:w-3/5 w-full mx-auto" variants={item}>
+            <div className="bg-white rounded-xl p-8 h-full hover:shadow-lg transition-shadow duration-300">
               <motion.div
                 className="w-16 h-16 bg-teal-100 rounded-full mb-6 flex items-center justify-center"
                 whileHover={{ scale: 1.1 }}
@@ -81,17 +80,17 @@ const WhoBenefits: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </motion.div>
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center md:text-left">
                 {benefits[0].title}
               </h2>
-              <p className="text-gray-600 text-lg">{benefits[0].description}</p>
+              <p className="text-gray-600 text-lg text-center md:text-left">{benefits[0].description}</p>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Second Row: 4 Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -100,12 +99,12 @@ const WhoBenefits: React.FC = () => {
           {benefits.slice(1).map((benefit, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+              className="bg-white rounded-xl p-6 sm:p-8 hover:shadow-lg transition-shadow duration-300 text-center sm:text-left"
               variants={item}
               whileHover={{ y: -5 }}
             >
               <motion.div
-                className="w-16 h-16 bg-teal-100 rounded-full mb-6 flex items-center justify-center"
+                className="w-16 h-16 bg-teal-100 rounded-full mb-6 flex items-center justify-center mx-auto sm:mx-0"
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
