@@ -11,7 +11,7 @@ const BlogSection = () => {
 
   {/* Subtitle & View All */}
   <div className="flex justify-between  md:pl-60 mt-4 max-w-4xl mx-auto max-md:flex-col max-md:items-center">
-    <p className="text-gray-600 text-start text-lg max-md:text-base">
+    <p className="text-gray-600  text-center text-lg max-md:text-base">
       Stay informed with the latest updates, trends, and insights...
     </p>
     <a href="#view-all" className="hidden md:block items-end font-bold text-teal-800 max-md:mt-2">

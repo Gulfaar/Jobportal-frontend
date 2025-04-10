@@ -32,7 +32,7 @@ const HeroSection = () => {
       <div className="flex flex-col items-center justify-center h-full text-center px-4">
         <h1 className="text-2xl md:text-4xl font-bold">Find Your Dream Job Today!</h1>
         <p className="text-sm md:text-lg mt-2">
-          Connecting Talent with Opportunity:{" "}
+          Connecting Talent with Opportunity{" "}
           <span className="block md:inline">Your Gateway to Career Success</span>
         </p>
 
