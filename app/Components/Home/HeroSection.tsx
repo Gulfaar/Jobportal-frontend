@@ -6,8 +6,19 @@ import Link from "next/link";
 import { CiLocationOn, CiSearch } from "react-icons/ci";
 import { FaBars, FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      console.log("Navigating with search query:", searchQuery);
+      router.push(`/jobseeker/joblisting?search=${encodeURIComponent(searchQuery)}`);
+    }
+  };
   return (
     <div
       className="relative w-full h-screen bg-cover bg-center flex flex-col items-center overflow-hidden text-white px-12 pt-[100px] md:pt-[150px]"
@@ -27,11 +38,19 @@ const HeroSection = () => {
 
         {/* Desktop Search Bar: visible only on md+ */}
         <div className="hidden md:block">
-          <DesktopSearchBar />
+          <DesktopSearchBar
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            handleSearch={handleSearch}
+          />
         </div>
 
         {/* Mobile Search Bar: visible only on sm */}
-        <MobileSearchBar />
+        <MobileSearchBar
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          handleSearch={handleSearch}
+        />
 
         <JobLocations />
       </div>
@@ -342,34 +361,28 @@ const NavLinks = () => {
   This is your original search bar, but now we only show it on md+ screens.
   We renamed it to DesktopSearchBar for clarity.
 */
-const DesktopSearchBar = () => {
+const DesktopSearchBar = ({ searchQuery, setSearchQuery, handleSearch }: {
+  searchQuery: string;
+  setSearchQuery: (value: string) => void;
+  handleSearch: (e: React.FormEvent) => void;
+}) => {
   return (
-    <div className="relative flex md:flex-row bg-white w-[700px]  max-w-[900px] md:w- h-auto md:h-[60px] rounded-lg mt-6 shadow-lg text-black items-center p-5 md:p-0">
-      <div className="w-full flex  items-center mx-2">
-      <CiSearch/>
-      
-      <input
-        type="text"
-        placeholder="Select for the job"
-        className="flex pl-4 pr-4 py-2 w-full outline-none  bg-transparent h-full justify-center items-center text-sm md:text-base border border-gray-300 rounded-lg md:rounded-none md:border-none"
-      />
+    <form onSubmit={handleSearch} className="relative flex md:flex-row bg-white w-[700px] max-w-[900px] md:w- h-auto md:h-[60px] rounded-lg mt-6 shadow-lg text-black items-center p-5 md:p-0">
+      <div className="w-full flex items-center mx-2">
+        <CiSearch />
+        <input
+          type="text"
+          placeholder="Select for the job"
+          className="flex pl-4 pr-4 py-2 w-full outline-none bg-transparent h-full justify-center items-center text-sm md:text-base border border-gray-300 rounded-lg md:rounded-none md:border-none"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </div>
-      {/* <div className="hidden md:block h-[70%] w-[1px] bg-gray-300 mx-2"></div> */}
-      {/* <div className="w-full flex items-center justify-between">
-        <CiLocationOn/>
-      <input
-        type="text"
-        placeholder="Country"
-        className="pl-4 pr-4 py-2 w-full outline-none bg-transparent h-full text-sm md:text-base border border-gray-300 rounded-lg md:rounded-none md:border-none md:mt-0"
-        
-      />
-      </div> */}
-      
-      <button className="bg-[#2E5F5C] px-6 md:h-full flex items-center justify-center text-white rounded-lg md:rounded-lg whitespace-nowrap text-sm md:text-base w-full md:w-auto mt-2 md:mt-0">
+      <button type="submit" className="bg-[#2E5F5C] px-6 md:h-full flex items-center justify-center text-white rounded-lg md:rounded-lg whitespace-nowrap text-sm md:text-base w-full md:w-auto mt-2 md:mt-0">
         <CiSearch className="text-white text-lg mr-2" />
         Search Job
       </button>
-    </div>
+    </form>
   );
 };
 
@@ -377,27 +390,32 @@ const DesktopSearchBar = () => {
   MobileSearchBar: visible only on small screens (block md:hidden).
   Matches the "two-button" style in your provided screenshot.
 */
-const MobileSearchBar = () => {
+const MobileSearchBar = ({ searchQuery, setSearchQuery, handleSearch }: {
+  searchQuery: string;
+  setSearchQuery: (value: string) => void;
+  handleSearch: (e: React.FormEvent) => void;
+}) => {
   return (
-    <div className="block md:hidden w-[350px] px-2 mt-6">
+    <form onSubmit={handleSearch} className="block md:hidden w-[350px] px-2 mt-6">
       <div className="flex items-center justify-between bg-white rounded-lg shadow-md overflow-hidden">
-        {/* Left "Select for the job" button */}
-        <button className="flex items-center justify-center text-gray-500 px-4 py-2 w-[200px]">
+        <div className="flex items-center justify-center text-gray-500 px-4 py-2 w-[200px]">
           <CiSearch className="mr-2 text-lg" />
-          Select for the job
-        </button>
-        
-
-        {/* Right "Search Job" button */}
-        <button className="flex items-center justify-center bg-white text-[#2E5F5C] px-4 py-2 w-1/2">
+          <input
+            type="text"
+            placeholder="Select for the job"
+            className="w-full outline-none bg-transparent"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+        <button type="submit" className="flex items-center justify-center bg-white text-[#2E5F5C] px-4 py-2 w-1/2">
           <CiSearch className="mr-2 text-lg" />
           Search Job
         </button>
       </div>
-    </div>
+    </form>
   );
 };
-
 const JobLocations = () => {
   const locations = [
     { name: "PARIS", img: "/america1.png" },
@@ -420,10 +438,10 @@ const JobLocations = () => {
     { name: "CANADA", img: "/germany2.png" },
     { name: "AUSTRALIA", img: "/usa.png" },
     { name: "BRAZIL", img: "/america1.png" },
-    { name: "JAPAN", img: "/usa.png" },
-    { name: "CHINA", img: "/america1.png" },
-    { name: "JAPAN", img: "/usa.png" },
-    { name: "CHINA", img: "/america1.png" },
+    { name: "BERLIN", img: "/usa.png" },
+    { name: "MALCOVA", img: "/america1.png" },
+    { name: "MALVIS", img: "/usa.png" },
+    { name: "SWEEDAN", img: "/america1.png" },
   ];
 
   const [index, setIndex] = useState(0);
@@ -482,5 +500,3 @@ const JobLocations = () => {
 };
 
 export default HeroSection;
-
-

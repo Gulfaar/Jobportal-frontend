@@ -3,11 +3,9 @@ import StatCard from "./StatCard";
 import useScrollAnimation from "@/app/Hooks/useScrollAnimation";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
-import Animationimage from '../../../assets/animation.json'
+import Animationimage from "../../../assets/animation.json";
 
 const InfoSection = () => {
-
-
   const { ref, scaleProgress, opacityProgress } = useScrollAnimation();
 
   const stats = [
@@ -31,34 +29,31 @@ const InfoSection = () => {
     },
   ];
 
- 
-
   return (
-    <motion.section 
-
-    ref={ref}
-    style={{
-      scale: scaleProgress,
-      opacity: opacityProgress,
-    }}
-    
-    className="overflow-hidden px-20 py-5 w-full bg-white max-md:px-5 max-md:max-w-full">
+    <motion.section
+      ref={ref}
+      style={{
+        scale: scaleProgress,
+        opacity: opacityProgress,
+      }}
+      className="overflow-hidden px-20 py-5 w-full bg-white max-md:px-5 max-md:max-w-full"
+    >
       <div className="w-full max-md:mr-2 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
-        <div className="md:w-1.5 lg:w-2xl max-md:ml-0">
-      <Lottie 
-        animationData={Animationimage} 
-        loop={true} 
-        className="object-contain grow gap-2.5 py-2.5 w-full rounded-3xl aspect-[1.07] max-md:mt-10 max-md:max-w-full"
-      />
-    </div>
-          <div className="flex ml-5 justify-center items-center md:w-6/10 md:py-1    max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col self-stretch my-auto w-full font-semibold   max-md:max-w-full">
+          <div className="md:w-1.5 lg:w-2xl max-md:ml-0">
+            <Lottie
+              animationData={Animationimage}
+              loop={true}
+              className="object-contain grow gap-2.5 py-2.5 w-full rounded-3xl aspect-[1.07] max-md:mt-10 max-md:max-w-full"
+            />
+          </div>
+          <div className="flex ml-5 justify-center items-center md:w-6/10 md:py-1 max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col self-stretch my-auto w-full font-semibold max-md:max-w-full">
               <h2 className="max-w-full text-4xl text-black w-[605px] max-md:max-w-full">
                 Empowering Workforce, Connecting Businesses, Building Global
                 Success
               </h2>
-              <p className="leading-7 font-medium  text-black mt-10 text-[15px] max-md:mt-20 max-md:max-w-full md:text-[20px]">
+              <p className="leading-7 font-medium text-black mt-10 text-[15px] max-md:mt-20 max-md:max-w-full md:text-[20px]">
                 At Gulfaar, we are more than just a recruitment agency—we are a
                 global workforce solutions provider committed to bridging the
                 gap between talent and opportunity. With our AI-driven hiring
@@ -86,20 +81,16 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between item-start gap-6 md:gap-0   mt-5 min-h-[171px] max-md:mt-2 max-md:max-w-full  py-5  w-full ">
-  {stats.map((stat, index) => (
-    <StatCard
-      key={index}
-      number={stat.number}
-      title={stat.title}
-      description ={
-        <div className=" max-w-[250px]">
-          {stat.description.toString()}
-        </div>
-      }
-    />
-  ))}
-</div>
+      <div className="flex flex-wrap justify-between item-start gap-6 md:gap-0 mt-5 min-h-[171px] max-md:mt-2 max-md:max-w-full py-5 w-full">
+        {stats.map((stat, index) => (
+          <StatCard
+            key={index}
+            number={stat.number}
+            title={stat.title}
+            description={stat.description} // Pass as a string
+          />
+        ))}
+      </div>
     </motion.section>
   );
 };
