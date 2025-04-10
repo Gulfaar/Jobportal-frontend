@@ -26,7 +26,7 @@ const EducationSection = () => {
   // Placeholder image URL (replace with your actual image path)
  
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F5F9FA] px-4 py-12 w-full">
+    <div className="h-full flex items-center justify-center bg-[#F5F9FA] md:px-6 md:py-12 w-full">
       <div className="relative w-full max-w-4xl">
         {/* Stepper Sidebar */}
         {/* <div className="absolute top-0 right-[-60px] flex flex-col items-center space-y-4">
@@ -45,7 +45,7 @@ const EducationSection = () => {
         {/* Main Content */}
         <div className="w-full">
           {/* Profile Header */}
-          <div className="flex items-center mb-6">
+          <div className="flex items-center  mb-6">
             <div className="w-12 h-12 rounded-full overflow-hidden">
               {/* Using Next.js Image component for the profile image */}
               <Image

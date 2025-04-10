@@ -105,7 +105,7 @@ const PersonalSummary = () => {
             <button className="px-4 py-2 border border-[#FF6F61] text-[#FF6F61] rounded-lg hover:bg-red-50">
               Back
             </button>
-            <Link href="/CandidateBoarding/Step11">
+            <Link href="/CandidateBoarding/Step12">
             <button className="px-4 py-2 bg-[#DA6B64] text-white rounded-lg hover:bg-[#e39e99]">
               Continue
             </button>
