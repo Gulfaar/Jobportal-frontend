@@ -29,7 +29,6 @@ export default function FlexibleHiringIndustries() {
   return (
     <section className="w-full bg-[#f9fbfd] py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        
         {/* First Row: Heading + 2 Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12">
           
@@ -44,16 +43,16 @@ export default function FlexibleHiringIndustries() {
           </div>
 
           {/* Two Cards (Right Side) */}
-          <div className="grid grid-cols-2 sm:grid-cols gap-11 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
             {industries.slice(0, 2).map((industry, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-2 text-left transition-all duration-300 hover:bg-[#2E5F5C] hover:-translate-y-1 hover:shadow-lg group w-full sm:w-[320px] h-[180px]"
+                className="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-2 text-left transition-all duration-300 hover:bg-[#2E5F5C] hover:-translate-y-1 hover:shadow-lg group w-full"
               >
-                <h3 className="font-semibold text-lg text-black sm:group-hover:text-white">
+                <h3 className="font-semibold text-lg text-black group-hover:text-white">
                   {industry.title}
                 </h3>
-                <p className="text-sm text-gray-600 sm:group-hover:text-white">
+                <p className="text-sm text-gray-600 group-hover:text-white">
                   {industry.description}
                 </p>
               </div>
@@ -62,23 +61,22 @@ export default function FlexibleHiringIndustries() {
 
         </div>
 
-        {/* Second Row: 4 Cards in 2x2 Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-11 justify-center mx-auto">
+        {/* Second Row: 4 Cards Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.slice(2).map((industry, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-2 text-left transition-all duration-300 hover:bg-[#2E5F5C] hover:-translate-y-1 hover:shadow-lg group w-full sm:w-[320px] h-[180px] mx-auto"
+              className="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-2 text-left transition-all duration-300 hover:bg-[#2E5F5C] hover:-translate-y-1 hover:shadow-lg group w-full"
             >
-              <h3 className="font-semibold text-lg text-black sm:group-hover:text-white">
+              <h3 className="font-semibold text-lg text-black group-hover:text-white">
                 {industry.title}
               </h3>
-              <p className="text-sm text-gray-600 sm:group-hover:text-white">
+              <p className="text-sm text-gray-600 group-hover:text-white">
                 {industry.description}
               </p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

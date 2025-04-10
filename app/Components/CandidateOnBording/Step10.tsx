@@ -1,134 +1,158 @@
-'use client';
-import React, { useState } from "react";
+"use client";
 import Image from "next/image";
-import { FaPlusCircle, FaMinusCircle, FaBold, FaItalic, FaUnderline } from "react-icons/fa";
 import Link from "next/link";
+import { FaRegEdit } from "react-icons/fa";
 
-interface Summary {
-  id: number;
-  text: string;
-}
-
-const summaries: Summary[] = [
-  {
-    id: 1,
-    text: "As a detail-oriented UI/UX designer, I bring a user-first approach to every project, ensuring designs are not only visually stunning but also intuitive and easy to use. With expertise in conducting user research, I create designs that resonate with people and solve real-world problems.",
-  },
-  {
-    id: 2,
-    text: "With expertise in conducting user research, I create designs that resonate with people and solve real-world problems, ensuring a seamless user experience.",
-  },
-  {
-    id: 3,
-    text: "coming in conducting user research, I create designs that resonate with people and solve real-world problems, ensuring a seamless user experience.",
-  },
-];
-
-const PersonalSummary = () => {
-  const [selectedSummary, setSelectedSummary] = useState<string | null>(null);
-
-  const handleToggle = (text: string) => {
-    setSelectedSummary(selectedSummary === text ? null : text);
+export default function ProfileSummary() {
+  const profile = {
+    name: "Sneha S",
+    email: "wwdjgst@gmail.com",
+    phone: "38494849",
+    country: "India",
+    city: "Ernakulam",
+    pincode: "682001",
   };
 
+  const experiences = [
+    {
+      title: "UI/UX Designer",
+      company: "Oxpyn Technologies",
+      location: "Kochi, Kerala",
+    },
+    {
+      title: "Frontend Developer",
+      company: "ABC Pvt Ltd",
+      location: "Bangalore, India",
+    },
+  ];
+
+  const education = [
+    {
+      course: "UI/UX Internship",
+      institute: "Zoople Technologies",
+    },
+    {
+      course: "React Developer Training",
+      institute: "TechMaster Academy",
+    },
+    {
+      course: "Web Design Certification",
+      institute: "Design School",
+    },
+  ];
+
+  const Card = ({
+    title,
+    children,
+  }: {
+    title: string;
+    children: React.ReactNode;
+  }) => (
+    <div className="bg-white rounded-lg shadow p-6 mb-6 relative">
+      <button className="text-[#1C4B4B] absolute top-4 right-4 text-xl">
+        <FaRegEdit />
+      </button>
+      <h3 className="text-lg font-bold text-[#1C4B4B] mb-4">{title}</h3>
+      {children}
+    </div>
+  );
+
   return (
-    <div className="min-h-screen  flex items-center justify-center p-4">
-      <div className="flex items-center">
-        {/* Main Content Area */}
-        <div className="w-full max-w-[900px]">
-          {/* Profile Section */}
-          <div className="flex items-center mb-4">
-            <Image
-              src="/images/profile.svg"
-              alt="User Profile"
-              width={48}
-              height={48}
-              className="rounded-full mr-4 object-cover"
-            />
-            <div>
-              <h2 className="text-lg font-semibold text-gray-800">Amanda Rawles</h2>
-              <p className="text-sm text-gray-500">alexrawles@gmail.com</p>
-            </div>
-          </div>
-
-          {/* Main Content Div */}
-          <div className="bg-white rounded-lg shadow-lg w-full p-6">
-            <div className="flex space-x-6">
-              {/* Left Side - Search & List */}
-              <div className="w-1/3 bg-[#D9E6E5] rounded-lg p-4">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">PERSONAL SUMMARY</h3>
-                <input
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-400 text-sm bg-white"
-                  placeholder="Search by job title, industry or keyword"
-                />
-                <div className="mt-4 max-h-64 overflow-y-auto">
-                  {summaries.map((summary) => (
-                    <button
-                      key={summary.id}
-                      onClick={() => handleToggle(summary.text)}
-                      className="flex items-start justify-between w-full bg-[#2E5E5A] text-white rounded-lg p-2 mb-2"
-                    >
-                      <span className="text-sm line-clamp-3 flex-1">{summary.text}</span>
-                      {selectedSummary === summary.text ? (
-                        <FaMinusCircle className="w-6 h-6 text-white cursor-pointer flex-shrink-0 ml-2" />
-                      ) : (
-                        <FaPlusCircle className="w-6 h-6 text-white cursor-pointer flex-shrink-0 ml-2" />
-                      )}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Side - Selected Summary */}
-              <div className="w-2/3 bg-[#2E5E5A] rounded-lg p-4 text-white min-h-[300px] relative">
-                {/* Icons at the top-right */}
-                <div className="absolute top-4 right-4 flex space-x-2">
-                  <FaBold className="w-4 h-4 text-white cursor-pointer" />
-                  <FaItalic className="w-4 h-4 text-white cursor-pointer" />
-                  <FaUnderline className="w-4 h-4 text-white cursor-pointer" />
-                </div>
-
-                {/* Selected Summary Content */}
-                <div className="mt-8">
-                  {selectedSummary ? (
-                    <p className="text-sm">{selectedSummary}</p>
-                  ) : (
-                    <p className="text-gray-300">No summary selected yet.</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Navigation Buttons */}
-          <div className="flex justify-between mt-6 w-full">
-            <button className="px-4 py-2 border border-[#FF6F61] text-[#FF6F61] rounded-lg hover:bg-red-50">
-              Back
-            </button>
-            <Link href="/CandidateBoarding/Step12">
-            <button className="px-4 py-2 bg-[#DA6B64] text-white rounded-lg hover:bg-[#e39e99]">
-              Continue
-            </button>
-            </Link>
+    <div className="flex items-center justify-center min-h-screen bg-[#F8FAFC] p-4">
+      <div className="w-full max-w-[900px]">
+        {/* Profile Header */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 bg-[#EDF6F5] rounded-xl p-6 mb-6">
+          <Image
+            src="/images/profile.svg"
+            alt="Profile"
+            width={70}
+            height={70}
+            className="rounded-full"
+          />
+          <div className="text-center sm:text-left">
+            <h2 className="text-xl font-semibold text-black">Amanda Rawles</h2>
+            <p className="text-base text-black">alexarawles@gmail.com</p>
           </div>
         </div>
 
-        {/* Step Sidebar */}
-        {/* <div className="flex flex-col items-center space-y-4 ml-2">
-          {[1, 2, 3, 4, 5].map((step) => (
-            <div
-              key={step}
-              className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                step === 1 ? "bg-[#FF6F61] text-white" : "border-2 border-[#FF6F61] text-[#FF6F61]"
-              }`}
-            >
-              {step}
-            </div>
-          ))}
-        </div> */}
+        {/* Main Card Section */}
+        <div className="bg-[#AEC1C1] p-6 rounded-xl shadow-lg">
+          <div className="bg-[#1C4B4B] rounded-lg overflow-y-auto max-h-[500px] p-6 space-y-6">
+            {/* Profile Info */}
+            <Card title="Profile">
+              <div className="text-base text-black space-y-2">
+                <p>
+                  <strong>Name:</strong> {profile.name}
+                </p>
+                <p>
+                  <strong>Country:</strong> {profile.country}
+                </p>
+                <p>
+                  <strong>Email:</strong> {profile.email}
+                </p>
+                <p>
+                  <strong>City:</strong> {profile.city}
+                </p>
+                <p>
+                  <strong>Phone number:</strong> {profile.phone}
+                </p>
+                <p>
+                  <strong>Pincode:</strong> {profile.pincode}
+                </p>
+              </div>
+            </Card>
+
+            {/* Experience Info */}
+            <Card title="Experience">
+              <div className="text-base text-black grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {experiences.map((exp, idx) => (
+                  <div key={idx}>
+                    <p>
+                      <strong>Role:</strong> {exp.title}
+                    </p>
+                    <p>
+                      <strong>Company:</strong> {exp.company}
+                    </p>
+                    <p>
+                      <strong>Location:</strong> {exp.location}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
+            {/* Education Info */}
+            <Card title="Education">
+              <div className="text-base text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {education.map((edu, idx) => (
+                  <div key={idx}>
+                    <p>
+                      <strong>Course:</strong> {edu.course}
+                    </p>
+                    <p>
+                      <strong>Institute:</strong> {edu.institute}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6">
+        <Link href="/CandidateBoarding/Step9">
+          <button className="w-full sm:w-auto border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
+            Back
+          </button>
+          </Link>
+          <Link href="/CandidateBoarding/Step12">
+          <button className="w-full sm:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
+            Continue
+          </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
-};
-
-export default PersonalSummary;
+}

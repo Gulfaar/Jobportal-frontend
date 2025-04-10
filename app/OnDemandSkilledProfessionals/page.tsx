@@ -2,7 +2,6 @@ import React from 'react'
 import HeroSection from '../Components/OnDemandSkilledProfessionals/HeroSection'
 import OnDemandWorks from '../Components/OnDemandSkilledProfessionals/OnDemandWorks'
 import OnDemandBenefits from '../Components/OnDemandSkilledProfessionals/OnDemandBenefits'
-import OnDemandExpertise from '../Components/OnDemandSkilledProfessionals/OnDemandExpertise'
 import OnDemandProfessional from '../Components/OnDemandSkilledProfessionals/OnDemandProfessional'
 import IndustryServices from '../Components/OnDemandSkilledProfessionals/IndustryServices'
 import Header from '../Components/Header/Header'
@@ -17,7 +16,6 @@ const page = () => {
         <OnDemandWorks/>
         <OnDemandBenefits/>
         <OnDemandProfessional/>
-        <OnDemandExpertise/>
         <Footer/>
       
     </div>

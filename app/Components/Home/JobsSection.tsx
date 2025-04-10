@@ -1,9 +1,39 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import Link from "next/link";
+import { getAllJobs } from "../Services/jobService";
+import { Job } from "../types/job";
 
 const JobsSection = () => {
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const jobsPerPage = 6;
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await getAllJobs();
+        console.log("Fetched jobs:", response);
+        setJobs(response.data); // ✅ assumes an array of jobs
+      } catch (error) {
+        console.error("Failed to fetch jobs:", error);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
+  // Pagination logic
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
+  const totalPages = Math.ceil(jobs.length / jobsPerPage);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   return (
     <section className="flex flex-col px-5 md:px-18 bg-[#2E5F5C] pt-16 pb-9 mt-16    w-full h-full  max-md:max-w-full">
       <h2 className="self-start text-5xl font-semibold text-center text-white max-md:text-4xl">
@@ -21,24 +51,32 @@ const JobsSection = () => {
       <div className="flex mt-14 max-md:mt-10 max-md:max-w-full">
       {/* Use Grid Layout for 3 Columns */}
       <div className="  grid grid-cols-1 md:grid-cols-3  gap-5">
-        {[1, 2, 3, 4, 5, 6].map((index) => (
-          <JobCard key={index} />
-        ))}
+      {Array.isArray(currentJobs) && currentJobs.length > 0 ? (
+            currentJobs.map((job) => <JobCard key={job._id} job={job} />)
+          ) : (
+            <p className="text-white">No jobs found.</p>
+          )}
+
       </div>
     </div>
 
       
 
-      <div className="flex gap-4 self-center mt-10 ml-3 max-w-full text-base text-center text-white w-[142px]">
-        <button className=" px-4 rounded border-solid bg-white border border-gray-300 h-[40px] min-h-[40px] text-teal-800">
-          1
-        </button>
-        <button className="self-stretch py-2 px-4 whitespace-nowrap rounded border border-white border-solid min-h-10">
-          2
-        </button>
-        <button className="self-stretch py-2 px-4 whitespace-nowrap rounded border border-white border-solid min-h-10">
-          3
-        </button>
+      <div className="flex gap-4 self-center mt-10 ml-3 max-w-full text-base text-center text-black w-[142px]">
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          <button
+            key={page}
+            onClick={() => handlePageChange(page)}
+            className={`px-4 rounded border-solid bg-white border border-gray-300 h-[40px] min-h-[40px] text-teal-800 ${
+              page === currentPage
+                ? " text-teal-800"
+                : "text-black border-white"
+            }`}
+          >
+            {page}
+          </button>
+        ))}
+
       </div>
     </section>
   );

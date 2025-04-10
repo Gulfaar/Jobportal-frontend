@@ -93,9 +93,11 @@ const EducationSection = () => {
 
           {/* Buttons */}
           <div className="mt-6 flex justify-between">
+          <Link href="/CandidateBoarding/Step6">
             <button className="border border-[#DA6B64] text-[#DA6B64] px-6 py-2 rounded hover:bg-red-100">
               Back
             </button>
+            </Link>
             <Link href='/CandidateBoarding/Step8'>
             <button className="bg-[#DA6B64] text-white px-6 py-2 rounded hover:bg-[#c95a56]">
               Continue

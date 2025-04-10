@@ -47,6 +47,8 @@ export default function WhyChooseGulfaar() {
                 className="mt-1"
               />
               <div>
+                <h3 className="font-semibold text-sm">{feature.title}</h3>
+                <p className="text-xs text-yellow-300">{feature.description}</p>
                 <h3 className="font-semibold text-white text-sm">{feature.title}</h3>
                 <p className="text-xs text-white">{feature.description}</p>
               </div>

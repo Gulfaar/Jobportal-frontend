@@ -143,12 +143,14 @@ const AddEducationForm = () => {
 
             {/* Buttons */}
             <div className="mt-6 flex justify-between">
+            <Link href="/CandidateBoarding/Step7">
               <button
                 type="button"
                 className="border border-[#DA6B64] text-[#DA6B64] px-6 py-2 rounded hover:bg-red-100"
               >
                 Back
               </button>
+              </Link>
               <Link href="/CandidateBoarding/Step9">
               <button
                 type="submit"

@@ -3,11 +3,9 @@ import StatCard from "./StatCard";
 import useScrollAnimation from "@/app/Hooks/useScrollAnimation";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
-import Animationimage from '../../../assets/animation.json'
+import Animationimage from "../../../assets/animation.json";
 
 const InfoSection = () => {
-
-
   const { ref, scaleProgress, opacityProgress } = useScrollAnimation();
 
   const stats = [
@@ -30,8 +28,6 @@ const InfoSection = () => {
         "With years of experience, our company has built a strong foundation of expertise, innovation, and customer-focused solutions. We've successfully delivered projects across various sectors, consistently exceeding client expectations",
     },
   ];
-
- 
 
   return (
     <motion.section 
@@ -58,7 +54,7 @@ const InfoSection = () => {
                 Empowering Workforce, Connecting Businesses, Building Global
                 Success
               </h2>
-              <p className="leading-7 font-medium  text-black mt-10 text-[15px] max-md:mt-20 max-md:max-w-full md:text-[20px]">
+              <p className="leading-7 font-medium text-black mt-10 text-[15px] max-md:mt-20 max-md:max-w-full md:text-[20px]">
                 At Gulfaar, we are more than just a recruitment agency—we are a
                 global workforce solutions provider committed to bridging the
                 gap between talent and opportunity. With our AI-driven hiring
@@ -86,20 +82,16 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between item-start gap-6 md:gap-0   mt-5 min-h-[171px] max-md:mt-2 max-md:max-w-full  py-5  w-full ">
-  {stats.map((stat, index) => (
-    <StatCard
-      key={index}
-      number={stat.number}
-      title={stat.title}
-      description ={
-        <div className=" max-w-[250px]">
-          {stat.description.toString()}
-        </div>
-      }
-    />
-  ))}
-</div>
+      <div className="flex flex-wrap justify-between item-start gap-6 md:gap-0 mt-5 min-h-[171px] max-md:mt-2 max-md:max-w-full py-5 w-full">
+        {stats.map((stat, index) => (
+          <StatCard
+            key={index}
+            number={stat.number}
+            title={stat.title}
+            description={stat.description} // Pass as a string
+          />
+        ))}
+      </div>
     </motion.section>
   );
 };
