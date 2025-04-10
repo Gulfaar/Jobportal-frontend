@@ -56,6 +56,7 @@ const NavBar = () => {
           className="w-[100px] py-10 md:py-0 h-auto block md:hidden"
         />
 
+
         <img
           src="./newlogo.png"
           alt="Gulfaar Logo"
@@ -69,6 +70,7 @@ const NavBar = () => {
         </button>
         <button className="text-white text-lg" onClick={() => setIsModalOpen(true)}>
           <FaBars />
+          
         </button>
       </div>
 
