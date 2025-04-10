@@ -121,18 +121,18 @@ const ResumeBuilderStep = () => {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-between mt-6 w-full">
-          <Link href="/CandidateBoarding/Step10">
-            <button className="px-4 py-2 border border-red-400 text-red-400 rounded-lg hover:bg-red-50">
-              Back
-            </button>
-            </Link>
-            <Link href="/CandidateBoarding/Step12">
-            <button className="px-4 py-2 bg-[#DA6B64] text-white rounded-lg hover:bg-[#FF6F61]">
-              Continue
-            </button>
-            </Link>
-          </div>
+          <div className="flex justify-between mt-6">
+        <Link href="/CandidateBoarding/Step10">
+          <button className="border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
+            Back
+          </button>
+        </Link>
+        <Link href="/CandidateBoarding/Step11">
+          <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
+            Continue
+          </button>
+          </Link>
+        </div>
         </div>
       </div>
     </div>
