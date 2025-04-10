@@ -134,6 +134,7 @@ const SkillsForm = () => {
               className="w-full sm:w-auto border border-[#DA6B64] text-[#DA6B64] px-6 py-2 rounded hover:bg-red-100 transition"
             >
               Back
+              
             </button>
             </Link>
             <Link href="/CandidateBoarding/Step10" className="w-full sm:w-auto">
