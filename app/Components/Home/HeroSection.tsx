@@ -80,7 +80,7 @@ const NavBar = () => {
         <img
           src="./newlogo.png"
           alt="Gulfaar Logo"
-          className="hidden w-[120px] md:w-[315px]  h-auto"
+          className="hidden md:block w-[120px] md:w-[315px]  h-auto"
         />
       </div>
       <div className="flex  items-center gap-2 md:hidden lg:hidden">
