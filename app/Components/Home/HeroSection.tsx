@@ -67,8 +67,8 @@ const NavBar = () => {
   const [isWorkForceOpen, setIsWorkForceOpen] = useState(false);  
 
   return (
-    <nav className="absolute  top-0 left-0 w-full flex justify-between items-center  px-10  py-7">
-      <div className="flex  mt-[-30px] items-center">
+    <nav className="absolute  top-0 left-0 w-full flex justify-between items-center px-5 py-10  md:px-10  md:py-7">
+      <div className="lex  mt-[-30px] items-center">
 
         <img
           src="./logomob.png"
@@ -80,10 +80,10 @@ const NavBar = () => {
         <img
           src="./newlogo.png"
           alt="Gulfaar Logo"
-          className="hidden md:block w-[120px] md:w-[315px]  h-auto"
+          className="hw-[120px] md:w-[315px]  h-auto hidden md:block lg:block"
         />
       </div>
-      <div className="flex  items-center gap-2 md:hidden lg:hidden">
+      <div className="flex  justify-end mt-[-30px] gap-2 md:hidden lg:hidden">
        <Link href={'/CandidateBoarding'}> <button className="px-2 py-2   rounded-lg text-white text-sm">Jobseeker</button></Link>
         <button className="bg-[#2E5F5C] px-3 py-2 rounded-lg text-white text-sm">
           Employer
@@ -139,14 +139,16 @@ const NavBar = () => {
       )}
 
       <div className="hidden w-full justify-end mt-[-50px] md:flex gap-2 md:gap-4">
-        <Link href={'/CandidateBoarding'}>
-        <button className="cursor-pointer md:px-2 py-2  rounded-lg text-white text-sm md:text-base">
-          Jobseeker
-        </button>
+      <Link href={'/jobseeker/login'}>
+          <button className="cursor-pointer md:px-2 py-2  rounded-lg text-white text-sm md:text-base">
+            Jobseeker
+          </button>
         </Link>
-        <button className="bg-[#2E5F5C] mt-1 md:px-4  md:h-8 rounded-lg text-white text-sm md:text-base">
-          Employer
-        </button>
+        <Link href={'/employer/signup'}>
+          <button className="bg-[#2E5F5C] mt-1 md:px-4  md:h-8 rounded-lg text-white text-sm md:text-base">
+            Employer
+          </button>
+        </Link>
         {/* <button className="bg-[#2E5F5C] px-3 md:px-4 py-2 rounded-lg text-white text-sm md:text-base">
           Post Job
         </button> */}
@@ -418,7 +420,7 @@ const MobileSearchBar = ({ searchQuery, setSearchQuery, handleSearch }: {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        <button type="submit" className="flex items-center justify-center bg-white text-[#2E5F5C] px-4 py-2 w-1/2">
+        <button type="submit" className="flex items-center justify-center bg-[#2E5F5C] text-white px-4 py-2 w-1/2">
           <CiSearch className="mr-2 text-lg" />
           Search
         </button>
@@ -481,16 +483,16 @@ const JobLocations = () => {
         
         {/* Slider Container */}
         <div className="flex overflow-hidden w-full px-10">
-          <div
-            className="flex transition-transform ease-in-out duration-700 gap-4"
+        <div
+            className="flex transition-transform ease-in-out duration-700 ml-30 md:ml-0  gap-2 md:gap-4"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
             {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-              <div key={slideIndex} className="flex min-w-full md:gap-5 px-3">
+              <div key={slideIndex} className="flex min-w-full gap-2 md:gap-5 px-3">
                 {locations.slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide).map((loc) => (
-                  <div key={loc.name} className="flex flex-col  px-5 md:ml-2 items-center min-w-[80px] md:min-w-[100px]">
+                  <div key={loc.name} className="flex flex-col  px-5 ml-1  md:ml-2 items-center min-w-[80px] md:min-w-[100px]">
                     <Link href="/country/CountryPresence">
-                      <Image src={loc.img} alt={loc.name} width={50} height={50} className="w-full h-full md:w-16 md:h-16" />
+                      <Image src={loc.img} alt={loc.name} width={50} height={50} className=" w-12 h-12  md:w-16 md:h-16" />
                     </Link>
                     <p className="text-xs mt-1">{loc.name}</p>
                   </div>
