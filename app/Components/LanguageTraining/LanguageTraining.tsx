@@ -9,13 +9,13 @@ const LanguageTraining = () => {
     <div className="w-full sm:px-5">
       {/* Hero Section */}
       
-      <section className="self-center px-15 mt-9 py-10 w-full max-w-[1294px] max-md:max-w-full">
+      <section className="self-center px-15 md:mt-9 md:py-10 w-full max-w-[1294px] max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
-          <div className="w-[63%] max-md:ml-0 max-md:w-full">
+          <div className="w-full max-md:ml-0 max-md:w-full">
             <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-10 max-md:max-w-full">
-              <h2 className="self-stretch text-3xl tracking-tight leading-[50px] max-md:max-w-full">
+              <h2 className="self-stretch text-2xl md:text-3xl tracking-tight leading-[50px] max-md:max-w-full">
                 Unlock Your Career Potential with <br />
-                <span className="text-[48px]">
+                <span className="text-[25px] md:text-[48px]">
                 Master Languages,  Expand Opportunities, Succeed Globally
                 </span>
               </h2>
@@ -87,9 +87,12 @@ const LanguageTraining = () => {
                   <Image src='/speechicon.svg' alt='speechicon' height={8} width={8} className='object-contain w-8 h-8'/>
                 </div>
                 <div>
-                  <h3 className="text-[24px] font-semibold mb-2 text-black">AI-Powered Speech Recognition</h3>
-                  <p className="text-gray-800 text-[20px]">Real-time analysis of pronunciation, fluency, and accent correction.</p>
+                  <h3 className="text-[18px] md:text-[24px] font-semibold mb-2 text-black">AI-Powered Speech Recognition</h3>   
+                  <div className='flex  w-full'>
+                  <p className="text-gray-800 text-left text-[20px]">Real-time analysis of pronunciation, fluency, and accent correction.</p>
+                  </div>
                 </div>
+                
               </div>
 
               {/* Feature 2 */}
@@ -98,18 +101,18 @@ const LanguageTraining = () => {
                   <Image src='/roboicon.svg' alt='speechicon' height={8} width={8} className='object-contain w-8 h-8'/>
                 </div>
                 <div>
-                  <h3 className="text-[24px] font-semibold mb-2 text-black">Personalized AI Learning Paths</h3>
+                  <h3 className="text-[18px] md:text-[24px] font-semibold mb-2 text-black">Personalized AI Learning Paths</h3>
                   <p className="text-gray-800 text-[20px]">AI adapts lessons based on your progress, focusing on areas that need improvement.</p>
                 </div>
               </div>
 
               {/* Feature 3 */}
-              <div className="flex items-start gap-4 bg-white/80 backdrop-blur-sm rounded-xl p-6">
+              <div className="flex justify-start items-start gap-4 bg-white/80 backdrop-blur-sm rounded-xl p-6">
                 <div className="w-16 h-16 rounded-full bg-[#2E6D65] flex items-center justify-center flex-shrink-0 relative">
                   <Image src='/messageicon.svg' alt='speechicon' height={8} width={8} className='object-contain w-8 h-8'/>
                 </div>
                 <div>
-                  <h3 className="text-[24px] font-semibold mb-2 text-black">Live AI Conversation Practice</h3>
+                  <h3 className="text-[18px] md:text-[24px] font-semibold mb-2 text-black">Live AI Conversation Practice</h3>
                   <p className="text-gray-800 text-[20px]">Engage in AI-driven conversations that simulate real-life scenarios, improving fluency and confidence.</p>
                 </div>
               </div>
@@ -120,7 +123,7 @@ const LanguageTraining = () => {
                   <Image src='/performicon.svg' alt='speechicon' height={8} width={8} className='object-contain w-8 h-8'/>
                 </div>
                 <div>
-                  <h3 className="text-[24px] font-semibold mb-2 text-black">Instant Feedback & Performance Analysis</h3>
+                  <h3 className="text-[18px] md:text-[24px] font-semibold mb-2 text-black">Instant Feedback & Performance Analysis</h3>
                   <p className="text-gray-800 text-[20px]">AI evaluates your speaking, listening, and writing skills, providing actionable insights.</p>
                 </div>
               </div>
@@ -131,7 +134,7 @@ const LanguageTraining = () => {
                   <Image src='/exampreicon.svg' alt='speechicon' height={8} width={8} className='object-contain w-8 h-8'/>
                 </div>
                 <div>
-                  <h3 className="text-[24px] font-semibold mb-2 text-black">AI-Based Exam Preparation</h3>
+                  <h3 className="text-[18px] md:text-[24px] font-semibold mb-2 text-black">AI-Based Exam Preparation</h3>
                   <p className="text-gray-800 text-[20px]">Targeted practice tests and personalized study plans for language certification exams.</p>
                 </div>
               </div>
@@ -635,49 +638,7 @@ const LanguageTraining = () => {
 
 
       {/* Invest in Yourself Section */}
-      <div className="w-full bg-white">
-        <div className="container mx-auto px-5 md:px-20 py-16 md:py-24">
-          <div className={`flex flex-col md:flex-row gap-8 md:gap-16 transition-all duration-500 ${showForm ? "justify-between" : "justify-center"}`}>
-            {/* Left Content - Yellow Box */}
-            <div className={`w-full md:w-1/2 bg-[#F8E449] rounded-3xl p-12 flex flex-col items-start justify-center transition-all duration-500 transform ${showForm ? "md:translate-x-[-50px]" : "md:translate-x-0"}`}>
-              <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
-                Invest in Yourself
-              </h2>
-              <p className="text-xl md:text-2xl text-black mb-8">
-                You Will Grow, You Will Succeed. We Promise That
-              </p>
-              <button onClick={() => setShowForm(true)} className="bg-[#2E6D65] text-white px-8 py-3 rounded-full hover:bg-[#245a53] transition-colors text-lg font-medium flex items-center gap-2">
-                Join with us
-                <div className="w-8 h-8 bg-white rounded-full">
-                  <Image src="/arrowtrainingicon.svg" alt="" height={20} width={20} className="ml-1.5 mt-2" />
-                </div>
-              </button>
-            </div>
-
-            {/* Right Content - Contact Form (conditionally rendered) */}
-            {showForm && (
-              <div className="w-full md:w-1/2 bg-[#2E6D65] rounded-3xl p-12 transition-all duration-500">
-                <div className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Name Input */}
-                    <input type="text" placeholder="Name" className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400" />
-                    {/* Contact Number Input */}
-                    <input type="tel" placeholder="Contact number" className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400" />
-                  </div>
-                  {/* Email Input */}
-                  <input type="email" placeholder="E-mail" className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400" />
-                  {/* Enquiry Input */}
-                  <input type="text" placeholder="Type field of enquiry" className="w-full px-6 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400" />
-                  {/* Submit Button */}
-                  <button className="bg-[#E57373] text-white px-12 py-3 rounded-lg hover:bg-[#d46868] transition-colors text-lg font-medium mx-auto block">
-                    Submit
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
+      
     </div>
   )
 }

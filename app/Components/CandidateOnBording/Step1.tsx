@@ -60,17 +60,17 @@ const CandidateOnboardingSteps1 = () => {
         ))}
       </div>
 
-      <div className="mt-8 flex justify-center gap-4">
-        <button className="border border-gray-400 px-4 py-2 rounded-lg flex items-center gap-2">
-          <span>🌍</span> Select country
-        </button>
-        <button
-      className="bg-[#D67268] text-white px-6 py-2 rounded-lg"
-      onClick={() => router.push("/CandidateBoarding/Step2")} // ✅ Navigate to Step2
-    >
-      Continue
-    </button>
-      </div>
+  <div className="mt-18 md:mt-10 flex flex-col items-center gap-4">
+  <button className="border border-gray-400 px-16 py-4 rounded-lg flex items-center gap-2">
+    <span>🌍</span> Select country
+  </button>
+  <button
+    className="bg-[#D67268] text-white px-10 py-3 rounded-lg"
+    onClick={() => router.push("/CandidateBoarding/Step2")} // ✅ Navigate to Step2
+  >
+    Continue
+  </button>
+</div>
     </section>
   );
 };

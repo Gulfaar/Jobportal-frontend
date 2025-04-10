@@ -39,7 +39,7 @@ export default function CandidateOnboardingLayout({ children }: { children: Reac
 
         {/* Step indicator on the right */}
         {!shouldHideStepIndicator && (
-          <div className="w-1/12 min-w-[80px] flex flex-col items-center justify-center space-y-4 absolute right-4 top-1/2 -translate-y-1/2">
+          <div className="hidden md:block lg-block w-1/12 min-w-[80px] flex flex-col items-center justify-center space-y-4 absolute right-4 top-1/2 -translate-y-1/2">
             {[1, 2, 3, 4, 5, 6, 7].map((step) => (
               <div
                 key={step}
