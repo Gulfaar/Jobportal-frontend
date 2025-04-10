@@ -69,10 +69,18 @@ const NavBar = () => {
   return (
     <nav className="absolute  top-0 left-0 w-full flex justify-between items-center  px-10  py-7">
       <div className="flex  mt-[-30px] items-center">
+
+        <img
+          src="./logomob.png"
+          alt="Gulfaar Mobile Logo"
+          className="w-[100px] py-10 md:py-0 h-auto block md:hidden"
+        />
+
+
         <img
           src="./newlogo.png"
           alt="Gulfaar Logo"
-          className="w-[120px] md:w-[315px]  h-auto"
+          className="hidden w-[120px] md:w-[315px]  h-auto"
         />
       </div>
       <div className="flex  items-center gap-2 md:hidden lg:hidden">
@@ -82,6 +90,7 @@ const NavBar = () => {
         </button>
         <button className="text-white text-lg" onClick={() => setIsModalOpen(true)}>
           <FaBars />
+          
         </button>
       </div>
 
@@ -411,7 +420,7 @@ const MobileSearchBar = ({ searchQuery, setSearchQuery, handleSearch }: {
         </div>
         <button type="submit" className="flex items-center justify-center bg-white text-[#2E5F5C] px-4 py-2 w-1/2">
           <CiSearch className="mr-2 text-lg" />
-          Search Job
+          Search
         </button>
       </div>
     </form>
