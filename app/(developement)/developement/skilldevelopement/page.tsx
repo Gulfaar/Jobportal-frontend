@@ -13,16 +13,16 @@ const SkillDevelopment: React.FC = () => {
   return (
     <div className="flex overflow-hidden flex-col bg-white">
       <Header title="SKILL DEVELOPMENT"
-       subtitle="Explore a wide range of job opportunities available"/>
+        subtitle="Explore a wide range of job opportunities available" />
 
       {/* Unlock Your Career Potential Section */}
-      <section className="self-center px-15 mt-9 py-10 w-full max-w-[1294px] max-md:max-w-full">
+      <section className="self-center px-5 md:px-15 md:mt-9 py-10 w-full max-w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
           <div className="w-[63%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-10 max-md:max-w-full">
+            <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-5 max-md:max-w-full">
               <h2 className="self-stretch text-3xl tracking-tight leading-[50px] max-md:max-w-full">
                 Unlock Your Career Potential with <br />
-                <span className="text-[48px]">
+                <span className="text-[30px] md:text-[48px] mb-2">
                   Gulfaar's Skill Development Programs
                 </span>
               </h2>
@@ -119,64 +119,62 @@ const SkillDevelopment: React.FC = () => {
       </section>
 
       {/* AI Enhances Skill Development Section */}
-      <section className="flex flex-col px-15 items-center mt-24 max-md:mt-10 max-md:max-w-full">
-        <h2 className="self-center text-4xl md:text-[48px] font-semibold tracking-tight leading-snug text-indigo-950 max-md:max-w-full ">
-          HOW AI ENHANCES SKILL DEVELOPEMNT AT GULFAAR?
-        </h2>
-        <div className="self-center mt-2 w-full max-w-[1279px] max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col">
-            <div className="w-[59%] max-md:ml-0 max-md:w-full">
-              <div className="flex flex-col items-start mt-12 w-full max-md:mt-10 max-md:max-w-full">
-                <div className="flex flex-col items-start self-stretch pl-3 w-full max-md:max-w-full">
-                  <AIFeature
-                    imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c87f0f37aede8c3f8035b33b88f887e0d02864?placeholderIfAbsent=true"
-                    title="AI-Powered Teaching"
-                    description="Our AI-driven learning platform personalizes your training based on your strengths and weaknesses, making education more effective."
-                  />
-                  <hr className="shrink-0 mt-6 max-w-full h-px border border-solid border-zinc-300 border-opacity-10 w-[652px]" />
-                  <AIFeature
-                    imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/33895386f87287c190405dcf00bb3e3df7cb7435?placeholderIfAbsent=true"
-                    title="AI-Based Practice & Mock Tests"
-                    description="Smart assessments analyze your performance, suggest improvements, and help you master skills faster"
-                    className="pt-2 pr-12 pb-6 mt-5 max-md:pr-5"
-                  />
-                  <hr className="shrink-0 mt-6 max-w-full h-px border border-solid border-zinc-300 border-opacity-10 w-[652px]" />
-                  <AIFeature
-                    imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/a56432f84971eac6f85943ddb5f4b69580a50aca?placeholderIfAbsent=true"
-                    title="Adaptive Learning Paths"
-                    description="AI recommends courses, modules, and practice exercises tailored to your progress"
-                    className="pt-2.5 pr-20 pb-6 mt-4 max-md:pr-5"
-                  />
-                  <hr className="shrink-0 mt-6 max-w-full h-px border border-solid border-zinc-300 border-opacity-10 w-[652px]" />
-                </div>
-                <AIFeature
-                  imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/5397be73cf2c626ab3f4b98909da9bc959c30928?placeholderIfAbsent=true"
-                  title="Real-Time Feedback & Analysis"
-                  description="AI evaluates your responses and provides instant insights to improve your performance"
-                  className="pt-2 pr-20 pb-6 pl-5 mt-4 max-md:px-5"
-                />
-                <hr className="shrink-0 mt-6 max-w-full h-px border border-solid border-zinc-300 border-opacity-10 w-[652px]" />
-                <AIFeature
-                  imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/5397be73cf2c626ab3f4b98909da9bc959c30928?placeholderIfAbsent=true"
-                  title="Global Standard Training"
-                  description="AI-driven simulations prepare you for real-world scenarios in different industries and countries"
-                  className="mt-3 ml-5"
-                />
-              </div>
-            </div>
-            <div className="ml-8 md:mt-60  w-[51%] max-md:ml-0 max-md:w-full ">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/756486e9bbca25b3eb005760ba6e6802399beaf4?placeholderIfAbsent=true"
-                className="object-contain object-bottom w-full h-full aspect-[0.75] max-md:mt-10 max-md:max-w-full"
-                alt="AI-enhanced learning illustration"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="flex flex-col px-4 md:px-15 items-center mt-24 max-md:mt-10 max-w-full">
+  <h2 className="text-3xl md:text-[48px] font-semibold tracking-tight leading-snug text-indigo-950 text-center max-md:text-left">
+    HOW AI ENHANCES SKILL DEVELOPMENT AT GULFAAR?
+  </h2>
+
+  <div className="mt-10 w-full max-w-[1279px] flex flex-col md:flex-row gap-8 pl-2">
+    {/* Left: Feature Cards */}
+    <div className="flex flex-col space-y-8 w-full">
+      <hr className="border border-zinc-300 border-opacity-10 w-full" />
+      <AIFeature
+        imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c87f0f37aede8c3f8035b33b88f887e0d02864?placeholderIfAbsent=true"
+        title="AI-Powered Teaching"
+        description="Our AI-driven learning platform personalizes your training based on your strengths and weaknesses, making education more effective."
+      />
+      <hr className="border border-zinc-300 border-opacity-10 w-full" />
+      <AIFeature
+        imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/33895386f87287c190405dcf00bb3e3df7cb7435?placeholderIfAbsent=true"
+        title="AI-Based Practice & Mock Tests"
+        description="Smart assessments analyze your performance, suggest improvements, and help you master skills faster."
+      />
+      <hr className="border border-zinc-300 border-opacity-10 w-full" />
+      <AIFeature
+        imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/a56432f84971eac6f85943ddb5f4b69580a50aca?placeholderIfAbsent=true"
+        title="Adaptive Learning Paths"
+        description="AI recommends courses, modules, and practice exercises tailored to your progress."
+      />
+      <hr className="border border-zinc-300 border-opacity-10 w-full" />
+      <AIFeature
+        imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/5397be73cf2c626ab3f4b98909da9bc959c30928?placeholderIfAbsent=true"
+        title="Real-Time Feedback & Analysis"
+        description="AI evaluates your responses and provides instant insights to improve your performance."
+      />
+      <hr className="border border-zinc-300 border-opacity-10 w-full" />
+      <AIFeature
+        imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/5397be73cf2c626ab3f4b98909da9bc959c30928?placeholderIfAbsent=true"
+        title="Global Standard Training"
+        description="AI-driven simulations prepare you for real-world scenarios in different industries and countries."
+      />
+    </div>
+
+    {/* Right: Image */}
+    <div className="ml-8 md:mt-60 w-full max-md:ml-0 max-md:w-full">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/756486e9bbca25b3eb005760ba6e6802399beaf4?placeholderIfAbsent=true"
+        className="object-contain object-bottom w-full h-full aspect-[0.75] max-md:mt-10 max-md:max-w-full"
+        alt="AI-enhanced learning illustration"
+      />
+    </div>
+  </div>
+</section>
+
+
+
 
       {/* Technical Skills Section */}
-      <section className=" w-full bg-yellow-400 bg-opacity-50 max-md:mt-10 max-md:max-w-full">
+      <section className=" w-full bg-yellow-400 bg-opacity-50 max-md:mt-0 max-md:max-w-full">
         <div className="flex relative flex-col px-20 py-12 w-full min-h-[759px] max-md:px-5 max-md:max-w-full">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/06f503cd746c831444541c86d7c0cf5d11fc1d19?placeholderIfAbsent=true"
@@ -308,7 +306,7 @@ const SkillDevelopment: React.FC = () => {
                   className="object-contain self-center w-20 aspect-square rounded-[100px]"
                   alt="Workplace communication icon"
                 />
-                <p className="mt-14 max-md:mt-10">  
+                <p className="mt-14 max-md:mt-10">
                   Workplace Communication & Negotiation Skills
                 </p>
               </div>
@@ -440,11 +438,11 @@ const SkillDevelopment: React.FC = () => {
           </div>
         </div>
       </section>
-<section>
-  <div className="px-10 py-12">
-<StepsSection/>
-</div>
-</section>
+      <section>
+        <div className="px-10 py-12">
+          <StepsSection />
+        </div>
+      </section>
       {/* Process Steps Section */}
       {/* <section className="flex flex-wrap gap-5 justify-between items-start self-center mt-12 w-full px-5 text-1xl font-semibold leading-tight text-teal-800 max-w-[1325px] max-md:mt-10 max-md:max-w-full">
         <ProcessStep
@@ -486,29 +484,29 @@ const SkillDevelopment: React.FC = () => {
           imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/5309d9f39396e329d7de259c4987e7adb667bd36?placeholderIfAbsent=true"
           title="Fresh graduates looking for career-ready skills"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          className="relative pt-2 pr-20 pb-8 text-neutral-950 max-md:pr-5"
+          className="relative py-6"
         />
         <TargetAudience
           imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/301c3263b08253529ed4ac8f72766deb36073f4d?placeholderIfAbsent=true"
           title="Working professionals seeking career advancement."
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          className="relative pt-2.5 pr-10 pb-7 mt-5 max-md:pr-5"
+          className="relative py-6 mt-6"
         />
         <TargetAudience
           imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/e399d6b3021cb0acbd79a8d43b3d714e45fd5677?placeholderIfAbsent=true"
           title="Job seekers looking for specialized industry training"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          className="relative pt-1.5 pr-20 pb-8 mt-5 max-md:pr-5"
+          className="relative py-6 mt-6"
         />
         <TargetAudience
           imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/40929c126ce06f7957f7059c0f3bc3081c268443?placeholderIfAbsent=true"
           title="Entrepreneurs and business owners upgrading their skill set"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          className="relative mt-7"
+          className="relative py-6 mt-6"
         />
       </section>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -64,7 +64,7 @@ const HowItWorksSection = () => {
         scale: scaleProgress,
         opacity: opacityProgress,
       }}
-      className="flex flex-col items-center text-black bg-white px-6 py-16 w-full">
+      className="flex flex-col items-center text-black bg-white  px-6 md:py-16 w-full">
       <h2 className="text-4xl font-bold text-center mb-16">HOW GULFAAR WORKS</h2>
       <div className={`relative w-full ${isMobile ? "flex flex-col items-center" : "flex justify-between"}`}>
         {steps.map((step, index) => (

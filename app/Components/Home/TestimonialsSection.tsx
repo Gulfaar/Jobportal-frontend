@@ -128,6 +128,7 @@ const TestimonialsSection = () => {
       avatar: "https://randomuser.me/api/portraits/men/3.jpg",
     },
   ];
+  const mobileTrackRef = useRef(null);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -191,13 +192,40 @@ const TestimonialsSection = () => {
       </button>
     </div>
         ):(
-          <div className="md:hidden flex flex-col gap-6 mt-10 w-full max-w-md">
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="w-full flex justify-center items-center">
-            <TestimonialCard {...testimonial} />
-          </div>
-        ))}
+          <div className="md:hidden relative w-full max-w-md mt-10 overflow-hidden">
+  {/* Left Button */}
+  <button 
+    onClick={handlePrev}
+    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+  >
+    <FaChevronLeft size={5} />
+  </button>
+
+  {/* Carousel Track */}
+  <div
+    ref={mobileTrackRef}
+    className="flex transition-transform  justify-center  items-center ml-3 md:ml-0 duration-500 ease-in-out"
+    style={{
+      transform: `translateX(-${currentIndex * 100}%)`,
+      width: `${testimonials.length * 100}%`,
+    }}
+  >
+    {testimonials.map((testimonial, index) => (
+      <div key={index} className="w-full   flex-shrink-0 px-4">
+        <TestimonialCard {...testimonial} />
       </div>
+    ))}
+  </div>
+
+  {/* Right Button */}
+  <button
+    onClick={handleNext}
+    className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+  >
+    <FaChevronRight size={5} />
+  </button>
+</div>
+
         ) 
       }
       

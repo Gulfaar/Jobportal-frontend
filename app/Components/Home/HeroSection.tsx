@@ -53,6 +53,7 @@ const HeroSection = () => {
         />
 
         <JobLocations />
+    
       </div>
     </div>
   );

@@ -14,19 +14,15 @@ const AIFeature: React.FC<AIFeatureProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`flex flex-wrap gap-6 ${className}`}>
+    <div className={`flex gap-4 items-start ${className} max-md:flex-col max-md:text-left`}>
       <img
         src={imageSrc}
-        className="object-contain shrink-0 self-start aspect-square rounded-[100px] w-[70px]"
+        className="object-contain rounded-full w-[70px] h-[70px] shrink-0"
         alt={title}
       />
-      <div className="flex flex-col grow shrink-0 basis-0 w-fit max-md:max-w-full">
-        <h3 className="self-start text-2xl font-semibold leading-tight text-indigo-950">
-          {title}
-        </h3>
-        <p className="mt-7 text-xl leading-7 text-black max-md:max-w-full">
-          {description}
-        </p>
+      <div className="flex flex-col text-left max-md:mt-2">
+        <h3 className="text-2xl font-semibold text-indigo-950">{title}</h3>
+        <p className="mt-3 text-xl text-black">{description}</p>
       </div>
     </div>
   );

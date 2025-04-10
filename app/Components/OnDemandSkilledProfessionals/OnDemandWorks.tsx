@@ -17,7 +17,7 @@ const OnDemandWorks = () => {
       ]
     },
     {
-      title: "Instant Communication & Workforce Management",
+      title: "Instant Communication Workforce Management",
       description: [
         "WhatsApp API & SMS Notifications – Immediate updates on hiring status",
         "Mobile App & In-App Messaging – Secure, fast communication with professionals"
@@ -40,28 +40,28 @@ const OnDemandWorks = () => {
   ];
 
   return (
-    <section className="px-16 py-20 max-md:px-8 max-sm:px-5">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-2 max-md:grid-cols-1 gap-x-24 gap-y-16">
-          {/* Main Heading */}
-          <h1 className="text-[52px] font-semibold text-[#2E5F5C] leading-[1.1] max-md:text-4xl max-sm:text-3xl">
-            How Our On-Demand<br />
-            Outsourcing Works ?
-          </h1>
-
-          {/* First Card */}
-          <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-            <h3 className="text-[24px] font-semibold text-[#1E1B4B] mb-4 text-center">
-              {benefits[0].title}
-            </h3>
-            <div className="space-y-4">
-              {benefits[0].description.map((point, index) => (
-                <p key={index} className="text-[18px] text-gray-700 leading-relaxed">
-                  {point}
-                </p>
-              ))}
-            </div>
-          </div>
+<section className="px-4 sm:px-6 md:px-8 lg:px-16 py-20">
+  <div className="max-w-[1400px] mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-16">
+      
+      {/* Updated Main Heading */}
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-semibold text-[#2E5F5C] leading-snug max-w-[680px] mx-auto text-center">
+        How Our On-Demand Outsourcing Works?
+      </h1>
+      
+      {/* First Card */}
+      <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+        <h3 className="text-[24px] font-semibold text-[#1E1B4B] mb-4 text-center">
+          {benefits[0].title}
+        </h3>
+        <div className="space-y-4">
+          {benefits[0].description.map((point, index) => (
+            <p key={index} className="text-[18px] text-gray-700 leading-relaxed">
+              {point}
+            </p>
+          ))}
+        </div>
+      </div>
 
           {/* Remaining Cards in Grid */}
           {benefits.slice(1).map((benefit, index) => (

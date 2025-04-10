@@ -48,7 +48,7 @@ export default function WhyChooseGulfaar() {
               />
               <div>
                 <h3 className="font-semibold text-sm">{feature.title}</h3>
-                <p className="text-xs text-white">{feature.description}</p>
+                <p className="text-xs text-yellow-300">{feature.description}</p>
               </div>
             </div>
           ))}

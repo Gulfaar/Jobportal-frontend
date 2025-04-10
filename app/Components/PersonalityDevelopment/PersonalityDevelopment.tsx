@@ -48,7 +48,7 @@ const PersonalityDevelopment = () => {
 
       {/* Existing "Why Personality Development Matters?" Section */}
       <section className="py-16">
-        <h2 className="text-[48px] font-semibold text-[#2E5F5C] text-center mb-12">
+        <h2 className="text-[28px] md:text-[48px] font-semibold text-[#2E5F5C] text-center mb-12">
           Why Personality Development Matters ?
         </h2>
 
@@ -333,87 +333,92 @@ const PersonalityDevelopment = () => {
 
       {/* How It Works Section */}
       <section className="bg-[#FAF278] py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-[48px] font-semibold text-[#204E47] text-center mb-16">
-            How It Works?
-          </h2>
-          
-          <div className="flex flex-nowrap items-start justify-between max-w-7xl mx-auto overflow-x-auto">
-            {/* Step 1 */}
-            <div className="flex flex-col items-center text-center min-w-[200px]">
-              <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
-                1
-              </div>
-              <h3 className="text-[#204E47] text-xl font-semibold mb-3">
-                Enroll in a Program
-              </h3>
-              <p className="text-[#204E47] text-[15px]">
-                Select a course that fits your growth needs
-              </p>
-            </div>
+  <div className="container mx-auto px-4">
+    <h2 className="text-[48px] font-semibold text-[#204E47] text-center mb-16">
+      How It Works?
+    </h2>
 
-            <FaArrowRightLong className="text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
-
-            {/* Step 2 */}
-            <div className="flex flex-col items-center text-center min-w-[200px]">
-              <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
-                2
-              </div>
-              <h3 className="text-[#204E47] text-xl font-semibold mb-3">
-                Learn with AI & Experts
-              </h3>
-              <p className="text-[#204E47] text-[15px]">
-                Get trained by professionals and AI modules
-              </p>
-            </div>
-
-            <FaArrowRightLong className="text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
-
-            {/* Step 3 */}
-            <div className="flex flex-col items-center text-center min-w-[200px]">
-              <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
-                3
-              </div>
-              <h3 className="text-[#204E47] text-xl font-semibold mb-3">
-                AI Assessment
-              </h3>
-              <p className="text-[#204E47] text-[15px]">
-                Receive real-time feedback on your progress
-              </p>
-            </div>
-
-            <FaArrowRightLong className="text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
-
-            {/* Step 4 */}
-            <div className="flex flex-col items-center text-center min-w-[200px]">
-              <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
-                4
-              </div>
-              <h3 className="text-[#204E47] text-xl font-semibold mb-3">
-                Practical Sessions
-              </h3>
-              <p className="text-[#204E47] text-[15px]">
-                Participate in interactive exercises
-              </p>
-            </div>
-
-            <FaArrowRightLong className="text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
-
-            {/* Step 5 */}
-            <div className="flex flex-col items-center text-center min-w-[200px]">
-              <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
-                5
-              </div>
-              <h3 className="text-[#204E47] text-xl font-semibold mb-3">
-                Certification
-              </h3>
-              <p className="text-[#204E47] text-[15px]">
-                Gain credentials and ongoing mentorship
-              </p>
-            </div>
-          </div>
+    <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-8 md:gap-0 max-w-7xl mx-auto overflow-x-auto">
+      {/* Step 1 */}
+      <div className="flex flex-col items-center text-center min-w-[200px]">
+        <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
+          1
         </div>
-      </section>
+        <h3 className="text-[#204E47] text-xl font-semibold mb-3">
+          Enroll in a Program
+        </h3>
+        <p className="text-[#204E47] text-[15px]">
+          Select a course that fits your growth needs
+        </p>
+      </div>
+
+      <FaArrowRightLong className="hidden md:block text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
+      <div className="block md:hidden h-[40px] w-[2px] bg-[#204E47]" />
+
+      {/* Step 2 */}
+      <div className="flex flex-col items-center text-center min-w-[200px]">
+        <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
+          2
+        </div>
+        <h3 className="text-[#204E47] text-xl font-semibold mb-3">
+          Learn with AI & Experts
+        </h3>
+        <p className="text-[#204E47] text-[15px]">
+          Get trained by professionals and AI modules
+        </p>
+      </div>
+
+      <FaArrowRightLong className="hidden md:block text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
+      <div className="block md:hidden h-[40px] w-[2px] bg-[#204E47]" />
+
+      {/* Step 3 */}
+      <div className="flex flex-col items-center text-center min-w-[200px]">
+        <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
+          3
+        </div>
+        <h3 className="text-[#204E47] text-xl font-semibold mb-3">
+          AI Assessment
+        </h3>
+        <p className="text-[#204E47] text-[15px]">
+          Receive real-time feedback on your progress
+        </p>
+      </div>
+
+      <FaArrowRightLong className="hidden md:block text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
+      <div className="block md:hidden h-[40px] w-[2px] bg-[#204E47]" />
+
+      {/* Step 4 */}
+      <div className="flex flex-col items-center text-center min-w-[200px]">
+        <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
+          4
+        </div>
+        <h3 className="text-[#204E47] text-xl font-semibold mb-3">
+          Practical Sessions
+        </h3>
+        <p className="text-[#204E47] text-[15px]">
+          Participate in interactive exercises
+        </p>
+      </div>
+
+      <FaArrowRightLong className="hidden md:block text-[#204E47] text-[40px] flex-shrink-0 mt-3" />
+      <div className="block md:hidden h-[40px] w-[2px] bg-[#204E47]" />
+
+      {/* Step 5 */}
+      <div className="flex flex-col items-center text-center min-w-[200px]">
+        <div className="w-12 h-12 rounded-full bg-[#204E47] text-white flex items-center justify-center text-xl font-medium mb-6">
+          5
+        </div>
+        <h3 className="text-[#204E47] text-xl font-semibold mb-3">
+          Certification
+        </h3>
+        <p className="text-[#204E47] text-[15px]">
+          Gain credentials and ongoing mentorship
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
