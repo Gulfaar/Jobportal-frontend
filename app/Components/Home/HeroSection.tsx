@@ -400,7 +400,7 @@ const MobileSearchBar = () => {
         {/* Right "Search Job" button */}
         <button className="flex items-center justify-center bg-[#2E5F5C] text-white px-4 py-2 w-1/2">
           <CiSearch className="mr-2 text-lg" />
-          Search Job
+          Search
         </button>
       </div>
     </div>
