@@ -76,7 +76,7 @@ const Features: React.FC<FeaturesProps> = ({
                 <h3 className="text-lg font-semibold text-[#00695C]">{feature.title}</h3>
               </div>
               {/* Description */}
-              <p className="text-[#4DB6AC]">{feature.description}</p>
+              <p className="text-black">{feature.description}</p>
             </div>
           ))}
         </div>

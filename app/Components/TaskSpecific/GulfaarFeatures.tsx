@@ -62,7 +62,7 @@ const GulfaarFeatures = () => {
               <Lottie 
                 animationData={TaskAnimation} 
                 loop={true} 
-                className="object-contain grow gap-2.5 py-2.5 w-full rounded-3xl aspect-[1.07] max-md:mt-10 max-md:max-w-full"
+                className="hidden md:block object-contain grow gap-2.5 py-2.5 w-full rounded-3xl aspect-[1.07] max-md:mt-10 max-md:max-w-full"
               />
       </div>
     </section>

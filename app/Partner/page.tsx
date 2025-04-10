@@ -24,7 +24,7 @@ const PartnerPage = () => {
                 <PartnerUs />
                 <PartnershipOpportunities />
                 <PartnershipTypes />
-                <SuccessNetwork />
+              
                 <Footer />
           </div>
         </div>

@@ -217,7 +217,7 @@ const NavLinks = () => {
               Language Training
             </Link>
             <Link
-              href="/exam"
+              href="/ExamPreprations"
               className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
             >
               Exam Preparation

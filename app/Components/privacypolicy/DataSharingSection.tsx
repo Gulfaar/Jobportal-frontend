@@ -6,17 +6,15 @@ interface DataSharingItemProps {
   description: string;
 }
 
-const DataSharingItem: React.FC<DataSharingItemProps> = ({
-  title,
-  description,
-}) => {
+const DataSharingItem: React.FC<DataSharingItemProps> = ({ title, description }) => {
   return (
-    <div className="flex items-center mb-4 max-sm:text-base">
+    <div className="mb-6 flex flex-col sm:flex-row sm:items-center gap-4 md:gap-10 text-left">
+      <div className="flex  ">
       <IoIosCheckbox className="text-teal-800 text-3xl mr-2 min-w-[24px]" />
-      <div className="flex items-center">
-        <h3 className="inline-flex md:whitespace-nowrap text-xl font-semibold text-teal-800 mr-2">{title} -</h3>
-        <p className="text-xl md:whitespace-nowrap">{description}</p>
+      <h3 className="text-lg font-semibold text-teal-900">{title}</h3>
       </div>
+      <p className="text-base text-gray-700 sm:mt-0 mt-1">{description}</p>
+     
     </div>
   );
 };

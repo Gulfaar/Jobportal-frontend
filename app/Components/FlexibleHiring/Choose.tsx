@@ -31,7 +31,7 @@ export default function WhyChooseGulfaar() {
   return (
     <section className="w-full bg-[#2E5F5C] py-16 px-4">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">
+        <h2 className="text-3xl text-white md:text-4xl font-bold mb-10">
           Why Choose Gulfaar's AI-Powered Flexible Hiring?
         </h2>
 
@@ -47,7 +47,7 @@ export default function WhyChooseGulfaar() {
                 className="mt-1"
               />
               <div>
-                <h3 className="font-semibold text-sm">{feature.title}</h3>
+                <h3 className="font-semibold text-white text-sm">{feature.title}</h3>
                 <p className="text-xs text-white">{feature.description}</p>
               </div>
             </div>

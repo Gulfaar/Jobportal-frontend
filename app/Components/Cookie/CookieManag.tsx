@@ -7,12 +7,12 @@ const ManagingCookies = () => {
         {/* Content Box */}
         <div className="bg-white shadow-md border border-gray-200 rounded-lg p-6 flex items-center gap-4 max-w-3xl w-full">
           {/* Icon */}
-          <div className="bg-[#2E5F5C] text-white p-2 rounded-full">
+          <div className="bg-[#2E5F5C] hidden md:block text-left text-white p-2 rounded-full">
             🍪
           </div>
           
           {/* Text */}
-          <p className="text-gray-700 flex-1">
+          <p className="text-gray-700 text-left">
             To modify your cookie preferences, visit our <a href="#" className="text-[#2E5F5C] font-semibold">Cookie Settings</a> page or update settings via your browser.
           </p>
           

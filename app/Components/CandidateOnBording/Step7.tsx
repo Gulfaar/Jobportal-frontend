@@ -63,22 +63,22 @@ const EducationSection = () => {
           </div>
 
           {/* Education Section */}
-          <div className="bg-[#F5D5D3] rounded-xl p-8">
-            <div className="flex justify-between items-center mb-4">
+          <div className="bg-white rounded-xl p-8">
+            <div className="flex justify-between items-center mb-20">
               <h3 className="text-[#DA6B64] font-semibold text-sm">Education</h3>
               <Link href="/CandidateBoarding/Step8">
-              <button className="border border-[#DA6B64] text-[#DA6B64] px-4 py-1.5 rounded hover:bg-red-100 text-sm">
+              <button className="border border-[#DA6B64] text-[#DA6B64] px-4 py-1.5  rounded hover:bg-red-100 text-sm">
                 Add more education
               </button>
               </Link>
             </div>
 
             {/* Education Entries */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 m md:grid-cols-3 gap-4">
               {educationEntries.map((entry, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg p-4 shadow-md relative border border-[#DA6B64]"
+                  className="bg-white rounded-lg mt-[-30px] p-4 shadow-md relative border border-[#DA6B64]"
                 >
                   <p className="font-semibold text-gray-800">{entry.role}</p>
                   <p className="text-sm text-gray-600">{entry.institution}</p>
