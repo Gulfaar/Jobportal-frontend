@@ -95,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
             </button> */}
             <ul className="flex flex-col space-y-4 text-white">
             <li>
-                <Link href="#jobs" className="block hover:text-gray-200 transition">
+                <Link href="/" className="block hover:text-gray-200 transition">
                   Home
                 </Link>
               </li>
