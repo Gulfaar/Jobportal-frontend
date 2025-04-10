@@ -6,8 +6,8 @@ const Footer = () => {
       <div className="container  px-10 py-8  md:py-10">
         <div className="flex flex-col gap-10 md:flex-row md:justify-between md:items-start">
           {/* Logo & Address Section */}
-          <div className=" mt-[-1px]  md:mb-0 md:w-1/6">
-          <div className="flex w-full ml-[-30px] md:ml-[10px]  ">
+          <div className=" mt-[-1px]   md:mb-0 md:w-1/6">
+          <div className="flex w-full mb-5 md:mb-0 ml-[-10px] md:ml-[10px]  ">
             <img
               src="/footerlogo.png"
               alt="Gulfaar"
@@ -23,10 +23,10 @@ const Footer = () => {
           </div>
 
           {/* Center Sections Container */}
-          <div className="flex flex-col  md:flex-row gap-15">
+          <div className="flex flex-col  md:flex-row gap-5 md:gap-15">
             {/* Company Section */}
 
-            <div className="mb-8 md:mb-0">
+            <div className="mb-5 md:mb-0">
               <h3 className="text-base font-bold md:mb-3">Jobs abroad</h3>
               <ul className="space-y-1">
                 <li><a href="#about-us" className="text-sm inline-flex whitespace-nowrap hover:text-gray-300">Jobs by country</a></li>
@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
 
 
-            <div className="md:mb-0 ">
+            <div className="mb-5  md:mb-0">
               <h3 className="text-base font-bold inline-flex whitespace-nowrap mb-2">Recruitment Solutions</h3>
               <ul className="space-y-1 ">
                 <li><a href="#about-us" className="text-sm hover:text-gray-300">Tailored Candidates</a></li>
@@ -53,7 +53,7 @@ const Footer = () => {
             </div>
 
             {/* Job Categories Section */}
-            <div className="mb-8 md:mb-0 ">
+            <div className="mb-5 md:mb-0 ">
 
 
             <h3 className="text-base font-bold mb-2">Outsourcing</h3>
@@ -63,7 +63,7 @@ const Footer = () => {
 
               </ul>
               
-              <h3 className="text-base font-bold mt-3 mb-1">Information</h3>
+              <h3 className="text-base font-bold mt-10 md:mt-5 mb-1">Information</h3>
               <ul className="space-y-1">
                 
                 <li><a href="/Regulations" className="text-sm hover:text-gray-300">Regulations</a></li>
@@ -71,10 +71,7 @@ const Footer = () => {
                 <li><a href="/Cookie" className="text-sm hover:text-gray-300">Cookie Policy</a></li>
               </ul>
             </div>
-          </div>
-
-          {/* Newsletter Section */}
-          <div className="md:w-1/3">
+            <div className="md:w-1/2">
             <h3 className="text-base font-bold mb-2">Newsletter</h3>
             <p className="text-sm mb-4">
             Subscribe to our newsletter for the latest job updates, career tips, and hiring trends
@@ -91,6 +88,10 @@ const Footer = () => {
               </button>
             </div>
           </div>
+          </div>
+
+          {/* Newsletter Section */}
+          
         </div>
       </div>
     </footer>

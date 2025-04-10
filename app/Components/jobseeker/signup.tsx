@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Home } from "lucide-react";
-import { registerUser } from "../Services/RegisterService";
+import { registerUser } from "../Services/jobseekeer/RegisterService";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import "react-toastify/dist/ReactToastify.css";
@@ -27,7 +27,7 @@ const EmployerSignupPage: React.FC = () => {
     
         if (result.success) {
           toast.success("Login Successful! Redirecting...");
-          router.push("/"); // Redirect using Next.js router
+          router.push("/CandidateBoarding"); // Redirect using Next.js router
         } else {
           toast.error(result.message || "Login failed. Please try again.");
         }

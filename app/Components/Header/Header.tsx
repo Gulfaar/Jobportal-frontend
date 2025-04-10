@@ -327,7 +327,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
           {/* Headline */}
           <h1 className="font-bold uppercase tracking-wide mb-5">
             {/* Mobile (2 lines) */}
-            <span className="block md:hidden text-4xl leading-tight">
+            <span className="block md:hidden text-3xl leading-tight">
               {title}
             </span>
             {/* Desktop (1 line) */}
@@ -339,7 +339,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
           {/* Subheading */}
           <p className="leading-relaxed max-w-2xl mx-auto">
             {/* Mobile (2 lines) */}
-            <span className="block md:hidden text-xl">
+            <span className="block md:hidden text-lg">
               {subtitle}
             </span>
             {/* Desktop (1 line) */}

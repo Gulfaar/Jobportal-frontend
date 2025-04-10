@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FeatureCard from "../SkillDevelopement/FeatureCard";
 
 const WelcomeSection = () => {
     return (
@@ -21,10 +22,11 @@ const WelcomeSection = () => {
             We will tailor your resume-building experience to emphasize your background in collaborative design practices 
             and your passion for creating intuitive user experiences.
           </p>
+          
         </div>
-        
        
       </section>
+      
     );
   };
   

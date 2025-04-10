@@ -16,13 +16,13 @@ const SkillDevelopment: React.FC = () => {
        subtitle="Explore a wide range of job opportunities available"/>
 
       {/* Unlock Your Career Potential Section */}
-      <section className="self-center px-15 mt-9 py-10 w-full max-w-[1294px] max-md:max-w-full">
+      <section className="self-center px-5 md:px-15 md:mt-9 py-10 w-full max-w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
           <div className="w-[63%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-10 max-md:max-w-full">
+            <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-5 max-md:max-w-full">
               <h2 className="self-stretch text-3xl tracking-tight leading-[50px] max-md:max-w-full">
                 Unlock Your Career Potential with <br />
-                <span className="text-[48px]">
+                <span className="text-[30px] md:text-[48px] mb-2">
                   Gulfaar's Skill Development Programs
                 </span>
               </h2>
@@ -125,13 +125,15 @@ const SkillDevelopment: React.FC = () => {
         </h2>
         <div className="self-center mt-2 w-full max-w-[1279px] max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col">
-            <div className="w-[59%] max-md:ml-0 max-md:w-full">
+            <div className="w-full max-md:ml-0 max-md:w-full">
               <div className="flex flex-col items-start mt-12 w-full max-md:mt-10 max-md:max-w-full">
                 <div className="flex flex-col items-start self-stretch pl-3 w-full max-md:max-w-full">
+                <hr className="shrink-0 mt-6 max-w-full h-px border border-solid border-zinc-300 border-opacity-10 w-[652px]" />
                   <AIFeature
                     imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c87f0f37aede8c3f8035b33b88f887e0d02864?placeholderIfAbsent=true"
                     title="AI-Powered Teaching"
                     description="Our AI-driven learning platform personalizes your training based on your strengths and weaknesses, making education more effective."
+                    className="pt-2 pr-12 pb-6 mt-5 max-md:pr-5"
                   />
                   <hr className="shrink-0 mt-6 max-w-full h-px border border-solid border-zinc-300 border-opacity-10 w-[652px]" />
                   <AIFeature
@@ -148,7 +150,7 @@ const SkillDevelopment: React.FC = () => {
                     className="pt-2.5 pr-20 pb-6 mt-4 max-md:pr-5"
                   />
                   <hr className="shrink-0 mt-6 max-w-full h-px border border-solid border-zinc-300 border-opacity-10 w-[652px]" />
-                </div>
+                
                 <AIFeature
                   imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/5397be73cf2c626ab3f4b98909da9bc959c30928?placeholderIfAbsent=true"
                   title="Real-Time Feedback & Analysis"
@@ -163,8 +165,9 @@ const SkillDevelopment: React.FC = () => {
                   className="mt-3 ml-5"
                 />
               </div>
+              </div>
             </div>
-            <div className="ml-8 md:mt-60  w-[51%] max-md:ml-0 max-md:w-full ">
+            <div className="ml-8 md:mt-60   w-full max-md:ml-0 max-md:w-full ">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/756486e9bbca25b3eb005760ba6e6802399beaf4?placeholderIfAbsent=true"
                 className="object-contain object-bottom w-full h-full aspect-[0.75] max-md:mt-10 max-md:max-w-full"
@@ -176,7 +179,7 @@ const SkillDevelopment: React.FC = () => {
       </section>
 
       {/* Technical Skills Section */}
-      <section className=" w-full bg-yellow-400 bg-opacity-50 max-md:mt-10 max-md:max-w-full">
+      <section className=" w-full bg-yellow-400 bg-opacity-50 max-md:mt-0 max-md:max-w-full">
         <div className="flex relative flex-col px-20 py-12 w-full min-h-[759px] max-md:px-5 max-md:max-w-full">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/06f503cd746c831444541c86d7c0cf5d11fc1d19?placeholderIfAbsent=true"

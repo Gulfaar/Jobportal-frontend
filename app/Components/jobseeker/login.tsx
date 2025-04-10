@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { loginUser } from "../Services/AuthService";
+import { loginUser } from "../Services/jobseekeer/AuthService";
 import { useRouter } from "next/navigation"; // Use Next.js router
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,7 +20,7 @@ const LoginPage: React.FC = () => {
 
     if (result.success) {
       toast.success("Login Successful! Redirecting...");
-      router.push("/"); // Redirect using Next.js router
+      router.push("/CandidateBoarding/Step3"); // Redirect using Next.js router
     } else {
       toast.error(result.message || "Login failed. Please try again.");
     }

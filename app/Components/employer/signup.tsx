@@ -1,11 +1,42 @@
 // pages/employer-signup.tsx
+"use client"
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Home } from "lucide-react"; // or use your own icon or svg
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import { registerEmployeer } from "../Services/Employeer/RegisteremployeeService";
+import "react-toastify/dist/ReactToastify.css";
 
 const EmployerSignupPage: React.FC = () => {
+
+  const router = useRouter();
+
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [company, setCompany] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [address, setAddress] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent default form submission
+
+    const result = await registerEmployeer (username ,email,phone,company,industry,address, password , confirmPassword) ;
+
+    if (result.success) {
+      toast.success("Login Successful! Redirecting...");
+      router.push("/employer/EmployeerContact"); // Redirect using Next.js router
+    } else {
+      toast.error(result.message || "Login failed. Please try again.");
+    }
+  };
+
+
   return (
     <div className="h-screen flex flex-col md:flex-row overflow-hidden">
       {/* Left Side (Branding / Message) */}
@@ -50,7 +81,7 @@ const EmployerSignupPage: React.FC = () => {
 
       {/* Right Side (Form, scrollable) */}
       <div className="md:w-1/2 bg-white overflow-y-auto p-8">
-        <form className="max-w-md w-full mx-auto space-y-4">
+        <form className="max-w-md w-full mx-auto space-y-4" onSubmit={handleSubmit}>
           {/* Username */}
           <div>
             <label htmlFor="username" className="block mb-1 font-medium text-gray-700">Username</label>
@@ -59,6 +90,8 @@ const EmployerSignupPage: React.FC = () => {
               name="username"
               type="text"
               placeholder="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
             />
           </div>
@@ -71,6 +104,8 @@ const EmployerSignupPage: React.FC = () => {
               name="company"
               type="text"
               placeholder="company name"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
               className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
             />
           </div>
@@ -83,6 +118,8 @@ const EmployerSignupPage: React.FC = () => {
               name="email"
               type="email"
               placeholder="example@gmail.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
             />
           </div>
@@ -95,6 +132,8 @@ const EmployerSignupPage: React.FC = () => {
               name="phone"
               type="tel"
               placeholder="+1 123 456 7890"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
             />
           </div>
@@ -107,6 +146,8 @@ const EmployerSignupPage: React.FC = () => {
               name="industry"
               type="text"
               placeholder="IT / Health / ... "
+              value={industry}
+              onChange={(e) => setIndustry(e.target.value)}
               className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
             />
           </div>
@@ -119,6 +160,8 @@ const EmployerSignupPage: React.FC = () => {
               name="address"
               type="text"
               placeholder="Location, Building no..."
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
               className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
             />
           </div>
@@ -131,6 +174,8 @@ const EmployerSignupPage: React.FC = () => {
               name="password"
               type="password"
               placeholder="********"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
             />
           </div>
@@ -142,6 +187,8 @@ const EmployerSignupPage: React.FC = () => {
               name="confirm-password"
               type="password"
               placeholder="********"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               className="w-full border border-gray-300 text-black rounded-md p-2 focus:outline-teal-500"
             />
           </div>
@@ -167,12 +214,12 @@ const EmployerSignupPage: React.FC = () => {
           </button>
 
           {/* Login Link */}
-          <p className="text-sm text-gray-600 mt-2">
+          {/* <p className="text-sm text-gray-600 mt-2">
             Already have an account?{" "}
             <Link href="/employer/login" className="text-teal-600 hover:underline">
               Login
             </Link>
-          </p>
+          </p> */}
         </form>
       </div>
     </div>

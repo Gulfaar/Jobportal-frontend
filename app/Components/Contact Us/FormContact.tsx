@@ -1,14 +1,18 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { ContactUser } from "../Services/jobseekeer/ContactUser";
 
 const FormContact = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    subject: "General Enquiry",
+    subject: "",
     message: "",
   });
 
@@ -16,9 +20,21 @@ const FormContact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted", formData);
+
+    const result = await ContactUser(formData);
+
+    if (result.success) {
+      toast.success("Login Successful! Redirecting...");
+      router.push("/"); // Redirect using Next.js router
+    } else {
+      toast.error(result.message || "Login failed. Please try again.");
+    }
+
+
+
   };
 
   return (
@@ -148,7 +164,7 @@ const FormContact = () => {
             <div className="space-y-4">
               <p className="text-gray-600">Select Subject?</p>
               <div className="flex gap-8">
-                {["General Enquiry", "General Enquiry", "General Enquiry"].map((subject, index) => (
+                {["General Enquiry", "Support", "Other"].map((subject, index) => (
                   <label key={index} className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="radio"
