@@ -4,7 +4,7 @@ import { SearchIcon, MapPinIcon, ChevronDownIcon } from "./Icons";
 
 const BlogSidebar: React.FC = () => {
   return (
-    <aside className="p-6 rounded-3xl shadow-sm bg-slate-100 w-[342px] max-md:w-full">
+    <aside className="hidden md:block p-6 rounded-3xl shadow-sm bg-slate-100 w-[342px] max-md:w-full">
       <section className="mb-10" aria-labelledby="search-title">
         <h2 id="search-title" className="mb-5 text-xl font-semibold">
           Search by Job Title

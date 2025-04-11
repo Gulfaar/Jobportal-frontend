@@ -11,7 +11,7 @@ import Header from "@/app/Components/Header/Header";
 
 const BlogPost = () => {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col  min-h-screen">
             <link
                 href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Montserrat:wght@400;500&display=swap"
                 rel="stylesheet"
@@ -21,9 +21,9 @@ const BlogPost = () => {
               subtitle="Explore a wide range of explore our blogs" />
 
             <main className="flex-grow">
-                <Breadcrumb />
+                
 
-                <h1 className="mx-10 my-5 text-5xl font-bold text-black max-sm:text-4xl">
+                <h1 className="mt-10  mx-10 my-5 text-5xl font-bold text-black max-sm:text-4xl">
                     News and Blog
                 </h1>
 

@@ -1,9 +1,20 @@
 "use client";
+import { RootState } from "@/app/redux/store";
 import Image from "next/image";
 import Link from "next/link";
 import { FaRegEdit } from "react-icons/fa";
+import { useSelector } from "react-redux";
+
+
 
 export default function ProfileSummary() {
+
+  const resumeData = useSelector((state: RootState) => state.resume.parsedData);
+
+  console.log(resumeData);
+  
+
+
   const profile = {
     name: "Sneha S",
     email: "wwdjgst@gmail.com",
@@ -58,8 +69,8 @@ export default function ProfileSummary() {
   );
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#F8FAFC] p-4">
-      <div className="w-full max-w-[71%]">
+    <div className="flex items-center justify-center  px-2 py-10 rounded-md   ">
+      <div className="w-full md:max-w-[71%]">
         {/* Profile Header */}
         <div className="flex flex-col sm:flex-row items-center gap-4 bg-[#EDF6F5] rounded-xl p-6 mb-6">
           <Image
@@ -70,8 +81,8 @@ export default function ProfileSummary() {
             className="rounded-full"
           />
           <div className="text-center sm:text-left">
-            <h2 className="text-xl font-semibold text-black">Amanda Rawles</h2>
-            <p className="text-base text-black">alexarawles@gmail.com</p>
+            <h2 className="text-xl font-semibold text-black">{resumeData?.structured_resume?.name}</h2>
+            <p className="text-base text-black">{resumeData?.structured_resume?.name}</p>
           </div>
         </div>
 
@@ -82,16 +93,16 @@ export default function ProfileSummary() {
             <Card title="Profile">
               <div className="text-base text-black space-y-2">
                 <p>
-                  <strong>Name:</strong> {profile.name}
+                  <strong>Name:</strong> {resumeData?.structured_resume?.name}
                 </p>
                 <p>
-                  <strong>Country:</strong> {profile.country}
+                  <strong>Country:</strong> India
                 </p>
                 <p>
-                  <strong>Email:</strong> {profile.email}
+                  <strong>Email:</strong> {resumeData?.structured_resume?.email}
                 </p>
                 <p>
-                  <strong>City:</strong> {profile.city}
+                  <strong>City:</strong> Kochi
                 </p>
                 <p>
                   <strong>Phone number:</strong> {profile.phone}
@@ -146,7 +157,7 @@ export default function ProfileSummary() {
             Back
           </button>
         </Link>
-        <Link href="/CandidateBoarding/Step11">
+        <Link href="/CandidateBoarding/Step12">
           <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
             Continue
           </button>
