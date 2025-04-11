@@ -1,103 +1,30 @@
-"use client";
+"use client"
 
 import Header from "@/app/Components/Header/Header";
 import Footer from "@/app/Components/Home/Footer";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import { getAllJobs, searchJobs } from "../../../Components/Services/jobService";
-import { Job } from "../../../Components/types/job";
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import React from "react";
+import { useState } from 'react';
+import { toast } from "react-toastify";
 
 const Joblisting = () => {
-    const searchParams = useSearchParams();
-    const [jobs, setJobs] = useState<Job[]>([]);
-    const [allJobs, setAllJobs] = useState<Job[]>([]);
-    const [currentPage, setCurrentPage] = useState(1);
     const [salary, setSalary] = useState([5000, 99999]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
-    const jobsPerPage = 9;
-
-    useEffect(() => {
-        const fetchAllJobs = async () => {
-          setLoading(true);
-          try {
-            const response = await getAllJobs(1, 10); // Pass page and limit as arguments
-            console.log("All jobs response:", response);
-            setAllJobs(response.data || []);
-            if (!searchParams.get("search")) {
-              setJobs(response.data || []);
-            }
-          } catch (error) {
-            console.error("Error fetching all jobs:", error);
-            setError("Failed to load jobs");
-          } finally {
-            setLoading(false);
-          }
-        };
-        fetchAllJobs();
-      }, []); // Run once on mount
-      
-      useEffect(() => {
-        const fetchSearchResults = async () => {
-          const searchQuery = searchParams.get("search");
-          console.log("Search query from URL:", searchQuery);
-      
-          if (searchQuery) {
-            setLoading(true);
-            try {
-              const response = await searchJobs(searchQuery);
-              console.log("Search API response:", response);
-              setJobs(response.data || []);
-              if (!response.data?.length) {
-                setError(`No jobs found for "${searchQuery}"`);
-              } else {
-                setError(null);
-              }
-            } catch (error) {
-              console.error("Error searching jobs:", error);
-              setError("Failed to search jobs. Please try again later.");
-              setJobs([]);
-            } finally {
-              setLoading(false);
-            }
-          } else {
-            setJobs(allJobs);
-            setError(null);
-          }
-        };
-      
-        fetchSearchResults();
-      }, [searchParams, allJobs]);
-
-    const indexOfLastJob = currentPage * jobsPerPage;
-    const indexOfFirstJob = indexOfLastJob - jobsPerPage;
-    const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
-    const totalPages = Math.ceil(jobs.length / jobsPerPage);
-
-    const handlePageChange = (page: number) => {
-        setCurrentPage(page);
-    };
-
-    const getLogoUrl = (job: Job) =>
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}${job.company?.logo || ""}`;
 
     return (
         <main>
-            <Header title="Jobs" subtitle="Explore a wide range of job opportunities available" />
-            <Suspense fallback={<div>Loading jobs...</div>}>
+            <Header title="Jobs" 
+        subtitle="Explore a wide range of job opportunities available" />
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col md:flex-row gap-6">
                     {/* Left Sidebar */}
-                    <div className="hidden md:block lg:block w-full md:w-1/6 space-y-6 bg-[#EBF5F4] p-4 rounded-lg text-black">
+                    <div className="w-full md:w-1/6 space-y-6 bg-[#EBF5F4] p-6 rounded-lg text-black">
                         {/* Search */}
                         <div>
                             <h3 className="font-medium mb-2">Search by Job Title</h3>
                             <div className="relative">
-                                <input
-                                    type="text"
-                                    placeholder="Job title or company"
+                                <input 
+                                    type="text" 
+                                    placeholder="Job title or company" 
                                     className="w-full p-2  border rounded-md pl-8 text-black"
                                 />
                                 <svg className="absolute left-2 top-3 w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -164,7 +91,7 @@ const Joblisting = () => {
                         <div>
                             <h3 className="font-medium mb-2">Date Posted</h3>
                             <div className="space-y-2">
-                                {['All', 'Last Hour', 'Last 24 Hours', 'Last 7 Days', 'Last 30 Days'].map((level) => (
+                                {['All', 'Last Hour', 'Last 24 Hours', 'Last 7 Days','Last 30 Days'].map((level) => (
                                     <label key={level} className="flex items-center gap-2 text-black">
                                         <input type="checkbox" className="rounded border-gray-300" />
                                         <span>{level}</span>
@@ -176,10 +103,10 @@ const Joblisting = () => {
                         {/* Salary Range */}
                         <div>
                             <h3 className="font-medium mb-2">Salary</h3>
-                            <input
-                                type="range"
-                                min="5000"
-                                max="100000"
+                            <input 
+                                type="range" 
+                                min="5000" 
+                                max="100000" 
                                 className="w-full"
                                 value={salary[0]}
                                 onChange={(e) => setSalary([parseInt(e.target.value), salary[1]])}
@@ -191,92 +118,66 @@ const Joblisting = () => {
                         </button>
                     </div>
 
-                    {/* Job Listings */}
+                    {/* Right Content */}
                     <div className="w-full md:w-3/4">
+                        {/* Results Header */}
                         <div className="flex justify-between items-center mb-6">
-                            <p className="text-gray-600">
-                                Showing {indexOfFirstJob + 1}-{Math.min(indexOfLastJob, jobs.length)} of {jobs.length} results
-                                {searchParams.get("search") && ` for "${searchParams.get("search")}"`}
-                            </p>
-                            <select className="p-2 border rounded-md text-black">
+                            <p className="text-gray-600">Showing 6-6 of 10 results</p>
+                            <select className="p-2 border rounded-md">
                                 <option>Sort by latest</option>
                                 <option>Sort by oldest</option>
                             </select>
                         </div>
 
-                        {loading ? (
-                            <p className="text-white col-span-full text-center">Loading jobs...</p>
-                        ) : error ? (
-                            <p className="text-white col-span-full text-center">{error}</p>
-                        ) : (
-                            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-7 justify-items-center">
-                                {Array.isArray(currentJobs) && currentJobs.length > 0 ? (
-                                    currentJobs.map((job) => (
-                                        <div key={job._id} className="bg-white rounded-lg shadow-md md:w-full md:h-full p-7 border relative">
-                                            <div className="flex items-center gap-3 mb-3">
-                                                <Image
-                                                    src={getLogoUrl(job)}
-                                                    alt="Company logo"
-                                                    width={24}
-                                                    height={24}
-                                                    className="object-contain"
-                                                    onError={(e) => console.log("Image failed to load:", (e.target as HTMLImageElement).src)}
-                                                />
-                                                <h3 className="font-semibold text-black">{job.title}</h3>
-                                            </div>
-                                            <div className="mb-3">
-                                                <span className="text-gray-600 text-sm">{job.location?.city || "Unknown"}</span>
-                                                <span className="mx-2 text-gray-400">•</span>
-                                                <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">
-                                                    {job.proficiencyLevel || "N/A"}
-                                                </span>
-                                            </div>
-                                            <p className="text-sm text-gray-600 mb-4 line-clamp-3">{job.description}</p>
-                                            <div className="flex md:mt-20 gap-3">
-                                                <button className="flex-1 bg-[#2E5F5C] border border-[#2E5F5C] text-white px-3 py-1.5 rounded text-sm hover:bg-[#2E5F5C] hover:text-white transition-colors">
-                                                    Apply now
-                                                </button>
-                                                <button className="flex-1 border border-[#2E5F5C] text-[#2E5F5C] px-3 py-1.5 rounded text-sm hover:bg-[#2E5F5C] hover:text-white transition-colors">
-                                                    Learn more
-                                                </button>
-                                            </div>
-                                        </div>
-                                    ))
-                                ) : (
-                                    <p className="text-white col-span-full text-center">
-                                        {searchParams.get("search")
-                                            ? `No jobs found for "${searchParams.get("search")}"`
-                                            : "No jobs found."}
+                        {/* Job Cards Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6  justify-items-center">
+                            {[...Array(9)].map((_, index) => (
+                                <div key={index} className="bg-white rounded-lg shadow-md  md:w-full md:h-full p-8 border relative">
+                                    <div className="flex items-center gap-3 mb-3">
+                                        <Image src="/google.png" alt="Google" width={24} height={24} />
+                                        <h3 className="font-semibold">Software Tester</h3>
+                                    </div>
+                                    <div className="mb-3">
+                                        <span className="text-gray-600 text-sm">Chennai</span>
+                                        <span className="mx-2 text-gray-400">•</span>
+                                        <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Intermediate Level</span>
+                                    </div>
+                                    <p className="text-sm text-gray-600 mb-4">
+                                        As a Software Tester, you will play a critical role in ensuring the quality and reliability of our software applications...
                                     </p>
-                                )}
-                            </div>
-                        )}
+                                    
+                                    <div className="flex md:mt-20    gap-3">
+                                        <button onClick={() => toast.success("Applied")} className="flex-1 bg bg-[#2E5F5C] border border-[#2E5F5C] text-white  px-3 py-1.5 rounded text-sm hover:bg-[#2b2d2d] hover:text-white transition-colors">
+                                            Apply now
+                                        </button>
+                                        <button className="flex-1 border border-[#2E5F5C] text-[#2E5F5C] px-3 py-1.5 rounded text-sm hover:bg-[#2E5F5C] hover:text-white transition-colors">
+                                            Learn more
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
 
                         {/* Pagination */}
-                        {totalPages > 1 && (
-                            <div className="flex justify-center mt-10 space-x-2">
-                                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                                    <button
-                                        key={page}
-                                        onClick={() => handlePageChange(page)}
-                                        className={`px-4 py-2 border rounded ${currentPage === page
-                                                ? "bg-[#2E5F5C] text-white"
-                                                : "bg-white text-black border-gray-300"
-                                            }`}
-                                    >
-                                        {page}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
+                        <div className="flex justify-center mt-8 gap-2">
+                            {[1, 2, 3].map((page) => (
+                                <button
+                                    key={page}
+                                    className={`w-8 h-8 rounded ${
+                                        page === 1 ? 'bg-[#2E5F5C] text-white' : 'border text-gray-600'
+                                    }`}
+                                >
+                                    {page}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
-                
             </div>
-            </Suspense>
-            <Footer />
+            <Footer/>
         </main>
+        
     );
-};
+}
 
 export default Joblisting;
