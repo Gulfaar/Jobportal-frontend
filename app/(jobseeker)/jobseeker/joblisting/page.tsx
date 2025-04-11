@@ -22,7 +22,7 @@ const Joblisting = () => {
         const fetchAllJobs = async () => {
           setLoading(true);
           try {
-            const response = await getAllJobs();
+            const response = await getAllJobs(1, 10); // Pass page and limit as arguments
             console.log("All jobs response:", response);
             setAllJobs(response.data || []);
             if (!searchParams.get("search")) {

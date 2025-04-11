@@ -1,70 +1,92 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
+import { Job } from "../types/job";
 
-// Axios instance
-const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000", // Fallback for development
-});
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
-const JOBS_ENDPOINT = process.env.NEXT_PUBLIC_APP_JOBS_API_ENDPOINT || "/job/jobs";
-const SEARCH_JOBS_ENDPOINT = process.env.NEXT_PUBLIC_APP_SEARCH_JOBS_API_ENDPOINT || "/job/jobs/search";
+// Interface for Job (adjust based on your actual job structure)
 
-// Generic error handler
-const handleAxiosError = (error: unknown): never => {
-  if (axios.isAxiosError(error)) {
-    const axiosError = error as AxiosError<{ error?: string }>;
-    const responseData = axiosError.response?.data;
 
-    const errorMessage =
-      responseData && typeof responseData === "object" && responseData.error
-        ? responseData.error
-        : axiosError.message || "An error occurred";
+// Interface for the API response
+interface JobApiResponse {
+  success: boolean;
+  data: Job[];
+  totalJobs?: number;
+}
 
-    console.error("Axios error:", errorMessage);
-    throw new Error(errorMessage);
-  } else {
-    const message = error instanceof Error ? error.message : String(error);
-    console.error("Unexpected error:", message);
-    throw new Error("Unexpected error occurred");
-  }
-};
+// Interface for the function's return value
+interface JobServiceResponse {
+  success: boolean;
+  data: Job[];
+  total: number;
+  message?: string;
+}
 
-// Fetch all jobs
-export const getAllJobs = async () => {
+// Get All Jobs
+export const getAllJobs = async (page: number, jobsPerPage: number): Promise<JobServiceResponse> => {
   try {
-    if (!JOBS_ENDPOINT) {
-      throw new Error("JOBS_ENDPOINT is not defined");
+    const response = await axios.get<JobApiResponse>(`${API_BASE_URL}/job/jobs`, {
+      params: {
+        page,
+        limit: jobsPerPage,
+      },
+      withCredentials: true,
+    });
+
+    // Log raw response for debugging
+    console.log("Raw API response:", response.data);
+
+    // Extract jobs and total from the response
+    const { success, data: jobs, totalJobs } = response.data;
+
+    if (!success) {
+      console.error("API returned success: false", response.data);
+      return {
+        success: false,
+        message: "API request failed",
+        data: [],
+        total: 0,
+      };
     }
-    const response = await api.get(JOBS_ENDPOINT);
-    console.log("✅ getAllJobs:", response.data);
-    return response.data;
-  } catch (error) {
-    handleAxiosError(error);
+
+    if (!Array.isArray(jobs)) {
+      console.error("Jobs is not an array:", jobs);
+      return {
+        success: false,
+        message: "Invalid response: jobs is not an array",
+        data: [],
+        total: 0,
+      };
+    }
+
+    return {
+      success: true,
+      data: jobs,
+      total: totalJobs || jobs.length, // Fallback to jobs.length if totalJobs is not provided
+    };
+  } catch (error: any) {
+    console.error("Get All Jobs error:", error.response?.data || error.message);
+    return {
+      success: false,
+      message: error.response?.data?.message || "Failed to fetch jobs",
+      data: [],
+      total: 0,
+    };
   }
 };
 
-// Search jobs by designation or title
+// Search Jobs
 export const searchJobs = async (query: string) => {
   try {
-    if (!SEARCH_JOBS_ENDPOINT) {
-      throw new Error("SEARCH_JOBS_ENDPOINT is not defined");
-    }
-    const url = `${SEARCH_JOBS_ENDPOINT}?designation=${encodeURIComponent(query)}`;
-    console.log(`Sending request to: ${url}`);
-    const response = await api.get(url);
-    console.log("✅ searchJobs:", response.data);
-    return response.data;
-  } catch (error) {
-    handleAxiosError(error);
-  }
-};
-
-// Get job details by ID
-export const getJobById = async (uuid: string) => {
-  try {
-    const response = await api.get(`/job/${uuid}`);
-    console.log("✅ getJobById:", response.data);
-    return response.data.job;
-  } catch (error) {
-    handleAxiosError(error);
+    const response = await axios.get(
+      `${API_BASE_URL}/job/jobs/search?designation=${encodeURIComponent(query)}`,
+      { withCredentials: true }
+    );
+    return { success: true, data: response.data };
+  } catch (error: any) {
+    console.error("Search Job error:", error.response?.data || error.message);
+    return {
+      success: false,
+      message: error.response?.data?.message || "Something went wrong",
+    };
   }
 };
