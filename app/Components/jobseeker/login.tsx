@@ -82,8 +82,8 @@ const LoginPage: React.FC = () => {
       </div>
 
       {/* Register Section */}
-      <div className="bg-[#D6655A] text-white p-4 md:p-6 lg:p-8 rounded-2xl shadow-md flex flex-col justify-between mt-0 md:mt-0 ml-0 md:ml-14 w-[72%]">
-        <div>
+      <div className="bg-[#D6655A] ml-10  text-white p-4 md:p-6 lg:p-8 rounded-2xl shadow-md flex flex-col md:justify-between  mt-0 md:mt-0  md:ml-14 w-[72%]">
+        <div className=" ">
           <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-4 md:mb-6 text-center">Register</h3>
           <ul className="space-y-2 md:space-y-4 text-sm md:text-base text-white/90">
             {Array.from({ length: 5 }).map((_, index) => (

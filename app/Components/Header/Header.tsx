@@ -422,7 +422,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
       >
         Contract-based workforce
 
-        {isContract && (
+        {isContractOpen && (
           <div
             className="absolute left-[-195px] top-0 w-48 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
            
@@ -447,13 +447,13 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
       <Link
         href=" "
         className="px-4 py-2 inline-flex whitespace-nowrap w-full hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-        onClick={() => setIsOutsourcing(true)}
-        onMouseEnter={() => setIsOutsourcing(true)}
-        onMouseLeave={() => setIsOutsourcing(false)}
+        onClick={() => setIsOutsourcingOpen(true)}
+        onMouseEnter={() => setIsOutsourcingOpen(true)}
+        onMouseLeave={() => setIsOutsourcingOpen(false)}
       >
         Outsourcing solutions
 
-        {isOutsourcing && (
+        {isOutsourcingOpen && (
           <div
             className="absolute left-[-290px] top-0 w-auto   bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
             
@@ -461,14 +461,14 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
             <Link
               href="/OnDemandSkilledProfessionals"
               className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-              onClick={() => setIsOutsourcing(false)}
+              onClick={() => setIsOutsourcingOpen(false)}
             >
               On-Demand skilled Professionals 
             </Link>
             <Link
               href="/TaskSpecifics"
               className=" px-4 py-2 inline-flex whitespace-nowrap hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-              onClick={() => setIsOutsourcing(false)}
+              onClick={() => setIsOutsourcingOpen(false)}
             >
              Task Specific Experts
             </Link>
