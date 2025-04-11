@@ -45,7 +45,7 @@ const StepsSection: React.FC = () => {
             <div className="w-10 h-10 flex items-center justify-center bg-[#FFF200] text-black font-bold text-lg rounded-full mx-auto mb-2">
               {item.number}
             </div>
-            <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+            <h3 className="text-lg font-semibold mb-1 text-black">{item.title}</h3>
             <p className="text-sm text-gray-700">{item.description}</p>
           </div>
         ))}
