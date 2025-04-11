@@ -25,7 +25,7 @@ const EducationSection = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F5F9FA] px-4 sm:px-6 lg:px-8 py-10">
+    <div className=" w-[53%] flex items-center  p-10 justify-center shadow-md rounded-lg px-4 sm:px-6 lg:px-8 py-10">
       <div className="w-full max-w-5xl">
         {/* Profile Header */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start mb-6 gap-4 sm:gap-6">

@@ -30,7 +30,7 @@ const AddEducationForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F5F9FA] px-4 py-12 w-full">
+    <div className="min-h-screen w-full md:w-[79%] flex items-center justify-center  px-4 py-12 ">
       <div className="relative w-full max-w-3xl">
         {/* Stepper Sidebar */}
         {/* <div className="absolute top-0 right-[-80px] flex flex-col items-center space-y-14">

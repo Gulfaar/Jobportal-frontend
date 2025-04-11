@@ -89,7 +89,7 @@ const NavBar = () => {
           className="hw-[120px] md:w-[315px]  h-auto hidden md:block lg:block"
         />
       </div>
-      <div className="flex  justify-end mt-[-30px] gap-2 md:hidden lg:hidden">
+      <div className="flex  justify-end mt-[-30px] md:gap-2 md:hidden lg:hidden">
        <Link href={'/CandidateBoarding'}> <button className="px-2 py-2   rounded-lg text-white text-sm">Jobseeker</button></Link>
         <button className="bg-[#2E5F5C] px-3 py-2 rounded-lg text-white text-sm">
           Employer
@@ -99,11 +99,7 @@ const NavBar = () => {
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
-              <div className="w-8 h-6 flex flex-col justify-between">
-                <div className="w-full h-1 bg-white rounded"></div>
-                <div className="w-full h-1 bg-white rounded"></div>
-                <div className="w-full h-1 bg-white rounded"></div>
-              </div>
+              <FaBars/>
             </button>
       </div>
 

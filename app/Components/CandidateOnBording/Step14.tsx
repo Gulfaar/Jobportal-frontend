@@ -51,7 +51,7 @@ export default function ProfileSummary() {
   );
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#F8FAFC] p-4">
+    <div className="flex w-[50%] items-center justify-center min-h-screen bg-[#F8FAFC] p-4">
       <div className="w-full max-w-5xl">
         {/* Profile Header */}
         <div className="flex items-center gap-4 bg-[#EDF6F5] rounded-xl p-6 max-w-76">
