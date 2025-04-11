@@ -41,7 +41,7 @@ const ExperienceSection = () => {
         
 
         {/* Main Content */}
-        <div className="w-full bg-white rounded-xl p-8">
+        <div className="w-full bg-[#f6fafa] shadow rounded-xl p-8">
           {/* Header */}
           <h2 className="text-xl font-semibold text-gray-900">Reflect on your experience.</h2>
           <p className="text-sm text-gray-600 mt-1">

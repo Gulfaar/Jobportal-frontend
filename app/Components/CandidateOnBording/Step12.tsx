@@ -41,7 +41,7 @@ const PositionForm = () => {
   if (!isMounted) return null;
 
   return (
-    <div className="min-h-screen flex items-center justify-center  px-4 py-12 w-[120]">
+    <div className="min-h-screen md:w-[52%] flex items-center justify-center  px-4 py-12 w-[120]">
       <div className="w-full max-w-5xl">
         {/* Profile Header */}
         <div className="flex items-center mb-6">
@@ -156,7 +156,7 @@ const PositionForm = () => {
             Back
           </button>
         </Link>
-        <Link href="/CandidateBoarding/Step12">
+        <Link href="/CandidateBoarding/Step14">
           <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
             Continue
           </button>

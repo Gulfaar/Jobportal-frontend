@@ -29,7 +29,7 @@ const SkillsForm = () => {
   );
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F5F9FA] px-4 py-8">
+    <div className="min-h-screen w-[50%] flex items-center justify-center bg-[#F5F9FA] px-4 py-8">
       <div className="w-full max-w-5xl">
         {/* Profile Header */}
         <div className="flex items-center mb-6">
@@ -71,7 +71,7 @@ const SkillsForm = () => {
                   placeholder="Search by job title"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full pl-10 pr-3 py-2 rounded-md text-black outline-none border border-gray-300 focus:ring-2 focus:ring-[#DA6B64]"
+                  className="w-full pl-10 pr-3 py-2 rounded-md text-white outline-none border border-gray-300 focus:ring-2 focus:ring-[#DA6B64]"
                 />
               </div>
               <div className="max-h-48 overflow-y-auto space-y-2 scrollbar-thin scrollbar-thumb-gray-400  rounded-md p-2 ">

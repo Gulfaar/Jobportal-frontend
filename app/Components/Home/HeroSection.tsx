@@ -61,10 +61,16 @@ const HeroSection = () => {
 
 const NavBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   
 
   const [isTrainingOpen, setIsTrainingOpen] = useState(false);
   const [isWorkForceOpen, setIsWorkForceOpen] = useState(false);  
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   return (
     <nav className="absolute  top-0 left-0 w-full flex justify-between items-center px-5 py-10  md:px-10  md:py-7">
@@ -83,60 +89,60 @@ const NavBar = () => {
           className="hw-[120px] md:w-[315px]  h-auto hidden md:block lg:block"
         />
       </div>
-      <div className="flex  justify-end mt-[-30px] gap-2 md:hidden lg:hidden">
+      <div className="flex  justify-end mt-[-30px] md:gap-2 md:hidden lg:hidden">
        <Link href={'/CandidateBoarding'}> <button className="px-2 py-2   rounded-lg text-white text-sm">Jobseeker</button></Link>
         <button className="bg-[#2E5F5C] px-3 py-2 rounded-lg text-white text-sm">
           Employer
         </button>
-        <button className="text-white text-lg" onClick={() => setIsModalOpen(true)}>
-          <FaBars />
-          
-        </button>
+        <button
+              className="ml-4 md:hidden text-white"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              <FaBars/>
+            </button>
       </div>
 
-      {isModalOpen && (
-        <div className="fixed inset-0 z-10  bg-black bg-opacity-50 flex justify-end">
-          <div className="bg-white w-64 h-full  px-2 flex flex-col text-black shadow-lg">
-            {/* Close Button */}
-            <button
-              className="self-end text-2xl mb-4"
-              onClick={() => setIsModalOpen(false)}
-            >
-  
-              <FaTimes />
-            </button>
-
-            {/* Navigation Links */}
-            <ul className="font-[20px] flex flex-col gap-4">
+      {isMenuOpen && (
+          <div className="md:hidden absolute top-20 right-6 bg-black/80 rounded p-4 w-64 z-50">
+            {/* Post Job button in mobile menu */}
+            {/* <button className="bg-teal-700 text-white text-sm px-3 py-1 rounded-lg hover:bg-teal-800 transition w-full mb-4">
+              Post Job
+            </button> */}
+            <ul className="flex flex-col space-y-4 text-white">
+            <li>
+                <Link href="/" className="block hover:text-gray-200 transition">
+                  Home
+                </Link>
+              </li>
               <li>
-                <a href="#" className="text-gray-900 hover:text-blue-700">
+                <Link href="#jobs" className="block hover:text-gray-200 transition">
                   Jobs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-900 hover:text-blue-700">
+                <Link href="#blog" className="block hover:text-gray-200 transition">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-900 hover:text-blue-700">
+                <Link href="#training" className="block hover:text-gray-200 transition">
                   Training
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-900 hover:text-blue-700">
+                <Link href="#workforce" className="block  hover:text-yellow-300 transition">
                   Work-Force Solutions
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-900 hover:text-blue-700">
+                <Link href="#partner" className="block hover:text-gray-200 transition">
                   Partner with us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
-        </div>
-      )}
+        )}
 
       <div className="hidden w-full justify-end mt-[-50px] md:flex gap-2 md:gap-4">
       <Link href={'/jobseeker/login'}>

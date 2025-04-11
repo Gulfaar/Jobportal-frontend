@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import OnboardingCard from './OnboardingCard'; // Import OnboardingCard
 
 export default function ProfileForm() {
   const [formData, setFormData] = useState({
@@ -16,11 +17,11 @@ export default function ProfileForm() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 flex justify-center items-center">
-      <div className="w-full max-w-6xl bg-[#f6fafa] rounded-lg shadow-md p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen  flex justify-center items-center">
+      <OnboardingCard>
         {/* Header Section */}
-        <div className="mb-8">
-          <div className="bg-white rounded-xl shadow-sm px-4 sm:px-6 py-5">
+        <div className="mb-6">
+          <div className="bg-[#f6fafa] rounded-xl shadow-sm px-4 py-5">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-y-4">
               {/* Welcome Text */}
               <p className="text-sm text-gray-500 font-medium">
@@ -59,7 +60,7 @@ export default function ProfileForm() {
         {/* Form Section */}
         <form className="space-y-6">
           {/* Name Fields */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
               <input
@@ -106,9 +107,9 @@ export default function ProfileForm() {
                   setFormData({ ...formData, country: e.target.value })
                 }
               >
-                <option className='text-black' value="UAE">UAE</option>
-                <option className='text-black' value="USA">USA</option>
-                <option className='text-black' value="UK">UK</option>
+                <option className="text-black" value="UAE">UAE</option>
+                <option className="text-black" value="USA">USA</option>
+                <option className="text-black" value="UK">UK</option>
               </select>
             </div>
             <div>
@@ -152,19 +153,19 @@ export default function ProfileForm() {
 
           {/* Navigation Buttons */}
           <div className="flex justify-between mt-6">
-        <Link href="/CandidateBoarding/Step3">
-          <button className="border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
-            Back
-          </button>
-        </Link>
-        <Link href="/CandidateBoarding/Step5">
-          <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
-            Continue
-          </button>
-          </Link>
-        </div>
+            <Link href="/CandidateBoarding/Step3">
+              <button className="border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
+                Back
+              </button>
+            </Link>
+            <Link href="/CandidateBoarding/Step5">
+              <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
+                Continue
+              </button>
+            </Link>
+          </div>
         </form>
-      </div>
+      </OnboardingCard>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const ResumeBuilderStep = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen  flex items-center justify-center p-4">
       <div className="flex items-center w-full max-w-[900px]">
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col">
@@ -127,7 +127,7 @@ const ResumeBuilderStep = () => {
             Back
           </button>
         </Link>
-        <Link href="/CandidateBoarding/Step11">
+        <Link href="/CandidateBoarding/Step12">
           <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
             Continue
           </button>
