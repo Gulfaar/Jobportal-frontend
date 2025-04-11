@@ -21,7 +21,7 @@ const LoginPage: React.FC = () => {
 
     if (result.success) {
       toast.success("Login Successful! Redirecting...");
-      router.push("/CandidateBoarding/Step3"); // Redirect using Next.js router
+      router.push("/CandidateBoarding"); // Redirect using Next.js router
     } else {
       toast.error(result.message || "Login failed. Please try again.");
     }

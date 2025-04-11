@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import { getAllJobs, searchJobs } from "../../../Components/Services/jobService";
 import { Job } from "../../../Components/types/job";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const Joblisting = () => {
     const searchParams = useSearchParams();
@@ -85,6 +86,7 @@ const Joblisting = () => {
     return (
         <main>
             <Header title="Jobs" subtitle="Explore a wide range of job opportunities available" />
+            <Suspense fallback={<div>Loading jobs...</div>}>
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col md:flex-row gap-6">
                     {/* Left Sidebar */}
@@ -269,7 +271,9 @@ const Joblisting = () => {
                         )}
                     </div>
                 </div>
+                
             </div>
+            </Suspense>
             <Footer />
         </main>
     );

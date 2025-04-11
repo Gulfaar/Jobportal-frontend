@@ -83,16 +83,17 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-nowrap justify-between item-start  gap-5 md:gap-7 mt-5 min-h-full max-md:mt-2 max-md:max-w-full  py-5 w-full">
-        {stats.map((stat, index) => (
-          <StatCard
-            key={index}
-            number={stat.number}
-            title={stat.title}
-            description={stat.description} // Pass as a string
-          />
-        ))}
-      </div>
+      <div className="flex flex-wrap md:flex-nowrap md:flex-row max-md:flex-col justify-between items-start gap-5 md:gap-7 mt-5 min-h-full max-md:mt-2 max-md:max-w-full py-5 w-full">
+  {stats.map((stat, index) => (
+    <StatCard
+      key={index}
+      number={stat.number}
+      title={stat.title}
+      description={stat.description} // Pass as a string
+    />
+  ))}
+</div>
+
     </motion.section>
   );
 };
