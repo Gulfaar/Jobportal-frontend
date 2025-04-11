@@ -20,53 +20,55 @@ const Joblisting = () => {
 
     useEffect(() => {
         const fetchAllJobs = async () => {
-            setLoading(true);
-            try {
-                const response = await getAllJobs();
-                console.log("All jobs response:", response);
-                setAllJobs(response.data || []);
-                setJobs(response.data || []);
-            } catch (error) {
-                console.error("Error fetching all jobs:", error);
-                setError("Failed to load jobs");
-            } finally {
-                setLoading(false);
+          setLoading(true);
+          try {
+            const response = await getAllJobs(1, 10); // Pass page and limit as arguments
+            console.log("All jobs response:", response);
+            setAllJobs(response.data || []);
+            if (!searchParams.get("search")) {
+              setJobs(response.data || []);
             }
+          } catch (error) {
+            console.error("Error fetching all jobs:", error);
+            setError("Failed to load jobs");
+          } finally {
+            setLoading(false);
+          }
         };
         fetchAllJobs();
-    }, []);
-
-    useEffect(() => {
+      }, []); // Run once on mount
+      
+      useEffect(() => {
         const fetchSearchResults = async () => {
-            const searchQuery = searchParams.get("search");
-            console.log("Search query from URL:", searchQuery);
-
-            if (searchQuery) {
-                setLoading(true);
-                try {
-                    const response = await searchJobs(searchQuery);
-                    console.log("Search API response:", response);
-                    setJobs(response.data || []);
-                    if (!response.data?.length) {
-                        setError(`No jobs found for "${searchQuery}"`);
-                    } else {
-                        setError(null);
-                    }
-                } catch (error) {
-                    console.error("Error searching jobs:", error);
-                    setError("Failed to search jobs");
-                    setJobs([]);
-                } finally {
-                    setLoading(false);
-                }
-            } else {
-                setJobs(allJobs);
+          const searchQuery = searchParams.get("search");
+          console.log("Search query from URL:", searchQuery);
+      
+          if (searchQuery) {
+            setLoading(true);
+            try {
+              const response = await searchJobs(searchQuery);
+              console.log("Search API response:", response);
+              setJobs(response.data || []);
+              if (!response.data?.length) {
+                setError(`No jobs found for "${searchQuery}"`);
+              } else {
                 setError(null);
+              }
+            } catch (error) {
+              console.error("Error searching jobs:", error);
+              setError("Failed to search jobs. Please try again later.");
+              setJobs([]);
+            } finally {
+              setLoading(false);
             }
+          } else {
+            setJobs(allJobs);
+            setError(null);
+          }
         };
-
+      
         fetchSearchResults();
-    }, [searchParams, allJobs]);
+      }, [searchParams, allJobs]);
 
     const indexOfLastJob = currentPage * jobsPerPage;
     const indexOfFirstJob = indexOfLastJob - jobsPerPage;
