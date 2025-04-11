@@ -9,7 +9,7 @@ const LanguageTraining = () => {
     <div className="w-full sm:px-5">
       {/* Hero Section */}
       
-      <section className="w-full max-w-[1294px] px-4 md:px-6 mx-auto py-10 md:py-16">
+      <section className="w-full max-w-[1294px]  md:px-6 mx-auto py-10 md:py-16">
   <div className="flex flex-col md:flex-row items-center gap-10">
     
     {/* LEFT: TEXT CONTENT */}
