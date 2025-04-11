@@ -10,10 +10,14 @@ import {
   faListUl,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 const PositionForm = () => {
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [isMounted, setIsMounted] = useState(false); // Track client-side mount
+
+  const resumeData = useSelector((state: RootState) => state.resume.parsedData);
 
   // Ensure component is mounted on client to avoid hydration mismatch
   useEffect(() => {
@@ -55,8 +59,8 @@ const PositionForm = () => {
             />
           </div>
           <div className="ml-4">
-            <h2 className="text-lg font-semibold text-gray-900">Amanda Rawles</h2>
-            <p className="text-sm text-gray-600">alexarawles@gmail.com</p>
+            <h2 className="text-lg font-semibold text-gray-900">{resumeData?.structured_resume?.name}</h2>
+            <p className="text-sm text-gray-600">{resumeData?.structured_resume?.email}</p>
           </div>
         </div>
 

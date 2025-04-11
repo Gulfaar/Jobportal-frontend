@@ -5,6 +5,7 @@ import Image from "next/image";
 import { loginUser } from "../Services/jobseekeer/AuthService";
 import { useRouter } from "next/navigation"; // Use Next.js router
 import { toast } from "react-toastify";
+import { FaLinkedinIn, FaInstagram, FaFacebookF } from 'react-icons/fa';
 import "react-toastify/dist/ReactToastify.css";
 
 const LoginPage: React.FC = () => {
@@ -27,54 +28,85 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row bg-white">
-      {/* Left Side (Branding / Message) */}
-      <div className="w-full lg:w-1/2 bg-teal-800 text-white flex flex-col justify-center items-center p-4 sm:p-6 lg:p-8 relative min-h-[45vh] sm:min-h-[50vh] lg:min-h-screen">
-        <div className="mb-8 sm:mb-12 lg:mb-16">
-          <Image src="/gulfaarlogo.png" alt="logo" height={160} width={160} className="w-28 sm:w-32 lg:w-40 h-auto" />
-        </div>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 uppercase text-center">LOGIN</h1>
-        <p className="text-base sm:text-lg lg:text-xl font-semibold text-center">WELCOME BACK</p>
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-white px-4 py-8">
+    <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Login Section */}
+      <div className="flex items-center justify-center bg-white px-4">
+        <div className="w-full max-w-sm">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[#2e6b66] mb-6">Log in</h2>
 
-      {/* Right Side (Form) */}
-      <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center p-4 sm:p-6 lg:p-8 min-h-[55vh] sm:min-h-[50vh] lg:min-h-screen">
-        <form className="max-w-md w-full mx-auto space-y-4 sm:space-y-5 px-4 sm:px-6" onSubmit={handleSubmit}>
-          {/* Email Field */}
-          <div>
-            <label htmlFor="email" className="block mb-1.5 font-medium text-gray-700 text-sm sm:text-base">Email</label>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <input
-              id="email"
-              name="email"
               type="email"
-              placeholder="example@gmail.com"
+              placeholder="E-mail address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-gray-300 text-black rounded-md p-2.5 text-sm sm:text-base focus:outline-teal-500"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#2e6b66] shadow-sm text-base md:text-lg text-gray-500"
             />
-          </div>
-
-          {/* Password Field */}
-          <div>
-            <label htmlFor="password" className="block mb-1.5 font-medium text-gray-700 text-sm sm:text-base">Password</label>
             <input
-              id="password"
-              name="password"
               type="password"
-              placeholder="********"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-gray-300 text-black rounded-md p-2.5 text-sm sm:text-base focus:outline-teal-500"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#2e6b66] shadow-sm text-base md:text-lg text-gray-500"
             />
+
+            <div className="flex justify-end">
+              <a href="#" className="text-sm md:text-base text-[#2e6b66] hover:underline">Forget password</a>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-[#2e6b66] text-white font-semibold py-3 rounded-2xl hover:bg-[#255a58] transition text-base md:text-lg"
+            >
+              Submit
+            </button>
+          </form>
+
+          <div className="text-center mt-6 text-sm md:text-base text-black font-semibold">
+            Or login with
           </div>
 
-          {/* Login Button */}
-          <button type="submit" className="w-full bg-teal-700 text-white py-2.5 sm:py-3 rounded-md font-medium hover:bg-teal-800 transition-colors text-sm sm:text-base">
-            LOGIN
+          <div className="flex justify-center space-x-6 mt-4">
+            <a href="#" className="text-[#2e6b66] text-2xl md:text-3xl hover:text-[#255a58]">
+              <FaLinkedinIn />
+            </a>
+            <a href="#" className="text-[#2e6b66] text-2xl md:text-3xl hover:text-[#255a58]">
+              <FaInstagram />
+            </a>
+            <a href="#" className="text-[#2e6b66] text-2xl md:text-3xl hover:text-[#255a58]">
+              <FaFacebookF />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Register Section */}
+      <div className="bg-[#D6655A] text-white p-4 md:p-6 lg:p-8 rounded-2xl shadow-md flex flex-col justify-between mt-0 md:mt-0 ml-0 md:ml-14 w-[72%]">
+        <div>
+          <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-4 md:mb-6 text-center">Register</h3>
+          <ul className="space-y-2 md:space-y-4 text-sm md:text-base text-white/90">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <li key={index} className="flex items-start gap-2">
+                <img src="/icons/Gulfaar-icon2.svg" alt="dot" className="w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 mt-1" />
+                <span className="text-sm md:text-base">
+                  A base job seeker refers to someone who is at the beginning of their job search journey.
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-4 md:mt-6 text-center">
+          <Link href={'/jobseeker/signup'}>
+          <button className="bg-[#2E5F5C] text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-[#244a47] transition text-sm md:text-base">
+            Create free account
           </button>
-        </form>
+          </Link>
+        </div>
       </div>
     </div>
+  </div>
   );
 };
 
