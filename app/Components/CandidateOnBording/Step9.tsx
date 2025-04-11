@@ -4,10 +4,20 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBold, faItalic, faUnderline, faListUl } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/redux/store';
 
 const SkillsForm = () => {
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [search, setSearch] = useState('');
+
+  const resumeData = useSelector((state: RootState) => state.resume.parsedData);
+
+  const experienceEntries = resumeData?.structured_resume?.experience || [];
+  const name = resumeData?.structured_resume?.name || 'No Name';
+  const email = resumeData?.structured_resume?.email || 'No Email';
+
+  
 
   const availableSkills = [
     'User Research',
@@ -29,7 +39,7 @@ const SkillsForm = () => {
   );
 
   return (
-    <div className="min-h-screen w-[50%] flex items-center justify-center bg-[#F5F9FA] px-4 py-8">
+    <div className="min-h-screen md:w-[50%] flex items-center justify-center rounded-md md:shadow-md px-8 py-8">
       <div className="w-full max-w-5xl">
         {/* Profile Header */}
         <div className="flex items-center mb-6">
@@ -43,8 +53,8 @@ const SkillsForm = () => {
             />
           </div>
           <div className="ml-4">
-            <h2 className="text-lg font-semibold text-gray-900">Amanda Rawles</h2>
-            <p className="text-sm text-gray-600">alexarawles@gmail.com</p>
+            <h2 className="text-lg font-semibold text-gray-900">{name}</h2>
+            <p className="text-sm text-gray-600">{email}</p>
           </div>
         </div>
 
@@ -64,7 +74,7 @@ const SkillsForm = () => {
               <div className="relative mb-3">
                 <FontAwesomeIcon
                   icon={faSearch}
-                  className="absolute top-2.5 left-3 text-gray-400"
+                  className="absolute top-2.5 left-3 text-white-400"
                 />
                 <input
                   type="text"

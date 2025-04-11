@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Image from 'next/image'; // Import Next.js Image component
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/redux/store';
 
 const AddEducationForm = () => {
   // State to manage form inputs
@@ -12,6 +14,13 @@ const AddEducationForm = () => {
     graduationYear: '',
     stillStudying: false,
   });
+
+  const resumeData = useSelector((state: RootState) => state.resume.parsedData);
+
+  const experienceEntries = resumeData?.structured_resume?.experience || [];
+  const name = resumeData?.structured_resume?.name || 'No Name';
+  const email = resumeData?.structured_resume?.email || 'No Email';
+  
 
   // Handle input changes
   const handleInputChange = (e: { target: { name: any; value: any; type: any; checked: any; }; }) => {
@@ -30,7 +39,7 @@ const AddEducationForm = () => {
   };
 
   return (
-    <div className="min-h-screen w-full md:w-[79%] flex items-center justify-center  px-4 py-12 ">
+    <div className="min-h-screen w-full md:w-[82%] md:mt-[-35px] flex items-center justify-center  px-4 py-12 ">
       <div className="relative w-full max-w-3xl">
         {/* Stepper Sidebar */}
         {/* <div className="absolute top-0 right-[-80px] flex flex-col items-center space-y-14">
@@ -52,7 +61,7 @@ const AddEducationForm = () => {
         </div> */}
 
         {/* Main Content */}
-        <div className="w-full bg-white rounded-xl p-8">
+        <div className="w-full shadow-md rounded-xl p-8">
           {/* Profile Header */}
           <div className="flex items-center mb-6">
             <div className="w-12 h-12 rounded-full overflow-hidden">
@@ -66,8 +75,8 @@ const AddEducationForm = () => {
               />
             </div>
             <div className="ml-4">
-              <h2 className="text-lg font-semibold text-gray-900">Amanda Rawles</h2>
-              <p className="text-sm text-gray-600">alexarawles@gmail.com</p>
+              <h2 className="text-lg font-semibold text-gray-900">{name}</h2>
+              <p className="text-sm text-gray-600">{email}</p>
             </div>
           </div>
 

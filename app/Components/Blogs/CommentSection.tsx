@@ -2,15 +2,13 @@
 import React, { useState } from "react";
 import UserAvatar from "./UserAvatar";
 
-const CommentSection  = () => {
+const CommentSection = () => {
   const [username, setUsername] = useState("");
   const [comment, setComment] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle comment submission logic here
     console.log("Submitted comment:", { username, comment });
-    // Reset form
     setUsername("");
     setComment("");
   };
@@ -21,27 +19,32 @@ const CommentSection  = () => {
         Comments
       </h2>
 
-      <form onSubmit={handleSubmit} className="flex gap-5 items-center mb-10">
-        <input
-          type="text"
-          placeholder="User name"
-          className="p-2.5 text-sm border-[none] text-neutral-400"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          aria-label="Your username"
-        />
-        <div className="w-px h-10 bg-stone-300" aria-hidden="true" />
-        <input
-          type="text"
-          placeholder="Your comment......."
-          className="p-2.5 text-sm border-[none] text-neutral-400 flex-grow"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-          aria-label="Your comment"
-        />
+      <form 
+        onSubmit={handleSubmit} 
+        className="flex flex-col sm:flex-row gap-5 items-center mb-10"
+      >
+        <div className="flex flex-col sm:flex-row gap-5 w-full">
+          <input
+            type="text"
+            placeholder="User name"
+            className="p-2.5 text-sm border-[none] text-neutral-400 flex-grow"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            aria-label="Your username"
+          />
+          <div className="hidden sm:block w-px h-10 bg-stone-300" aria-hidden="true" />
+          <input
+            type="text"
+            placeholder="Your comment......."
+            className="p-2.5 text-sm border-[none] text-neutral-400 flex-grow"
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+            aria-label="Your comment"
+          />
+        </div>
         <button
           type="submit"
-          className="px-5 py-2.5 text-base text-white bg-sky-500 rounded-md cursor-pointer border-[none]"
+          className="px-5 py-2.5 text-base text-white bg-sky-500 rounded-md cursor-pointer border-[none] w-full sm:w-auto"
         >
           Comment
         </button>

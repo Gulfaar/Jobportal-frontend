@@ -4,6 +4,7 @@ import useScrollAnimation from "@/app/Hooks/useScrollAnimation";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import Animationimage from "../../../assets/animation.json";
+import Link from "next/link";
 
 const InfoSection = () => {
   const { ref, scaleProgress, opacityProgress } = useScrollAnimation();
@@ -63,14 +64,14 @@ const InfoSection = () => {
                 professionals build successful careers across the world
               </p>
               <div className="flex gap-6 items-center self-start mt-16 text-base max-md:mt-10">
-                <a
-                  href="#search-job"
+                <Link
+                  href="/jobseeker/joblisting"
                   className="self-stretch my-auto text-white capitalize w-[122px]"
                 >
                   <div className="flex px-3 py-4 rounded-lg bg-slate-800 justify-center items-center">
                     Search Job
                   </div>
-                </a>
+                </Link>
                 <a
                   href="#learn-more"
                   className="self-stretch my-auto text-teal-800 underline"
@@ -82,7 +83,7 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between item-start gap-6 md:gap-0 mt-5 min-h-[171px] max-md:mt-2 max-md:max-w-full py-5 w-full">
+      <div className="flex flex-nowrap justify-between item-start  gap-5 md:gap-7 mt-5 min-h-full max-md:mt-2 max-md:max-w-full  py-5 w-full">
         {stats.map((stat, index) => (
           <StatCard
             key={index}
