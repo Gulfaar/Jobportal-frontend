@@ -6,16 +6,27 @@ const GulfAdvantage: FC = () => {
     <section className="bg-white py-12 w-full">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          {/* Text Column - Adjusted for better alignment */}
-          <div className="md:w-1/2">
-            <p className="text-gray-900 leading-relaxed text-base md:text-[20px]">
-            This method uniquely combines expert instruction with AI technology for personalized exam preparation{" "}
-              <span className="font-semibold"> AI analyzes</span>, your strengths and weaknesses, creating tailored study plans and adaptive practice. With{" "}
-              Expert educators provide personalized feedback and clarify complex concepts. Real-time performance analysis allows you to track progress and focus on areas needing improvement. Comprehensive online resources ensure flexible and convenient study.This approach aims to maximize your exam success through individualized,<span className="font-semibold">data-driven learning..</span>
+
+          {/* Text Column */}
+          <div className="md:w-1/2 space-y-6">
+            {/* NEW Description Heading */}
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              Ace Your Exams, Unlock Global Opportunities with AI-Powered Training!
+            </h2>
+
+            {/* NEW Intro Paragraph */}
+            <p className="text-gray-800 text-base md:text-lg leading-relaxed">
+              At Gulfaar, we understand that securing international career and education opportunities often
+              requires clearing standardized tests. Our AI-Powered Exam Preparation Programs are designed to
+              help you succeed in language proficiency tests, job qualification exams, and industry-specific
+              assessments with expert guidance, structured training, and AI-driven personalized learning.
             </p>
-          </div>
+
           
-          {/* Image Column - Tightened to text */}
+            
+          </div>
+
+          {/* Image Column */}
           <div className="md:w-1/2 flex justify-end">
             <div className="w-full max-w-[400px]">
               <Image
@@ -27,6 +38,7 @@ const GulfAdvantage: FC = () => {
               />
             </div>
           </div>
+
         </div>
       </div>
     </section>

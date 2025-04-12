@@ -56,6 +56,13 @@ const Features: React.FC<FeaturesProps> = ({
 }) => {
   return (
     <section className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+<div className="text-center">
+
+  {/* Heading */}
+  <h2 className="text-3xl md:text-4xl font-bold text-[#DA6B64] mt-6 mb-4">
+    Why Choose Gulfaar for Exam Preparation?
+  </h2>
+</div>
       <div className="max-w-7xl mx-auto">
         {/* Grid of Feature Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

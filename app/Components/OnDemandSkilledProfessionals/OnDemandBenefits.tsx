@@ -1,33 +1,33 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 const OnDemandBenefits = () => {
   const benefits = [
     {
       title: "Companies Looking For Quick Workforce Scaling",
       description: "Fast hiring with no long-term commitments.",
-      icon: "/rewarondemand.svg"
+      icon: "/rewarondemand.svg",
     },
     {
       title: "Startups & SMEs Needing Flexible Teams",
       description: "Access top professionals on demand",
-      icon: "/ondemandpapericon.svg"
+      icon: "/ondemandpapericon.svg",
     },
     {
       title: "Businesses Seeking Cost-Effective Talent Solutions",
       description: "Save on recruitment costs & overhead expenses",
-      icon: "/ondemandcost.svg"
+      icon: "/ondemandcost.svg",
     },
     {
       title: "Organizations Expanding Operations Globally",
       description: "Get multi-language, AI-driven outsourcing solutions.",
-      icon: "/ondemandpapericon.svg"
+      icon: "/ondemandpapericon.svg",
     },
     {
       title: "Industries Requiring Seasonal Or Project-Based Workforce",
       description: "Hire based on your specific needs & timeframes",
-      icon: "/chatondemand.svg"
-    }
+      icon: "/chatondemand.svg",
+    },
   ];
 
   return (
@@ -43,10 +43,11 @@ const OnDemandBenefits = () => {
           {benefits.slice(0, 4).map((benefit, index) => (
             <div
               key={index}
-              className="flex items-start gap-6 hover:scale-105 transition-all duration-300 cursor-pointer max-sm:flex-col max-sm:items-center max-sm:text-center sm:text-left"
+              className="flex items-start gap-6 max-sm:gap-4 max-sm:flex-col max-sm:items-center max-sm:text-center sm:text-left hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               {/* Icon */}
-              <div className="w-[60px] h-[60px] rounded-full bg-[#2E5F5C] flex items-center justify-center flex-shrink-0 max-sm:mb-3">
+              
+              <div className="w-[60px] h-[60px] rounded-full bg-[#2E5F5C] flex items-center justify-center flex-shrink-0">
                 <Image
                   src={benefit.icon}
                   alt={benefit.title}
@@ -56,7 +57,8 @@ const OnDemandBenefits = () => {
                 />
               </div>
 
-              <div className="max-sm:mt-2">
+              {/* Text Content */}
+              <div>
                 <h3 className="text-[24px] font-semibold text-[#1E1B4B] mb-2 leading-snug">
                   {benefit.title}
                 </h3>
@@ -70,8 +72,8 @@ const OnDemandBenefits = () => {
 
         {/* Last card - centered */}
         <div className="flex justify-center mt-12">
-          <div className="flex items-start gap-6 max-w-[600px] hover:scale-105 transition-all duration-300 cursor-pointer max-sm:flex-col max-sm:items-center sm:text-left max-sm:text-center">
-            <div className="w-[60px] h-[60px] rounded-full bg-[#2E5F5C] flex items-center justify-center flex-shrink-0 max-sm:mb-3">
+          <div className="flex items-start gap-6 max-sm:gap-4 max-sm:flex-col max-sm:items-center sm:text-left max-sm:text-center max-w-[600px] hover:scale-105 transition-all duration-300 cursor-pointer">
+            <div className="w-[60px] h-[60px] rounded-full bg-[#2E5F5C] flex items-center justify-center flex-shrink-0">
               <Image
                 src={benefits[4].icon}
                 alt={benefits[4].title}
@@ -81,7 +83,7 @@ const OnDemandBenefits = () => {
               />
             </div>
 
-            <div className="max-sm:mt-2">
+            <div>
               <h3 className="text-[24px] font-semibold text-[#1E1B4B] mb-2 leading-snug">
                 {benefits[4].title}
               </h3>

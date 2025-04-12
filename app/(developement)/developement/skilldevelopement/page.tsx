@@ -22,20 +22,20 @@ const SkillDevelopment: React.FC = () => {
     {/* Text Section */}
     <div className="w-full md:w-[63%]">
       <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-teal-800 leading-tight">
-        Unlock Your Career Potential with
+      Unlock Your Career Potential with
       </h2>
       
       <p className="mt-3 text-[22px] sm:text-[26px] md:text-[36px] font-bold text-teal-800 leading-snug">
-        Master Languages, Expand Opportunities, Succeed Globally
+      Gulfaar's Skill Development Programs
       </p>
 
       <p className="mt-6 text-base sm:text-lg text-gray-700">
-        Transform Your Career with Industry-Leading Skill Development
+      Transform Your Career with Industry-Leading Skill Development
       </p>
 
       <p className="mt-6 text-base sm:text-lg text-neutral-900 leading-relaxed">
-        In today's interconnected world, language is more than just communication —<br className="hidden sm:block" />
-        it's the key to unlocking global opportunities.
+      At Gulfaar, we believe that skills are the foundation of success. Whether you're a fresh graduate<br className="hidden sm:block" />
+        a professional looking to upskill, or someone seeking to switch careers, our Skill Development Programs are designed to equip you with industry-relevant expertise using the latest AI-powered learning techniques
       </p>
 
       <button
@@ -54,7 +54,7 @@ const SkillDevelopment: React.FC = () => {
     {/* Image Section */}
     <div className="w-full md:w-[37%]">
       <img
-        src="/LANGUAGE.png"
+        src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c59f9f64f3d931e65c3207dc47edd4bcc02e16?placeholderIfAbsent=true"
         alt="Career development illustration"
         className="w-full object-cover rounded-3xl"
       />
@@ -250,9 +250,10 @@ const SkillDevelopment: React.FC = () => {
                 <p className="self-start text-2xl tracking-tight  max-md:max-w-full">
                   OUR SKILL DEVELOPEMENT PROGRAMS
                 </p>
-                <h2 className="bg mt-5 text-5xl  w-full leading-[50px] max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-10">
-                  Non-Technical Skills For General & Specialized Roles
-                </h2>
+                <h2 className="mt-5 text-center text-5xl md:text-6xl sm:text-4xl max-md:text-3xl max-sm:text-2xl font-semibold leading-tight tracking-tight text-teal-900 max-w-2xl mx-auto">
+  Non-Technical Skills For General & Specialized Roles
+</h2>
+
               </div>
             </div>
             <div className="ml-60 w-[29%] max-md:ml-0 max-md:w-full">
@@ -350,9 +351,10 @@ const SkillDevelopment: React.FC = () => {
         <p className="text-2xl font-semibold tracking-tight  text-black max-md:max-w-full">
           OUR SKILL DEVELOPEMENT PROGRAMS
         </p>
-        <h2 className="mt-7 text-4xl font-semibold leading-none text-black max-md:max-w-full max-md:text-4xl">
-          Personality Development For Professional Growth
-        </h2>
+        <h2 className="mt-7 text-4xl max-md:text-3xl font-semibold leading-snug text-black text-center w-fit mx-auto">
+  Personality Development For <br />
+  <span className="block text-center">Professional Growth</span>
+</h2>
         <div className="self-stretch mt-16 max-md:mt-10 max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col">
             <div className="w-3/12 max-md:ml-0 max-md:w-full">
@@ -437,7 +439,7 @@ const SkillDevelopment: React.FC = () => {
             />
             <FeatureCard
               imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/f7eef0d74d474c04b3422015f180a1be59fdd8b0?placeholderIfAbsent=true"
-              title="Construction Safety & Compliance"
+              title="Construction Safety &Compliance"
               description="Expert Oil & Gas Industry Training Solutions"
               className="ml-5 w-3/12 max-md:ml-0 max-md:w-full bg-white"
             />
