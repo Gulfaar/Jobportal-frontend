@@ -71,15 +71,20 @@ const NavBar = () => {
   return (
     <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-5 py-10 md:px-10 md:py-7">
       <div className="flex items-center mt-[-30px]">
-        <img
-          src="./logomob.png"
+        <Image
+          src="/logomob.png"
           alt="Gulfaar Mobile Logo"
-          className="w-[100px] py-10 md:py-0 h-auto block md:hidden"
+          width={100}
+          height={40}
+          className="py-10 md:py-0 h-auto block md:hidden"
         />
-        <img
-          src="./newlogo.png"
+
+        <Image
+          src="/newlogo.png"
           alt="Gulfaar Logo"
-          className="w-[120px] md:w-[315px] h-auto hidden md:block lg:block"
+          width={315}
+          height={80}
+          className="hidden md:block lg:block w-[120px] md:w-[315px] h-auto"
         />
       </div>
 
@@ -101,219 +106,219 @@ const NavBar = () => {
       </div>
 
       {isModalOpen && (
-  <div className="fixed top-0 left-0 w-full h-full bg-white bg-opacity-98 z-50 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+        <div className="fixed top-0 left-0 w-full h-full bg-white bg-opacity-98 z-50 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
 
-<div className="fixed top-6 left-4 z-50 h-10 w-auto">
-  <Image
-    src="/logomob.png"
-    alt="Company Logo"
-    width={120}
-    height={40}
-    priority
-    className="filter invert"
-  />
-</div>
-
-
-    {/* Close Button */}
-    <button
-      className="fixed top-4 right-4 text-gray-400  transition z-50"
-      onClick={() => setIsModalOpen(false)}
-    >
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M6 18L18 6M6 6l12 12"
-        ></path>
-      </svg>
-    </button>
-
-    {/* Navigation Links */}
-    <div className="flex flex-col items-center w-full max-w-md mx-auto py-20 space-y-4 text-lg tracking-wide min-h-screen scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
-      <Link
-        href="/"
-        className="w-full  text-2xl text-black rounded-lg px-10 py-4  transition-all duration-300 ease-in-out transform "
-        onClick={() => setIsModalOpen(false)}
-      >
-        Home
-      </Link>
-      <Link
-        href="/jobseeker/joblisting"
-        className="w-full text-2xl rounded-lg px-10 py-4 text-black  transition-all duration-300 ease-in-out transform "
-        onClick={() => setIsModalOpen(false)}
-      >
-        Jobs
-      </Link>
-      <Link
-        href=" "
-        className="w-full  text-2xl rounded-lg px-10 py-4 text-black  transition-all duration-300 ease-in-out transform "
-        onClick={() => setIsModalOpen(false)}
-      >
-        Blog
-      </Link>
-
-      {/* Training Dropdown */}
-      <div className="w-full">
-        <button
-          className="w-full  text-2xl rounded-lg px-10 py-4 text-black flex justify-between items-center transition-all duration-300 ease-in-out transform"
-          onClick={() => setIsTrainingOpen(!isTrainingOpen)}
-        >
-          <span>Training</span>
-          {isTrainingOpen ? <FiChevronUp /> : <FiChevronDown />}
-        </button>
-        {isTrainingOpen && (
-          <div className="mt-2 w-full text-2xl rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
-            <Link
-              href="/developement/skilldevelopement"
-              className="block px-10 py-3 text-black   rounded-t-md transition-all duration-200 "
-              onClick={() => setIsModalOpen(false)}
-            >
-              Skill Development
-            </Link>
-            <Link
-              href="/Training/PersonalityDevelopment"
-              className="block px-10 py-3 text-black   transition-all duration-200 "
-              onClick={() => setIsModalOpen(false)}
-            >
-              Personality Development
-            </Link>
-            <Link
-              href="/Training/LanguageTraining"
-              className="block px-10 py-3 text-black  transition-all duration-200 "
-              onClick={() => setIsModalOpen(false)}
-            >
-              Language Training
-            </Link>
-            <Link
-              href="/ExamPreprations"
-              className="block px-10 py-3 text-black   transition-all duration-200 "
-              onClick={() => setIsModalOpen(false)}
-            >
-              Exam Preparation
-            </Link>
+          <div className="fixed top-6 left-4 z-50 h-10 w-auto">
+            <Image
+              src="/logomob.png"
+              alt="Company Logo"
+              width={120}
+              height={40}
+              priority
+              className="filter invert"
+            />
           </div>
-        )}
-      </div>
 
-      {/* Workforce Solutions Dropdown */}
-      <div className="w-full">
-        <button
-          className="w-full  text-2xl rounded-lg px-10 py-4 text-black flex justify-between items-center transition-all duration-300 ease-in-out transform "
-          onClick={() => setIsWorkForceOpen(!isWorkForceOpen)}
-        >
-          <span>Work-Force Solutions</span>
-          {isWorkForceOpen ? <FiChevronUp /> : <FiChevronDown />}
-        </button>
-        {isWorkForceOpen && (
-          <div className="mt-2 w-full rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
-            {/* Recruitment Sub-Dropdown */}
+
+          {/* Close Button */}
+          <button
+            className="fixed top-4 right-4 text-gray-400  transition z-50"
+            onClick={() => setIsModalOpen(false)}
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+
+          {/* Navigation Links */}
+          <div className="flex flex-col items-center w-full max-w-md mx-auto py-20 space-y-4 text-lg tracking-wide min-h-screen scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+            <Link
+              href="/"
+              className="w-full  text-2xl text-black rounded-lg px-10 py-4  transition-all duration-300 ease-in-out transform "
+              onClick={() => setIsModalOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              href="/jobseeker/joblisting"
+              className="w-full text-2xl rounded-lg px-10 py-4 text-black  transition-all duration-300 ease-in-out transform "
+              onClick={() => setIsModalOpen(false)}
+            >
+              Jobs
+            </Link>
+            <Link
+              href=" "
+              className="w-full  text-2xl rounded-lg px-10 py-4 text-black  transition-all duration-300 ease-in-out transform "
+              onClick={() => setIsModalOpen(false)}
+            >
+              Blog
+            </Link>
+
+            {/* Training Dropdown */}
             <div className="w-full">
               <button
-                className="w-full px-10  py-3 text-2xl  text-black  flex justify-between items-center  transition-all duration-200 "
-                onClick={() => setIsRecruitmentOpen(!isRecruitmentOpen)}
+                className="w-full  text-2xl rounded-lg px-10 py-4 text-black flex justify-between items-center transition-all duration-300 ease-in-out transform"
+                onClick={() => setIsTrainingOpen(!isTrainingOpen)}
               >
-                <span>Recruitment</span>
-                {isRecruitmentOpen ? <FiChevronUp /> : <FiChevronDown />}
+                <span>Training</span>
+                {isTrainingOpen ? <FiChevronUp /> : <FiChevronDown />}
               </button>
-              {isRecruitmentOpen && (
-                <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+              {isTrainingOpen && (
+                <div className="mt-2 w-full text-2xl rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
                   <Link
-                    href="/workforcesolutions/TailoredCandidates"
-                    className="block px-10 py-3 text-black text-2xl transition-all duration-200 "
+                    href="/developement/skilldevelopement"
+                    className="block px-10 py-3 text-black   rounded-t-md transition-all duration-200 "
                     onClick={() => setIsModalOpen(false)}
                   >
-                    Tailored Candidates
+                    Skill Development
                   </Link>
                   <Link
-                    href="/workforcesolutions/DirectPlacement"
-                    className="block px-10 py-3  text-black text-2xl  transition-all duration-200  "
+                    href="/Training/PersonalityDevelopment"
+                    className="block px-10 py-3 text-black   transition-all duration-200 "
                     onClick={() => setIsModalOpen(false)}
                   >
-                    Direct Placement
+                    Personality Development
+                  </Link>
+                  <Link
+                    href="/Training/LanguageTraining"
+                    className="block px-10 py-3 text-black  transition-all duration-200 "
+                    onClick={() => setIsModalOpen(false)}
+                  >
+                    Language Training
+                  </Link>
+                  <Link
+                    href="/ExamPreprations"
+                    className="block px-10 py-3 text-black   transition-all duration-200 "
+                    onClick={() => setIsModalOpen(false)}
+                  >
+                    Exam Preparation
                   </Link>
                 </div>
               )}
             </div>
 
-            {/* Contract Workforce Sub-Dropdown */}
-            <div className="w-full overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
-              <button
-                className="w-full px-10 py-3  text-black  text-2xl flex justify-between items-center  transition-all duration-200"
-                onClick={() => setIsContractOpen(!isContractOpen)}
-              >
-                <span>Contract Workforce</span>
-                {isContractOpen ? <FiChevronUp /> : <FiChevronDown />}
-              </button>
-              {isContractOpen && (
-                <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
-                  <Link
-                    href="/PayrollManagement"
-                    className="block px-10 py-3 text-2xl text-black hover:bg-gray-700  transition-all duration-200 "
-                    onClick={() => setIsModalOpen(false)}
-                  >
-                    Payroll Management
-                  </Link>
-                  <Link
-                    href="/FlexibleHiring"
-                    className="block text-2xl px-10 py-3 text-black hover:bg-gray-700  transition-all duration-200 "
-                    onClick={() => setIsModalOpen(false)}
-                  >
-                    Flexible Hiring
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            {/* Outsourcing Sub-Dropdown */}
+            {/* Workforce Solutions Dropdown */}
             <div className="w-full">
               <button
-                className="w-full px-10 py-3  text-black  flex justify-between items-center  transition-all duration-200 text-2xl"
-                onClick={() => setIsOutsourcingOpen(!isOutsourcingOpen)}
+                className="w-full  text-2xl rounded-lg px-10 py-4 text-black flex justify-between items-center transition-all duration-300 ease-in-out transform "
+                onClick={() => setIsWorkForceOpen(!isWorkForceOpen)}
               >
-                <span>Outsourcing</span>
-                {isOutsourcingOpen ? <FiChevronUp /> : <FiChevronDown />}
+                <span>Work-Force Solutions</span>
+                {isWorkForceOpen ? <FiChevronUp /> : <FiChevronDown />}
               </button>
-              {isOutsourcingOpen && (
-                <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
-                  <Link
-                    href="/OnDemandSkilledProfessionals"
-                    className="block px-10 py-3  text-black text-2xl  transition-all duration-200 "
-                    onClick={() => setIsModalOpen(false)}
-                  >
-                    On-Demand Professionals
-                  </Link>
-                  <Link
-                    href="/TaskSpecifics"
-                    className="block px-10 py-3  text-2xl text-black  transition-all duration-200 "
-                    onClick={() => setIsModalOpen(false)}
-                  >
-                    Task-Specific Experts
-                  </Link>
+              {isWorkForceOpen && (
+                <div className="mt-2 w-full rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+                  {/* Recruitment Sub-Dropdown */}
+                  <div className="w-full">
+                    <button
+                      className="w-full px-10  py-3 text-2xl  text-black  flex justify-between items-center  transition-all duration-200 "
+                      onClick={() => setIsRecruitmentOpen(!isRecruitmentOpen)}
+                    >
+                      <span>Recruitment</span>
+                      {isRecruitmentOpen ? <FiChevronUp /> : <FiChevronDown />}
+                    </button>
+                    {isRecruitmentOpen && (
+                      <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+                        <Link
+                          href="/workforcesolutions/TailoredCandidates"
+                          className="block px-10 py-3 text-black text-2xl transition-all duration-200 "
+                          onClick={() => setIsModalOpen(false)}
+                        >
+                          Tailored Candidates
+                        </Link>
+                        <Link
+                          href="/workforcesolutions/DirectPlacement"
+                          className="block px-10 py-3  text-black text-2xl  transition-all duration-200  "
+                          onClick={() => setIsModalOpen(false)}
+                        >
+                          Direct Placement
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Contract Workforce Sub-Dropdown */}
+                  <div className="w-full overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+                    <button
+                      className="w-full px-10 py-3  text-black  text-2xl flex justify-between items-center  transition-all duration-200"
+                      onClick={() => setIsContractOpen(!isContractOpen)}
+                    >
+                      <span>Contract Workforce</span>
+                      {isContractOpen ? <FiChevronUp /> : <FiChevronDown />}
+                    </button>
+                    {isContractOpen && (
+                      <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+                        <Link
+                          href="/PayrollManagement"
+                          className="block px-10 py-3 text-2xl text-black hover:bg-gray-700  transition-all duration-200 "
+                          onClick={() => setIsModalOpen(false)}
+                        >
+                          Payroll Management
+                        </Link>
+                        <Link
+                          href="/FlexibleHiring"
+                          className="block text-2xl px-10 py-3 text-black hover:bg-gray-700  transition-all duration-200 "
+                          onClick={() => setIsModalOpen(false)}
+                        >
+                          Flexible Hiring
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Outsourcing Sub-Dropdown */}
+                  <div className="w-full">
+                    <button
+                      className="w-full px-10 py-3  text-black  flex justify-between items-center  transition-all duration-200 text-2xl"
+                      onClick={() => setIsOutsourcingOpen(!isOutsourcingOpen)}
+                    >
+                      <span>Outsourcing</span>
+                      {isOutsourcingOpen ? <FiChevronUp /> : <FiChevronDown />}
+                    </button>
+                    {isOutsourcingOpen && (
+                      <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+                        <Link
+                          href="/OnDemandSkilledProfessionals"
+                          className="block px-10 py-3  text-black text-2xl  transition-all duration-200 "
+                          onClick={() => setIsModalOpen(false)}
+                        >
+                          On-Demand Professionals
+                        </Link>
+                        <Link
+                          href="/TaskSpecifics"
+                          className="block px-10 py-3  text-2xl text-black  transition-all duration-200 "
+                          onClick={() => setIsModalOpen(false)}
+                        >
+                          Task-Specific Experts
+                        </Link>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
-          </div>
-        )}
-      </div>
 
-      <Link
-        href="/Partner"
-        className="w-full  rounded-lg px-10 py-4 text-2xl text-black  transition-all duration-300 ease-in-out transform "
-        onClick={() => setIsModalOpen(false)}
-      >
-        Partner with us
-      </Link>
-    </div>
-  </div>
-)}
+            <Link
+              href="/Partner"
+              className="w-full  rounded-lg px-10 py-4 text-2xl text-black  transition-all duration-300 ease-in-out transform "
+              onClick={() => setIsModalOpen(false)}
+            >
+              Partner with us
+            </Link>
+          </div>
+        </div>
+      )}
 
       <div className="hidden w-full justify-end mt-[-50px] md:flex gap-2 md:gap-4">
         <Link href="/jobseeker/login">
@@ -339,7 +344,7 @@ const NavLinks = () => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isSkillDevelopement, setSkillDevelopement] = useState(false);
   const [isPersonality, setPersonality] = useState(false);
-  
+
   return (
     <div className="flex gap-4 text-white font-[20px] w-full justify-end md:mt-[-45px] lg:mt-[-35px] relative -top-9">
       <Link href="/" className="hover:text-[#dae470]">
@@ -635,10 +640,10 @@ const JobLocations = () => {
         <button onClick={prevSlide} className="absolute left-0 z-10 p-2  rounded-full shadow-md">
           <FaArrowLeft size={24} />
         </button>
-        
+
         {/* Slider Container */}
         <div className="flex overflow-hidden w-full px-10">
-        <div
+          <div
             className="flex transition-transform ease-in-out duration-700 ml-30 md:ml-0  gap-2 md:gap-4"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
