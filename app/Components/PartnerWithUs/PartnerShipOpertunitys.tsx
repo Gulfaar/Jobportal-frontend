@@ -1,6 +1,7 @@
 // components/TypesOfPartnershipOpportunities.tsx
 import React from 'react';
 import Image from 'next/image';
+import { Circle } from 'lucide-react';
 
 const TypesOfPartnershipOpportunities: React.FC = () => {
   return (
@@ -16,14 +17,8 @@ const TypesOfPartnershipOpportunities: React.FC = () => {
           {/* Left Column */}
           <div className="space-y-6">
             <div className="flex items-start space-x-3">
-              <div className="w-6 h-6 flex-shrink-0 mt-1">
-                <Image
-                  src="/icons/Gulfaar-icon2.svg"
-                  alt="Gulfaar Icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
+            <div className="w-6 h-6 flex-shrink-0 mt-1 text-primary">
+                <Circle className='text-white' size={24} />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">
@@ -36,14 +31,8 @@ const TypesOfPartnershipOpportunities: React.FC = () => {
             </div>
 
             <div className="flex items-start space-x-3">
-              <div className="w-6 h-6 flex-shrink-0 mt-1">
-                <Image
-                  src="/icons/Gulfaar-icon2.svg"
-                  alt="Gulfaar Icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
+            <div className="w-6 h-6 flex-shrink-0 mt-1 text-primary">
+                <Circle className='text-white' size={24} />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">
@@ -59,14 +48,8 @@ const TypesOfPartnershipOpportunities: React.FC = () => {
           {/* Right Column */}
           <div className="space-y-6">
             <div className="flex items-start space-x-3">
-              <div className="w-6 h-6 flex-shrink-0 mt-1">
-                <Image
-                  src="/icons/Gulfaar-icon2.svg"
-                  alt="Gulfaar Icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
+            <div className="w-6 h-6 flex-shrink-0 mt-1 text-primary">
+                <Circle className='text-white' size={24} />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">
@@ -79,14 +62,8 @@ const TypesOfPartnershipOpportunities: React.FC = () => {
             </div>
 
             <div className="flex items-start space-x-3">
-              <div className="w-6 h-6 flex-shrink-0 mt-1">
-                <Image
-                  src="/icons/Gulfaar-icon2.svg"
-                  alt="Gulfaar Icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
+              <div className="w-6 h-6 flex-shrink-0 mt-1 text-primary">
+                <Circle className='text-white' size={24} />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">

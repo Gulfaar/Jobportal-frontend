@@ -303,7 +303,8 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
                 </Link>
               </li>
             <li>
-              <Link href="#jobs" className="hover:text-gray-200 transition">
+              
+              <Link href="/jobseeker/joblisting" className="hover:text-gray-200 transition">
                 Jobs
               </Link>
             </li>
@@ -323,7 +324,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
 
       {isTrainingOpen && (
         <div
-          className="absolute left-0 mt-2 w-[48] bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+          className="absolute left-0 mt-2 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
           onMouseEnter={() => setIsTrainingOpen(true)}
           onMouseLeave={() => setIsTrainingOpen(false)}
         >
