@@ -65,7 +65,7 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      title: "Amazing services",
+      title: "Great work",
       content: "Exceptional support and top-notch service. Highly recommend!",
       author: "Marco Kihn",
       role: "Happy Client",
@@ -86,7 +86,21 @@ const TestimonialsSection = () => {
       avatar: "https://randomuser.me/api/portraits/men/3.jpg",
     },
     {
-      title: "Awesome experience!",
+      title: "Grea  t job",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      title: "Outstanding work",
+      content: "From start to finish, a delightful experience!",
+      author: "Zion Cisneros",
+      role: "Happy Client",
+      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      title: "Good team",
       content: "From start to finish, a delightful experience!",
       author: "Zion Cisneros",
       role: "Happy Client",
@@ -100,28 +114,14 @@ const TestimonialsSection = () => {
       avatar: "https://randomuser.me/api/portraits/men/3.jpg",
     },
     {
-      title: "Awesome experience!",
+      title: "Good enough",
       content: "From start to finish, a delightful experience!",
       author: "Zion Cisneros",
       role: "Happy Client",
       avatar: "https://randomuser.me/api/portraits/men/3.jpg",
     },
     {
-      title: "Awesome experience!",
-      content: "From start to finish, a delightful experience!",
-      author: "Zion Cisneros",
-      role: "Happy Client",
-      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
-    },
-    {
-      title: "Awesome experience!",
-      content: "From start to finish, a delightful experience!",
-      author: "Zion Cisneros",
-      role: "Happy Client",
-      avatar: "https://randomuser.me/api/portraits/men/3.jpg",
-    },
-    {
-      title: "Awesome experience!",
+      title: "Better",
       content: "From start to finish, a delightful experience!",
       author: "Zion Cisneros",
       role: "Happy Client",
@@ -146,7 +146,7 @@ const TestimonialsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col items-center mt-6 px-6 py-16 w-full text-center bg-cover bg-center overflow-hidden"
+      className="flex flex-col items-center mt-6 px-6 py-20 w-full text-center bg-cover bg-center overflow-hidden"
       style={{ backgroundImage: "url('/Testimonial.png')" }}
     >
       <h2 className="text-3xl font-bold">Testimonials from Our Customers</h2>
@@ -161,7 +161,7 @@ const TestimonialsSection = () => {
           <button 
           onClick={handlePrev}
         
-        className="absolute md:left-12  z-10 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+        className="absolute md:left-12  z-10 bg-gray-800 text-black p-2 rounded-full shadow-lg hover:bg-gray-700"
       >
         <FaChevronLeft size={15} />
       </button>
