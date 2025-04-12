@@ -221,7 +221,7 @@ const Joblisting = () => {
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <Image src={job.logo} alt={job.title} width={24} height={24} />
-                      <h3 className="font-semibold">{job.title}</h3>
+                      <h3 className="font-semibold text-black">{job.title}</h3>
                     </div>
                     <div className="mb-3">
                       <span className="text-gray-600 text-sm">{job.location}</span>
