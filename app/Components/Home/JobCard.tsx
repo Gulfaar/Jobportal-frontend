@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
+import { toast } from "react-toastify";
 
 interface Job {
   id: string;
@@ -56,11 +57,11 @@ const JobCard = ({ job }: { job: Job }) => {
 
         {/* Action Buttons */}
         <div className="flex gap-4 mt-4">
-          <Link href={`/jobseeker/jobdetails/${job.id}`}>
-            <button className="px-4 py-2 bg-red-400 hover:bg-red-900 text-white rounded text-sm">
+         
+            <button onClick={() => toast.success("Applied")} className="px-4 py-2 bg-red-400 hover:bg-red-900 text-white rounded text-sm">
               Apply now
-            </button>
-          </Link>
+           </button>
+          
           <button className="px-4 py-2 border border-white text-white rounded text-sm">
             Learn more
           </button>

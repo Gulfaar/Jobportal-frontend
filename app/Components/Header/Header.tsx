@@ -139,7 +139,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
         Jobs
       </Link>
       <Link
-        href="/blogs/Bloglisting"
+        href=" "
         className="w-full bg-red-400 rounded-lg px-6 py-4 text-white  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
@@ -316,7 +316,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
               </Link>
             </li>
             <li>
-              <Link href="/blogs/Bloglisting" className="hover:text-gray-200 transition">
+              <Link href=" " className="hover:text-gray-200 transition">
                 Blog
               </Link>
             </li>

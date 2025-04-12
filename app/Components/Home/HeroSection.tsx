@@ -151,7 +151,7 @@ const NavBar = () => {
         Jobs
       </Link>
       <Link
-        href="/blogs/Bloglisting"
+        href=" "
         className="w-full bg-red-400 rounded-lg px-6 py-4 text-white  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
@@ -346,7 +346,7 @@ const NavLinks = () => {
       <Link href="/jobseeker/joblisting" className="hover:text-[#dae470]">
         Jobs
       </Link>
-      <Link href="/blogs/Bloglisting" className="hover:text-[#dae470]">
+      <Link href=" " className="hover:text-[#dae470]">
         Blog
       </Link>
 

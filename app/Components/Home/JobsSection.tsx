@@ -26,7 +26,7 @@ const jobsData = [
     location: "Bangalore",
     experience: "Entry Level",
     description:
-      "Build responsive UI using React.js and modern CSS frameworks.",
+      "Build responsive UI using React.js and modern CSS frameworks well-defined test cases.",
   },
   {
     id: "12347",
@@ -46,7 +46,7 @@ const jobsData = [
     location: "Pune",
     experience: "Mid Level",
     description:
-      "Manage CI/CD pipelines and cloud infrastructure deployments.",
+      "Manage CI/CD pipelines and cloud infrastructure deployments and well-defined test cases.",
   },
   {
     id: "12349",
@@ -56,7 +56,7 @@ const jobsData = [
     location: "Mumbai",
     experience: "Senior Level",
     description:
-      "Define product roadmap and coordinate between design and engineering teams.",
+      "Define product roadmap and coordinate between design and engineering teams .",
   },
   {
     id: "12350",
@@ -66,7 +66,7 @@ const jobsData = [
     location: "Remote",
     experience: "Intermediate Level",
     description:
-      "Design user interfaces and experiences for mobile and web apps.",
+      "Design user interfaces and experiences for mobile and web appsand well-defined test cases.",
   },
 ];
 
