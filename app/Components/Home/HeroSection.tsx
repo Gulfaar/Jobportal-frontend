@@ -69,17 +69,13 @@ const NavBar = () => {
   const [isOutsourcingOpen, setIsOutsourcingOpen] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-5 py-10 md:px-10 md:py-7">
-      <div className="flex items-center mt-[-30px]">
+    <nav className="absolute top-7 md:top-0 left-0 w-full flex justify-between items-center px-5 py-10 md:px-10 md:py-7">
+      <div className="flex items-center mt-[-30px] md:mt-[14px]">
+        
         <img
           src="./logomob.png"
-          alt="Gulfaar Mobile Logo"
-          className="w-[100px] py-10 md:py-0 h-auto block md:hidden"
-        />
-        <img
-          src="./newlogo.png"
           alt="Gulfaar Logo"
-          className="w-[120px] md:w-[315px] h-auto hidden md:block lg:block"
+          className="w-[100px] md:w-[215px] h-auto  md:block lg:block"
         />
       </div>
 
@@ -494,7 +490,7 @@ const NavLinks = () => {
 
               {isOutsourcingOpen && (
                 <div
-                  className="absolute left-[-290px] top-0 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+                  className="absolute left-[-290px] top-10 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
                 >
                   <Link
                     href="/OnDemandSkilledProfessionals"
