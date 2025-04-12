@@ -6,6 +6,7 @@ import Link from "next/link";
 const EmployeerContact = () => {
     return (
         <div className=" ">
+          
        
         <Header title="Contact us" subtitle="For hiring, jobs, or partnerships, contact Gulfaar!"/>
 
