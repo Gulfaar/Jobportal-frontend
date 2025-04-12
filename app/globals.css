@@ -47,28 +47,31 @@ body {
 }
 
 /* Custom scrollbar for main modal and dropdowns */
+/* Custom scrollbar for main modal and dropdowns */
 .overflow-y-auto::-webkit-scrollbar {
   width: 6px;
 }
 
 .overflow-y-auto::-webkit-scrollbar-track {
-  background: #2d3748;
+  background: white; /* ← Set track to white */
   border-radius: 3px;
 }
 
 .overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: white; /* ← Set thumb to white */
   border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: white;
-  border-radius: 8px;
+/* Global scrollbar styling for all scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: white; /* ← Set global track to white */
 }
 
-::-webkit-scrollbar {
-  width: 8px;
+::-webkit-scrollbar-thumb {
+  background-color: white; /* ← Set global thumb to white */
+  border-radius: 8px;
 }

@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const BannerSection = () => {
   return (
-    <section className="overflow-hidden self-center max-w-6xl mx-auto bg-[#2E5F5C] rounded-2xl max-md:w-full max-md:rounded-none">
-      <div className="flex justify-between max-md:flex-col">
+    <section className="overflow-hidden self-center max-w-6xl mx-auto bg-[#2E5F5C] rounded-2xl max-md:w-full ">
+      <div className="flex justify-between  max-md:flex-col">
         <div className="w-[45%] flex justify-center px-10 py-5 max-md:w-full max-md:px-4">
           <div className="flex flex-col my-auto">
             <h2 className="text-3xl font-bold text-white max-md:text-2xl">
@@ -25,7 +25,7 @@ const BannerSection = () => {
             </Link>
           </div>
         </div>
-        <div className="w-[55%] flex justify-end bg-amber-300 max-md:w-full">
+        <div className="w-[55%] flex justify-end md:bg-amber-300 max-md:w-full">
           <Image
             src={Bannerimage}
             alt="Blurred professionals"

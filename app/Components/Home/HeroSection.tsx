@@ -101,17 +101,19 @@ const NavBar = () => {
       </div>
 
       {isModalOpen && (
-  <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-98 z-50 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+  <div className="fixed top-0 left-0 w-full h-full bg-white bg-opacity-98 z-50 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
 
-    <div className="fixed top-4 left-4 z-50 h-10 w-auto">
-      <Image
-        src="/logomob.png" // Replace with your actual logo path
-        alt="Company Logo"
-        width={120}
-        height={40}
-        priority
-      />
-    </div>
+<div className="fixed top-6 left-4 z-50 h-10 w-auto">
+  <Image
+    src="/logomob.png"
+    alt="Company Logo"
+    width={120}
+    height={40}
+    priority
+    className="filter invert"
+  />
+</div>
+
 
     {/* Close Button */}
     <button
@@ -138,21 +140,21 @@ const NavBar = () => {
     <div className="flex flex-col items-center w-full max-w-md mx-auto py-20 space-y-4 text-lg tracking-wide min-h-screen scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
       <Link
         href="/"
-        className="w-full bg-red-400 rounded-lg px-6 py-4  transition-all duration-300 ease-in-out transform "
+        className="w-full  text-2xl text-black rounded-lg px-10 py-4  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
         Home
       </Link>
       <Link
         href="/jobseeker/joblisting"
-        className="w-full bg-red-400 rounded-lg px-6 py-4 text-white  transition-all duration-300 ease-in-out transform "
+        className="w-full text-2xl rounded-lg px-10 py-4 text-black  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
         Jobs
       </Link>
       <Link
         href=" "
-        className="w-full bg-red-400 rounded-lg px-6 py-4 text-white  transition-all duration-300 ease-in-out transform "
+        className="w-full  text-2xl rounded-lg px-10 py-4 text-black  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
         Blog
@@ -161,38 +163,38 @@ const NavBar = () => {
       {/* Training Dropdown */}
       <div className="w-full">
         <button
-          className="w-full bg-red-400 rounded-lg px-6 py-4 text-white flex justify-between items-center transition-all duration-300 ease-in-out transform"
+          className="w-full  text-2xl rounded-lg px-10 py-4 text-black flex justify-between items-center transition-all duration-300 ease-in-out transform"
           onClick={() => setIsTrainingOpen(!isTrainingOpen)}
         >
           <span>Training</span>
           {isTrainingOpen ? <FiChevronUp /> : <FiChevronDown />}
         </button>
         {isTrainingOpen && (
-          <div className="mt-2 w-full bg-red-400 rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+          <div className="mt-2 w-full text-2xl rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
             <Link
               href="/developement/skilldevelopement"
-              className="block px-6 py-3 text-gray-200  rounded-t-md transition-all duration-200 border-b border-gray-700"
+              className="block px-10 py-3 text-black   rounded-t-md transition-all duration-200 "
               onClick={() => setIsModalOpen(false)}
             >
               Skill Development
             </Link>
             <Link
               href="/Training/PersonalityDevelopment"
-              className="block px-6 py-3 text-gray-200  transition-all duration-200 border-b border-gray-700"
+              className="block px-10 py-3 text-black   transition-all duration-200 "
               onClick={() => setIsModalOpen(false)}
             >
               Personality Development
             </Link>
             <Link
               href="/Training/LanguageTraining"
-              className="block px-6 py-3 text-gray-200  transition-all duration-200 border-b border-gray-700"
+              className="block px-10 py-3 text-black  transition-all duration-200 "
               onClick={() => setIsModalOpen(false)}
             >
               Language Training
             </Link>
             <Link
               href="/ExamPreprations"
-              className="block px-6 py-3 text-gray-200  transition-all duration-200 border-b border-gray-700"
+              className="block px-10 py-3 text-black   transition-all duration-200 "
               onClick={() => setIsModalOpen(false)}
             >
               Exam Preparation
@@ -204,18 +206,18 @@ const NavBar = () => {
       {/* Workforce Solutions Dropdown */}
       <div className="w-full">
         <button
-          className="w-full bg-red-400 rounded-lg px-6 py-4 text-white  flex justify-between items-center transition-all duration-300 ease-in-out transform "
+          className="w-full  text-2xl rounded-lg px-10 py-4 text-black flex justify-between items-center transition-all duration-300 ease-in-out transform "
           onClick={() => setIsWorkForceOpen(!isWorkForceOpen)}
         >
           <span>Work-Force Solutions</span>
           {isWorkForceOpen ? <FiChevronUp /> : <FiChevronDown />}
         </button>
         {isWorkForceOpen && (
-          <div className="mt-2 w-full bg-red-400 rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+          <div className="mt-2 w-full rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
             {/* Recruitment Sub-Dropdown */}
             <div className="w-full">
               <button
-                className="w-full px-6 py-3 bg-red-400 text-gray-100 font-semibold flex justify-between items-center  transition-all duration-200 border-b border-gray-700"
+                className="w-full px-10  py-3 text-2xl  text-black  flex justify-between items-center  transition-all duration-200 "
                 onClick={() => setIsRecruitmentOpen(!isRecruitmentOpen)}
               >
                 <span>Recruitment</span>
@@ -225,14 +227,14 @@ const NavBar = () => {
                 <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
                   <Link
                     href="/workforcesolutions/TailoredCandidates"
-                    className="block px-6 py-3 bg-red-400 text-gray-200  transition-all duration-200 border-b border-gray-700"
+                    className="block px-10 py-3 text-black text-2xl transition-all duration-200 "
                     onClick={() => setIsModalOpen(false)}
                   >
                     Tailored Candidates
                   </Link>
                   <Link
                     href="/workforcesolutions/DirectPlacement"
-                    className="block px-6 py-3 bg-red-400 text-gray-200  transition-all duration-200 border-b border-gray-700"
+                    className="block px-10 py-3  text-black text-2xl  transition-all duration-200  "
                     onClick={() => setIsModalOpen(false)}
                   >
                     Direct Placement
@@ -244,7 +246,7 @@ const NavBar = () => {
             {/* Contract Workforce Sub-Dropdown */}
             <div className="w-full overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
               <button
-                className="w-full px-6 py-3 bg-red-400 text-gray-100 font-semibold flex justify-between items-center  transition-all duration-200 border-b border-gray-700"
+                className="w-full px-10 py-3  text-black  text-2xl flex justify-between items-center  transition-all duration-200"
                 onClick={() => setIsContractOpen(!isContractOpen)}
               >
                 <span>Contract Workforce</span>
@@ -254,14 +256,14 @@ const NavBar = () => {
                 <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
                   <Link
                     href="/PayrollManagement"
-                    className="block px-6 py-3 text-gray-200 hover:bg-gray-700  transition-all duration-200 border-b border-gray-700"
+                    className="block px-10 py-3 text-2xl text-black hover:bg-gray-700  transition-all duration-200 "
                     onClick={() => setIsModalOpen(false)}
                   >
                     Payroll Management
                   </Link>
                   <Link
                     href="/FlexibleHiring"
-                    className="block px-6 py-3 text-gray-200 hover:bg-gray-700  transition-all duration-200 border-b border-gray-700"
+                    className="block text-2xl px-10 py-3 text-black hover:bg-gray-700  transition-all duration-200 "
                     onClick={() => setIsModalOpen(false)}
                   >
                     Flexible Hiring
@@ -273,7 +275,7 @@ const NavBar = () => {
             {/* Outsourcing Sub-Dropdown */}
             <div className="w-full">
               <button
-                className="w-full px-6 py-3 bg-red-400 text-gray-100 font-semibold flex justify-between items-center  transition-all duration-200 border-b border-gray-700"
+                className="w-full px-10 py-3  text-black  flex justify-between items-center  transition-all duration-200 text-2xl"
                 onClick={() => setIsOutsourcingOpen(!isOutsourcingOpen)}
               >
                 <span>Outsourcing</span>
@@ -283,14 +285,14 @@ const NavBar = () => {
                 <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
                   <Link
                     href="/OnDemandSkilledProfessionals"
-                    className="block px-6 py-3 bg-red-400 text-gray-200  transition-all duration-200 border-b border-gray-700"
+                    className="block px-10 py-3  text-black text-2xl  transition-all duration-200 "
                     onClick={() => setIsModalOpen(false)}
                   >
                     On-Demand Professionals
                   </Link>
                   <Link
                     href="/TaskSpecifics"
-                    className="block px-6 py-3 bg-red-400 text-gray-200  transition-all duration-200 border-b border-gray-700"
+                    className="block px-10 py-3  text-2xl text-black  transition-all duration-200 "
                     onClick={() => setIsModalOpen(false)}
                   >
                     Task-Specific Experts
@@ -304,7 +306,7 @@ const NavBar = () => {
 
       <Link
         href="/Partner"
-        className="w-full bg-red-400 rounded-lg px-6 py-4 text-white  transition-all duration-300 ease-in-out transform "
+        className="w-full  rounded-lg px-10 py-4 text-2xl text-black  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
         Partner with us
