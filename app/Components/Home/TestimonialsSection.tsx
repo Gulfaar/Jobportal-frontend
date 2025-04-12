@@ -149,7 +149,7 @@ const TestimonialsSection = () => {
       className="flex flex-col items-center mt-6 px-6 py-20 w-full text-center bg-cover bg-center overflow-hidden"
       style={{ backgroundImage: "url('/Testimonial.png')" }}
     >
-      <h2 className="text-3xl font-bold">Testimonials from Our Customers</h2>
+      <h2 className="text-3xl text-black font-bold">Testimonials from Our Customers</h2>
       <p className="mt-4 text-lg text-black max-w-2xl">
         Exceptional service and professionalism! The team understood our needs perfectly and delivered beyond our expectations.
       </p>
