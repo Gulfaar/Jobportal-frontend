@@ -206,7 +206,7 @@ const Joblisting = () => {
               <p className="text-gray-600">
                 Showing {filteredJobs.length} of {jobs.length} results
               </p>
-              <select className="p-2 border rounded-md">
+              <select className="p-2 border-black text-black border rounded-md">
                 <option>Sort by latest</option>
                 <option>Sort by oldest</option>
               </select>
