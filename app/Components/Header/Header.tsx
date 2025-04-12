@@ -168,7 +168,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
                     Language Training
                   </Link>
                   <Link
-                    href="/exam"
+                    href="/ExamPreprations"
                     className="block px-6 py-3 text-gray-200 hover:bg-gray-700 hover:text-[#f0c14b] transition-all duration-200 border-b border-gray-700"
                     onClick={() => setIsModalOpen(false)}
                   >

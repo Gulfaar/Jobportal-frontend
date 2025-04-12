@@ -20,10 +20,11 @@ const SkillDevelopment: React.FC = () => {
         <div className="flex gap-5 max-md:flex-col">
           <div className="w-[63%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-5 max-md:max-w-full">
-              <h2 className="self-stretch text-3xl tracking-tight leading-[50px] max-md:max-w-full">
-                Unlock Your Career Potential with <br />
-                <span className="text-[30px] md:text-[48px] mb-2">
-                  Gulfaar's Skill Development Programs
+              <h2 className="self-stretch text-2xl md:text-3xl tracking-tight leading-[50px] max-md:max-w-full">
+                Unlock Your Career Potential  with
+                <br className="hidden md:block" />  
+                <span className="text-2xl md:text-[48px] ml-2 md:ml-0 mb-2">
+                     Gulfaar's Skill Development Programs
                 </span>
               </h2>
               <p className="mt-1 max-md:max-w-full">

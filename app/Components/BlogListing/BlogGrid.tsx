@@ -15,11 +15,11 @@ const BlogGrid: React.FC = () => {
     <section className="flex-1" aria-labelledby="blog-main-title">
       <h2
         id="blog-main-title"
-        className="mb-5 md:text-[48px] font-semibold text-center"
+        className="mb-5 md:text-[48px] text-[30px] text-black font-semibold text-center"
       >
         News and Blog
       </h2>
-      <p className="mb-10 text-[24px] text-center">
+      <p className="mb-10 text-[24px] text-black text-center">
         Explore the latest insights, trends, and updates on AI, technology, and
         development
       </p>

@@ -14,7 +14,7 @@ const Joblisting = () => {
         <main>
             <Header title="Jobs" 
         subtitle="Explore a wide range of job opportunities available" />
-            <div className="container mx-auto px-4 py-8">
+            <div className="container hidden md:block mx-auto px-4 py-8">
                 <div className="flex flex-col md:flex-row gap-6">
                     {/* Left Sidebar */}
                     <div className="w-full md:w-1/6 space-y-6 bg-[#EBF5F4] p-6 rounded-lg text-black">

@@ -36,7 +36,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ category, date, title }) => {
       </time>
       <h3 className="mb-8 text-1xl font-semibold leading-8">{title}</h3>
       <Link
-        href="/blogs/BlogPost"
+        href=" "
         className="flex gap-3 items-center font-semibold text-teal-800"
         aria-label={`Read more about ${title}`}
       >

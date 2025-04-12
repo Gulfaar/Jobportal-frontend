@@ -39,10 +39,10 @@ const StepsSection: React.FC = () => {
       <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-4">
         {steps.map((item, index) => (
           <div key={index} className="text-center max-w-xs">
-            <div className="bg-[#FFF200] text-black font-bold py-1 px-3 rounded-full inline-block mb-2">
+            <div className=" text-black font-bold py-1 px-3 rounded-full inline-block mb-2">
               {item.step}
             </div>
-            <div className="w-10 h-10 flex items-center justify-center bg-[#FFF200] text-black font-bold text-lg rounded-full mx-auto mb-2">
+            <div className="w-10 h-10 flex items-center justify-center bg-[#2E5F5C] text-white font-bold text-lg rounded-full mx-auto mb-2">
               {item.number}
             </div>
             <h3 className="text-lg font-semibold mb-1">{item.title}</h3>

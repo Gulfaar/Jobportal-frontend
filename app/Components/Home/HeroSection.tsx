@@ -101,7 +101,7 @@ const NavBar = () => {
       </div>
 
       {isModalOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-white bg-opacity-98 z-50 overflow-y-auto">
+        <div className="fixed top-0 left-0 w-full h-full bg-[#2E5F5C] bg-opacity-98 z-50 overflow-y-auto">
           {/* Close Button */}
           <button
             className="fixed top-4 right-4 text-gray-400 hover:text-[#f0c14b] transition z-50"
@@ -127,21 +127,21 @@ const NavBar = () => {
           <div className="flex flex-col items-center w-full max-w-md mx-auto py-20 space-y-4 text-lg tracking-wide min-h-screen">
             <Link
               href="/"
-              className="w-full bg-[#2E5F5C] rounded-lg px-6 py-4 text- hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+              className="w-full bg-[#f0c14b] rounded-lg px-6 py-4 text- hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
               onClick={() => setIsModalOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/jobseeker/joblisting"
-              className="w-full bg-[#2E5F5C] rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+              className="w-full bg-[#f0c14b] rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
               onClick={() => setIsModalOpen(false)}
             >
               Jobs
             </Link>
             <Link
               href="/blogs/Bloglisting"
-              className="w-full bg-[#2E5F5C] rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+              className="w-full bg-[#f0c14b] rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
               onClick={() => setIsModalOpen(false)}
             >
               Blog
@@ -150,14 +150,14 @@ const NavBar = () => {
             {/* Training Dropdown */}
             <div className="w-full">
               <button
-                className="w-full bg-[#2E5F5C] rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] flex justify-between items-center transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+                className="w-full bg-[#f0c14b] rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] flex justify-between items-center transition-all duration-300 ease-in-out transform hover:bg-gray-700"
                 onClick={() => setIsTrainingOpen(!isTrainingOpen)}
               >
                 <span>Training</span>
                 {isTrainingOpen ? <FiChevronUp /> : <FiChevronDown />}
               </button>
               {isTrainingOpen && (
-                <div className="mt-2 w-full bg-[#2E5F5C] rounded-lg shadow-2xl max-h-60 overflow-y-auto animate-fadeIn">
+                <div className="mt-2 w-full bg-[#f0c14b] rounded-lg shadow-2xl max-h-60 overflow-y-auto animate-fadeIn">
                   <Link
                     href="/developement/skilldevelopement"
                     className="block px-6 py-3 text-gray-200 hover:bg-gray-700 hover:text-[#f0c14b] rounded-t-md transition-all duration-200 border-b border-gray-700"
@@ -180,7 +180,7 @@ const NavBar = () => {
                     Language Training
                   </Link>
                   <Link
-                    href="/exam"
+                    href="/ExamPreprations"
                     className="block px-6 py-3 text-gray-200 hover:bg-gray-700 hover:text-[#f0c14b] transition-all duration-200 border-b border-gray-700"
                     onClick={() => setIsModalOpen(false)}
                   >
@@ -194,14 +194,14 @@ const NavBar = () => {
             {/* Workforce Solutions Dropdown */}
             <div className="w-full">
               <button
-                className="w-full bg-[#2E5F5C] rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] flex justify-between items-center transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+                className="w-full bg-[#f0c14b] rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] flex justify-between items-center transition-all duration-300 ease-in-out transform hover:bg-gray-700"
                 onClick={() => setIsWorkForceOpen(!isWorkForceOpen)}
               >
                 <span>Work-Force Solutions</span>
                 {isWorkForceOpen ? <FiChevronUp /> : <FiChevronDown />}
               </button>
               {isWorkForceOpen && (
-                <div className="mt-2 w-full bg-[#2E5F5C] rounded-lg shadow-2xl max-h-60 overflow-y-auto animate-fadeIn">
+                <div className="mt-2 w-full bg-[#f0c14b] rounded-lg shadow-2xl max-h-60 overflow-y-auto animate-fadeIn">
                   {/* Recruitment Sub-Dropdown */}
                   <div className="w-full">
                     <button
@@ -268,6 +268,7 @@ const NavBar = () => {
                       className="w-full px-6 py-3 text-gray-100 font-semibold flex justify-between items-center hover:text-[#f0c14b] transition-all duration-200 border-b border-gray-700"
                       onClick={() => setIsOutsourcingOpen(!isOutsourcingOpen)}
                     >
+                      
                       <span>Outsourcing</span>
                       {isOutsourcingOpen ? <FiChevronUp /> : <FiChevronDown />}
                     </button>
@@ -297,7 +298,7 @@ const NavBar = () => {
 
             <Link
               href="/Partner"
-              className="w-full bg-[#2E5F5C] rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+              className="w-full bg-[#f0c14b] rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
               onClick={() => setIsModalOpen(false)}
             >
               Partner with us
@@ -356,7 +357,7 @@ const NavLinks = () => {
 
         {isTrainingOpen && (
           <div
-            className="absolute left-0 mt-2 w-[48] bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+            className="absolute left-0 mt-2 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
             onMouseEnter={() => setIsTrainingOpen(true)}
             onMouseLeave={() => setIsTrainingOpen(false)}
           >
@@ -392,7 +393,7 @@ const NavLinks = () => {
               Language Training
             </Link>
             <Link
-              href="/exam"
+              href="/ExamPreprations"
               className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
             >
               Exam Preparation

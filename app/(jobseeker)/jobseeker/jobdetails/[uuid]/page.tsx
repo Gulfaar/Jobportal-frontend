@@ -9,9 +9,11 @@ import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import JobOverview from "@/app/Components/jobdetails/JobOverview";
 import RelatedJobs from "@/app/Components/jobdetails/RelatedJobs";
 import SendMessage from "@/app/Components/jobdetails/SendMessage";
+import Header from "@/app/Components/Header/Header";
 
 const JobDetailsPage: React.FC = () => {
   return (
+    
     <div className="bg-gray-50 py-6 md:py-8">
       <div className="max-w-7xl mx-auto px-2 md:px-4">
         {/* Main Layout */}

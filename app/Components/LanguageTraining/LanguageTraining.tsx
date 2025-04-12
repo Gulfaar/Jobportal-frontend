@@ -10,12 +10,12 @@ const LanguageTraining = () => {
       {/* Hero Section */}
       
       <section className="self-center px-15 md:mt-9 md:py-10 w-full max-w-[1294px] max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col">
+        <div className="flex md:gap-5 max-md:flex-col">
           <div className="w-full max-md:ml-0 max-md:w-full">
             <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-10 max-md:max-w-full">
               <h2 className="self-stretch text-2xl md:text-3xl tracking-tight leading-[50px] max-md:max-w-full">
-                Unlock Your Career Potential with <br />
-                <span className="text-[25px] md:text-[48px]">
+                Unlock Your Career Potential with <br className='hidden md:block' />
+                <span className="text-2xl md:text-[48px]">
                 Master Languages,  Expand Opportunities, Succeed Globally
                 </span>
               </h2>
@@ -269,7 +269,7 @@ const LanguageTraining = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* English Card */}
         <div className="bg-[#204E47] rounded-[20px] p-8 text-white">
-          <h3 className="text-2xl md:text-[28px] font-medium mb-8">English</h3>
+          <h3 className="text-2xl text-center md:text-[28px] font-medium mb-8">English</h3>
           <div className="space-y-4">
             <div className="bg-white text-[#204E47] rounded-full py-3 px-6 text-center text-[20px]">
               Business English
@@ -288,7 +288,7 @@ const LanguageTraining = () => {
 
         {/* Spanish Card */}
         <div className="bg-[#204E47] rounded-[20px] p-8 text-white">
-          <h3 className="text-2xl md:text-[28px] font-medium mb-8">Spanish</h3>
+          <h3 className="text-2xl md:text-[28px] text-center font-medium mb-8">Spanish</h3>
           <div className="space-y-4">
             <div className="bg-white text-[#204E47] rounded-full py-3 px-6 text-center text-[20px]">
               DELE Certification
@@ -305,7 +305,7 @@ const LanguageTraining = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {/* Arabic Card */}
       <div className="bg-[#204E47] rounded-[20px] p-8 text-white">
-        <h3 className="text-2xl md:text-[28px] font-medium mb-8">Arabic</h3>
+        <h3 className="text-2xl md:text-[28px] text-center font-medium mb-8">Arabic</h3>
         <div className="space-y-4">
           <div className="bg-white text-[#204E47] rounded-full py-3 px-6 text-center text-[20px]">
             Basics to Advanced
@@ -318,7 +318,7 @@ const LanguageTraining = () => {
 
       {/* German Card */}
       <div className="bg-[#204E47] rounded-[20px] p-8 text-white">
-        <h3 className="text-2xl md:text-[28px] font-medium mb-8">German</h3>
+        <h3 className="text-2xl md:text-[28px] text-center font-medium mb-8">German</h3>
         <div className="space-y-4">
           <div className="bg-white text-[#204E47] rounded-full py-3 px-6 text-center text-[20px]">
             A1 to C2 Levels
@@ -337,7 +337,7 @@ const LanguageTraining = () => {
 
       {/* Mandarin Card */}
       <div className="bg-[#204E47] rounded-[20px] p-8 text-white">
-        <h3 className="text-2xl md:text-[28px] font-medium mb-8">Mandarin</h3>
+        <h3 className="text-2xl md:text-[28px] text-center font-medium mb-8">Mandarin</h3>
         <div className="space-y-4">
           <div className="bg-white text-[#204E47] rounded-full py-3 px-6 text-center text-[20px]">
             HSK Exam Preparation
@@ -350,7 +350,7 @@ const LanguageTraining = () => {
 
       {/* French Card */}
       <div className="bg-[#204E47] rounded-[20px] p-8 text-white">
-        <h3 className="text-2xl md:text-[28px] font-medium mb-8">French</h3>
+        <h3 className="text-2xl md:text-[28px] text-center font-medium mb-8">French</h3>
         <div className="space-y-4">
           <div className="bg-white text-[#204E47] rounded-full py-3 px-6 text-center text-[20px]">
             DELF/DALF Certification
@@ -382,11 +382,11 @@ const LanguageTraining = () => {
             {/* Hospitality Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
               <div className="flex justify-center items-center w-full">
-                <h3 className="text-2xl font-semibold mb-2">
+                <h3 className="text-2xl text-center font-semibold mb-2">
                   Hospitality & Customer Service Language
                 </h3>
               </div>
-              <div className="flex justify-center items-center">
+              <div className="flex">
                 <p className="text-lg mb-6 opacity-90">
                   English, French, Arabic, German
                 </p>
@@ -410,7 +410,7 @@ const LanguageTraining = () => {
             {/* Healthcare Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
               <div className="flex justify-center items-center w-full">
-                <h3 className="text-2xl font-semibold mb-2">
+                <h3 className="text-2xl text-center font-semibold mb-2">
                   Healthcare & Medical Language
                 </h3>
               </div>
@@ -438,7 +438,7 @@ const LanguageTraining = () => {
             {/* Corporate Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
               <div className="flex justify-center items-center w-full">
-                <h3 className="text-2xl font-semibold mb-2">
+                <h3 className="text-2xl text-center font-semibold mb-2">
                   Corporate & Business Language Skills
                 </h3>
               </div>
@@ -466,7 +466,7 @@ const LanguageTraining = () => {
             {/* Construction Card */}
             <div className="bg-[#E57373] rounded-2xl p-8 text-white">
               <div className="flex justify-center items-center w-full">
-                <h3 className="text-2xl font-semibold mb-2">
+                <h3 className="text-2xl text-center font-semibold mb-2">
                   Construction & Labor Industry Language
                 </h3>
               </div>
