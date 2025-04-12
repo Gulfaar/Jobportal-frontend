@@ -1,5 +1,5 @@
 import React from "react";
-import BlogCard from "./BlogCard";
+// import BlogCard from "./BlogCard";
 
 const BlogSection = () => {
   return (
@@ -32,12 +32,12 @@ const BlogSection = () => {
     </button>
 
     {/* Blog Cards */}
-    <div className="flex justify-center  items-center   px-8  gap-6 md:gap-10 mb-10 max-w-5xl mx-auto max-md:flex-col max-md:w-full">
+    {/* <div className="flex justify-center  items-center   px-8  gap-6 md:gap-10 mb-10 max-w-5xl mx-auto max-md:flex-col max-md:w-full">
       <BlogCard />
       <BlogCard />
       <BlogCard />
       <BlogCard />
-    </div>
+    </div> */}
 
     {/* Right Button - Hide on Mobile */}
     <button className="absolute right-0 z-10 bg-white p-2 rounded-full shadow-md max-md:hidden">
