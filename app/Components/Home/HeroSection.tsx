@@ -231,7 +231,7 @@ const NavBar = () => {
                     Tailored Candidates
                   </Link>
                   <Link
-                    href="/ExamPreprations"
+                    href="/workforcesolutions/DirectPlacement"
                     className="block px-6 py-3 bg-red-400 text-gray-200  transition-all duration-200 border-b border-gray-700"
                     onClick={() => setIsModalOpen(false)}
                   >
