@@ -24,7 +24,7 @@ const BlogGrid: React.FC = () => {
         development
       </p>
 
-      <div className="grid grid-cols-3 gap-7 max-md:grid-cols-2 max-sm:grid-cols-1">
+      <div className="grid grid-cols-3 gap-7 text-black max-md:grid-cols-2 max-sm:grid-cols-1">
         {blogs.map((blog, index) => (
           <BlogCard
             key={index}
