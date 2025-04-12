@@ -115,7 +115,7 @@ const NavBar = () => {
 
     {/* Close Button */}
     <button
-      className="fixed top-4 right-4 text-gray-400 hover:text-[#f0c14b] transition z-50"
+      className="fixed top-4 right-4 text-gray-400  transition z-50"
       onClick={() => setIsModalOpen(false)}
     >
       <svg
@@ -138,21 +138,21 @@ const NavBar = () => {
     <div className="flex flex-col items-center w-full max-w-md mx-auto py-20 space-y-4 text-lg tracking-wide min-h-screen scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
       <Link
         href="/"
-        className="w-full bg-red-400 rounded-lg px-6 py-4 hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+        className="w-full bg-red-400 rounded-lg px-6 py-4  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
         Home
       </Link>
       <Link
         href="/jobseeker/joblisting"
-        className="w-full bg-red-400 rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+        className="w-full bg-red-400 rounded-lg px-6 py-4 text-white  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
         Jobs
       </Link>
       <Link
         href="/blogs/Bloglisting"
-        className="w-full bg-red-400 rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+        className="w-full bg-red-400 rounded-lg px-6 py-4 text-white  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
         Blog
@@ -161,7 +161,7 @@ const NavBar = () => {
       {/* Training Dropdown */}
       <div className="w-full">
         <button
-          className="w-full bg-red-400 rounded-lg px-6 py-4 text-white flex justify-between items-center transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+          className="w-full bg-red-400 rounded-lg px-6 py-4 text-white flex justify-between items-center transition-all duration-300 ease-in-out transform"
           onClick={() => setIsTrainingOpen(!isTrainingOpen)}
         >
           <span>Training</span>
@@ -171,28 +171,28 @@ const NavBar = () => {
           <div className="mt-2 w-full bg-red-400 rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
             <Link
               href="/developement/skilldevelopement"
-              className="block px-6 py-3 text-gray-200 hover:bg-gray-700 rounded-t-md transition-all duration-200 border-b border-gray-700"
+              className="block px-6 py-3 text-gray-200  rounded-t-md transition-all duration-200 border-b border-gray-700"
               onClick={() => setIsModalOpen(false)}
             >
               Skill Development
             </Link>
             <Link
               href="/Training/PersonalityDevelopment"
-              className="block px-6 py-3 text-gray-200 hover:bg-gray-700 transition-all duration-200 border-b border-gray-700"
+              className="block px-6 py-3 text-gray-200  transition-all duration-200 border-b border-gray-700"
               onClick={() => setIsModalOpen(false)}
             >
               Personality Development
             </Link>
             <Link
               href="/Training/LanguageTraining"
-              className="block px-6 py-3 text-gray-200 hover:bg-gray-700 transition-all duration-200 border-b border-gray-700"
+              className="block px-6 py-3 text-gray-200  transition-all duration-200 border-b border-gray-700"
               onClick={() => setIsModalOpen(false)}
             >
               Language Training
             </Link>
             <Link
               href="/ExamPreprations"
-              className="block px-6 py-3 text-gray-200 hover:bg-gray-700 transition-all duration-200 border-b border-gray-700"
+              className="block px-6 py-3 text-gray-200  transition-all duration-200 border-b border-gray-700"
               onClick={() => setIsModalOpen(false)}
             >
               Exam Preparation
@@ -204,7 +204,7 @@ const NavBar = () => {
       {/* Workforce Solutions Dropdown */}
       <div className="w-full">
         <button
-          className="w-full bg-red-400 rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] flex justify-between items-center transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+          className="w-full bg-red-400 rounded-lg px-6 py-4 text-white  flex justify-between items-center transition-all duration-300 ease-in-out transform "
           onClick={() => setIsWorkForceOpen(!isWorkForceOpen)}
         >
           <span>Work-Force Solutions</span>
@@ -215,7 +215,7 @@ const NavBar = () => {
             {/* Recruitment Sub-Dropdown */}
             <div className="w-full">
               <button
-                className="w-full px-6 py-3 bg-red-400 text-gray-100 font-semibold flex justify-between items-center hover:text-[#f0c14b] transition-all duration-200 border-b border-gray-700"
+                className="w-full px-6 py-3 bg-red-400 text-gray-100 font-semibold flex justify-between items-center  transition-all duration-200 border-b border-gray-700"
                 onClick={() => setIsRecruitmentOpen(!isRecruitmentOpen)}
               >
                 <span>Recruitment</span>
@@ -225,14 +225,14 @@ const NavBar = () => {
                 <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
                   <Link
                     href="/workforcesolutions/TailoredCandidates"
-                    className="block px-6 py-3 bg-red-400 text-gray-200 hover:bg-gray-700 transition-all duration-200 border-b border-gray-700"
+                    className="block px-6 py-3 bg-red-400 text-gray-200  transition-all duration-200 border-b border-gray-700"
                     onClick={() => setIsModalOpen(false)}
                   >
                     Tailored Candidates
                   </Link>
                   <Link
                     href="/ExamPreprations"
-                    className="block px-6 py-3 bg-red-400 text-gray-200 hover:bg-gray-700 transition-all duration-200 border-b border-gray-700"
+                    className="block px-6 py-3 bg-red-400 text-gray-200  transition-all duration-200 border-b border-gray-700"
                     onClick={() => setIsModalOpen(false)}
                   >
                     Direct Placement
@@ -244,7 +244,7 @@ const NavBar = () => {
             {/* Contract Workforce Sub-Dropdown */}
             <div className="w-full overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
               <button
-                className="w-full px-6 py-3 bg-red-400 text-gray-100 font-semibold flex justify-between items-center hover:text-[#f0c14b] transition-all duration-200 border-b border-gray-700"
+                className="w-full px-6 py-3 bg-red-400 text-gray-100 font-semibold flex justify-between items-center  transition-all duration-200 border-b border-gray-700"
                 onClick={() => setIsContractOpen(!isContractOpen)}
               >
                 <span>Contract Workforce</span>
@@ -254,14 +254,14 @@ const NavBar = () => {
                 <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
                   <Link
                     href="/PayrollManagement"
-                    className="block px-6 py-3 text-gray-200 hover:bg-gray-700 hover:text-[#f0c14b] transition-all duration-200 border-b border-gray-700"
+                    className="block px-6 py-3 text-gray-200 hover:bg-gray-700  transition-all duration-200 border-b border-gray-700"
                     onClick={() => setIsModalOpen(false)}
                   >
                     Payroll Management
                   </Link>
                   <Link
                     href="/FlexibleHiring"
-                    className="block px-6 py-3 text-gray-200 hover:bg-gray-700 hover:text-[#f0c14b] transition-all duration-200 border-b border-gray-700"
+                    className="block px-6 py-3 text-gray-200 hover:bg-gray-700  transition-all duration-200 border-b border-gray-700"
                     onClick={() => setIsModalOpen(false)}
                   >
                     Flexible Hiring
@@ -273,7 +273,7 @@ const NavBar = () => {
             {/* Outsourcing Sub-Dropdown */}
             <div className="w-full">
               <button
-                className="w-full px-6 py-3 bg-red-400 text-gray-100 font-semibold flex justify-between items-center hover:text-[#f0c14b] transition-all duration-200 border-b border-gray-700"
+                className="w-full px-6 py-3 bg-red-400 text-gray-100 font-semibold flex justify-between items-center  transition-all duration-200 border-b border-gray-700"
                 onClick={() => setIsOutsourcingOpen(!isOutsourcingOpen)}
               >
                 <span>Outsourcing</span>
@@ -283,14 +283,14 @@ const NavBar = () => {
                 <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
                   <Link
                     href="/OnDemandSkilledProfessionals"
-                    className="block px-6 py-3 bg-red-400 text-gray-200 hover:bg-gray-700 transition-all duration-200 border-b border-gray-700"
+                    className="block px-6 py-3 bg-red-400 text-gray-200  transition-all duration-200 border-b border-gray-700"
                     onClick={() => setIsModalOpen(false)}
                   >
                     On-Demand Professionals
                   </Link>
                   <Link
                     href="/TaskSpecifics"
-                    className="block px-6 py-3 bg-red-400 text-gray-200 hover:bg-gray-700 transition-all duration-200 border-b border-gray-700"
+                    className="block px-6 py-3 bg-red-400 text-gray-200  transition-all duration-200 border-b border-gray-700"
                     onClick={() => setIsModalOpen(false)}
                   >
                     Task-Specific Experts
@@ -304,7 +304,7 @@ const NavBar = () => {
 
       <Link
         href="/Partner"
-        className="w-full bg-red-400 rounded-lg px-6 py-4 text-white hover:text-[#f0c14b] transition-all duration-300 ease-in-out transform hover:bg-gray-700"
+        className="w-full bg-red-400 rounded-lg px-6 py-4 text-white  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
         Partner with us
