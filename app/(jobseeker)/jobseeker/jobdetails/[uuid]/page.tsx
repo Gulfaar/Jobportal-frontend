@@ -1,3 +1,4 @@
+"use client"
 // pages/job-details.tsx
 
 import React from "react";
