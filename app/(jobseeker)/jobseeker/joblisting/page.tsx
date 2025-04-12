@@ -1,5 +1,7 @@
-"use client";
+import React, { Suspense } from "react";
+import Joblisting from "./joblisting"
 
+<<<<<<< HEAD
 import Header from "@/app/Components/Header/Header";
 import Footer from "@/app/Components/Home/Footer";
 import Image from "next/image";
@@ -305,3 +307,12 @@ const Joblisting = () => {
 };
 
 export default Joblisting;
+=======
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading job listings...</div>}>
+      <Joblisting />
+    </Suspense>
+  );
+}
+>>>>>>> ab301bc1e0dfd5003eafdeb36aa3e891b3dfc599

@@ -9,7 +9,7 @@ const WhoCanPartnerWithUs: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 items-start">
           {/* Heading (Aligned with Left Card of Second Row) */}
           <div className="lg:col-span-1 flex items-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mt-14 ml-8">
+            <h2 className="text-2xl md:text-4xl font-bold text-black text-center mt-14 ml-8">
               Who Can Partner With Us?
             </h2>
           </div>

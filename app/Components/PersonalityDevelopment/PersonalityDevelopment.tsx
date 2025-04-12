@@ -18,10 +18,13 @@ const PersonalityDevelopment = () => {
       "Business Communication & Workplace Etiquette"
     ],
     career: [
-      "Building Self-Confidence & Positive Thinking",
-      "Overcoming Fear, Anxiety & Social Hesitations",
-      "Stress Management & Emotional Resilience",
-      "Goal Setting & Time Management"
+      "Mastering Job Interview Techniques & Resume Building",
+
+      "Enhancing Communication & Professional Networking Skills",
+      
+      "Developing Leadership & Team Collaboration Abilities",
+      
+      "Boosting Productivity with Effective Work Strategies"
     ],
     confident: [
       "Building Self-Confidence & Positive Thinking",
@@ -246,7 +249,7 @@ const PersonalityDevelopment = () => {
                     }`}
                   >
                     <span className="font-semibold text-sm md:text-[20px]">
-                      Communication &<br />Public Speaking
+                      Communication &<br className='hidden md:block' /> Public Speaking
                     </span>
                   </button>
 
@@ -272,7 +275,7 @@ const PersonalityDevelopment = () => {
                     }`}
                   >
                     <span className="font-semibold text-sm md:text-[20px]">
-                      Confident & Self-<br />Growth
+                      Confident & Self-Growth
                     </span>
                   </button>
 

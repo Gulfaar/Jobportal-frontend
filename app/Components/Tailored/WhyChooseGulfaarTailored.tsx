@@ -28,7 +28,7 @@ const WhyChooseGulfaarTailored: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#2E5D55] px-10 py-16 text-white max-md:px-6">
+    <section className="bg-[#2E5D55] flex px-10 py-16 justify-center items-center text-white max-md:px-6">
       <div className="max-w-[1100px] mx-auto text-center">
         <h2 className="text-[36px] font-semibold mb-12 max-md:text-[32px]">
           Why Choose Gulfaar's AI-Powered Recruitment

@@ -25,7 +25,7 @@ const BannerSection = () => {
             </Link>
           </div>
         </div>
-        <div className="w-[55%] flex justify-end bg-amber-300 max-md:w-full">
+        <div className="w-[55%] flex justify-end  md:bg-amber-300 max-md:w-full">
           <Image
             src={Bannerimage}
             alt="Blurred professionals"

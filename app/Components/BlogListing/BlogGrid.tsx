@@ -15,16 +15,28 @@ const BlogGrid: React.FC = () => {
     <section className="flex-1" aria-labelledby="blog-main-title">
       <h2
         id="blog-main-title"
+<<<<<<< HEAD
         className="mb-5 md:text-[48px] font-semibold text-center text-black"
       >
         News and Blog
       </h2>
       <p className="mb-10 text-[24px] text-center text-black">
+=======
+        className="mb-5 md:text-[48px] text-[30px] text-black font-semibold text-center"
+      >
+        News and Blog
+      </h2>
+      <p className="mb-10 text-[24px] text-black text-center">
+>>>>>>> ab301bc1e0dfd5003eafdeb36aa3e891b3dfc599
         Explore the latest insights, trends, and updates on AI, technology, and
         development
       </p>
 
+<<<<<<< HEAD
       <div className="grid grid-cols-3 gap-7 max-md:grid-cols-2 max-sm:grid-cols-1 text-black">
+=======
+      <div className="grid grid-cols-3 gap-7 text-black max-md:grid-cols-2 max-sm:grid-cols-1">
+>>>>>>> ab301bc1e0dfd5003eafdeb36aa3e891b3dfc599
         {blogs.map((blog, index) => (
           <BlogCard
             key={index}

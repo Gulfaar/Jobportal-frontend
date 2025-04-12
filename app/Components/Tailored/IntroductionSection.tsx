@@ -5,13 +5,13 @@ import Link from "next/link";
 const IntroductionSection: React.FC = () => {
   return (
     <div className="w-full bg-white">
-      <div className="max-w-[1400px] mx-auto px-16 py-20 max-md:px-8 max-sm:px-5">
+      <div className="max-w-[1400px] mx-auto px-16 py-14 max-md:px-8 max-sm:px-5">
         <div className="flex items-center justify-between gap-24 max-lg:flex-col max-lg:gap-16">
           {/* Text Content */}
           <div className="flex-1 w-full">
             <h1 className="text-[#2E5F5C] text-[42px] font-semibold leading-[1.2] mb-4 max-md:text-3xl max-sm:text-2xl">
-            <span className=" text-3xl">Intelligent Hiring Starts Here</span>
-              <span className="block text-[#2E5F5C] mt-2">
+            <span className="text-2xl md:text-3xl">Intelligent Hiring Starts Here</span>
+              <span className="block text-[#2E5F5C]  text-2xl mt-2">
                 Gulfaar's Skill Development Programs
               </span>
             </h1>

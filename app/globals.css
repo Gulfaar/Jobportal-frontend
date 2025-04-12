@@ -57,10 +57,18 @@ body {
 }
 
 .overflow-y-auto::-webkit-scrollbar-thumb {
-  background: #f0c14b;
   border-radius: 3px;
 }
 
-.overflow-y-auto::-webkit-scrollbar-thumb:hover {
-  background: #d4a017;
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
 }

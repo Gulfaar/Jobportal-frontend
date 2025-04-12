@@ -9,7 +9,7 @@ const WhyPartnerWithGulfaar: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
           {/* Heading */}
           <div className="flex items-center justify-center lg:col-span-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center lg:text-left">
+            <h2 className="text-2xl md:text-4xl font-bold text-white text-center lg:text-left">
               Why Partner with Gulfaar?
             </h2>
           </div>

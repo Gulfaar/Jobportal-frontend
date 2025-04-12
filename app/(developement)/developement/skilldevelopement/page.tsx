@@ -65,6 +65,50 @@ const SkillDevelopment: React.FC = () => {
 
 
 
+      <section className="self-center px-5 md:px-15 md:mt-9 py-10 w-full max-w-full max-md:max-w-full">
+        <div className="flex gap-5 max-md:flex-col">
+          <div className="w-[63%] max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-5 max-md:max-w-full">
+              <h2 className="self-stretch text-2xl md:text-3xl tracking-tight leading-[50px] max-md:max-w-full">
+                Unlock Your Career Potential  with
+                <br className="hidden md:block" />  
+                <span className="text-2xl md:text-[48px] ml-2 md:ml-0 mb-2">
+                     Gulfaar's Skill Development Programs
+                </span>
+              </h2>
+              <p className="mt-1 max-md:max-w-full">
+                Transform Your Career with Industry-Leading Skill Development
+              </p>
+              <p className="mt-9 max-w-full leading-9 text-black font-normal text-[24px] w-[672px] max-md:max-w-full">
+                At Gulfaar, we believe that skills are the foundation of
+                success. Whether you're a fresh graduate, a professional looking
+                to upskill, or someone seeking to switch careers, our Skill
+                Development Programs are designed to equip you with
+                industry-relevant expertise using the latest AI-powered learning
+                techniques
+              </p>
+              <button
+                className="flex gap-3 px-8 py-4 mt-12 text-sm leading-tight text-center text-white uppercase bg-teal-800 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
+                aria-label="Get Started"
+              >
+                <span className="grow my-auto">Get Started</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/6307c969f4753633a930c857def46cbf555e5466?placeholderIfAbsent=true"
+                  className="object-contain shrink-0 w-3.5 aspect-[0.87]"
+                  alt="Arrow icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div className="ml-5 w-[37%] max-md:ml-0 max-md:w-full">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c59f9f64f3d931e65c3207dc47edd4bcc02e16?placeholderIfAbsent=true"
+              className="object-contain grow w-full rounded-3xl aspect-[0.77] max-md:mt-10 max-md:max-w-full"
+              alt="Career development illustration"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Why Choose Gulfaar Section */}
       <section className="px-20 py-12 mt-7 w-full bg-teal-800 max-md:px-5 max-md:max-w-full">
