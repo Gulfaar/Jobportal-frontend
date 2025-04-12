@@ -61,7 +61,7 @@ const CandidateOnboardingSteps1 = () => {
       </div>
 
   <div className="mt-18 md:mt-10 flex flex-col items-center gap-4">
-  <button className="border border-gray-400 px-16 py-4 rounded-lg flex items-center gap-2">
+  <button className="border text-black border-gray-400 px-16 py-4 rounded-lg flex items-center gap-2">
     <span>🌍</span> Select country
   </button>
   <button
