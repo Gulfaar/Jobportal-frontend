@@ -69,13 +69,17 @@ const NavBar = () => {
   const [isOutsourcingOpen, setIsOutsourcingOpen] = useState(false);
 
   return (
-    <nav className="absolute top-7 md:top-0 left-0 w-full flex justify-between items-center px-5 py-10 md:px-10 md:py-7">
-      <div className="flex items-center mt-[-30px] md:mt-[14px]">
-        
+    <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-5 py-10 md:px-10 md:py-7">
+      <div className="flex items-center mt-[-30px]">
         <img
           src="./logomob.png"
+          alt="Gulfaar Mobile Logo"
+          className="w-[100px] py-10 md:py-0 h-auto block md:hidden"
+        />
+        <img
+          src="./newlogo.png"
           alt="Gulfaar Logo"
-          className="w-[100px] md:w-[215px] h-auto  md:block lg:block"
+          className="w-[120px] md:w-[315px] h-auto hidden md:block lg:block"
         />
       </div>
 
