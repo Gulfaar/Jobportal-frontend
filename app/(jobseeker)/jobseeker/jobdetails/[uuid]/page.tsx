@@ -10,11 +10,16 @@ import JobOverview from "@/app/Components/jobdetails/JobOverview";
 import RelatedJobs from "@/app/Components/jobdetails/RelatedJobs";
 import SendMessage from "@/app/Components/jobdetails/SendMessage";
 import Header from "@/app/Components/Header/Header";
+import Footer from "@/app/Components/Home/Footer";
+import { toast } from "react-toastify";
 
 const JobDetailsPage: React.FC = () => {
   return (
-    
+
+    <main>
+    <Header title="Job details" subtitle="Explore more for jobs"/>
     <div className="bg-gray-50 py-6 md:py-8">
+      
       <div className="max-w-7xl mx-auto px-2 md:px-4">
         {/* Main Layout */}
         <div className="flex flex-col md:flex-row gap-6 mb-6 md:mb-8">
@@ -51,7 +56,7 @@ const JobDetailsPage: React.FC = () => {
                 </div>
 
                 {/* Mobile-only Apply Button */}
-                <button className="block md:hidden bg-teal-600 text-white px-4 py-2 rounded-md text-sm hover:bg-teal-700 transition-colors">
+                <button onClick={() => toast.success("Applied")} className="block md:hidden bg-teal-600 text-white px-4 py-2 rounded-md text-sm hover:bg-teal-700 transition-colors">
                   Apply
                 </button>
               </div>
@@ -211,6 +216,8 @@ const JobDetailsPage: React.FC = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </main>
   );
 };
 

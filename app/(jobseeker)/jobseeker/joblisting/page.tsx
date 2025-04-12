@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
 import Header from "@/app/Components/Header/Header";
 import Footer from "@/app/Components/Home/Footer";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { toast } from "react-toastify";
+import { useSearchParams } from "next/navigation";
 
 const jobs = [
   {
@@ -87,16 +88,28 @@ const jobs = [
 ];
 
 const Joblisting = () => {
-  const [salary, setSalary] = useState([5000, 99999]);
+  const [salary, setSalary] = useState<[number, number]>([5000, 99999]);
+  const searchParams = useSearchParams();
+  const searchQuery = searchParams.get("search")?.toLowerCase().trim() || "";
+
+  const filteredJobs = useMemo(() => {
+    if (!searchQuery) return jobs;
+    return jobs.filter((job) =>
+      job.title.toLowerCase().includes(searchQuery) ||
+      job.location.toLowerCase().includes(searchQuery) ||
+      job.experience.toLowerCase().includes(searchQuery) ||
+      job.description.toLowerCase().includes(searchQuery)
+    );
+  }, [searchQuery]);
 
   return (
     <main>
       <Header title="Jobs" subtitle="Explore a wide range of job opportunities available" />
 
-      <div className="container hidden md:block mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row gap-6">
+      <div className="container  mx-auto px-4 py-8">
+        <div className="flex flex-col  md:flex-row gap-6">
           {/* Sidebar */}
-          <div className="w-full md:w-1/6 space-y-6 bg-[#EBF5F4] p-6 rounded-lg text-black">
+          <div className="w-full md:w-1/6 space-y-6 hidden md:block bg-[#EBF5F4] p-6 rounded-lg text-black">
             <div>
               <h3 className="font-medium mb-2">Search by Job Title</h3>
               <div className="relative">
@@ -120,8 +133,8 @@ const Joblisting = () => {
                 </svg>
               </div>
             </div>
+            
 
-            {/* Filters */}
             <div>
               <h3 className="font-medium mb-2">Location</h3>
               <select className="w-full p-2 border rounded-md mb-2 text-gray-700">
@@ -186,10 +199,13 @@ const Joblisting = () => {
             </button>
           </div>
 
-          {/* Job Cards Grid */}
+
+          {/* Job Cards */}
           <div className="w-full md:w-3/4">
             <div className="flex justify-between items-center mb-6">
-              <p className="text-gray-600">Showing 1-9 of 9 results</p>
+              <p className="text-gray-600">
+                Showing {filteredJobs.length} of {jobs.length} results
+              </p>
               <select className="p-2 border rounded-md">
                 <option>Sort by latest</option>
                 <option>Sort by oldest</option>
@@ -197,39 +213,45 @@ const Joblisting = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
-              {jobs.map((job) => (
-                <div
-                  key={job.id}
-                  className="bg-white rounded-lg shadow-md p-8 border relative md:w-full"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <Image src={job.logo} alt={job.title} width={24} height={24} />
-                    <h3 className="font-semibold">{job.title}</h3>
+              {filteredJobs.length > 0 ? (
+                filteredJobs.map((job) => (
+                  <div
+                    key={job.id}
+                    className="bg-white rounded-lg shadow-md p-8 border relative md:w-full"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <Image src={job.logo} alt={job.title} width={24} height={24} />
+                      <h3 className="font-semibold">{job.title}</h3>
+                    </div>
+                    <div className="mb-3">
+                      <span className="text-gray-600 text-sm">{job.location}</span>
+                      <span className="mx-2 text-gray-400">•</span>
+                      <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">
+                        {job.experience}
+                      </span>
+                    </div>
+                    <p className="text-sm text-gray-600 mb-4">{job.description}</p>
+                    <div className="flex gap-3 md:mt-20">
+                      <button
+                        onClick={() => toast.success("Applied")}
+                        className="flex-1 bg-[#2E5F5C] text-white px-3 py-1.5 rounded text-sm border border-[#2E5F5C] hover:bg-[#2b2d2d]"
+                      >
+                        Apply now
+                      </button>
+                      <button className="flex-1 text-[#2E5F5C] px-3 py-1.5 rounded text-sm border border-[#2E5F5C] hover:bg-[#2E5F5C] hover:text-white">
+                        Learn more
+                      </button>
+                    </div>
                   </div>
-                  <div className="mb-3">
-                    <span className="text-gray-600 text-sm">{job.location}</span>
-                    <span className="mx-2 text-gray-400">•</span>
-                    <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">
-                      {job.experience}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">{job.description}</p>
-                  <div className="flex gap-3 md:mt-20">
-                    <button
-                      onClick={() => toast.success("Applied")}
-                      className="flex-1 bg-[#2E5F5C] text-white px-3 py-1.5 rounded text-sm border border-[#2E5F5C] hover:bg-[#2b2d2d]"
-                    >
-                      Apply now
-                    </button>
-                    <button className="flex-1 text-[#2E5F5C] px-3 py-1.5 rounded text-sm border border-[#2E5F5C] hover:bg-[#2E5F5C] hover:text-white">
-                      Learn more
-                    </button>
-                  </div>
-                </div>
-              ))}
+                ))
+              ) : (
+                <p className="text-center col-span-full text-gray-500">
+                  No jobs found matching "{searchQuery}"
+                </p>
+              )}
             </div>
 
-            {/* Pagination */}
+            {/* Pagination (optional static) */}
             <div className="flex justify-center mt-8 gap-2">
               {[1, 2, 3].map((page) => (
                 <button
