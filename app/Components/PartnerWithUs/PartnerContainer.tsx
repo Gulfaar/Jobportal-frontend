@@ -14,16 +14,16 @@ const PartnerWithGulfaar = () => {
                 
                 {/* Image Column - Tightened to text */}
                 <div className="md:w-1/2 flex justify-end">
-                  <div className="w-full max-w-[400px]">
-                    <Image
-                      src="/images/Partner-hero.svg" // Replace with your actual image URL
-                      alt="Person working at a desk with a laptop"
-                      width={400}
-                      height={240}
-                      className="rounded-lg object-cover w-full h-auto"
-                    />
-                  </div>
-                </div>
+  <div className="w-full sm:max-w-[400px]">
+    <Image
+      src="/images/Partner-hero.jpg" // Replace with your actual image URL
+      alt="Person working at a desk with a laptop"
+      width={400}
+      height={240}
+      className="rounded-lg object-cover w-full h-auto"
+    />
+  </div>
+</div>
               </div>
             </div>
           </section>

@@ -16,50 +16,55 @@ const SkillDevelopment: React.FC = () => {
         subtitle="Explore a wide range of job opportunities available" />
 
       {/* Unlock Your Career Potential Section */}
-      <section className="self-center px-5 md:px-15 md:mt-9 py-10 w-full max-w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col">
-          <div className="w-[63%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-5 max-md:max-w-full">
-              <h2 className="self-stretch text-2xl md:text-3xl tracking-tight leading-[50px] max-md:max-w-full">
-                Unlock Your Career Potential  with
-                <br className="hidden md:block" />  
-                <span className="text-2xl md:text-[48px] ml-2 md:ml-0 mb-2">
-                     Gulfaar's Skill Development Programs
-                </span>
-              </h2>
-              <p className="mt-1 max-md:max-w-full">
-                Transform Your Career with Industry-Leading Skill Development
-              </p>
-              <p className="mt-9 max-w-full leading-9 text-black font-normal text-[24px] w-[672px] max-md:max-w-full">
-                At Gulfaar, we believe that skills are the foundation of
-                success. Whether you're a fresh graduate, a professional looking
-                to upskill, or someone seeking to switch careers, our Skill
-                Development Programs are designed to equip you with
-                industry-relevant expertise using the latest AI-powered learning
-                techniques
-              </p>
-              <button
-                className="flex gap-3 px-8 py-4 mt-12 text-sm leading-tight text-center text-white uppercase bg-teal-800 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
-                aria-label="Get Started"
-              >
-                <span className="grow my-auto">Get Started</span>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/6307c969f4753633a930c857def46cbf555e5466?placeholderIfAbsent=true"
-                  className="object-contain shrink-0 w-3.5 aspect-[0.87]"
-                  alt="Arrow icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div className="ml-5 w-[37%] max-md:ml-0 max-md:w-full">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c59f9f64f3d931e65c3207dc47edd4bcc02e16?placeholderIfAbsent=true"
-              className="object-contain grow w-full rounded-3xl aspect-[0.77] max-md:mt-10 max-md:max-w-full"
-              alt="Career development illustration"
-            />
-          </div>
-        </div>
-      </section>
+      <section className="w-full max-w-[1294px] px-4 md:px-6 mx-auto py-10 md:py-16">
+  <div className="flex flex-col-reverse md:flex-row items-center gap-10">
+    
+    {/* Text Section */}
+    <div className="w-full md:w-[63%]">
+      <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-teal-800 leading-tight">
+      Unlock Your Career Potential with
+      </h2>
+      
+      <p className="mt-3 text-[22px] sm:text-[26px] md:text-[36px] font-bold text-teal-800 leading-snug">
+      Gulfaar's Skill Development Programs
+      </p>
+
+      <p className="mt-6 text-base sm:text-lg text-gray-700">
+      Transform Your Career with Industry-Leading Skill Development
+      </p>
+
+      <p className="mt-6 text-base sm:text-lg text-neutral-900 leading-relaxed">
+      At Gulfaar, we believe that skills are the foundation of success. Whether you're a fresh graduate<br className="hidden sm:block" />
+        a professional looking to upskill, or someone seeking to switch careers, our Skill Development Programs are designed to equip you with industry-relevant expertise using the latest AI-powered learning techniques
+      </p>
+
+      <button
+        className="flex items-center gap-2 px-6 py-3 mt-8 text-sm sm:text-base font-medium text-white uppercase bg-teal-800 rounded-full tracking-wide hover:bg-teal-700 transition"
+        aria-label="Get Started"
+      >
+        Get Started
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/6307c969f4753633a930c857def46cbf555e5466?placeholderIfAbsent=true"
+          className="w-4 h-4 object-contain"
+          alt="Arrow icon"
+        />
+      </button>
+    </div>
+
+    {/* Image Section */}
+    <div className="w-full md:w-[37%]">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c59f9f64f3d931e65c3207dc47edd4bcc02e16?placeholderIfAbsent=true"
+        alt="Career development illustration"
+        className="w-full object-cover rounded-3xl"
+      />
+    </div>
+  </div>
+</section>
+
+
+
+
 
       {/* Why Choose Gulfaar Section */}
       <section className="px-20 py-12 mt-7 w-full bg-teal-800 max-md:px-5 max-md:max-w-full">
@@ -245,9 +250,10 @@ const SkillDevelopment: React.FC = () => {
                 <p className="self-start text-2xl tracking-tight  max-md:max-w-full">
                   OUR SKILL DEVELOPEMENT PROGRAMS
                 </p>
-                <h2 className="bg mt-5 text-5xl  w-full leading-[50px] max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-10">
-                  Non-Technical Skills For General & Specialized Roles
-                </h2>
+                <h2 className="mt-5 text-center text-5xl md:text-6xl sm:text-4xl max-md:text-3xl max-sm:text-2xl font-semibold leading-tight tracking-tight text-teal-900 max-w-2xl mx-auto">
+  Non-Technical Skills For General & Specialized Roles
+</h2>
+
               </div>
             </div>
             <div className="ml-60 w-[29%] max-md:ml-0 max-md:w-full">
@@ -345,9 +351,10 @@ const SkillDevelopment: React.FC = () => {
         <p className="text-2xl font-semibold tracking-tight  text-black max-md:max-w-full">
           OUR SKILL DEVELOPEMENT PROGRAMS
         </p>
-        <h2 className="mt-7 text-4xl font-semibold leading-none text-black max-md:max-w-full max-md:text-4xl">
-          Personality Development For Professional Growth
-        </h2>
+        <h2 className="mt-7 text-4xl max-md:text-3xl font-semibold leading-snug text-black text-center w-fit mx-auto">
+  Personality Development For <br />
+  <span className="block text-center">Professional Growth</span>
+</h2>
         <div className="self-stretch mt-16 max-md:mt-10 max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col">
             <div className="w-3/12 max-md:ml-0 max-md:w-full">
@@ -432,7 +439,7 @@ const SkillDevelopment: React.FC = () => {
             />
             <FeatureCard
               imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/f7eef0d74d474c04b3422015f180a1be59fdd8b0?placeholderIfAbsent=true"
-              title="Construction Safety & Compliance"
+              title="Construction Safety &Compliance"
               description="Expert Oil & Gas Industry Training Solutions"
               className="ml-5 w-3/12 max-md:ml-0 max-md:w-full bg-white"
             />

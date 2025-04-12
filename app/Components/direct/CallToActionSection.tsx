@@ -28,18 +28,7 @@ const CallToActionSection: React.FC = () => {
           you're always just a click away from your next great hire.
         </p>
 
-        {/* CTA Button and Text */}
-        <div className="flex justify-center items-center gap-6 max-sm:flex-col max-sm:text-center">
-          <p className="text-xl font-medium max-sm:text-lg">
-            Let our technology find your perfect hire
-          </p>
-          <button
-            className="px-10 py-4 text-xl font-medium text-white bg-teal-800 rounded-[12px] hover:bg-teal-700 transition-colors max-sm:w-full max-sm:py-3"
-            aria-label="Contact Gulfaar for direct placement services"
-          >
-            Contact Now
-          </button>
-        </div>
+
       </div>
     </section>
   );

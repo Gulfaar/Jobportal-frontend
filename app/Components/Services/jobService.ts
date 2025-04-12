@@ -3,17 +3,12 @@ import { Job } from "../types/job";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
-// Interface for Job (adjust based on your actual job structure)
-
-
-// Interface for the API response
 interface JobApiResponse {
   success: boolean;
   data: Job[];
   totalJobs?: number;
 }
 
-// Interface for the function's return value
 interface JobServiceResponse {
   success: boolean;
   data: Job[];
@@ -32,14 +27,9 @@ export const getAllJobs = async (page: number, jobsPerPage: number): Promise<Job
       withCredentials: true,
     });
 
-    // Log raw response for debugging
-    console.log("Raw API response:", response.data);
-
-    // Extract jobs and total from the response
-    const { success, data: jobs, totalJobs } = response.data;
+    const { success, data: jobs } = response.data;
 
     if (!success) {
-      console.error("API returned success: false", response.data);
       return {
         success: false,
         message: "API request failed",
@@ -49,7 +39,6 @@ export const getAllJobs = async (page: number, jobsPerPage: number): Promise<Job
     }
 
     if (!Array.isArray(jobs)) {
-      console.error("Jobs is not an array:", jobs);
       return {
         success: false,
         message: "Invalid response: jobs is not an array",
@@ -61,7 +50,7 @@ export const getAllJobs = async (page: number, jobsPerPage: number): Promise<Job
     return {
       success: true,
       data: jobs,
-      total: totalJobs || jobs.length, // Fallback to jobs.length if totalJobs is not provided
+      total: response.data.totalJobs || jobs.length,
     };
   } catch (error: any) {
     console.error("Get All Jobs error:", error.response?.data || error.message);
@@ -75,18 +64,45 @@ export const getAllJobs = async (page: number, jobsPerPage: number): Promise<Job
 };
 
 // Search Jobs
-export const searchJobs = async (query: string) => {
+export const searchJobs = async (query: string): Promise<JobServiceResponse> => {
   try {
-    const response = await axios.get(
+    const response = await axios.get<JobApiResponse>(
       `${API_BASE_URL}/job/jobs/search?designation=${encodeURIComponent(query)}`,
       { withCredentials: true }
     );
-    return { success: true, data: response.data };
+
+    const { success, data: jobs } = response.data;
+
+    if (!success) {
+      return {
+        success: false,
+        message: "Search API request failed",
+        data: [],
+        total: 0,
+      };
+    }
+
+    if (!Array.isArray(jobs)) {
+      return {
+        success: false,
+        message: "Invalid response: search jobs is not an array",
+        data: [],
+        total: 0,
+      };
+    }
+
+    return {
+      success: true,
+      data: jobs,
+      total: response.data.totalJobs || jobs.length,
+    };
   } catch (error: any) {
     console.error("Search Job error:", error.response?.data || error.message);
     return {
       success: false,
-      message: error.response?.data?.message || "Something went wrong",
+      message: error.response?.data?.message || "Failed to search jobs",
+      data: [],
+      total: 0,
     };
   }
 };

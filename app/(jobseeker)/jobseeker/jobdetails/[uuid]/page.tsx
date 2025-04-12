@@ -2,10 +2,12 @@
 // pages/job-details.tsx
 
 import React from "react";
-import Image from "next/image";
+;
 import Link from "next/link";
 import { BsBriefcase, BsCash, BsClock, BsGeoAlt } from "react-icons/bs";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+
+import Image from "next/image";
 
 import JobOverview from "@/app/Components/jobdetails/JobOverview";
 import RelatedJobs from "@/app/Components/jobdetails/RelatedJobs";
