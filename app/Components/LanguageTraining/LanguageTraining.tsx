@@ -33,10 +33,10 @@ const LanguageTraining = () => {
           Transform Your Career with Industry-Leading Skill Development
         </p>
         <p className="mt-6 leading-9 text-black  text-[34px] max-md:text-base max-md:leading-6 max-md:mt-4">
-          In today's interconnected world, language is more than just communication—it's the key to<br />
+          In today's interconnected world, language is more than just communication, it's the key to<br />
           unlocking global opportunities.
         </p>
-        <button
+        {/* <button
           className="flex gap-3 px-8 py-4 mt-8 text-sm leading-tight text-center text-white uppercase bg-teal-800 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-6"
           aria-label="Get Started"
         >
@@ -46,7 +46,7 @@ const LanguageTraining = () => {
             className="object-contain shrink-0 w-3.5 aspect-[0.87]"
             alt="Arrow icon"
           />
-        </button>
+        </button> */}
       </div>
     </div>
   </div>

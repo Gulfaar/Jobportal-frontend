@@ -32,7 +32,7 @@ const IntroductionSection: React.FC = () => {
     
                 </p>
     
-                <button
+                {/* <button
                     className="flex gap-3 px-8 py-4 mt-12 text-sm leading-tight text-center text-white uppercase bg-teal-800 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
                     aria-label="Get Started"
                   >
@@ -42,7 +42,7 @@ const IntroductionSection: React.FC = () => {
                       className="object-contain shrink-0 w-3.5 aspect-[0.87]"
                       alt="Arrow icon"
                     />
-                  </button>
+                  </button> */}
               </div>
     
               {/* Image Section */}

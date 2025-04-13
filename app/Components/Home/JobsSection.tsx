@@ -82,7 +82,7 @@ const JobsSection = () => {
         </p>
         <Link
           href="/jobseeker/joblisting"
-          className="flex justify-end items-end text-[12px] md:text-2xl w-full font-noraml text-white"
+          className="flex justify-end hover:text-yellow-200 items-end text-[12px] md:text-2xl w-full font-noraml text-white"
         >
           View all
         </Link>

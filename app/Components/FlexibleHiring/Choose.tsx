@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Circle } from 'lucide-react';
 
 const features = [
   {
@@ -38,15 +39,8 @@ export default function WhyChooseGulfaar() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
           {features.map((feature, index) => (
             <div key={index} className="flex gap-3">
-              {/* Replace CheckCircle with custom SVG */}
-              <Image
-                src="/icons/Gulfaar-icon2.svg" // Temporary path, replace with your actual SVG path
-                alt="Gulfaar-icon"
-                width={20}
-                height={20}
-                className="mt-1"
-              />
-              <div>
+            <Circle size={20} className="text-white mt-1" />
+            <div>
                 <h3 className="font-semibold text-white text-sm">{feature.title}</h3>
                 <p className="text-xs text-yellow-300">{feature.description}</p>
                 <h3 className="font-semibold text-white text-sm">{feature.title}</h3>

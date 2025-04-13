@@ -10,14 +10,14 @@ const IntroductionSection: React.FC = () => {
           {/* Text Content */}
           <div className="flex-1 w-full">
             <h1 className="text-[#2E5F5C] text-[42px] font-semibold leading-[1.2] mb-4 max-md:text-3xl max-sm:text-2xl">
-            <span className="text-2xl md:text-3xl">Intelligent Hiring Starts Here</span>
-              <span className="block text-[#2E5F5C]  text-2xl mt-2">
-                Gulfaar's Skill Development Programs
-              </span>
+            <span className="text-2xl md:text-3xl">Gulfaar uses AI-powered video interviews to match you with pre-assessed, job-ready talent</span>
+              {/* <span className="block text-[#2E5F5C]  text-2xl mt-2">
+              
+              </span> */}
             </h1>
 
             <h2 className="text-[#2E5F5C] text-[28px] font-medium mb-8 max-md:text-2xl max-sm:text-xl">
-              Transform Your Career with Industry-Leading Skill Development
+            Hire faster with smarter, data-driven screening.
             </h2>
 
             <p className="text-[18px] text-gray-700 leading-[1.8] mb-10 max-w-[650px]">
@@ -29,7 +29,7 @@ const IntroductionSection: React.FC = () => {
 
             </p>
 
-            <button
+            {/* <button
                 className="flex gap-3 px-8 py-4 mt-12 text-sm leading-tight text-center text-white uppercase bg-teal-800 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
                 aria-label="Get Started"
               >
@@ -39,7 +39,7 @@ const IntroductionSection: React.FC = () => {
                   className="object-contain shrink-0 w-3.5 aspect-[0.87]"
                   alt="Arrow icon"
                 />
-              </button>
+              </button> */}
           </div>
 
           {/* Image Section */}

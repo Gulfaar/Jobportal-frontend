@@ -157,13 +157,13 @@ const NavBar = () => {
             >
               Jobs
             </Link>
-            <Link
+            {/* <Link
               href=" "
               className="w-full  text-2xl rounded-lg px-10 py-4 text-black  transition-all duration-300 ease-in-out transform "
               onClick={() => setIsModalOpen(false)}
             >
               Blog
-            </Link>
+            </Link> */}
 
             {/* Training Dropdown */}
             <div className="w-full">
@@ -353,9 +353,9 @@ const NavLinks = () => {
       <Link href="/jobseeker/joblisting" className="hover:text-[#dae470]">
         Jobs
       </Link>
-      <Link href=" " className="hover:text-[#dae470]">
+      {/* <Link href=" " className="hover:text-[#dae470]">
         Blog
-      </Link>
+      </Link> */}
 
       {/* Training Dropdown */}
       <div
@@ -449,7 +449,7 @@ const NavLinks = () => {
                     Tailored candidates
                   </Link>
                   <Link
-                    href="/ExamPreprations"
+                    href="/workforcesolutions/DirectPlacement"
                     className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
                   >
                     Direct placement

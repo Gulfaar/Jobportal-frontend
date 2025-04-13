@@ -62,9 +62,11 @@ const JobCard = ({ job }: { job: Job }) => {
               Apply now
            </button>
           
-          <button className="px-4 py-2 border border-white text-white rounded text-sm">
+          <Link href={'/jobseeker/joblisting'}>
+          <button className="px-4 py-2 border border-white text-white hover:text-amber-200 cursor-pointer rounded text-sm">
             Learn more
           </button>
+          </Link>
         </div>
       </div>
     </article>

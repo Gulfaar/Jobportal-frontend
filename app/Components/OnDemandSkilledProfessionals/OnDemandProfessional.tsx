@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { ChevronRight } from 'lucide-react';
 
 const OnDemandProfessional = () => {
   const benefits = [
@@ -40,7 +41,7 @@ const OnDemandProfessional = () => {
       <div className="max-w-[1400px] mx-auto">
         {/* Main Heading */}
         <h1 className="text-[44px] font-semibold text-[#1E1B4B] text-center mb-16 leading-[1.2] max-md:text-3xl max-sm:text-2xl">
-          Why Gulfaar's AI-Powered On-Demand <br/> Professionals ?
+          Why Gulfaar's AI-Powered On-Demand <br /> Professionals ?
         </h1>
 
         {/* Benefits Grid */}
@@ -52,12 +53,9 @@ const OnDemandProfessional = () => {
             >
               {/* Icon */}
               <div className="w-[60px] h-[60px] rounded-full bg-[#2E5F5C] flex items-center justify-center flex-shrink-0">
-                <Image
-                  src={benefit.icon}
-                  alt={benefit.title}
-                  width={35}
-                  height={35}
-                  className="object-contain max-sm:w-[28px] max-sm:h-[28px]"
+                <ChevronRight
+                  size={35}
+                  className="text-white object-contain max-sm:w-[28px] max-sm:h-[28px]"
                 />
               </div>
 

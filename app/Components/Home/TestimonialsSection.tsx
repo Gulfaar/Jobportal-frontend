@@ -146,7 +146,7 @@ const TestimonialsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col items-center mt-6 px-6 py-20 w-full text-center bg-cover bg-center overflow-hidden"
+      className="flex flex-col items-center mt-10 md:mt-18 px-6 py-20 w-full text-center bg-cover bg-center overflow-hidden"
       style={{ backgroundImage: "url('/Testimonial.png')" }}
     >
       <h2 className="text-3xl text-black font-bold">Testimonials from Our Customers</h2>
@@ -161,7 +161,7 @@ const TestimonialsSection = () => {
           <button 
           onClick={handlePrev}
         
-        className="absolute md:left-12  z-10 bg-gray-800 text-black p-2 rounded-full shadow-lg hover:bg-gray-700"
+        className="absolute md:left-12  z-10 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
       >
         <FaChevronLeft size={15} />
       </button>

@@ -68,16 +68,16 @@ const InfoSection = () => {
                   href="/jobseeker/joblisting"
                   className="self-stretch my-auto text-white capitalize w-[122px]"
                 >
-                  <div className="flex px-3 py-4 rounded-lg bg-slate-800 justify-center items-center">
+                  <div className="flex px-3 py-4 rounded-lg bg-slate-700 hover:bg-slate-950 justify-center items-center">
                     Search Job
                   </div>
                 </Link>
-                <a
+                {/* <a
                   href="#learn-more"
                   className="self-stretch my-auto text-teal-800 underline"
                 >
                   Learn more
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

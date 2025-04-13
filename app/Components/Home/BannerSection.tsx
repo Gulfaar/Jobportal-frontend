@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const BannerSection = () => {
   return (
-    <section className="overflow-hidden self-center max-w-6xl mx-auto bg-[#2E5F5C] rounded-2xl max-md:w-full ">
+    <section className="overflow-hidden self-center mt-10 max-w-6xl mx-auto bg-[#2E5F5C] rounded-2xl max-md:w-full ">
       <div className="flex justify-between  max-md:flex-col">
         <div className="w-[45%] flex justify-center px-10 py-5 max-md:w-full max-md:px-4">
           <div className="flex flex-col my-auto">
@@ -19,7 +19,7 @@ const BannerSection = () => {
             </p>
             <Link
               href="/jobseeker/joblisting"
-              className="px-4 py-2 w-fit mt-4 text-sm font-semibold text-white rounded-lg bg-slate-800"
+              className="px-4 py-2 w-fit mt-4 text-sm font-semibold text-white rounded-lg bg-slate-700 hover:bg-slate-950 "
             >
               Search Job
             </Link>

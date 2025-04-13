@@ -38,7 +38,7 @@ const SkillDevelopment: React.FC = () => {
         a professional looking to upskill, or someone seeking to switch careers, our Skill Development Programs are designed to equip you with industry-relevant expertise using the latest AI-powered learning techniques
       </p>
 
-      <button
+      {/* <button
         className="flex items-center gap-2 px-6 py-3 mt-8 text-sm sm:text-base font-medium text-white uppercase bg-teal-800 rounded-full tracking-wide hover:bg-teal-700 transition"
         aria-label="Get Started"
       >
@@ -48,7 +48,7 @@ const SkillDevelopment: React.FC = () => {
           className="w-4 h-4 object-contain"
           alt="Arrow icon"
         />
-      </button>
+      </button> */}
     </div>
 
     {/* Image Section */}
@@ -250,7 +250,7 @@ const SkillDevelopment: React.FC = () => {
                 <p className="self-start text-2xl tracking-tight  max-md:max-w-full">
                   OUR SKILL DEVELOPEMENT PROGRAMS
                 </p>
-                <h2 className="mt-5 text-center text-5xl md:text-6xl sm:text-4xl max-md:text-3xl max-sm:text-2xl font-semibold leading-tight tracking-tight text-teal-900 max-w-2xl mx-auto">
+                <h2 className="mt-5 text-left text-3xl md:text-4xl sm:text-4xl max-md:text-3xl max-sm:text-2xl font-semibold leading-tight tracking-tight text-teal-900 max-w-2xl mx-auto">
   Non-Technical Skills For General & Specialized Roles
 </h2>
 
@@ -351,7 +351,7 @@ const SkillDevelopment: React.FC = () => {
         <p className="text-2xl font-semibold tracking-tight  text-black max-md:max-w-full">
           OUR SKILL DEVELOPEMENT PROGRAMS
         </p>
-        <h2 className="mt-7 text-4xl max-md:text-3xl font-semibold leading-snug text-black text-center w-fit mx-auto">
+        <h2 className="mt-7 text-4xl max-md:text-3xl font-semibold leading-snug text-teal-800 text-center w-fit mx-auto">
   Personality Development For <br />
   <span className="block text-center">Professional Growth</span>
 </h2>
@@ -423,25 +423,25 @@ const SkillDevelopment: React.FC = () => {
               imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/ddba3c8bc7cdd898ef18c4c209cff947f09256f3?placeholderIfAbsent=true"
               title="Healthcare & Nursing Certification"
               description="Data science transforms raw data"
-              className="w-3/12 max-md:ml-0 max-md:w-full bg-white"
+              className="w-3/12 max-md:ml-0 max-md:w-full text-center bg-white"
             />
             <FeatureCard
               imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/fc48bab7fbb0c93d3f1a1d6e780a0624b1a3d13e?placeholderIfAbsent=true"
               title="Financial & Banking Courses"
               description="Engineering and construction shape the world"
-              className="ml-5 w-3/12 max-md:ml-0 max-md:w-full bg-white"
+              className="ml-5 w-3/12 max-md:ml-0 max-md:w-full text-center bg-white"
             />
             <FeatureCard
               imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/9b016f69193783a100fe80160ab8af1dca62700a?placeholderIfAbsent=true"
               title="IT & Cybersecurity Certifications"
               description="Electrical and mechanical skills drive innovation"
-              className="ml-5 w-3/12 max-md:ml-0 max-md:w-full bg-white"
+              className="ml-5 w-3/12 max-md:ml-0 max-md:w-full text-center bg-white"
             />
             <FeatureCard
               imageSrc="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/f7eef0d74d474c04b3422015f180a1be59fdd8b0?placeholderIfAbsent=true"
-              title="Construction Safety &Compliance"
+              title="Construction Safety & Compliance"
               description="Expert Oil & Gas Industry Training Solutions"
-              className="ml-5 w-3/12 max-md:ml-0 max-md:w-full bg-white"
+              className="ml-5 w-3/12 max-md:ml-0 max-md:w-full text-center bg-white"
             />
           </div>
         </div>

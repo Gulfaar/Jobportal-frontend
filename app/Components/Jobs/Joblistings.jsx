@@ -39,7 +39,7 @@ export default function JobListings() {
       
       {/* Job Listings */}
       <div className="w-3/4 px-6">
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between border-black text-black items-center mb-4">
           <p>Showing 6-6 of 10 results</p>
           <Select placeholder="Sort by latest">
             <SelectItem value="latest">Latest</SelectItem>

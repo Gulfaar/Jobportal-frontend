@@ -64,19 +64,13 @@ const AboutUs = () => {
               <p className="mt-6 max-md:max-w-full">
               Building Global Success!
               </p>
-              <p className="mt-9 max-w-full leading-9 text-black font-normal text-[24px] w-[672px] max-md:max-w-full">
+              <p className="mt-9 max-w-full leading-9 text-black font-normal text-[20px] w-[672px] max-md:max-w-full">
               At Gulfaar, we are more than just a recruitment agency, we are a 
             global workforce solutions provider committed to bridging the gap 
             between talent and opportunity. With our AI-driven hiring platform, 
-            advanced workforce solutions, and industry-leading training 
-            programs, we help businesses find the right people and 
-            professionals build successful careers across the world. With a 
-            presence in multiple countries and a strong network of employers, 
-            job seekers, and partners, Gulfaar is shaping the future of work, 
-            recruitment, and workforce outsourcing with efficiency, technology, 
-            and innovation.
+            advanced workforce solutions.
               </p>
-              <button
+              {/* <button
                 className="flex gap-3 px-8 py-4 mt-12 text-sm leading-tight text-center text-white uppercase bg-teal-800 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
                 aria-label="Get Started"
               >
@@ -86,7 +80,7 @@ const AboutUs = () => {
                   className="object-contain shrink-0 w-3.5 aspect-[0.87]"
                   alt="Arrow icon"
                 />
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="ml-5 w-[37%] max-md:ml-0 max-md:w-full">
@@ -479,14 +473,14 @@ const AboutUs = () => {
                   <p className="text-lg md:text-xl text-[#1E1E1E] mb-8">
                     At Gulfaar, we believe in building strong partnerships that create mutual growth and long-term success.
                   </p>
-                  <div className="flex gap-4">
+                  {/* <div className="flex gap-4">
                     <button className="bg-[#2E6D65] text-white px-6 md:px-8 py-3 rounded-lg hover:bg-[#245a53] transition-colors">
                       Apply
                     </button>
                     <button className="bg-white text-[#1E1E1E] px-6 md:px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
                       Learn More
                     </button>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Right Image Placeholder */}

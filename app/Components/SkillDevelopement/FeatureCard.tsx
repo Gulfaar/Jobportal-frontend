@@ -25,7 +25,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       <h3 className="flex justify-center items-center mt-12 font-semibold text-[18px] leading-tight text-black max-md:mt-10">
         {title}
       </h3>
-      <p className="mt-12 leading-7 text-center text-[18px] text-[#7E7E7E] max-md:mt-2">
+      <p className="mt-12 leading-7 text-center text-[18px] text-black max-md:mt-2">
         {description}
       </p>
     </div>

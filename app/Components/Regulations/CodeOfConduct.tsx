@@ -1,6 +1,7 @@
 // components/CodeOfConduct.tsx
 import React from 'react';
 import Image from 'next/image';
+import { Circle } from 'lucide-react'
 
 const CodeOfConduct: React.FC = () => {
   return (
@@ -15,14 +16,9 @@ const CodeOfConduct: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {/* Item 1 */}
           <div className="flex items-start space-x-4">
-            <div className="w-6 h-6 flex-shrink-0">
-              <Image
-                src="/icons/Gulfaar-icon2.svg"
-                alt="Gulfaar Icon"
-                width={24}
-                height={24}
-              />
-            </div>
+          <div className="w-6 h-6 flex-shrink-0">
+  <Circle size={24} className="text-white" />
+</div>
             <div>
               <h3 className="text-xl font-semibold text-white mb-2">
                 Strict Background Verification
@@ -35,14 +31,9 @@ const CodeOfConduct: React.FC = () => {
 
           {/* Item 2 */}
           <div className="flex items-start space-x-4">
-            <div className="w-6 h-6 flex-shrink-0">
-              <Image
-                src="/icons/Gulfaar-icon2.svg"
-                alt="Gulfaar Icon"
-                width={24}
-                height={24}
-              />
-            </div>
+          <div className="w-6 h-6 flex-shrink-0">
+  <Circle size={24} className="text-white" />
+</div>
             <div>
               <h3 className="text-xl font-semibold text-white mb-2">
                 Transparent Contracts
@@ -55,14 +46,9 @@ const CodeOfConduct: React.FC = () => {
 
           {/* Item 3 */}
           <div className="flex items-start space-x-4">
-            <div className="w-6 h-6 flex-shrink-0">
-              <Image
-                src="/icons/Gulfaar-icon2.svg"
-                alt="Gulfaar Icon"
-                width={24}
-                height={24}
-              />
-            </div>
+          <div className="w-6 h-6 flex-shrink-0">
+  <Circle size={24} className="text-white" />
+</div>
             <div>
               <h3 className="text-xl font-semibold text-white mb-2">
                 Whistleblower & Complaint System
@@ -75,15 +61,9 @@ const CodeOfConduct: React.FC = () => {
 
           {/* Item 4 */}
           <div className="flex items-start space-x-4">
-            <div className="w-6 h-6 flex-shrink-0">
-              <Image
-                src="/icons/Gulfaar-icon2.svg"
-                alt="Gulfaar Icon"
-                width={24}
-                height={24}
-                
-              />
-            </div>
+          <div className="w-6 h-6 flex-shrink-0">
+  <Circle size={24} className="text-white" />
+</div>
             <div>
               <h3 className="text-xl font-semibold text-white mb-2">
                 Regular Audits & Compliance Checks
