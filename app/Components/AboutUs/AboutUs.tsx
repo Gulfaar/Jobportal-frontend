@@ -142,14 +142,7 @@ const AboutUs = () => {
                     <div className="bg-white rounded-xl shadow-lg p-4 relative">
                       <div className="flex gap-4">
                         {/* Image */}
-                        <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                          <Image
-                            src={marker.image}
-                            alt={`${marker.city} office`}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
+                        
                         
                         {/* Content */}
                         <div className="flex items-start gap-2">

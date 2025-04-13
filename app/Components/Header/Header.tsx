@@ -58,11 +58,13 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
             {/* Action Buttons - Smaller size */}
             <div className="hidden w-full justify-end mt-[-20px] md:flex gap-2 md:gap-4">
             
-              <span className="md:px-2 py-2  rounded-lg text-white text-sm md:text-base">
+              <Link href="/jobseeker/login">
+              <button className="md:px-2 py-2  cursor-pointer rounded-lg text-white text-sm md:text-base">
                 Jobseeker
-              </span>
+              </button>
+              </Link>
               <Link href="/employer/signup">
-              <button className="bg-[#2E5F5C] mt-1 md:px-4  md:h-8 rounded-lg text-white text-sm md:text-base">
+              <button className="bg-[#2E5F5C] mt-1 md:px-4 cursor-pointer md:h-8 rounded-lg text-white text-sm md:text-base">
                 Employer
               </button>
               </Link>
