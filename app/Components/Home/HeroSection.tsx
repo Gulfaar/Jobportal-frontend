@@ -7,7 +7,8 @@ import { CiLocationOn, CiSearch } from "react-icons/ci";
 import { FaBars, FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { FiChevronDown, FiChevronRight, FiChevronUp } from "react-icons/fi";
+
+import { FiChevronDown, FiChevronLeft, FiChevronRight, FiChevronUp } from "react-icons/fi";
 
 const HeroSection = () => {
   const router = useRouter();
@@ -347,185 +348,158 @@ const NavLinks = () => {
 
   return (
     <div className="flex gap-4 text-white font-[20px] w-full justify-end md:mt-[-45px] lg:mt-[-35px] relative -top-9">
-      <Link href="/" className="hover:text-[#dae470]">
-        Home
-      </Link>
-      <Link href="/jobseeker/joblisting" className="hover:text-[#dae470]">
-        Jobs
-      </Link>
-      {/* <Link href=" " className="hover:text-[#dae470]">
-        Blog
-      </Link> */}
+  <Link href="/" className="hover:text-[#dae470]">
+    Home
+  </Link>
+  <Link href="/jobseeker/joblisting" className="hover:text-[#dae470]">
+    Jobs
+  </Link>
 
-      {/* Training Dropdown */}
+  {/* Training Dropdown */}
+  <div
+    className="relative group"
+    onMouseEnter={() => setIsTrainingOpen(true)}
+    onMouseLeave={() => setIsTrainingOpen(false)}
+  >
+    <Link href="#" className="hover:text-[#dae470]">
+      Training
+    </Link>
+
+    {isTrainingOpen && (
       <div
-        className="relative group"
+        className="absolute left-0 mt-2 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
         onMouseEnter={() => setIsTrainingOpen(true)}
         onMouseLeave={() => setIsTrainingOpen(false)}
       >
-        <Link href="#" className="hover:text-[#dae470]">
-          Training
+        <Link
+          href="/developement/skilldevelopement"
+          className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+        >
+          Skill Development
         </Link>
-
-        {isTrainingOpen && (
-          <div
-            className="absolute left-0 mt-2 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
-            onMouseEnter={() => setIsTrainingOpen(true)}
-            onMouseLeave={() => setIsTrainingOpen(false)}
-          >
-            {/* Language Training with Nested Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsLanguageOpen(true)}
-              onMouseLeave={() => setIsLanguageOpen(false)}
-            >
-              <Link
-                href="/developement/skilldevelopement"
-                className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-                onMouseEnter={() => setSkillDevelopement(true)}
-                onMouseLeave={() => setSkillDevelopement(false)}
-              >
-                Skill Development
-              </Link>
-            </div>
-
-            <Link
-              href="/Training/PersonalityDevelopment"
-              className="px-4 py-2 inline-flex whitespace-nowrap hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-              onMouseOver={() => setPersonality(true)}
-              onMouseLeave={() => setPersonality(false)}
-            >
-              Personality Development
-            </Link>
-
-            <Link
-              href="/Training/LanguageTraining"
-              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-            >
-              Language Training
-            </Link>
-            <Link
-              href="/ExamPreprations"
-              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-            >
-              Exam Preparation
-            </Link>
-          </div>
-        )}
+        <Link
+          href="/Training/PersonalityDevelopment"
+          className="px-4 py-2 inline-flex whitespace-nowrap hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+        >
+          Personality Development
+        </Link>
+        <Link
+          href="/Training/LanguageTraining"
+          className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+        >
+          Language Training
+        </Link>
+        <Link
+          href="/ExamPreprations"
+          className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+        >
+          Exam Preparation
+        </Link>
       </div>
+    )}
+  </div>
 
-      {/* Work-Force Solutions Dropdown */}
+  {/* Work-Force Solutions Dropdown */}
+  <div
+    className="relative group"
+    onMouseEnter={() => setIsWorkForceOpen(true)}
+    onMouseLeave={() => setIsWorkForceOpen(false)}
+  >
+    <Link href="#" className="hover:text-[#dae470]">
+      Work-Force Solutions
+    </Link>
+
+    {isWorkForceOpen && (
       <div
-        className="relative group"
+        className="absolute left-0 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
         onMouseEnter={() => setIsWorkForceOpen(true)}
         onMouseLeave={() => setIsWorkForceOpen(false)}
       >
-        <Link href="#" className="hover:text-[#dae470]">
-          Work-Force Solutions
-        </Link>
+        {/* Recruitment */}
+        <div
+          className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded relative flex items-center justify-between cursor-pointer"
+          onMouseEnter={() => setIsRecruitmentOpen(true)}
+          onMouseLeave={() => setIsRecruitmentOpen(false)}
+        >
+          <span>Recruitment solutions</span>
+          {isRecruitmentOpen ? <FiChevronLeft /> : <FiChevronRight />}
+          {isRecruitmentOpen && (
+            <div className="absolute left-[-195px] mt-[50px] w-48 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2">
+              <Link
+                href="/workforcesolutions/TailoredCandidates"
+                className="px-3 py-2 inline-flex whitespace-nowrap w-auto hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+              >
+                Tailored candidates
+              </Link>
+              <Link
+                href="/workforcesolutions/DirectPlacement"
+                className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+              >
+                Direct placement
+              </Link>
+            </div>
+          )}
+        </div>
 
-        {isWorkForceOpen && (
-          <div
-            className="absolute left-0 w-56 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
-            onMouseEnter={() => setIsWorkForceOpen(true)}
-            onMouseLeave={() => setIsWorkForceOpen(false)}
-          >
-            <Link
-              href=""
-              className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded relative"
-              onClick={() => setIsRecruitmentOpen(true)}
-              onMouseEnter={() => setIsRecruitmentOpen(true)}
-              onMouseLeave={() => setIsRecruitmentOpen(false)}
-            >
-              Recruitment solutions
-              {isRecruitmentOpen && (
-                <div
-                  className="absolute left-[-202px] mt-[-40px] w-48 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
-                >
-                  <Link
-                    href="/workforcesolutions/TailoredCandidates"
-                    className="px-3 py-2 inline-flex whitespace-nowrap w-42 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-                  >
-                    Tailored candidates
-                  </Link>
-                  <Link
-                    href="/workforcesolutions/DirectPlacement"
-                    className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-                  >
-                    Direct placement
-                  </Link>
-                </div>
-              )}
-            </Link>
+        {/* Contract-based workforce */}
+        <div
+          className="px-4 py-2 inline-flex whitespace-nowrap w-auto hover:text-[#dae470] hover:bg-[#3e5f5e] rounded relative flex items-center justify-between cursor-pointer"
+          onMouseEnter={() => setIsContractOpen(true)}
+          onMouseLeave={() => setIsContractOpen(false)}
+        >
+          <span>Contract based workforce</span>
+          {isContractOpen ? <FiChevronLeft /> : <FiChevronRight />}
+          {isContractOpen && (
+            <div className="absolute left-[-195px] top-0 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2">
+              <Link
+                href="/PayrollManagement"
+                className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+              >
+                Payroll Management
+              </Link>
+              <Link
+                href="/FlexibleHiring"
+                className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+              >
+                Flexible Hiring
+              </Link>
+            </div>
+          )}
+        </div>
 
-            <Link
-              href=" "
-              className="px-4 py-2 inline-flex whitespace-nowrap w-full hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-              onClick={() => setIsContractOpen(true)}
-              onMouseEnter={() => setIsContractOpen(true)}
-              onMouseLeave={() => setIsContractOpen(false)}
-            >
-              Contract-based workforce
-
-              {isContractOpen && (
-                <div
-                  className="absolute left-[-195px] top-0 w-48 bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
-                >
-                  <Link
-                    href="/PayrollManagement"
-                    className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-                    onClick={() => setIsContractOpen(false)}
-                  >
-                    Payroll Management
-                  </Link>
-                  <Link
-                    href="/FlexibleHiring"
-                    className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-                    onClick={() => setIsContractOpen(false)}
-                  >
-                    Flexible Hiring
-                  </Link>
-                </div>
-              )}
-            </Link>
-            <Link
-              href=" "
-              className="px-4 py-2 inline-flex whitespace-nowrap w-full hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-              onClick={() => setIsOutsourcingOpen(true)}
-              onMouseEnter={() => setIsOutsourcingOpen(true)}
-              onMouseLeave={() => setIsOutsourcingOpen(false)}
-            >
-              Outsourcing solutions
-
-              {isOutsourcingOpen && (
-                <div
-                  className="absolute left-[-290px] top-10 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
-                >
-                  <Link
-                    href="/OnDemandSkilledProfessionals"
-                    className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-                    onClick={() => setIsOutsourcingOpen(false)}
-                  >
-                    On-Demand skilled Professionals
-                  </Link>
-                  <Link
-                    href="/TaskSpecifics"
-                    className="px-4 py-2 inline-flex whitespace-nowrap hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
-                    onClick={() => setIsOutsourcingOpen(false)}
-                  >
-                    Task Specific Experts
-                  </Link>
-                </div>
-              )}
-            </Link>
-          </div>
-        )}
+        {/* Outsourcing solutions */}
+        <div
+          className="px-4 py-2 inline-flex whitespace-nowrap w-full hover:text-[#dae470] hover:bg-[#3e5f5e] rounded relative flex items-center justify-between cursor-pointer"
+          onMouseEnter={() => setIsOutsourcingOpen(true)}
+          onMouseLeave={() => setIsOutsourcingOpen(false)}
+        >
+          <span>Outsourcing solutions</span>
+          {isOutsourcingOpen ? <FiChevronLeft /> : <FiChevronRight />}
+          {isOutsourcingOpen && (
+            <div className="absolute left-[-285px] top-[-40px] w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2">
+              <Link
+                href="/OnDemandSkilledProfessionals"
+                className="block px-4 py-2 hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+              >
+                On-Demand skilled Professionals
+              </Link>
+              <Link
+                href="/TaskSpecifics"
+                className="px-4 py-2 inline-flex whitespace-nowrap hover:text-[#dae470] hover:bg-[#3e5f5e] rounded"
+              >
+                Task Specific Experts
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
+    )}
+  </div>
 
-      <Link href="/Partner" className="hover:text-[#dae470]">
-        Partner with us
-      </Link>
-    </div>
+  <Link href="/Partner" className="hover:text-[#dae470]">
+    Partner with us
+  </Link>
+</div>
   );
 };
 

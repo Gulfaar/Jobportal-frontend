@@ -33,25 +33,25 @@ const HowItWorksSection = () => {
 
   const steps = [
     {
-      icon: "/signupp.jpg",
+      icon: "/usericon.png",
       title: "Sign Up & Optimize Resume",
       description:
         "Register, create your profile & upload your resume. AI enhances your resume for better job visibility.",
     },
     {
-      icon: "/searchjob.jpg",
+      icon: "/green.png",
       title: "Find Jobs & Identify Skill Gaps",
       description:
         "AI job search matches you with the best roles. Detects knowledge/tech gaps & suggests upskilling.",
     },
     {
-      icon: "/aiimage.avif",
+      icon: "/searchicon.png",
       title: "AI Screening & Pre-Interview",
       description:
         "Take AI-driven tests & pre-video interviews. Get an AI match score for faster shortlisting.",
     },
     {
-      icon: "/gethired.avif",
+      icon: "/circle.png",
       title: "Get Hired & Grow",
       description:
         "Receive interview invites via WhatsApp, SMS, email & notification. Track applications, accept offers & upskill.",
