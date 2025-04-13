@@ -1,6 +1,21 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const Footer = () => {
+
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = () => {
+    if (!email.trim()) {
+      toast.error("Please fill in your email address");
+      return;
+    }
+    toast.success("Subscribed");
+    // You can also send the email to a backend here if needed
+    setEmail(""); // reset input after subscribing
+  };
+
   return (
     <footer className="bg-teal-900 w-full text-white">
       <div className="container  px-10 py-8  md:py-10">
@@ -80,10 +95,12 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Email Address"
+                value={email}
+        onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-3 rounded-md bg-transparent border border-white text-white placeholder-white text-sm focus:outline-none focus:ring-2 focus:ring-white/50"
                 aria-label="Email Address"
               />
-              <button className="w-full py-3 bg-white text-teal-900 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">
+              <button onClick={handleSubscribe} className="w-full py-3 bg-white text-teal-700 hover:text-teal-900 cursor-pointer rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">
                 Subscribe now
               </button>
             </div>
