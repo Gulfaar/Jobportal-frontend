@@ -306,7 +306,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
 )}
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <div className="flex gap-4 text-white font-[20px] md:mt-[-34px] w-full justify-end  relative  pr-2">
+        <div className="hidden md:flex  gap-4  text-white font-[20px] md:mt-[-34px] w-full justify-end  relative  pr-2">
   <Link href="/" className="hover:text-[#dae470]">
     Home
   </Link>
