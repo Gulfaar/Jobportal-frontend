@@ -6,6 +6,7 @@ import { loginUser } from "../Services/jobseekeer/AuthService";
 import { useRouter } from "next/navigation"; // Use Next.js router
 import { toast } from "react-toastify";
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { Circle } from 'lucide-react';
 import "react-toastify/dist/ReactToastify.css";
 
 const LoginPage: React.FC = () => {
@@ -86,15 +87,15 @@ const LoginPage: React.FC = () => {
         <div className=" ">
           <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-4 md:mb-6 text-center">Register</h3>
           <ul className="space-y-2 md:space-y-4 text-sm md:text-base text-white/90">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <img src="/icons/Gulfaar-icon2.svg" alt="dot" className="w-2 md:w-3 lg:w-4 h-2 md:h-3 lg:h-4 mt-1" />
-                <span className="text-sm md:text-base">
-                  A base job seeker refers to someone who is at the beginning of their job search journey.
-                </span>
-              </li>
-            ))}
-          </ul>
+  {Array.from({ length: 5 }).map((_, index) => (
+    <li key={index} className="flex items-start gap-2">
+      <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+      <span className="text-sm md:text-base">
+        A base job seeker refers to someone who is at the beginning of their job search journey.
+      </span>
+    </li>
+  ))}
+</ul>
         </div>
 
         <div className="mt-4 md:mt-6 text-center">
