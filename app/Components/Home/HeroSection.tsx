@@ -625,7 +625,7 @@ const JobLocations = () => {
               <div key={slideIndex} className="flex min-w-full gap-2 md:gap-5 px-3">
                 {locations.slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide).map((loc) => (
                   <div key={loc.name} className="flex flex-col  px-4 ml-2  md:ml-2 items-center  md:min-w-[100px] overflow-hidden">
-                    <Link href="/country/CountryPresence">
+                    <Link href={{pathname:"/country/CountryPresence",query:{county:loc.name},}}>
                       <Image src={loc.img} alt={loc.name} width={50} height={50} className=" w-10 h-10   md:w-16 md:h-16" />
                     </Link>
                     <p className="text-xs mt-1">{loc.name}</p>

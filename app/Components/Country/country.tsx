@@ -1,7 +1,11 @@
 "use client";
 import * as React from "react";
+import { useSearchParams } from "next/navigation";
+import { CountryData } from "../Data/Countrydata";
 
 const Header = () => {
+
+
   return (
     <header className="flex relative flex-wrap gap-5 justify-between w-full max-md:mr-1.5 max-md:max-w-full">
       <img
@@ -68,31 +72,39 @@ export const HeroSection = () => {
   );
 };
 
+interface PresenceHeroSectionProps {
+  countryParam: string;
+}
 
-export const PresenceHeroSection = () =>{
+
+export const PresenceHeroSection = ({countryParam }: PresenceHeroSectionProps) =>{
+
+  const country = countryParam
+  console.log("newwww",country);
+  
   return(
     <section className="self-center px-15 mt-9 py-10 w-full max-w-[1294px] max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
           <div className="w-[63%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col items-start self-stretch my-auto w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:mt-10 max-md:max-w-full">
               <h2 className="self-stretch text-3xl tracking-tight leading-[50px] max-md:max-w-full">
-                USA - Gulfaar's Presence  <br />
+                {`${country} - Gulfaar's Presence`}  <br />
                 <span className="text-[48px]">
-                Connecting Talent & Businesses Across USA
+              {  `Connecting Talent & Businesses Across ${country}`}
                 </span>
               </h2>
               <p className="mt-1 max-md:max-w-full">
                 Transform Your Career with Industry-Leading Skill Development
               </p>
               <p className="mt-9 max-w-full leading-9 text-black font-normal text-[24px] w-[672px] max-md:max-w-full">
-              Gulfaar is proud to be a leading *workforce solutions provider* in
-            USA, offering **recruitment, outsourcing, skill
-            development, and contract-based hiring* across multiple industries.
-            With a *strong local team and AI-powered hiring technology*, we
+              {`Gulfaar is proud to be a leading workforce solutions provider in
+            ${country}, offering recruitment, outsourcing, skill
+            development, and contract-based hiring across multiple industries.
+            With a strong local team and AI-powered hiring technology, we
             ensure that businesses find the right talent and job seekers access
-            the best career opportunities
+            the best career opportunities`}
               </p>
-              <button
+              {/* <button
                 className="flex gap-3 px-8 py-4 mt-12 text-sm leading-tight text-center text-white uppercase bg-teal-800 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
                 aria-label="Get Started"
               >
@@ -102,7 +114,7 @@ export const PresenceHeroSection = () =>{
                   className="object-contain shrink-0 w-3.5 aspect-[0.87]"
                   alt="Arrow icon"
                 />
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="ml-5 w-[37%] max-md:ml-0 max-md:w-full">
@@ -145,7 +157,37 @@ export const PresenceSection = () => {
   );
 };
 
-export const BranchesSection = () => {
+export const BranchesSection = ({ countryParam }:PresenceHeroSectionProps ) => {
+  const country = CountryData.find(
+    (item) => item.countryCode.toLowerCase() === countryParam.toLowerCase()
+  );
+
+  // Fallback dummy data
+  const fallbackBranches = {
+    title: "Country",
+    headOffice: "N/A",
+    regionalOffices: "N/A",
+    franchiseLocations: [],
+    contact: "N/A",
+    email: "contact@example.com",
+    mapImage:
+      "https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/ad1f07a80a140ebfc8b24d269863b03f6bbddf23?placeholderIfAbsent=true",
+    pinImage:
+      "https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/a447b2f1098832e365f5a2105227c6de3cd255d6?placeholderIfAbsent=true",
+  };
+
+  // Use fallback if country or branches is missing
+  const {
+    title,
+    headOffice,
+    regionalOffices,
+    franchiseLocations,
+    contact,
+    email,
+    mapImage,
+    pinImage,
+  } = country?.branches || fallbackBranches;
+
   return (
     <section className="flex flex-col justify-center items-center px-16 py-12 w-full bg-teal-800 max-md:px-5 max-md:max-w-full">
       <div className="w-full max-w-[1205px] max-md:max-w-full">
@@ -153,39 +195,40 @@ export const BranchesSection = () => {
           <div className="w-[42%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow items-start text-2xl text-white max-md:mt-10 max-md:max-w-full">
               <h2 className="self-stretch text-4xl font-semibold max-md:max-w-full max-md:text-3xl">
-                Our Branches in USA
+                {title}
               </h2>
-              <p className="mt-12 max-md:mt-10">Head Office: [City, Address]</p>
-              <p className="mt-8">Regional Offices: [City, Address]</p>
+              <p className="mt-12 max-md:mt-10">Head Office: {headOffice}</p>
+              <p className="mt-8">Regional Offices: {regionalOffices}</p>
               <p className="self-stretch mt-8 mr-6 max-md:mr-2.5 max-md:max-w-full">
-                Franchise Locations: [List of locations]
+                Franchise Locations: {franchiseLocations.join(", ")}
               </p>
-              <p className="self-stretch mt-8 mr-6 max-md:mr-2.5 max-md:max-w-full">
-                Franchise Locations: [List of locations]
-              </p>
-              <p className="mt-8">contact US:</p>
-              <p className="mt-8">Email ID:</p>
+              <p className="mt-8">Contact Us: {contact}</p>
+              <p className="mt-8">Email ID: {email}</p>
             </div>
           </div>
-          <div className="ml-5 w-[58%] max-md:ml-0 max-md:w-full">
-            <div className="flex overflow-hidden relative flex-col grow items-end px-20 pt-24 pb-52 rounded-xl min-h-[336px] max-md:px-5 max-md:pb-24 max-md:mt-10 max-md:max-w-full">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/ad1f07a80a140ebfc8b24d269863b03f6bbddf23?placeholderIfAbsent=true"
-                alt="USA map"
-                className="object-cover absolute inset-0 size-full"
-              />
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/a447b2f1098832e365f5a2105227c6de3cd255d6?placeholderIfAbsent=true"
-                alt="Location pin"
-                className="object-contain w-10 aspect-square"
-              />
-            </div>
-          </div>
+          {countryParam.toLowerCase() !== "india" && (
+  <div className="ml-5 w-[58%] max-md:ml-0 max-md:w-full">
+    <div className="flex overflow-hidden relative flex-col grow items-end px-20 pt-24 pb-52 rounded-xl min-h-[336px] max-md:px-5 max-md:pb-24 max-md:mt-10 max-md:max-w-full">
+      <img
+        src={mapImage}
+        alt="Map"
+        className="object-cover absolute inset-0 size-full"
+      />
+      <img
+        src={pinImage}
+        alt="Location pin"
+        className="object-contain w-10 aspect-square"
+      />
+    </div>
+  </div>
+)}
+
         </div>
       </div>
     </section>
   );
 };
+
 
 export const TeamMember = ({
   image,
@@ -201,7 +244,7 @@ export const TeamMember = ({
       <img
         src={image}
         alt={`${name} - ${position}`}
-        className="object-contain max-w-full rounded-full aspect-square w-[122px]"
+        className="object-contain max-w-full rounded-full aspect-square w-[134px]"
       />
       <h3 className="mt-8 text-xl font-semibold leading-none">{name}</h3>
       <p className="mt-8 text-sm leading-none">{position}</p>
@@ -209,8 +252,10 @@ export const TeamMember = ({
   );
 };
 
-export const TeamSection = () => {
-  const teamMembers = [
+export const TeamSection = ({ countryParam }: PresenceHeroSectionProps ) => {
+  console.log("countryParam:", countryParam);
+
+  const defaultTeam = [
     {
       image:
         "https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/3a8c6330db1816bc907baba20e4a32543e68ee62?placeholderIfAbsent=true",
@@ -237,16 +282,26 @@ export const TeamSection = () => {
     },
   ];
 
+  const countryData = CountryData.find(
+    (item) => item.countryCode === countryParam
+  );
+  const countryTeam = countryData?.team;
+
+  console.log("countryTeam:", countryTeam);
+
+  const teamMembers = countryTeam?.members || defaultTeam;
+  const title = countryTeam?.title || "Meet Our Team in USA";
+  const description =
+    countryTeam?.description ||
+    "Our dedicated team of recruitment experts, HR specialists, and business consultants ensures seamless hiring, training, and workforce management. Want to connect? Reach out to our team for hiring solutions or job opportunities!";
+
   return (
     <section className="flex flex-col items-center px-10 py-12 w-full max-md:px-5 max-md:max-w-full">
       <h2 className="text-5xl font-semibold tracking-tight leading-snug text-black max-md:max-w-full max-md:text-4xl">
-        Meet Our Team in USA
+        {title}
       </h2>
       <p className="mt-8 text-xl leading-9 text-center text-black w-[1069px] max-md:max-w-full">
-        Our dedicated team of recruitment experts, HR specialists, and business
-        consultants ensures seamless hiring, training, and workforce management.
-        Want to connect ? Reach out to our team for hiring solutions or job
-        opportunities!
+        {description}
       </p>
       <div className="self-stretch mt-12 max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
@@ -267,6 +322,7 @@ export const TeamSection = () => {
     </section>
   );
 };
+
 
 export const IndustryItem = ({
   icon,
@@ -330,8 +386,8 @@ export const IndustriesSection = () => {
   ];
 
   return (
-    <section className="flex flex-col justify-center items-center px-20 py-12 w-full  text-white bg-teal-800 max-md:px-5 max-md:max-w-full">
-      <div className="flex flex-col w-full max-w-[1096px] max-md:max-w-full">
+    <section className="flex flex-col justify-center items-center  w-full  text-black  max-md:px-5 max-md:max-w-full bg-yellow-300  " style={{ backgroundImage: "url('/Testimonial.png')", opacity:1 }} >
+      <div className="flex flex-col px-20 py-15   max-md:max-w-full bg-[rgba(255,242,0,0.4)] w-full">
         <h2 className="self-center text-5xl font-semibold tracking-tight leading-snug max-md:max-w-full max-md:text-4xl">
           Industries We Serve in USA
         </h2>
@@ -361,7 +417,7 @@ export const BenefitCard = ({
 }) => {
   return (
     <div className="grow px-6 py-16 w-full h-full text-center text-white bg-red-400 rounded-xl max-md:px-5 max-md:mt-10">
-      <h3 className="text-2xl font-semibold leading-7">{title}</h3>
+      <h3 className="text-[19px] font-semibold leading-7">{title}</h3>
       <p className="mt-12 text-xl leading-7 max-md:mt-10">{description}</p>
     </div>
   );
@@ -370,7 +426,7 @@ export const BenefitCard = ({
 export const BenefitsSection = () => {
   const benefits = [
     {
-      title: "Local Expertise & Global Network",
+      title: "Local Expertise  & Global Network",
       description:
         "We understand [Country Name]'s market trends and hiring needs",
     },
@@ -399,7 +455,7 @@ export const BenefitsSection = () => {
         Looking for workforce solutions in USA ? Contact us today!
       </p>
       <div className="self-stretch mt-12  max-md:mt-10 max-md:max-w-full ">
-        <div className="flex gap-5 max-md:flex-col">
+        <div className="flex  max-md:flex-col">
           {benefits.map((benefit, index) => (
             <div
               key={index}
