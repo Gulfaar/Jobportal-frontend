@@ -39,7 +39,7 @@ export const CountryData = [
           },
           {
             image: "/unkouwn.jpeg",
-            name: "Marcello Zalai",
+            name: "MARCELLO ZALAI",
             position: "Sales Manager",
           },
         ],

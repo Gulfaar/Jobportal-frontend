@@ -250,7 +250,7 @@ export const TeamMember = ({
       className="rounded-full"
     />
   </div>
-  <h3 className="mt-8 text-xl font-semibold leading-none">{name}</h3>
+  <h3 className="mt-8 text-xl font-semibold inline-flex whitespace-nowrap leading-none">{name}</h3>
   <p className="mt-8 text-sm leading-none">{position}</p>
 </div>
   );
