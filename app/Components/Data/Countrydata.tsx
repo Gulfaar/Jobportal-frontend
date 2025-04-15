@@ -10,7 +10,7 @@ export const CountryData = [
       },
       branches: {
         title: "Our Branches in USA",
-        headOffice: "Head Office: New York, 123 Gulfaar St",
+        headOffice: "2901 West Coast Hwy, 397 Newport Beach, CA 92663",
         regionalOffices: "Regional Offices: Los Angeles, Chicago, Houston",
         franchiseLocations: ["Dallas", "San Francisco", "Seattle"],
         contact: "contact@gulfaarusa.com",

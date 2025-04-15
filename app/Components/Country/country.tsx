@@ -167,7 +167,6 @@ export const BranchesSection = ({ countryParam }:PresenceHeroSectionProps ) => {
   const fallbackBranches = {
     title: "Country",
     headOffice: "N/A",
-    regionalOffices: "N/A",
     franchiseLocations: [],
     contact: "N/A",
     email: "contact@example.com",
@@ -181,7 +180,7 @@ export const BranchesSection = ({ countryParam }:PresenceHeroSectionProps ) => {
   const {
     title,
     headOffice,
-    regionalOffices,
+    
     franchiseLocations,
     contact,
     email,
@@ -199,7 +198,7 @@ export const BranchesSection = ({ countryParam }:PresenceHeroSectionProps ) => {
                 {title}
               </h2>
               <p className="mt-12 max-md:mt-10">Head Office: {headOffice}</p>
-              <p className="mt-8">Regional Offices: {regionalOffices}</p>
+              
               <p className="self-stretch mt-8 mr-6 max-md:mr-2.5 max-md:max-w-full">
                 Franchise Locations: {franchiseLocations.join(", ")}
               </p>
