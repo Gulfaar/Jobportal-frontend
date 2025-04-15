@@ -2,6 +2,7 @@
 import * as React from "react";
 import { useSearchParams } from "next/navigation";
 import { CountryData } from "../Data/Countrydata";
+import Image from "next/image";
 
 const Header = () => {
 
@@ -241,14 +242,18 @@ export const TeamMember = ({
 }) => {
   return (
     <div className="flex flex-col grow items-center px-13 py-10 w-full h-full text-center text-white bg-[#DA6B64] rounded-xl max-md:px-5 max-md:mt-10">
-      <img
-        src={image}
-        alt={`${name} - ${position}`}
-        className="object-contain max-w-full rounded-full aspect-square w-[134px]"
-      />
-      <h3 className="mt-8 text-xl font-semibold leading-none">{name}</h3>
-      <p className="mt-8 text-sm leading-none">{position}</p>
-    </div>
+  <div className="relative w-[134px] h-[134px] rounded-full overflow-hidden">
+    <Image
+      src={image}
+      alt={`${name} - ${position}`}
+      layout="fill"
+      objectFit="cover"
+      className="rounded-full"
+    />
+  </div>
+  <h3 className="mt-8 text-xl font-semibold leading-none">{name}</h3>
+  <p className="mt-8 text-sm leading-none">{position}</p>
+</div>
   );
 };
 
@@ -386,12 +391,12 @@ export const IndustriesSection = () => {
   ];
 
   return (
-    <section className="flex flex-col justify-center items-center  w-full  text-black  max-md:px-5 max-md:max-w-full bg-yellow-300  " style={{ backgroundImage: "url('/Testimonial.png')", opacity:1 }} >
+    <section className="flex flex-col justify-center items-center  w-full  text-black   max-md:max-w-full bg-yellow-300  " style={{ backgroundImage: "url('/Testimonial.png')", opacity:1 }} >
       <div className="flex flex-col px-20 py-15   max-md:max-w-full bg-[rgba(255,242,0,0.4)] w-full">
         <h2 className="self-center text-5xl font-semibold tracking-tight leading-snug max-md:max-w-full max-md:text-4xl">
           Industries We Serve in USA
         </h2>
-        <div className="flex flex-wrap gap-10 mt-12 w-full max-w-[1045px] max-md:mt-10 max-md:max-w-full">
+        <div className="flex flex-wrap gap-10 mt-12 w-full max-w-[1058px] max-md:mt-10 max-md:max-w-full">
           <IndustryItem {...industries[0]} />
           <IndustryItem {...industries[1]} />
         </div>
@@ -399,7 +404,7 @@ export const IndustriesSection = () => {
           <IndustryItem {...industries[2]} />
           <IndustryItem {...industries[3]} />
         </div>
-        <div className="flex flex-wrap gap-10 mt-12 w-full max-md:mt-10 max-md:max-w-full">
+        <div className="flex flex-wrap gap-10 mt-12 w-full max-w-[1125px] max-md:mt-10 max-md:max-w-full">
           <IndustryItem {...industries[4]} />
           <IndustryItem {...industries[5]} />
         </div>

@@ -23,7 +23,7 @@ export const CountryData = [
         description: "Our dedicated team of recruitment experts, HR specialists, and business consultants ensures seamless hiring, training, and workforce management. Want to connect? Reach out to our team for hiring solutions or job opportunities!",
         members: [
           {
-            image: "/Lida.jpeg",
+            image: "/lida.jpeg",
             name: "LIDA AMIN",
             position: "Country Director",
           },
@@ -39,8 +39,8 @@ export const CountryData = [
           },
           {
             image: "/unkouwn.jpeg",
-            name: "BDM",
-            position: "Business Development Manager",
+            name: "Marcello Zalai",
+            position: "Sales Manager",
           },
         ],
       },
