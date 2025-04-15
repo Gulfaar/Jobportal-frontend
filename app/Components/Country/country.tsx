@@ -202,6 +202,7 @@ export const BranchesSection = ({ countryParam }:PresenceHeroSectionProps ) => {
               <p className="self-stretch mt-8 mr-6 max-md:mr-2.5 max-md:max-w-full">
                 Franchise Locations: {franchiseLocations.join(", ")}
               </p>
+              <p className="mt-8">Telephone: 9496629473</p>
               <p className="mt-8">Contact Us: {contact}</p>
               <p className="mt-8">Email ID: {email}</p>
             </div>
