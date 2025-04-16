@@ -627,11 +627,10 @@ const JobLocations = () => {
             100% { transform: translateX(-50%); }
           }
           .animate-marquee {
-            animation: marquee 20s linear infinite;
+            display: flex;
+            animation: marquee 2s linear infinite;
           }
-          .pause-marquee {
-            animation-play-state: paused !important;
-          }
+          
         `}
       </style>
     </div>
