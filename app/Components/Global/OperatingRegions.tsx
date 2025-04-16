@@ -1,70 +1,123 @@
-import React from "react";
+import Image from "next/image";
 
-const OperatingRegions = () => {
+const bulletIcon = "/icons/dot-icon.png"; // Replace with your own bullet icon
+
+const regions = [
+  {
+    name: "Middle East & GCC",
+    countries: "UAE | Saudi Arabia | Qatar | Kuwait | Oman | Bahrain",
+    image: "/icons/middle-east.png",
+    points: [
+      "Manpower supply for oil & gas, construction, hospitality, and healthcare sectors.",
+      "Contract-based and project-based workforce solutions.",
+      "End-to-end visa processing & placement assistance.",
+    ],
+  },
+  {
+    name: "Europe",
+    countries: "Germany | UK | France | Spain | Netherlands | Poland | More",
+    image: "/icons/europe.png",
+    points: [
+      "Global mobility services for job seekers aiming for European markets.",
+      "AI-powered language training, cultural adaptation, and workforce recruitment.",
+      "Industry-focused hiring for engineering, manufacturing, finance, and hospitality.",
+    ],
+  },
+  {
+    name: "South America",
+    countries: "Brazil | Argentina | Chile | Colombia | More",
+    image: "/icons/south-america.png",
+    points: [
+      "Skilled labor mobility solutions for major industries.",
+      "Partnerships for corporate hiring and workforce training.",
+    ],
+  },
+  {
+    name: "Asia-Pacific",
+    countries: "India | China | Malaysia | Singapore | Australia | Japan | More",
+    image: "/icons/asia-pacific.png",
+    points: [
+      "BPO, IT outsourcing, and tech-driven workforce solutions.",
+      "Corporate & industrial staffing for multinational businesses.",
+      "Training and upskilling programs for career enhancement.",
+    ],
+  },
+  {
+    name: "Africa",
+    countries: "South Africa | Nigeria | Kenya | Egypt | More",
+    image: "/icons/africa.png",
+    points: [
+      "Skilled and semi-skilled workforce deployment for construction, mining, and energy sectors.",
+      "Job training programs & international hiring solutions.",
+      "Rapidly growing outsourcing solutions for call centers and IT services.",
+    ],
+  },
+  {
+    name: "North America",
+    countries: "USA | Canada | Mexico",
+    image: "/icons/north-america.png",
+    points: [
+      "Specialized hiring for IT, healthcare, construction, BPO, and logistics sectors.",
+      "Workforce solutions for corporate and industrial businesses.",
+    ],
+  },
+];
+
+export default function WhereWeOperate() {
   return (
-    <section className="flex flex-col items-center px-10 w-full max-w-[1307px]">
-      <h2 className="mt-11 text-2xl font-semibold tracking-tight leading-none text-black max-md:mt-10">
+    <section className="bg-[#17403F] py-10 px-4 sm:py-12 sm:px-6 md:py-16 md:px-10 lg:py-20 lg:px-16 xl:px-24 text-white w-full">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-center mb-8 sm:mb-10 lg:mb-12">
         Where We Operate
       </h2>
 
-      <div className="mt-12 w-full max-w-[1000px] max-md:mt-10 max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col">
-          <div className="w-3/12 max-md:ml-0 max-md:w-full flex justify-center">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/818520f53de898a0a47ef936931c4c9468f0997b?placeholderIfAbsent=true"
-              alt="Operating region flag 1"
-              className="object-contain shrink-0 max-w-full aspect-square w-[100px] max-md:mt-10"
-            />
-          </div>
-          <div className="ml-5 w-3/12 max-md:ml-0 max-md:w-full flex justify-center">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/3b9a5435eccfe439c9d8c52d0cc0c2bb60f3a0b3?placeholderIfAbsent=true"
-              alt="Operating region flag 2"
-              className="object-contain shrink-0 max-w-full aspect-square w-[100px] max-md:mt-10"
-            />
-          </div>
-          <div className="ml-5 w-3/12 max-md:ml-0 max-md:w-full flex justify-center">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/f4fbe6ef04d26929ad7b90c8979fb8482282e458?placeholderIfAbsent=true"
-              alt="Operating region flag 3"
-              className="object-contain shrink-0 max-w-full aspect-square w-[100px] max-md:mt-10"
-            />
-          </div>
-          <div className="ml-5 w-3/12 max-md:ml-0 max-md:w-full flex justify-center">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/f9aa8ac03a91ccb1455af6dc9176f2f46edf8c87?placeholderIfAbsent=true"
-              alt="Operating region flag 4"
-              className="object-contain shrink-0 max-w-full aspect-square w-[100px] max-md:mt-10"
-            />
-          </div>
-        </div>
-      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-7xl mx-auto">
+        {regions.map((region, idx) => (
+          <div key={idx} className="flex gap-4 sm:gap-5 items-start">
+            {/* Icon */}
+            <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 mt-1">
+              <Image
+                src={region.image}
+                alt={region.name}
+                width={48}
+                height={48}
+                className="rounded-full object-cover"
+                sizes="(max-width: 640px) 40px, 48px"
+              />
+            </div>
 
-      <div className="mt-12 ml-4 w-full max-w-[1330px] max-md:mt-10 max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col">
-          <div className="w-[46%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:mr-0 max-md:max-w-full">
-              <h3 className="self-center text-2xl font-semibold tracking-tight leading-none text-teal-800">
-                Expanding to More Regions!
+            {/* Region Content */}
+            <div className="text-[#C1DDDA] flex-1">
+              <h3 className="text-white font-semibold text-lg sm:text-xl mb-1">
+                {region.name}
               </h3>
-              <p className="mt-8 text-xl tracking-tight leading-8 text-black max-md:max-w-full">
-                We are constantly growing, adding new markets and creating
-                stronger global connections to meet the ever-changing needs of
-                businesses and job seekers.
+              <p className="text-sm sm:text-base text-[#C1DDDA] mb-2">
+                {region.countries}
               </p>
+              <ul className="space-y-2">
+                {region.points.map((point, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm sm:text-base leading-relaxed">
+                    <Image
+                      src={bulletIcon}
+                      alt="bullet"
+                      width={12}
+                      height={12}
+                      className="mt-1.5 flex-shrink-0"
+                    />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-          <div className="ml-5 w-[54%] max-md:ml-0 max-md:w-full">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/5269587029bc627a5ebf875503c016acc0ce1651?placeholderIfAbsent=true"
-              alt="World map showing expansion regions"
-              className="object-contain grow w-full aspect-[2.03] max-md:max-w-full"
-            />
-          </div>
-        </div>
+        ))}
       </div>
+
+      <p className="text-center text-white font-medium text-sm sm:text-[15px] mt-10 sm:mt-12 lg:mt-16 max-w-3xl mx-auto">
+        <span className="block font-bold text-base sm:text-[17px] mb-1">
+          Expanding to More Regions!
+        </span>
+        We are constantly growing, adding new markets and creating stronger global connections to meet the ever-changing needs of businesses and job seekers.
+      </p>
     </section>
   );
-};
-
-export default OperatingRegions;
+}

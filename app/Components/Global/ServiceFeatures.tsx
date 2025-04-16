@@ -1,70 +1,66 @@
-import React from "react";
-
-const FeatureCard = ({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) => {
+export default function TrustedPartner() {
   return (
-    <article className="flex flex-wrap gap-10 p-8 mt-8 w-full text-black rounded-xl border border-white border-solid max-w-[1161px] shadow-[0px_0px_8px_rgba(0,0,0,0.25)] max-md:px-5 max-md:max-w-full">
-      <h3 className="grow shrink text-xl font-semibold w-[253px]">{title}</h3>
-      <p className="grow shrink text-lg leading-none w-[511px] max-md:max-w-full">
-        {description}
-      </p>
-    </article>
-  );
-};
+    <section className="w-full px-4 sm:px-6 lg:px-24 py-16 text-[#17403F]">
+      {/* Row 1: Heading and First Card */}
+      <div className="flex flex-col lg:flex-row items-start justify-between gap-6 mb-6">
+        {/* Left: Heading */}
+        <div className="flex-1 mt-4">
+          <h2 className="text-3xl sm:text-4xl font-semibold max-w-xl">
+            What Makes Gulfaar a Trusted Global Workforce Partner?
+          </h2>
+        </div>
+        {/* Right: First Card */}
+        <div className="flex-1">
+          <div className="bg-[#2B6762] text-white rounded-lg p-9 h-38">
+            <h3 className="text-lg font-semibold">
+              AI-Powered Recruitment Solutions
+            </h3>
+            <p className="text-sm mt-2">
+              Intelligent hiring & talent-matching in multiple countries.
+            </p>
+          </div>
+        </div>
+      </div>
 
-const ServiceFeatures = () => {
-  const features = [
-    {
-      title: "AI-Powered Recruitment Solutions",
-      description:
-        "Intelligent hiring & talent-matching in multiple countries.",
-    },
-    {
-      title: "Cross-Border Workforce Management",
-      description: "Seamless hiring, payroll, and compliance solutions.",
-    },
-    {
-      title: "Industry-Specific Expertise",
-      description:
-        "Covering healthcare, IT, construction, finance, logistics, and more.",
-    },
-    {
-      title: "Global Network of Employers & Job Seekers",
-      description: "Thousands of professionals placed in international jobs.",
-    },
-    {
-      title: "Training & Language Support for Relocation",
-      description: "Helping candidates prepare for global careers.",
-    },
-  ];
+      {/* Row 2: Two Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+        <div className="bg-[#2B6762] text-white rounded-lg p-9 h-38">
+          <h3 className="text-lg font-semibold">
+            Cross-Border Workforce Management
+          </h3>
+          <p className="text-sm mt-2">
+            Seamless hiring, payroll, and compliance solutions.
+          </p>
+        </div>
+        <div className="bg-[#2B6762] text-white rounded-lg p-9 h-38">
+          <h3 className="text-lg font-semibold">
+            Training & Language Support for Relocation
+          </h3>
+          <p className="text-sm mt-2">
+            Helping candidates prepare for global careers.
+          </p>
+        </div>
+      </div>
 
-  return (
-    <section className="flex flex-col items-center w-full max-w-[1307px]">
-      {/* First card has different margin-top */}
-      <article className="flex flex-wrap gap-10 p-8 mt-12 w-full text-black rounded-xl border border-white border-solid max-w-[1161px] shadow-[0px_0px_8px_rgba(0,0,0,0.25)] max-md:px-5 max-md:mt-10 max-md:max-w-full">
-        <h3 className="grow shrink text-xl font-semibold w-[253px]">
-          {features[0].title}
-        </h3>
-        <p className="grow shrink text-lg leading-none w-[511px] max-md:max-w-full">
-          {features[0].description}
-        </p>
-      </article>
-
-      {/* Render the rest of the features */}
-      {features.slice(1).map((feature, index) => (
-        <FeatureCard
-          key={index}
-          title={feature.title}
-          description={feature.description}
-        />
-      ))}
+      {/* Row 3: Two Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="bg-[#2B6762] text-white rounded-lg p-9 h-38">
+          <h3 className="text-lg font-semibold">
+            Global Network of Employers & Job Seekers
+          </h3>
+          <p className="text-sm mt-2">
+            Thousands of professionals placed in international jobs.
+          </p>
+        </div>
+        <div className="bg-[#2B6762] text-white rounded-lg p-9 h-38">
+          <h3 className="text-lg font-semibold">
+            Industry-Specific Expertise
+          </h3>
+          <p className="text-sm mt-2">
+            Covering healthcare, IT, construction, finance, logistics, and more.
+          </p>
+        </div>
+      </div>
     </section>
   );
-};
-
-export default ServiceFeatures;
+}

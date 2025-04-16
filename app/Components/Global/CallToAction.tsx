@@ -1,36 +1,33 @@
 import React from "react";
 
-
 const CallToAction = () => {
   return (
-    <section className="flex flex-col items-center mt-12 max-w-[1307px] px-4 md:px-0">
-      <h2 className="text-2xl font-semibold text-teal-800 text-center max-md:mt-10 max-md:max-w-full">
-        Gulfaar: Bridging Talent & Opportunities Worldwide!
-      </h2>
+    <section
+      className="w-full bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url('/images/call-bg.png')` }}
+    >
+      {/* Overlay with 50% yellow */}
+      <div className="w-full h-full bg-[rgba(255,242,0,0.5)]">
+        <div className="flex flex-col items-center justify-center text-center px-4 py-20 sm:py-24 md:py-32 text-black">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug whitespace-normal lg:whitespace-nowrap max-w-full">
+  Gulfaar: Bridging Talent & Opportunities Worldwide
+</h1>
 
-      <p className="mt-8 text-xl text-center text-black max-w-[768px] max-md:max-w-full">
-        With offices, hiring partners, and training centers across the world, we
-        ensure businesses get the best talent and job seekers find the right
-        opportunities. No matter where you are, Gulfaar connects you to a world
-        of possibilities!
+<p className="mt-8 sm:mt-10 lg:mt-12 text-center text-black font-medium text-sm sm:text-base md:text-lg max-w-[450px] mx-auto leading-relaxed">
+        With offices, hiring partners, and training centers across the world, we ensure
+        businesses get the best talent and job seekers find the right opportunities. No matter
+        where you are, Gulfaar connects you to a world of possibilities!
       </p>
 
-      <a
-        href="#"
-        className="flex items-center justify-center gap-5 px-7 py-5 mt-12 text-base text-white bg-teal-800 rounded-xl w-[215px] max-md:w-full max-md:px-5 max-md:mt-10"
-        aria-label="Contact with Gulfaar"
-      >
-        <span className="font-semibold">Contact us</span>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/52c7915de3873c47014d662d56ee9b4eb1a7648f?placeholderIfAbsent=true"
-          alt="Contact icon"
-          className="object-contain w-[23px]"
-        />
-      </a>
-
-      <p className="mt-12 text-xl text-black text-center py-4 max-md:mt-10 max-md:max-w-full">
-        Looking to hire or work internationally? Contact us today!
-      </p>
+          {/* Bottom section: text + button */}
+          <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
+            <p className="text-base font-medium">Looking to hire or work internationally?</p>
+            <button className="px-6 py-3 bg-teal-800 text-white rounded-md hover:bg-teal-700 transition">
+              Contact Now
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

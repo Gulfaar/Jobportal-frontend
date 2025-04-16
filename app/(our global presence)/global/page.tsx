@@ -1,8 +1,8 @@
 "use client";
 import CallToAction from "@/app/Components/Global/CallToAction";
 import GlobalPresenceInfo from "@/app/Components/Global/GlobalPresenceInfo";
-import OperatingRegions from "@/app/Components/Global/OperatingRegions";
-import ServiceFeatures from "@/app/Components/Global/ServiceFeatures";
+import WhereWeOperate from "@/app/Components/Global/OperatingRegions";
+import TrustedPartner from "@/app/Components/Global/ServiceFeatures";
 import Header from "@/app/Components/Header/Header";
 import Footer from "@/app/Components/Home/Footer";
 import * as React from "react";
@@ -16,8 +16,8 @@ function OurGlobalPresence() {
         subtitle="Connecting Talent & Businesses Across the World"
          />
       <GlobalPresenceInfo />
-      <OperatingRegions />
-      <ServiceFeatures />
+      <WhereWeOperate />
+      <TrustedPartner />
       <CallToAction />
       <Footer/>
       
