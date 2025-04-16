@@ -574,8 +574,6 @@ const JobLocations = () => {
     { name: "BRAZIL", img: "/brazil.png" },
     { name: "JAPAN", img: "/japan.png" },
     { name: "CHINA", img: "/china.png" },
-    // { name: "UK", img: "/usa.png" },
-    // { name: "SPAIN", img: "/america1.png" },
     { name: "PARIS", img: "/america1.png" },
     { name: "INDIA", img: "/india.png" },
     { name: "GERMANY", img: "/germany2.png" },
