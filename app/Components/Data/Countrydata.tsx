@@ -14,6 +14,7 @@ export const CountryData = [
         regionalOffices: "Regional Offices: Los Angeles, Chicago, Houston",
         franchiseLocations: ["Dallas", "San Francisco", "Seattle"],
         contact: "contact@gulfaarusa.com",
+        phone:"949-662-9473",
         email: "info@gulfaarusa.com",
         mapImage: "https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/ad1f07a80a140ebfc8b24d269863b03f6bbddf23?placeholderIfAbsent=true",
         pinImage: "https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/a447b2f1098832e365f5a2105227c6de3cd255d6?placeholderIfAbsent=true",
