@@ -14,7 +14,7 @@ const FlexibleHiringPage = () => {
             <Head>
             <title>FlexibleHiring</title>
           </Head>
-          <Header title={"Flexible Hiring"} subtitle={""} />
+          <Header title={"Flexible Hiring"} subtitle={"Flexible Workforce Solutions for Every Need"} />
           <div className="flex-1 flex  flex-col items-center justify-center  w-full">
             {/* <FlexibleHead /> */}
             <FlexibleHiringModels />

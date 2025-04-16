@@ -17,50 +17,39 @@ const SkillDevelopment: React.FC = () => {
 
       {/* Unlock Your Career Potential Section */}
       <section className="w-full max-w-[1294px] px-4 md:px-6 mx-auto py-10 md:py-16">
-  <div className="flex flex-col-reverse md:flex-row items-center gap-10">
-    
-    {/* Text Section */}
-    <div className="w-full md:w-[63%]">
-      <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-teal-800 leading-tight">
-      Unlock Your Career Potential with
-      </h2>
+    <div className="flex flex-col-reverse md:flex-row items-stretch gap-10">
       
-      <p className="mt-3 text-[22px] sm:text-[26px] md:text-[36px] font-bold text-teal-800 leading-snug">
-      Gulfaar's Skill Development Programs
-      </p>
+      {/* Text Section */}
+      <div className="w-full md:w-[63%] flex flex-col justify-center">
+        <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-teal-800 leading-tight">
+          Unlock Your Career Potential with
+        </h2>
+        
+        <p className="mt-3 text-[22px] sm:text-[26px] md:text-[36px] font-bold text-teal-800 leading-snug">
+          Gulfaar's Skill Development Programs
+        </p>
 
-      <p className="mt-6 text-base sm:text-lg text-gray-700">
-      Transform Your Career with Industry-Leading Skill Development
-      </p>
+        <p className="mt-6 text-base sm:text-lg text-gray-700">
+          Transform Your Career with Industry-Leading Skill Development
+        </p>
 
-      <p className="mt-6 text-base sm:text-lg text-neutral-900 leading-relaxed">
-      At Gulfaar, we believe that skills are the foundation of success. Whether you're a fresh graduate<br className="hidden sm:block" />
-        a professional looking to upskill, or someone seeking to switch careers, our Skill Development Programs are designed to equip you with industry-relevant expertise using the latest AI-powered learning techniques
-      </p>
+        <p className="mt-6 text-base sm:text-lg text-neutral-900 leading-relaxed">
+          At Gulfaar, we believe that skills are the foundation of success. Whether you're a fresh graduate
+          <br className="hidden sm:block" />
+          a professional looking to upskill, or someone seeking to switch careers, our Skill Development Programs are designed to equip you with industry-relevant expertise using the latest AI-powered learning techniques
+        </p>
+      </div>
 
-      {/* <button
-        className="flex items-center gap-2 px-6 py-3 mt-8 text-sm sm:text-base font-medium text-white uppercase bg-teal-800 rounded-full tracking-wide hover:bg-teal-700 transition"
-        aria-label="Get Started"
-      >
-        Get Started
+      {/* Image Section */}
+      <div className="w-full md:w-[37%] flex items-center">
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/6307c969f4753633a930c857def46cbf555e5466?placeholderIfAbsent=true"
-          className="w-4 h-4 object-contain"
-          alt="Arrow icon"
+          src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c59f9f64f3d931e65c3207dc47edd4bcc02e16?placeholderIfAbsent=true"
+          alt="Career development illustration"
+          className="w-full h-[80%] object-cover rounded-3xl max-h-[400px] md:max-h-full"
         />
-      </button> */}
+      </div>
     </div>
-
-    {/* Image Section */}
-    <div className="w-full md:w-[37%]">
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c59f9f64f3d931e65c3207dc47edd4bcc02e16?placeholderIfAbsent=true"
-        alt="Career development illustration"
-        className="w-full object-cover rounded-3xl"
-      />
-    </div>
-  </div>
-</section>
+  </section>
 
 
 

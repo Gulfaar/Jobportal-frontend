@@ -87,15 +87,44 @@ const LoginPage: React.FC = () => {
         <div className=" ">
           <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-4 md:mb-6 text-center">Register</h3>
           <ul className="space-y-2 md:space-y-4 text-sm md:text-base text-white/90">
-  {Array.from({ length: 5 }).map((_, index) => (
-    <li key={index} className="flex items-start gap-2">
-      <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
-      <span className="text-sm md:text-base">
-        A base job seeker refers to someone who is at the beginning of their job search journey.
-      </span>
-    </li>
-  ))}
+  <li className="flex items-start gap-2">
+    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+    <span className="text-sm md:text-base">
+      Let our AI-powered platform highlight your strengths and boost your visibility to employers.
+    </span>
+  </li>
+  <li className="flex items-start gap-2">
+    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+    <span className="text-sm md:text-base">
+      Let our AI-powered platform highlight your strengths and boost your visibility to employers.
+    </span>
+  </li>
+  <li className="flex items-start gap-2">
+    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+    <span className="text-sm md:text-base">
+      Add your skills, experience, and preferred job sectors to get matched faster.
+    </span>
+  </li>
+  <li className="flex items-start gap-2">
+    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+    <span className="text-sm md:text-base">
+      Our AI finds the best job opportunities based on your profile — no endless searching.
+    </span>
+  </li>
+  <li className="flex items-start gap-2">
+    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+    <span className="text-sm md:text-base">
+      Apply for verified positions across 22+ countries with trusted employers.
+    </span>
+  </li>
+  <li className="flex items-start gap-2">
+    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+    <span className="text-sm md:text-base">
+      Get certified, interview-ready, and deployed with end-to-end career assistance from Gulfaar.
+    </span>
+  </li>
 </ul>
+
         </div>
 
         <div className="mt-4 md:mt-6 text-center">

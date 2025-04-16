@@ -22,7 +22,7 @@ const RegulationsPage = () => {
             <Head>
             <title>Regulations</title>
           </Head>
-          <Header title={"Regulations"} subtitle={""} />
+          <Header title={"Regulations"} subtitle={"At Gulfaar, we are committed to legal compliance,"} />
           <div className="flex-1 flex  flex-col items-center justify-center  w-full">
             <EmploymentLabourCompliance />
             <DataProtectionSection />

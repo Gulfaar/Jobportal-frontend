@@ -78,7 +78,7 @@ const JobsSection = () => {
       </h2>
       <div className="flex justify-between items-start w-full px-1 mt-9 font-normal text-[12px] md:text-2xl max-md:max-w-full">
         <p className="text-white md:inline-flex md:whitespace-nowrap max-md:max-w-full">
-          Explore the latest job opportunities across various industries
+          Explore the latest job opportunities across various industries over the globe
         </p>
         <Link
           href="/jobseeker/joblisting"

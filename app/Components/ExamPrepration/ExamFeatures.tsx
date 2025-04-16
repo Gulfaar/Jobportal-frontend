@@ -59,7 +59,7 @@ const Features: React.FC<FeaturesProps> = ({
 <div className="text-center">
 
   {/* Heading */}
-  <h2 className="text-3xl md:text-4xl font-bold text-[#DA6B64] mt-6 mb-4">
+  <h2 className="text-3xl md:text-4xl font-bold text-[#DA6B64]  mb-20">
     Why Choose Gulfaar for Exam Preparation?
   </h2>
 </div>

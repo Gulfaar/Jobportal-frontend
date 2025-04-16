@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const DataProtectionSection = () => {
   const complianceCards = [
@@ -63,12 +64,12 @@ const DataProtectionSection = () => {
 
         {/* Privacy Policy Link */}
         <div className="text-center">
-          <a 
-            href="#" 
+          <Link
+            href="/privacypolicy" 
             className="text-[#2E5F5C] hover:text-[#1E4F4C] text-lg font-medium underline underline-offset-4 transition-colors"
           >
             For more details, refer to our Privacy Policy
-          </a>
+          </Link>
         </div>
       </div>
     </div>

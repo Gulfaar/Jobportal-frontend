@@ -6,7 +6,7 @@ import AboutUs from '../Components/AboutUs/AboutUs'
 const page = () => {
   return (
     <div>
-        <Header title='About Us' subtitle=''/>
+        <Header title='About Us' subtitle='Connecting Businesses, Building Global Success!"'/>
 
         <AboutUs/>
 

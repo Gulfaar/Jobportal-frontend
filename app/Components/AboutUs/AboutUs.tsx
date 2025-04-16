@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
+import Link from 'next/link';
 
 interface MarkerData {
   id: number;
@@ -146,9 +147,9 @@ const AboutUs = () => {
                         
                         {/* Content */}
                         <div className="flex items-start gap-2">
-                          <span className="text-2xl">{marker.flag}</span>
+                          <span className="text-2xl text-[#2E6D65]">{marker.flag}</span>
                           <div>
-                            <h3 className="text-lg font-semibold">{marker.city}, {marker.country}</h3>
+                            <h3 className="text-lg font-semibold text-black">{marker.city}, {marker.country}</h3>
                             {marker.address && (
                               <p className="text-sm text-gray-600 mt-1 whitespace-pre-line">
                                 {marker.address}
@@ -466,14 +467,13 @@ const AboutUs = () => {
                   <p className="text-lg md:text-xl text-[#1E1E1E] mb-8">
                     At Gulfaar, we believe in building strong partnerships that create mutual growth and long-term success.
                   </p>
-                  {/* <div className="flex gap-4">
-                    <button className="bg-[#2E6D65] text-white px-6 md:px-8 py-3 rounded-lg hover:bg-[#245a53] transition-colors">
-                      Apply
-                    </button>
-                    <button className="bg-white text-[#1E1E1E] px-6 md:px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="flex gap-4">
+                  <Link href="/Partner">
+                    <button className="bg-[#2E6D65] text-white px-6 md:px-8 py-3 rounded-lg hover:bg-green-800 transition-colors">
                       Learn More
                     </button>
-                  </div> */}
+                    </Link>
+                  </div>
                 </div>
 
                 {/* Right Image Placeholder */}

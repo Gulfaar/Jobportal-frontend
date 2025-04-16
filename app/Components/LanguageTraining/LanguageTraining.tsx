@@ -9,46 +9,35 @@ const LanguageTraining = () => {
     <div className="w-full sm:px-5">
       {/* Hero Section */}
       
-      <section className="self-center px-15 py-8 md:mt-9 md:py-10 w-full max-w-[1294px] max-md:max-w-full">
-  <div className="flex flex-col md:flex-row-reverse md:gap-5">
-    {/* Image First on Mobile, Right Side on Desktop */}
-    <div className="w-full md:w-[37%] md:ml-5">
-      <img
-        src="/LANGUAGE.png"
-        className="object-contain w-full rounded-3xl aspect-[0.77] mb-2 md:mb-0 max-md:mt-0 max-md:max-w-full"
-        alt="Career development illustration"
-      />
+      <section className="w-full max-w-[1294px] px-4 md:px-6 mx-auto py-10 md:py-16">
+  <div className="flex flex-col-reverse md:flex-row items-stretch gap-10">
+
+    {/* Text Section */}
+    <div className="w-full md:w-[63%] flex flex-col justify-center">
+      <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-teal-800 leading-tight">
+        Unlock Your Career Potential with
+      </h2>
+
+      <p className="mt-3 text-[22px] sm:text-[26px] md:text-[36px] font-bold text-teal-800 leading-snug">
+        Master Languages, Expand Opportunities, Succeed Globally
+      </p>
+
+
+
+      <p className="mt-6 text-base sm:text-lg text-neutral-900 leading-relaxed">
+      Transform your career with industry leading skill development that prepares you for today’s global world. In an age where language is more than just communication it's a key to opportunity mastering the right skills can set you apart. Whether you're aiming to work abroad, connect across cultures, or grow professionally, strong language and communication abilities are essential. Our programs are designed to build confidence, sharpen real-world skills, and open doors to a future full of possibilities..
+      </p>
     </div>
 
-    {/* Content */}
-    <div className="w-full">
-      <div className="flex flex-col items-start self-stretch w-full text-2xl font-semibold tracking-tight text-teal-800 max-md:max-w-full">
-        <h2 className="text-2xl md:text-3xl tracking-tight leading-[50px] max-md:max-w-full max-md:leading-9 max-md:text-xl">
-          Unlock Your Career Potential with <br className='hidden md:block' />
-          <span className="text-2xl md:text-[48px] max-md:text-[24px] max-md:leading-8">
-            Master Languages, Expand Opportunities, Succeed Globally
-          </span>
-        </h2>
-        <p className="mt-4 max-md:text-base max-md:leading-6">
-          Transform Your Career with Industry-Leading Skill Development
-        </p>
-        <p className="mt-6 leading-9 text-black  text-[34px] max-md:text-base max-md:leading-6 max-md:mt-4">
-          In today's interconnected world, language is more than just communication, it's the key to<br />
-          unlocking global opportunities.
-        </p>
-        {/* <button
-          className="flex gap-3 px-8 py-4 mt-8 text-sm leading-tight text-center text-white uppercase bg-teal-800 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-6"
-          aria-label="Get Started"
-        >
-          <span className="grow my-auto">Get Started</span>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/6307c969f4753633a930c857def46cbf555e5466?placeholderIfAbsent=true"
-            className="object-contain shrink-0 w-3.5 aspect-[0.87]"
-            alt="Arrow icon"
-          />
-        </button> */}
-      </div>
+    {/* Image Section */}
+    <div className="w-full md:w-[37%] flex items-center">
+      <img
+        src="/LANGUAGE.png"
+        alt="Career development illustration"
+        className="w-full h-[80%] object-cover rounded-3xl max-h-[400px] md:max-h-full"
+      />
     </div>
+    
   </div>
 </section>
 
@@ -391,8 +380,8 @@ const LanguageTraining = () => {
                   Hospitality & Customer Service Language
                 </h3>
               </div>
-              <div className="flex">
-                <p className="text-lg mb-6 opacity-90">
+              <div className="flex justify-center items-center ">
+                <p className="text-lg mb-6 opacity-90 ">
                   English, French, Arabic, German
                 </p>
               </div>

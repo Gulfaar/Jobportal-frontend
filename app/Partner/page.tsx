@@ -17,7 +17,7 @@ const PartnerPage = () => {
             <Head>
             <title>Cookies</title>
           </Head>
-          <Header title={"Partner With Us"} subtitle={""} />
+          <Header title={"Partner With Us"} subtitle={"Grow, and Succeed with Gulfaar"} />
           <div className="flex-1 flex  flex-col items-center justify-center ">
                 <PartnerWithGulfaar />
                 <WhyPartnerWithGulfaar />

@@ -42,7 +42,7 @@ const OnDemandWorks = () => {
   return (
     <section className="px-4 sm:px-6 md:px-8 lg:px-16 py-20">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
           {/* Main Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-semibold text-[#2E5F5C] leading-snug max-w-[680px] mx-auto text-center">
             How Our On-Demand Outsourcing Works?
