@@ -24,7 +24,7 @@ const CallToActionSection: React.FC = () => {
         {/* Description Text */}
         <p className="mx-auto mb-8 text-xl max-w-[580px] md:text-justify leading-relaxed text-center max-sm:text-lg max-sm:leading-snug">
           With Gulfaar's AI-powered direct placement system, hiring is faster, smarter, and more effective than ever before. 
-          Communicating with candidates is seamless—whether via WhatsApp, mobile apps, or instant alerts,  
+          Communicating with candidates is seamless whether via WhatsApp, mobile apps, or instant alerts,  
           you're always just a click away from your next great hire.
         </p>
 

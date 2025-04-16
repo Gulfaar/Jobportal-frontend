@@ -17,7 +17,7 @@ const IntroductionSection: React.FC = () => {
                 </h1>
     
                 <h2 className="text-[#2E5F5C] text-[28px] font-medium mb-8 max-md:text-2xl max-sm:text-xl">
-                Hire smarter with AI-driven interviews, screening, and shortlisting—faster and easier.
+                Hire smarter with AI-driven interviews, screening, and shortlisting faster and easier.
                 </h2>
     
                 <p className="text-[18px] text-gray-700 leading-[1.8] mb-10 max-w-[650px]">
