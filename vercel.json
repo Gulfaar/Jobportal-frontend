@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      {
+        "source": "http://gulfaar.com",
+        "destination": "https://gulfaar.com",
+        "permanent": true
+      }
+    ]
+}
+ 
