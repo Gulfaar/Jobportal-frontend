@@ -169,6 +169,7 @@ export const BranchesSection = ({ countryParam }:PresenceHeroSectionProps ) => {
     headOffice: "N/A",
     franchiseLocations: [],
     contact: "N/A",
+    phone: "N/A",
     email: "contact@example.com",
     mapImage:
       "https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/ad1f07a80a140ebfc8b24d269863b03f6bbddf23?placeholderIfAbsent=true",
@@ -180,10 +181,10 @@ export const BranchesSection = ({ countryParam }:PresenceHeroSectionProps ) => {
   const {
     title,
     headOffice,
-    
     franchiseLocations,
     contact,
     email,
+    phone,
     mapImage,
     pinImage,
   } = country?.branches || fallbackBranches;
@@ -199,10 +200,10 @@ export const BranchesSection = ({ countryParam }:PresenceHeroSectionProps ) => {
               </h2>
               <p className="mt-12 max-md:mt-10">Head Office: {headOffice}</p>
               
-              <p className="self-stretch mt-8 mr-6 max-md:mr-2.5 max-md:max-w-full">
+              {/* <p className="self-stretch mt-8 mr-6 max-md:mr-2.5 max-md:max-w-full">
                 Franchise Locations: {franchiseLocations.join(", ")}
-              </p>
-              <p className="mt-8">Telephone: 9496629473</p>
+              </p> */}
+              <p className="mt-8">Phone: {phone}</p>
               <p className="mt-8">Contact Us: {contact}</p>
               <p className="mt-8">Email ID: {email}</p>
             </div>
