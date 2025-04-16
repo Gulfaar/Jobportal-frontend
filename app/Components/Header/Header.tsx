@@ -14,12 +14,8 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
     const [isTrainingOpen, setIsTrainingOpen] = useState(false);
     const [isWorkForceOpen, setIsWorkForceOpen] = useState(false);
-   
     const [isContractOpen, setIsContractOpen] = useState(false);
-    const [isOutsourcingOpen, setIsOutsourcingOpen] = useState(false);
-  
-    
-  
+    const [isOutsourcingOpen, setIsOutsourcingOpen] = useState(false); 
     const [isRecruitmentOpen, setIsRecruitmentOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -152,46 +148,45 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
 
       {/* Training Dropdown */}
       <div className="w-full">
-        <button
-          className="w-full  text-2xl rounded-lg px-10 py-4 text-black flex justify-between items-center transition-all duration-300 ease-in-out transform"
-          onClick={() => setIsTrainingOpen(!isTrainingOpen)}
-        >
-          <span>Training</span>
-          {isTrainingOpen ? <FiChevronUp /> : <FiChevronDown />}
-        </button>
-        {isTrainingOpen && (
-          <div className="mt-2 w-full text-2xl rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
-            <Link
-              href="/developement/skilldevelopement"
-              className="block px-10 py-3 text-black   rounded-t-md transition-all duration-200 "
-              onClick={() => setIsModalOpen(false)}
-            >
-              Skill Development
-            </Link>
-            <Link
-              href="/Training/PersonalityDevelopment"
-              className="block px-10 py-3 text-black   transition-all duration-200 "
-              onClick={() => setIsModalOpen(false)}
-            >
-              Personality Development
-            </Link>
-            <Link
-              href="/Training/LanguageTraining"
-              className="block px-10 py-3 text-black  transition-all duration-200 "
-              onClick={() => setIsModalOpen(false)}
-            >
-              Language Training
-            </Link>
-            <Link
-              href="/ExamPreprations"
-              className="block px-10 py-3 text-black   transition-all duration-200 "
-              onClick={() => setIsModalOpen(false)}
-            >
-              Exam Preparation
-            </Link>
-          </div>
-        )}
-      </div>
+              <button
+                className="w-full  text-2xl rounded-lg px-10 py-4 text-black flex justify-between items-center transition-all duration-300 ease-in-out transform"
+                onClick={() => setIsTrainingOpen(!isTrainingOpen)}
+              >
+                Training
+              </button>
+              {isTrainingOpen && (
+                <div className="mt-2 w-full text-2xl rounded-lg shadow-2xl max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent">
+                  <Link
+                    href="/developement/skilldevelopement"
+                    className="block px-10 py-3 text-black   rounded-t-md transition-all duration-200 "
+                    onClick={() => setIsModalOpen(false)}
+                  >
+                    Skill Development
+                  </Link>
+                  <Link
+                    href="/Training/PersonalityDevelopment"
+                    className="block px-10 py-3 text-black   transition-all duration-200 "
+                    onClick={() => setIsModalOpen(false)}
+                  >
+                    Personality Development
+                  </Link>
+                  <Link
+                    href="/Training/LanguageTraining"
+                    className="block px-10 py-3 text-black  transition-all duration-200 "
+                    onClick={() => setIsModalOpen(false)}
+                  >
+                    Language Training
+                  </Link>
+                  <Link
+                    href="/ExamPreprations"
+                    className="block px-10 py-3 text-black   transition-all duration-200 "
+                    onClick={() => setIsModalOpen(false)}
+                  >
+                    Exam Preparation
+                  </Link>
+                </div>
+              )}
+            </div>
 
       {/* Workforce Solutions Dropdown */}
       <div className="w-full">

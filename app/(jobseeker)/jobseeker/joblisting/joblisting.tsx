@@ -109,7 +109,7 @@ const Joblisting = () => {
       <div className="container  mx-auto px-4 py-8">
         <div className="flex flex-col  md:flex-row gap-6">
           {/* Sidebar */}
-          <div className="w-full md:w-1/6 space-y-6 hidden md:block bg-[#EBF5F4] p-6 rounded-lg text-black">
+          <div className="w-full md:w-1/5 space-y-6 hidden md:block bg-[#EBF5F4] p-6 rounded-lg text-black">
             <div>
               <h3 className="font-medium mb-2">Search by Job Title</h3>
               <div className="relative">
