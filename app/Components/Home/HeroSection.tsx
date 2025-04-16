@@ -574,76 +574,61 @@ const JobLocations = () => {
     { name: "BRAZIL", img: "/brazil.png" },
     { name: "JAPAN", img: "/japan.png" },
     { name: "CHINA", img: "/china.png" },
-    // { name: "UK", img: "/usa.png" },
-    // { name: "SPAIN", img: "/america1.png" },
-    { name: "PARIS", img: "/america1.png" },
-    { name: "INDIA", img: "/india.png" },
-    { name: "GERMANY", img: "/germany2.png" },
-    { name: "USA", img: "/usa.png" },
-    { name: "UAE", img: "/uae.png" },
-    { name: "CANADA", img: "/canda.png" },
-    { name: "AUSTRALIA", img: "/austraila2.png" },
-    { name: "BRAZIL", img: "/brazil.png" },
     { name: "BERLIN", img: "/berlin.png" },
     { name: "MALCOVA", img: "/america1.png" },
     { name: "MALVIS", img: "/usa.png" },
     { name: "SWEEDAN", img: "/america1.png" },
-    { name: "QATAR", img: "/qatar.png"}
+    { name: "QATAR", img: "/qatar.png" },
   ];
-
-  const [index, setIndex] = useState(0);
-  const itemsPerSlide = 6;
-  const totalSlides = Math.ceil(locations.length / itemsPerSlide);
-
-  const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % totalSlides);
-  };
-
-  const prevSlide = () => {
-    setIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="relative flex flex-col items-center w-full px-5 py-6 overflow-hidden">
-      <div className="relative flex items-center w-full max-w-4xl">
-        {/* Left Arrow */}
-        <button onClick={prevSlide} className="absolute left-0 z-10 p-2  rounded-full shadow-md">
-          <FaArrowLeft size={24} />
-        </button>
-
-        {/* Slider Container */}
-        <div className="flex overflow-hidden w-full px-10">
-          <div
-            className="flex transition-transform ease-in-out duration-700 ml-30 md:ml-0  gap-2 md:gap-4"
-            style={{ transform: `translateX(-${index * 100}%)` }}
-          >
-            {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-              <div key={slideIndex} className="flex min-w-full gap-2 md:gap-5 px-3">
-                {locations.slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide).map((loc) => (
-                  <div key={loc.name} className="flex flex-col  px-4 ml-2  md:ml-2 items-center  md:min-w-[100px] overflow-hidden">
-                    <Link href={{pathname:"/country/CountryPresence",query:{county:loc.name},}}>
-                      <Image src={loc.img} alt={loc.name} width={50} height={50} className=" w-10 h-10   md:w-16 md:h-16" />
-                    </Link>
-                    <p className="text-xs mt-1">{loc.name}</p>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
+      
+      <div className="md:w-[950px] w-[120px] ">
+        <div className="flex  md:gap-10 items-center whitespace-nowrap animate-marquee hover:pause-marquee">
+          {[...locations, ...locations].map((loc, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center min-w-[100px] px-4 cursor-pointer"
+            >
+              <Link
+                href={{
+                  pathname: "/country/CountryPresence",
+                  query: { county: loc.name },
+                }}
+              >
+                <Image
+                  src={loc.img}
+                  alt={loc.name}
+                  width={50}
+                  height={50}
+                  className="w-10 h-10 md:w-16 md:h-16 hover:scale-110 transition-transform duration-300"
+                />
+              </Link>
+              <p className="text-xs mt-1">{loc.name}</p>
+            </div>
+          ))}
         </div>
-
-        {/* Right Arrow */}
-        <button onClick={nextSlide} className="absolute right-0 z-10 p-2  rounded-full shadow-md">
-          <FaArrowRight size={24} />
-        </button>
       </div>
+
+      {/* Animation styles */}
+      <style>
+        {`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 20s linear infinite;
+          }
+          .pause-marquee {
+            animation-play-state: paused !important;
+          }
+        `}
+      </style>
     </div>
   );
 };
+
 
 export default HeroSection;
