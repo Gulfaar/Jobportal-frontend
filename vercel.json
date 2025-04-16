@@ -1,7 +1,7 @@
 {
     "redirects": [
       {
-        "source": "http://gulfaar.com",
+        "source": "/",
         "destination": "https://gulfaar.com",
         "permanent": true
       }
