@@ -6,86 +6,194 @@ import Image from "next/image";
 import React, { useState, useMemo } from "react";
 import { toast } from "react-toastify";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
+
+
+
 
 const jobs = [
   {
     id: "1",
-    logo: "/google.png",
+    logo: "/infosys.png",
     title: "Software Tester",
+    company: "Infosys",
     location: "Chennai",
     experience: "Intermediate Level",
+    salaryRange: "$50,000 - $65,000",
+    tag: "Full-time",
+    category: "QA/Testing",
+    education: "B.Tech / B.Sc in IT",
     description:
-      "As a Software Tester, you will ensure the quality and reliability of our applications.",
+      "Ensure the quality and reliability of applications by executing test strategies, identifying bugs, and working closely with development teams.",
+    responsibilities: [
+      "Develop and execute test cases",
+      "Identify and document bugs",
+      "Perform regression testing",
+      "Collaborate with developers for issue resolution",
+    ],
   },
   {
     id: "2",
     logo: "/google.png",
     title: "Frontend Developer",
+    company: "Google",
     location: "Bangalore",
     experience: "Entry Level",
-    description: "Build engaging UIs using React and modern frameworks.",
+    salaryRange: "$60,000 - $75,000",
+    tag: "Remote",
+    category: "Development",
+    education: "B.Tech / BCA",
+    description:
+      "Build engaging and responsive user interfaces using React and modern frontend frameworks to enhance user experience.",
+    responsibilities: [
+      "Convert designs into functional UI",
+      "Optimize frontend performance",
+      "Work with designers and backend developers",
+      "Write clean and maintainable code",
+    ],
   },
   {
     id: "3",
-    logo: "/google.png",
+    logo: "/microsoft.png",
     title: "Backend Developer",
+    company: "Microsoft",
     location: "Hyderabad",
     experience: "Senior Level",
-    description: "Design and build scalable backend services using Node.js.",
+    salaryRange: "$90,000 - $120,000",
+    tag: "Hybrid",
+    category: "Development",
+    education: "B.Tech / M.Tech",
+    description:
+      "Design and implement scalable backend services and APIs using modern backend technologies such as Node.js and Express.",
+    responsibilities: [
+      "Build scalable backend systems",
+      "Integrate APIs and databases",
+      "Write reusable backend components",
+      "Ensure system security and efficiency",
+    ],
   },
   {
     id: "4",
-    logo: "/google.png",
+    logo: "/adobe.jpg",
     title: "UI/UX Designer",
+    company: "Adobe",
     location: "Mumbai",
     experience: "Mid Level",
-    description: "Create intuitive and visually appealing user interfaces.",
+    salaryRange: "$65,000 - $80,000",
+    tag: "Full-time",
+    category: "Design",
+    education: "B.Des / Equivalent",
+    description:
+      "Create intuitive and visually appealing designs for web and mobile platforms, enhancing the overall user experience.",
+    responsibilities: [
+      "Design wireframes and prototypes",
+      "Conduct user research and testing",
+      "Collaborate with developers",
+      "Maintain design consistency across products",
+    ],
   },
   {
     id: "5",
-    logo: "/google.png",
+    logo: "/amazon.jpg",
     title: "Product Manager",
+    company: "Amazon",
     location: "Remote",
     experience: "Senior Level",
+    salaryRange: "$100,000 - $130,000",
+    tag: "Full-time",
+    category: "Product",
+    education: "MBA / B.Tech",
     description:
-      "Lead the product roadmap and collaborate.",
+      "Lead product development from ideation to launch, aligning business goals with user needs and driving the roadmap.",
+    responsibilities: [
+      "Define product vision and strategy",
+      "Gather and prioritize requirements",
+      "Work with cross-functional teams",
+      "Analyze market and competition",
+    ],
   },
   {
     id: "6",
-    logo: "/google.png",
+    logo: "/ibm.png",
     title: "DevOps Engineer",
+    company: "IBM",
     location: "Pune",
     experience: "Mid Level",
-    description: "Maintain CI/CD pipelines and automate infrastructure.",
+    salaryRange: "$70,000 - $90,000",
+    tag: "Hybrid",
+    category: "DevOps",
+    education: "B.Tech / BCA",
+    description:
+      "Manage CI/CD pipelines, automate infrastructure, and ensure smooth deployment cycles across development environments.",
+    responsibilities: [
+      "Maintain CI/CD pipelines",
+      "Automate infrastructure processes",
+      "Monitor system performance",
+      "Ensure system uptime and reliability",
+    ],
   },
   {
     id: "7",
-    logo: "/google.png",
+    logo: "/deloitte.png",
     title: "Data Analyst",
+    company: "Deloitte",
     location: "Delhi",
     experience: "Entry Level",
+    salaryRange: "$55,000 - $70,000",
+    tag: "Full-time",
+    category: "Analytics",
+    education: "B.Sc / B.Tech",
     description:
-      "Analyze and interpret complex datasets for business decisions.",
+      "Collect, analyze, and interpret complex data sets to help guide strategic decisions and improve business performance.",
+    responsibilities: [
+      "Analyze large datasets",
+      "Generate business insights",
+      "Create dashboards and reports",
+      "Work with business teams on data needs",
+    ],
   },
   {
     id: "8",
-    logo: "/google.png",
+    logo: "/cisco.png",
     title: "Cybersecurity Analyst",
+    company: "Cisco",
     location: "Noida",
     experience: "Intermediate Level",
+    salaryRange: "$80,000 - $100,000",
+    tag: "Full-time",
+    category: "Security",
+    education: "B.Tech / M.Sc in Cyber Security",
     description:
-      "Protect organizational data and infrastructure from threats.",
+      "Protect digital assets and infrastructure by identifying threats, managing incidents, and ensuring compliance with security standards.",
+    responsibilities: [
+      "Monitor and respond to security threats",
+      "Conduct vulnerability assessments",
+      "Ensure security compliance",
+      "Investigate security breaches",
+    ],
   },
   {
     id: "9",
-    logo: "/google.png",
+    logo: "/flipkart.png",
     title: "Mobile App Developer",
+    company: "Flipkart",
     location: "Kolkata",
     experience: "Mid Level",
+    salaryRange: "$75,000 - $95,000",
+    tag: "Remote",
+    category: "Development",
+    education: "B.Tech / MCA",
     description:
-      "Develop responsive mobile applications using Flutter or React Native.",
+      "Develop high-performance mobile applications using Flutter or React Native, focusing on usability and responsiveness.",
+    responsibilities: [
+      "Develop cross-platform apps",
+      "Collaborate with UI/UX designers",
+      "Integrate APIs and backend services",
+      "Ensure app performance and stability",
+    ],
   },
 ];
+
 
 const Joblisting = () => {
   const [salary, setSalary] = useState<[number, number]>([5000, 99999]);
@@ -237,10 +345,13 @@ const Joblisting = () => {
                         className="flex-1 bg-[#2E5F5C] text-white px-3 py-1.5 rounded text-sm border border-[#2E5F5C] hover:bg-[#2b2d2d]"
                       >
                         Apply now
+              
                       </button>
+                      <Link href = {`/jobseeker/jobdetails/${job.id}`}>
                       <button className="flex-1 text-[#2E5F5C] px-3 py-1.5 rounded text-sm border border-[#2E5F5C] hover:bg-[#2E5F5C] hover:text-white">
                         Learn more
                       </button>
+                      </Link>
                     </div>
                   </div>
                 ))
