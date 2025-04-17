@@ -32,8 +32,8 @@ const HeroSection = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center h-full text-center px-6">
-        <div className="px-73 md:px-0">
-        <h1 className="text-3xl md:text-4xl font-bold">Find Your Dream Job Today!</h1>
+        <div className="px-76 md:px-0">
+        <h1 className="text-[28px] md:text-4xl font-bold">Find Your Dream Job Today!</h1>
         <p className="text-xl md:text-lg mt-2">
           Connecting Talent with Opportunity{" "}
           <span className="block md:inline">Your Gateway to Career Success</span>
@@ -70,7 +70,7 @@ const NavBar = () => {
   const [isRecruitmentOpen, setIsRecruitmentOpen] = useState(false);
   const [isContractOpen, setIsContractOpen] = useState(false);
   const [isOutsourcingOpen, setIsOutsourcingOpen] = useState(false);
-  
+
 
   return (
     <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-5 py-10 md:px-10 md:py-7">
