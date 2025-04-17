@@ -23,7 +23,7 @@ const HeroSection = () => {
   };
   return (
     <div
-      className="relative w-full h-screen bg-cover bg-center flex flex-col items-center overflow-hidden text-white px-12 pt-[100px] md:pt-[150px]"
+      className="relative w-full h-screen bg-cover bg-center flex flex-col items-center overflow-hidden text-white px-12 pt-[30px] md:pt-[150px]"
       style={{ backgroundImage: "url('/background.png')" }}
     >
       <NavBar />
@@ -31,12 +31,14 @@ const HeroSection = () => {
         <NavLinks />
       </div>
 
-      <div className="flex flex-col items-center justify-center h-full text-center px-4">
-        <h1 className="text-2xl md:text-4xl font-bold">Find Your Dream Job Today!</h1>
-        <p className="text-sm md:text-lg mt-2">
+      <div className="flex flex-col items-center justify-center h-full text-center px-6">
+        <div className="px-73 md:px-0">
+        <h1 className="text-3xl md:text-4xl font-bold">Find Your Dream Job Today!</h1>
+        <p className="text-xl md:text-lg mt-2">
           Connecting Talent with Opportunity{" "}
           <span className="block md:inline">Your Gateway to Career Success</span>
         </p>
+        </div>
 
         {/* Desktop Search Bar: visible only on md+ */}
         <div className="hidden md:block">
@@ -592,7 +594,7 @@ const JobLocations = () => {
               key={index}
               className="flex flex-col items-center justify-center min-w-[90px] md:min-w-[120px] px-2 md:px-4 cursor-pointer"
             >
-              
+
               <Link
                 href={{
                   pathname: "/country/CountryPresence",

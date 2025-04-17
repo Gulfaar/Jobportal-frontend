@@ -48,7 +48,7 @@ const jobs = [
     location: "Remote",
     experience: "Senior Level",
     description:
-      "Lead the product roadmap and collaborate with cross-functional teams.",
+      "Lead the product roadmap and collaborate.",
   },
   {
     id: "6",
