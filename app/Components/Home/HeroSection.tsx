@@ -70,6 +70,7 @@ const NavBar = () => {
   const [isRecruitmentOpen, setIsRecruitmentOpen] = useState(false);
   const [isContractOpen, setIsContractOpen] = useState(false);
   const [isOutsourcingOpen, setIsOutsourcingOpen] = useState(false);
+  
 
   return (
     <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-5 py-10 md:px-10 md:py-7">
