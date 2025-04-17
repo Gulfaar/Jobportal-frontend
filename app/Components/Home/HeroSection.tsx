@@ -592,6 +592,7 @@ const JobLocations = () => {
               key={index}
               className="flex flex-col items-center justify-center min-w-[90px] md:min-w-[120px] px-2 md:px-4 cursor-pointer"
             >
+              
               <Link
                 href={{
                   pathname: "/country/CountryPresence",
