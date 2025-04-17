@@ -574,14 +574,6 @@ const JobLocations = () => {
     { name: "BRAZIL", img: "/brazil.png" },
     { name: "JAPAN", img: "/japan.png" },
     { name: "CHINA", img: "/china.png" },
-    { name: "PARIS", img: "/america1.png" },
-    { name: "INDIA", img: "/india.png" },
-    { name: "GERMANY", img: "/germany2.png" },
-    { name: "USA", img: "/usa.png" },
-    { name: "UAE", img: "/uae.png" },
-    { name: "CANADA", img: "/canda.png" },
-    { name: "AUSTRALIA", img: "/austraila2.png" },
-    { name: "BRAZIL", img: "/brazil.png" },
     { name: "BERLIN", img: "/berlin.png" },
     { name: "MALCOVA", img: "/america1.png" },
     { name: "MALVIS", img: "/usa.png" },
@@ -589,15 +581,16 @@ const JobLocations = () => {
     { name: "QATAR", img: "/qatar.png" },
   ];
 
+  const duplicatedLocations = [...locations, ...locations]; // for infinite scroll effect
+
   return (
     <div className="relative flex flex-col items-center w-full px-5 py-6 overflow-hidden">
-      
-      <div className="md:w-[950px] w-[120px] ">
-        <div className="flex  md:gap-10 items-center whitespace-nowrap animate-marquee hover:pause-marquee">
-          {[...locations, ...locations].map((loc, index) => (
+      <div className="w-[950px] overflow-hidden">
+        <div className="flex whitespace-nowrap animate-marquee">
+          {duplicatedLocations.map((loc, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center min-w-[100px] px-4 cursor-pointer"
+              className="flex flex-col items-center justify-center min-w-[90px] md:min-w-[120px] px-2 md:px-4 cursor-pointer"
             >
               <Link
                 href={{
@@ -619,23 +612,26 @@ const JobLocations = () => {
         </div>
       </div>
 
-      {/* Animation styles */}
-      <style>
-        {`
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0%);
           }
-          .animate-marquee {
-            display: flex;
-            animation: marquee 2s linear infinite;
+          100% {
+            transform: translateX(-50%);
           }
-          
-        `}
-      </style>
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </div>
   );
 };
+
 
 
 export default HeroSection;
