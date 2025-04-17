@@ -21,6 +21,7 @@ const HeroSection = () => {
       router.push(`/jobseeker/joblisting?search=${encodeURIComponent(searchQuery)}`);
     }
   };
+  
   return (
     <div
       className="relative w-full h-screen bg-cover bg-center flex flex-col items-center overflow-hidden text-white px-12 pt-[30px] md:pt-[150px]"
