@@ -134,7 +134,7 @@ const jobs = [
   },
   {
     id: "7",
-    logo: "/deloitte.png",
+    logo: "/deloitte.jpg",
     title: "Data Analyst",
     company: "Deloitte",
     location: "Delhi",
@@ -174,7 +174,7 @@ const jobs = [
   },
   {
     id: "9",
-    logo: "/flipkart.png",
+    logo: "/flip.png",
     title: "Mobile App Developer",
     company: "Flipkart",
     location: "Kolkata",

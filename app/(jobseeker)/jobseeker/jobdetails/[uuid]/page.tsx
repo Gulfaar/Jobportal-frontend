@@ -135,7 +135,7 @@ const JobDetailsPage: React.FC = () => {
     },
     {
       id: "7",
-      logo: "/deloitte.png",
+      logo: "/deloitte.jpg",
       title: "Data Analyst",
       company: "Deloitte",
       location: "Delhi",
@@ -175,7 +175,7 @@ const JobDetailsPage: React.FC = () => {
     },
     {
       id: "9",
-      logo: "/flipkart.png",
+      logo: "/flip.png",
       title: "Mobile App Developer",
       company: "Flipkart",
       location: "Kolkata",
@@ -240,7 +240,7 @@ const JobDetailsPage: React.FC = () => {
                   </div>
 
                   <button
-                    onClick={() => toast.success("Applied")}
+                    onClick={() => toast.success("Applied")} 
                     className="block md:hidden bg-teal-600 text-white px-4 py-2 rounded-md text-sm hover:bg-teal-700 transition-colors"
                   >
                     Apply
