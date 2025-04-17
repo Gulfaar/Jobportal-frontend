@@ -138,13 +138,13 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
       >
         Jobs
       </Link>
-      <Link
+      {/* <Link
         href=" "
         className="w-full  text-2xl rounded-lg px-10 py-4 text-black  transition-all duration-300 ease-in-out transform "
         onClick={() => setIsModalOpen(false)}
       >
         Blog
-      </Link>
+      </Link> */}
 
       {/* Training Dropdown */}
       <div className="w-full">
@@ -321,7 +321,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
 
     {isTrainingOpen && (
       <div
-        className="absolute left-0 mt-2 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
+        className="absolute left-0 mt-0 w-auto bg-[#2E5F5C] text-white rounded-lg shadow-lg p-2"
         onMouseEnter={() => setIsTrainingOpen(true)}
         onMouseLeave={() => setIsTrainingOpen(false)}
       >

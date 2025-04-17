@@ -27,10 +27,10 @@ const FormContact = () => {
     const result = await ContactUser(formData);
 
     if (result.success) {
-      toast.success("Login Successful! Redirecting...");
+      toast.success(result.message);
       router.push("/");
     } else {
-      toast.error(result.message || "Login failed. Please try again.");
+      toast.error(result.message);
     }
   };
 
