@@ -32,7 +32,7 @@ const HeroSection = () => {
         <NavLinks />
       </div>
 
-      <div className="flex flex-col items-center justify-center h-full text-center px-6">
+      <div className="flex flex-col items-center justify-center mt-[-30px] md:mt-0  h-full text-center px-6">
         <div className="px-80 md:px-0">
         <h1 className="text-[30px] md:text-4xl font-bold">Find Your Dream Job Today!</h1>
         <p className="text-xl md:text-lg mt-2">
