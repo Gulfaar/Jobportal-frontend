@@ -9,40 +9,41 @@ import Link from "next/link";
 export default function OnboardingCompletePage() {
   const router = useRouter();
   const [confettiActive, setConfettiActive] = useState(true);
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
-  // Stop confetti after 3 seconds
+  // Set window dimensions only on client
   useEffect(() => {
+    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+
     const timer = setTimeout(() => setConfettiActive(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 
-  // Handle navigation
   const handleStartExploring = () => {
-    router.push("/"); // Updated to root or your desired route
+    router.push("/");
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-white p-4 sm:p-6 lg:p-8">
-      {confettiActive && (
+      {confettiActive && windowSize.width > 0 && (
         <Confetti
-          width={window.innerWidth}
-          height={window.innerHeight}
+          width={windowSize.width}
+          height={windowSize.height}
           recycle={false}
-          numberOfPieces={150} // Reduced for performance
+          numberOfPieces={150}
         />
       )}
 
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }} // Optimized duration
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="max-w-md w-full bg-white rounded-xl shadow-lg p-6 text-center"
       >
-        {/* Animated Checkmark */}
         <motion.div
           initial={{ rotate: -10 }}
           animate={{ rotate: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }} // Optimized duration
+          transition={{ duration: 0.4, delay: 0.3 }}
           className="mx-auto flex items-center justify-center w-20 h-20 bg-green-100 rounded-full"
         >
           <svg
@@ -60,7 +61,6 @@ export default function OnboardingCompletePage() {
           </svg>
         </motion.div>
 
-        {/* Welcome Message */}
         <h1 className="mt-5 text-3xl font-bold text-gray-900 sm:text-4xl">
           Welcome, UserName!
         </h1>
@@ -68,7 +68,6 @@ export default function OnboardingCompletePage() {
           Your onboarding is complete! Start exploring your personalized journey.
         </p>
 
-        {/* Start Exploring Button */}
         <Link href="/" onClick={handleStartExploring}>
           <motion.button
             whileHover={{ scale: 1.03 }}
