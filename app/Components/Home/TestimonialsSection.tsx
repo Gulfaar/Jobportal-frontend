@@ -192,7 +192,7 @@ const TestimonialsSection = () => {
       </button>
     </div>
         ):(
-          <div className="md:hidden relative w-full max-w-md mt-10 overflow-hidden">
+          <div className="md:hidden flex relative justify-center items-center w-full gap-10 max-w-md mt-10 overflow-hidden">
       {/* Left Button */}
       <button
         onClick={handlePrev}
@@ -204,7 +204,7 @@ const TestimonialsSection = () => {
       {/* Carousel Track */}
       <div
         ref={mobileTrackRef}
-        className="flex transition-transform justify-center items-center ml-3 md:ml-0 duration-500 ease-out"
+        className="flex transition-transform justify-center items-center  duration-500 ease-out"
         style={{
           transform: `translateX(-${currentIndex * (100 / testimonials.length)}%)`,
           width: `${testimonials.length * 100}%`,
@@ -214,7 +214,7 @@ const TestimonialsSection = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="flex-shrink-0 px-5"
+            className="flex-shrink-0 px-10"
             style={{ width: `${100 / testimonials.length}%` }}
           >
             <TestimonialCard {...testimonial} />
