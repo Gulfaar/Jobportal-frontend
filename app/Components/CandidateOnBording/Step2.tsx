@@ -26,7 +26,7 @@ const CandidateOnboardingSteps2 = () => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://3.1.221.8:8000/api/resume/process-resume', formData, {
+      const response = await axios.post(' https://api.ml.gulfaar.com/api/resume/process-resume', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
