@@ -1,13 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import OnboardingCard from "./OnboardingCard"; // Import OnboardingCard
-import { RootState } from "@/app/redux/store";
-import { useSelector } from "react-redux";
 
-// Define the Country type based on REST Countries API response
+// Define the Country type
 interface Country {
   cca2: string;
   name: {
@@ -15,36 +13,43 @@ interface Country {
   };
 }
 
+// Static array of countries
+const countriesList: Country[] = [
+  { cca2: "AE", name: { common: "United Arab Emirates" } },
+  { cca2: "US", name: { common: "United States" } },
+  { cca2: "GB", name: { common: "United Kingdom" } },
+  { cca2: "CA", name: { common: "Canada" } },
+  { cca2: "AU", name: { common: "Australia" } },
+  { cca2: "IN", name: { common: "India" } },
+  { cca2: "FR", name: { common: "France" } },
+  { cca2: "DE", name: { common: "Germany" } },
+  { cca2: "IT", name: { common: "Italy" } },
+  { cca2: "JP", name: { common: "Japan" } },
+  { cca2: "CN", name: { common: "China" } },
+  { cca2: "BR", name: { common: "Brazil" } },
+  { cca2: "ZA", name: { common: "South Africa" } },
+  { cca2: "MX", name: { common: "Mexico" } },
+  { cca2: "RU", name: { common: "Russia" } },
+  { cca2: "ES", name: { common: "Spain" } },
+  { cca2: "NL", name: { common: "Netherlands" } },
+  { cca2: "SE", name: { common: "Sweden" } },
+  { cca2: "CH", name: { common: "Switzerland" } },
+  { cca2: "SG", name: { common: "Singapore" } },
+  // Add more countries as needed
+];
+
 export default function ProfileForm() {
   const [formData, setFormData] = useState({
     fullName: "",
     lastName: "",
     city: "",
-    country: "UAE", // Default value
+    country: "", // Changed to empty string to enforce selection
     pincode: "",
     phone: "",
     email: "",
   });
-  const [countries, setCountries] = useState<Country[]>([]);
+  const [countries, setCountries] = useState<Country[]>(countriesList); // Initialize with static list
   const [error, setError] = useState<string | null>(null);
-
-  // Fetch countries from REST Countries API
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await fetch("https://restcountries.com/v3.1/all");
-        const data: Country[] = await response.json();
-        // Sort countries alphabetically by common name
-        const sortedCountries = data.sort((a, b) =>
-          a.name.common.localeCompare(b.name.common)
-        );
-        setCountries(sortedCountries);
-      } catch (error) {
-        console.error("Error fetching countries:", error);
-      }
-    };
-    fetchCountries();
-  }, []);
 
   // Handle form field changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -62,7 +67,6 @@ export default function ProfileForm() {
     }
     setError(null); // Clear error if valid
   };
-  const resumeData = useSelector((state: RootState) => state.resume.parsedData);
 
   return (
     <div className="min-h-screen flex justify-center items-center">
@@ -83,19 +87,16 @@ export default function ProfileForm() {
               {/* Profile Image */}
               <div className="flex items-center gap-4">
                 <div className="relative w-16 h-16">
-                  <img
-                    src={resumeData?.profile_image_url || "/images/profile.svg"}
-                    onError={(e) => {
-                      e.currentTarget.src = "/images/profile.svg";
-                    }}
+                  <Image
+                    src="/images/profile.svg" // Fallback image since resumeData is unused
                     alt="User Profile"
-                    className="w-full h-full object-cover"
+                    width={64}
+                    height={64}
+                    className="rounded-full object-cover"
                   />
                 </div>
                 <div>
-                  <h2 className="text-base font-medium text-gray-800">
-                    Amanda Rawles
-                  </h2>
+                  <h2 className="text-base font-medium text-gray-800">Amanda Rawles</h2>
                   <p className="text-sm text-gray-500">alexarawles@gmail.com</p>
                 </div>
               </div>
@@ -149,8 +150,7 @@ export default function ProfileForm() {
               <label className="block text-sm font-medium text-gray-700 mb-1">Country</label>
               <select
                 name="country"
-                className={`w-full px-3 py-2 border rounded-md bg-white text-black ${error ? "border-red-500" : "border-gray-300"
-                  }`}
+                className={`w-full px-3 py-2 border rounded-md bg-white text-black ${error ? "border-red-500" : "border-gray-300"}`}
                 value={formData.country}
                 onChange={handleChange}
               >

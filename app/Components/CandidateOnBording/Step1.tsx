@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-// Define the Country type based on REST Countries API response
+// Define the Country type
 interface Country {
   cca2: string;
   name: {
@@ -11,29 +11,36 @@ interface Country {
   };
 }
 
+// Static array of countries
+const countriesList: Country[] = [
+  { cca2: "AE", name: { common: "United Arab Emirates" } },
+  { cca2: "US", name: { common: "United States" } },
+  { cca2: "GB", name: { common: "United Kingdom" } },
+  { cca2: "CA", name: { common: "Canada" } },
+  { cca2: "AU", name: { common: "Australia" } },
+  { cca2: "IN", name: { common: "India" } },
+  { cca2: "FR", name: { common: "France" } },
+  { cca2: "DE", name: { common: "Germany" } },
+  { cca2: "IT", name: { common: "Italy" } },
+  { cca2: "JP", name: { common: "Japan" } },
+  { cca2: "CN", name: { common: "China" } },
+  { cca2: "BR", name: { common: "Brazil" } },
+  { cca2: "ZA", name: { common: "South Africa" } },
+  { cca2: "MX", name: { common: "Mexico" } },
+  { cca2: "RU", name: { common: "Russia" } },
+  { cca2: "ES", name: { common: "Spain" } },
+  { cca2: "NL", name: { common: "Netherlands" } },
+  { cca2: "SE", name: { common: "Sweden" } },
+  { cca2: "CH", name: { common: "Switzerland" } },
+  { cca2: "SG", name: { common: "Singapore" } },
+  // Add more countries as needed (e.g., up to 200+ if required)
+];
+
 const CandidateOnboardingSteps1 = () => {
   const router = useRouter();
-  const [countries, setCountries] = useState<Country[]>([]);
+  const [countries, setCountries] = useState<Country[]>(countriesList); // Initialize with static list
   const [selectedCountry, setSelectedCountry] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
-
-  // Fetch countries from REST Countries API
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await fetch("https://restcountries.com/v3.1/all");
-        const data: Country[] = await response.json();
-        // Sort countries alphabetically by common name
-        const sortedCountries = data.sort((a, b) =>
-          a.name.common.localeCompare(b.name.common)
-        );
-        setCountries(sortedCountries);
-      } catch (error) {
-        console.error("Error fetching countries:", error);
-      }
-    };
-    fetchCountries();
-  }, []);
 
   // Handle country selection
   const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
