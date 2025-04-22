@@ -1,12 +1,11 @@
 'use client';
 import { useState } from 'react';
-import Image from 'next/image'; // Import Next.js Image component
+import Image from 'next/image';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/redux/store';
 
 const AddEducationForm = () => {
-  // State to manage form inputs
   const [formData, setFormData] = useState({
     collegeName: '',
     fieldOfStudy: '',
@@ -16,14 +15,10 @@ const AddEducationForm = () => {
   });
 
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
-
-  const experienceEntries = resumeData?.structured_resume?.experience || [];
   const name = resumeData?.structured_resume?.name || 'No Name';
   const email = resumeData?.structured_resume?.email || 'No Email';
-  
 
-  // Handle input changes
-  const handleInputChange = (e: { target: { name: any; value: any; type: any; checked: any; }; }) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -31,43 +26,20 @@ const AddEducationForm = () => {
     }));
   };
 
-  // Handle form submission (you can customize this)
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Form Data:', formData);
-    // Add your submission logic here
   };
 
   return (
-    <div className="min-h-screen w-full md:w-[82%] md:mt-[-35px] flex items-center justify-center  px-4 py-12 ">
+    <div className="min-h-screen w-full flex items-center justify-center px-4 py-6 sm:py-6">
       <div className="relative w-full max-w-3xl">
-        {/* Stepper Sidebar */}
-        {/* <div className="absolute top-0 right-[-80px] flex flex-col items-center space-y-14">
-          {[1, 2, 3, 4, 5].map((step, index) => (
-            <div
-              key={index}
-              className={`relative w-8 h-8 flex items-center justify-center rounded-full border-2 ${
-                index === 2 ? 'bg-[#DA6B64] text-white' : 'border-[#DA6B64] text-[#DA6B64] bg-[#F5D5D3]'
-              } ${
-                // Add dashed line for all steps except the last one
-                index < 4
-                  ? 'before:content-[""] before:absolute before:top-8 before:left-1/2 before:-translate-x-1/2 before:h-16 before:border-l-2 before:border-dashed before:border-[#DA6B64]'
-                  : ''
-              }`}
-            >
-              {step}
-            </div>
-          ))}
-        </div> */}
-
-        {/* Main Content */}
-        <div className="w-full shadow-md rounded-xl p-8">
+        <div className="w-full shadow-md rounded-xl p-6 sm:p-8">
           {/* Profile Header */}
           <div className="flex items-center mb-6">
             <div className="w-12 h-12 rounded-full overflow-hidden">
-              {/* Using Next.js Image component for the profile image */}
               <Image
-                src="/images/profile.svg" // Replace with your actual image path
+                src="/images/profile.svg"
                 alt="Profile"
                 width={48}
                 height={48}
@@ -82,7 +54,7 @@ const AddEducationForm = () => {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* College Name */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">College name</label>
@@ -151,18 +123,24 @@ const AddEducationForm = () => {
             </div>
 
             {/* Buttons */}
-            <div className="flex justify-between mt-6">
-        <Link href="/CandidateBoarding/Step7">
-          <button className="border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
-            Back
-          </button>
-        </Link>
-        <Link href="/CandidateBoarding/Step9">
-          <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
-            Continue
-          </button>
-          </Link>
-        </div>
+            <div className="flex flex-col sm:flex-row justify-between mt-6 gap-3 sm:gap-0">
+              <Link href="/CandidateBoarding/Step7" className="w-full sm:w-auto">
+                <button
+                  type="button"
+                  className="w-full sm:w-auto border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition"
+                >
+                  Back
+                </button>
+              </Link>
+              <Link href="/CandidateBoarding/Step9" className="w-full sm:w-auto">
+                <button
+                  type="submit"
+                  className="w-full sm:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition"
+                >
+                  Continue
+                </button>
+              </Link>
+            </div>
           </form>
         </div>
       </div>

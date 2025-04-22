@@ -75,3 +75,41 @@ body {
   background-color: white; /* ← Set global thumb to white */
   border-radius: 8px;
 }
+@keyframes spin-smooth {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(50%) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(50%) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-delayed {
+  0% {
+    transform: rotate(180deg) translateX(50%) rotate(180deg);
+  }
+  100% {
+    transform: rotate(540deg) translateX(50%) rotate(-180deg);
+  }
+}
+
+.animate-spin-smooth {
+  animation: spin-smooth 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.animate-orbit {
+  animation: orbit 2.5s linear infinite;
+}
+
+.animate-orbit-delayed {
+  animation: orbit-delayed 2.5s linear infinite 1.25s;
+}

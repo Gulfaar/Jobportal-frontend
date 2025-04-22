@@ -5,7 +5,7 @@ import React from 'react';
 
 export default function HighlightsSection() {
   return (
-    <section className="w-full text-blue-600 font-fightree py-12 px-4 md:px-12 lg:px-24">
+    <section className="w-full text-[#2E5F5C] font-fightree py-12 px-4 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold mb-8">Recent Highlights</h2>
