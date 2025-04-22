@@ -30,8 +30,11 @@ const CandidateOnboardingSteps2 = () => {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
+
       if (response.status === 200) {
         dispatch(setParsedResumeData(response.data));
+        console.log("datafrompython",response.data);
+        
         router.push("/CandidateBoarding/Step3");
       }
     } catch (error) {
