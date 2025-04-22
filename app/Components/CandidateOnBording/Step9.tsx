@@ -42,12 +42,13 @@ const SkillsForm = () => {
         {/* Profile Header */}
         <div className="flex items-center mb-6 ">
           <div className="w-12 h-12 rounded-full overflow-hidden ">
-            <Image
-              src="/images/profile.svg"
-              alt="Profile"
-              width={48}
-              height={48}
-              className="object-cover"
+          <img
+              src={resumeData?.profile_image_url || "/images/profile.svg"}
+              onError={(e) => {
+                e.currentTarget.src = "/images/profile.svg";
+              }}
+              alt="User Profile"
+              className="w-full h-full object-cover"
             />
           </div>
           <div className="ml-4">

@@ -1,23 +1,71 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import OnboardingCard from './OnboardingCard'; // Import OnboardingCard
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import OnboardingCard from "./OnboardingCard"; // Import OnboardingCard
+import { RootState } from "@/app/redux/store";
+import { useSelector } from "react-redux";
+
+// Define the Country type based on REST Countries API response
+interface Country {
+  cca2: string;
+  name: {
+    common: string;
+  };
+}
 
 export default function ProfileForm() {
   const [formData, setFormData] = useState({
-    fullName: '',
-    lastName: '',
-    city: '',
-    country: 'UAE',
-    pincode: '',
-    phone: '',
-    email: ''
+    fullName: "",
+    lastName: "",
+    city: "",
+    country: "UAE", // Default value
+    pincode: "",
+    phone: "",
+    email: "",
   });
+  const [countries, setCountries] = useState<Country[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch countries from REST Countries API
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch("https://restcountries.com/v3.1/all");
+        const data: Country[] = await response.json();
+        // Sort countries alphabetically by common name
+        const sortedCountries = data.sort((a, b) =>
+          a.name.common.localeCompare(b.name.common)
+        );
+        setCountries(sortedCountries);
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
+    fetchCountries();
+  }, []);
+
+  // Handle form field changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === "country") setError(null); // Clear error when country is selected
+  };
+
+  // Handle Continue button click
+  const handleContinue = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!formData.country) {
+      e.preventDefault(); // Prevent navigation
+      setError("Please select a country");
+      return;
+    }
+    setError(null); // Clear error if valid
+  };
+  const resumeData = useSelector((state: RootState) => state.resume.parsedData);
 
   return (
-    <div className="min-h-screen  flex justify-center items-center">
+    <div className="min-h-screen flex justify-center items-center">
       <OnboardingCard>
         {/* Header Section */}
         <div className="mb-6">
@@ -35,11 +83,13 @@ export default function ProfileForm() {
               {/* Profile Image */}
               <div className="flex items-center gap-4">
                 <div className="relative w-16 h-16">
-                  <Image
-                    src="/images/profile.svg"
-                    alt="Profile"
-                    fill
-                    className="rounded-full object-cover"
+                  <img
+                    src={resumeData?.profile_image_url || "/images/profile.svg"}
+                    onError={(e) => {
+                      e.currentTarget.src = "/images/profile.svg";
+                    }}
+                    alt="User Profile"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
@@ -65,22 +115,20 @@ export default function ProfileForm() {
               <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
               <input
                 type="text"
+                name="fullName"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 value={formData.fullName}
-                onChange={(e) =>
-                  setFormData({ ...formData, fullName: e.target.value })
-                }
+                onChange={handleChange}
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
               <input
                 type="text"
+                name="lastName"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 value={formData.lastName}
-                onChange={(e) =>
-                  setFormData({ ...formData, lastName: e.target.value })
-                }
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -91,36 +139,40 @@ export default function ProfileForm() {
               <label className="block text-sm font-medium text-gray-700 mb-1">City</label>
               <input
                 type="text"
+                name="city"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 value={formData.city}
-                onChange={(e) =>
-                  setFormData({ ...formData, city: e.target.value })
-                }
+                onChange={handleChange}
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Country</label>
               <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-black"
+                name="country"
+                className={`w-full px-3 py-2 border rounded-md bg-white text-black ${error ? "border-red-500" : "border-gray-300"
+                  }`}
                 value={formData.country}
-                onChange={(e) =>
-                  setFormData({ ...formData, country: e.target.value })
-                }
+                onChange={handleChange}
               >
-                <option className="text-black" value="UAE">UAE</option>
-                <option className="text-black" value="USA">USA</option>
-                <option className="text-black" value="UK">UK</option>
+                <option value="" disabled>
+                  Select country
+                </option>
+                {countries.map((country) => (
+                  <option key={country.cca2} value={country.name.common} className="py-2 text-black">
+                    {country.name.common}
+                  </option>
+                ))}
               </select>
+              {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Pincode</label>
               <input
                 type="text"
+                name="pincode"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 value={formData.pincode}
-                onChange={(e) =>
-                  setFormData({ ...formData, pincode: e.target.value })
-                }
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -131,22 +183,20 @@ export default function ProfileForm() {
               <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
               <input
                 type="tel"
+                name="phone"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 value={formData.phone}
-                onChange={(e) =>
-                  setFormData({ ...formData, phone: e.target.value })
-                }
+                onChange={handleChange}
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
               <input
                 type="email"
+                name="email"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -158,7 +208,7 @@ export default function ProfileForm() {
                 Back
               </button>
             </Link>
-            <Link href="/CandidateBoarding/Step5">
+            <Link href="/CandidateBoarding/Step5" onClick={handleContinue}>
               <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
                 Continue
               </button>

@@ -85,10 +85,10 @@ const CandidateOnboardingSteps2 = () => {
             Apply Now!
           </h2>
           <h3 className="text-lg sm:text-xl font-extrabold text-black">
-            520+ company searching for you
+          1m+ Job vacancis waiting for you
           </h3>
           <p className="text-gray-600 mt-3 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae sit donec lectus suscipit ultricies rhoncus.
+          1m+ Job vacancis waiting for you.
           </p>
 
           {/* Buttons */}
@@ -108,7 +108,7 @@ const CandidateOnboardingSteps2 = () => {
               style={{ display: "none" }}
             />
 
-            <Link href="/CandidateBoarding/Step6" className="w-full sm:w-auto">
+            <Link href="/CandidateBoarding/Step4" className="w-full sm:w-auto">
               <button
                 className="w-full sm:w-auto bg-[#D67268] text-white px-4 py-3 rounded-lg shadow-md hover:bg-[#c55e54] transition-colors"
                 disabled={loading}

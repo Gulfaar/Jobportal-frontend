@@ -2,8 +2,11 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { RootState } from '@/app/redux/store';
+import { useSelector } from 'react-redux';
 
 const ResumeBuilderStep = () => {
+  const resumeData = useSelector((state: RootState) => state.resume.parsedData);
   return (
     <div className="min-h-screen  flex items-center justify-center p-4">
       <div className="flex items-center w-full max-w-[900px]">
@@ -11,12 +14,13 @@ const ResumeBuilderStep = () => {
         <div className="flex-1 flex flex-col">
           {/* Profile Section */}
           <div className="flex items-center mb-6 bg-white p-4 rounded-xl shadow-md w-[40%]">
-            <Image
-              src="/images/profile.svg"
+          <img
+              src={resumeData?.profile_image_url || "/images/profile.svg"}
+              onError={(e) => {
+                e.currentTarget.src = "/images/profile.svg";
+              }}
               alt="User Profile"
-              width={60}
-              height={60}
-              className="rounded-full mr-4 object-cover"
+              className="w-full h-full object-cover"
             />
             <div>
               <h2 className="text-lg font-semibold text-gray-800">Amanda Rawles</h2>

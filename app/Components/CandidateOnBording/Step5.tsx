@@ -34,8 +34,8 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <div className="min-h-screen p-4 md:p-6 flex justify-center items-start ">
-      <div className="w-full max-w-6xl shadow rounded-xl p-4 md:p-8 ">
+    <div className="min-h-screen flex justify-center items-start  ">
+      <div className="w-full max-w-6xl  shadow rounded-xl md:p-8 ">
         {/* Header */}
         <h2 className="text-lg md:text-xl font-semibold text-gray-900">Reflect on your experience.</h2>
         <p className="text-sm text-gray-600 mt-1">

@@ -66,13 +66,14 @@ export default function ProfileSummary() {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 bg-[#2E5F5C]/50 p-5 rounded-xl shadow mb-6 border border-[#1C4B4B]/10">
-          <Image
-            src="/images/profile.svg"
-            alt="Profile"
-            width={70}
-            height={70}
-            className="rounded-full"
-          />
+        <img
+              src={resumeData?.profile_image_url || "/images/profile.svg"}
+              onError={(e) => {
+                e.currentTarget.src = "/images/profile.svg";
+              }}
+              alt="User Profile"
+              className="w-full h-full object-cover"
+            />
           <div className="text-center sm:text-left">
             <h1 className="text-xl font-bold text-[#1C4B4B]">
               {resumeData?.structured_resume?.name}

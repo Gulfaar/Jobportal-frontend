@@ -20,12 +20,13 @@ const EducationSection = () => {
         {/* Profile Header */}
         <div className="flex flex-col sm:flex-row items-center gap-4 ">
           <div className="w-16 h-16 rounded-full overflow-hidden">
-            <Image
-              src="/images/profile.svg"
-              alt="Profile"
-              width={64}
-              height={64}
-              className="object-cover w-full h-full"
+          <img
+              src={resumeData?.profile_image_url || "/images/profile.svg"}
+              onError={(e) => {
+                e.currentTarget.src = "/images/profile.svg";
+              }}
+              alt="User Profile"
+              className="w-full h-full object-cover"
             />
           </div>
           <div className="text-center sm:text-left">
@@ -37,10 +38,10 @@ const EducationSection = () => {
         {/* Experience Section */}
         <div className="mt-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-4">
-            <h3 className="text-[#DA6B64] font-semibold text-base">Experience</h3>
+            <h3 className="text-[#DA6B64] font-semibold text-base">Education</h3>
             <Link href="/CandidateBoarding/Step8">
               <button className="border border-[#DA6B64] text-[#DA6B64] px-4 py-1.5 rounded hover:bg-red-100 text-sm">
-                Add more experience
+                Add more Education
               </button>
             </Link>
           </div>

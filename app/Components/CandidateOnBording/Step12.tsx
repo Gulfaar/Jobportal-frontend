@@ -50,13 +50,14 @@ const PositionForm = () => {
     {/* Profile Header */}
     <div className="flex items-center mb-6 flex-col md:flex-row text-center md:text-left">
       <div className="w-12 h-12 rounded-full overflow-hidden mb-2 md:mb-0">
-        <Image
-          src="/images/profile.svg"
-          alt="Profile"
-          width={48}
-          height={48}
-          className="object-cover"
-        />
+      <img
+              src={resumeData?.profile_image_url || "/images/profile.svg"}
+              onError={(e) => {
+                e.currentTarget.src = "/images/profile.svg";
+              }}
+              alt="User Profile"
+              className="w-full h-full object-cover"
+            />
       </div>
       <div className="md:ml-4">
         <h2 className="text-lg font-semibold text-gray-900">{resumeData?.structured_resume?.name}</h2>
@@ -162,7 +163,7 @@ const PositionForm = () => {
             Back
           </button>
         </Link>
-        <Link href="/CandidateBoarding/Step14" className="w-full md:w-auto">
+        <Link href="/Finish" className="w-full md:w-auto">
           <button className="w-full md:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
             Continue
           </button>

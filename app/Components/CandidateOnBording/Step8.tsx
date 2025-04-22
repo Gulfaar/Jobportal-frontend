@@ -36,21 +36,10 @@ const AddEducationForm = () => {
       <div className="relative w-full max-w-3xl">
         <div className="w-full shadow-md rounded-xl p-6 sm:p-8">
           {/* Profile Header */}
-          <div className="flex items-center mb-6">
-            <div className="w-12 h-12 rounded-full overflow-hidden">
-              <Image
-                src="/images/profile.svg"
-                alt="Profile"
-                width={48}
-                height={48}
-                className="object-cover"
-              />
-            </div>
-            <div className="ml-4">
-              <h2 className="text-lg font-semibold text-gray-900">{name}</h2>
-              <p className="text-sm text-gray-600">{email}</p>
-            </div>
-          </div>
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Add more Education</h2>
+        <p className="text-sm sm:text-base text-gray-600 mt-1">
+        Make Edits as necessary
+        </p>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="mt-6">
