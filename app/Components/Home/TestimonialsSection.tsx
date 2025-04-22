@@ -146,7 +146,7 @@ const TestimonialsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col items-center mt-10 md:mt-18 px-6 py-20 w-full text-center bg-cover bg-center overflow-hidden"
+      className="flex flex-col items-center  md:mt-18 px-6 py-20 w-full text-center bg-cover bg-center overflow-hidden"
       style={{ backgroundImage: "url('/Testimonial.png')" }}
     >
       <h2 className="text-3xl text-black font-bold">Testimonials from Our Customers</h2>
