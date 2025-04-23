@@ -90,7 +90,7 @@ const LoginPage: React.FC = () => {
   <li className="flex items-start gap-2">
     <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
     <span className="text-sm md:text-base">
-      Let our AI-powered platform highlight your strengths and boost your visibility to employers.
+    Create a free account then upload or  manually enter  your  CV.
     </span>
   </li>
   <li className="flex items-start gap-2">
