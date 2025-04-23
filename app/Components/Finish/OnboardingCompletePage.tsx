@@ -5,8 +5,14 @@ import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 export default function OnboardingCompletePage() {
+    const resumeData = useSelector((state: RootState) => state.resume.parsedData);
+  
+    const userNameRaw = resumeData?.structured_resume?.name || "Candidate";
+    const userName = userNameRaw.replace(/\s+/g, " ").trim();
   const router = useRouter();
   const [confettiActive, setConfettiActive] = useState(true);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
@@ -62,7 +68,7 @@ export default function OnboardingCompletePage() {
         </motion.div>
 
         <h1 className="mt-5 text-3xl font-bold text-gray-900 sm:text-4xl">
-          Welcome, UserName!
+          Welcome,{userName}
         </h1>
         <p className="mt-3 text-base text-gray-600">
           Your onboarding is complete! Start exploring your personalized journey.

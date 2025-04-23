@@ -32,7 +32,7 @@ const AddEducationForm = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center px-4 py-6 sm:py-6">
+    <div className="min-h-screen w-full flex items-center justify-center  sm:py-6">
       <div className="relative w-full max-w-3xl">
         <div className="w-full shadow-md rounded-xl p-6 sm:p-8">
           {/* Profile Header */}

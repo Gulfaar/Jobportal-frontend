@@ -7,15 +7,11 @@ import { useSelector } from "react-redux";
 
 export default function ProfileSummary() {
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
+  const educationEntries = resumeData?.structured_resume?.education || [];
+  const experienceEntries = resumeData?.structured_resume?.experience || [];
+  
 
-  const profile = {
-    name: "Sneha S",
-    email: "wwdjgst@gmail.com",
-    phone: "38494849",
-    country: "India",
-    city: "Ernakulam",
-    pincode: "682001",
-  };
+
 
   const experiences = [
     {
@@ -62,7 +58,7 @@ export default function ProfileSummary() {
   );
 
   return (
-    <div className="min-h-screen bg-[#D3E2E2] rounded-2xl px-4 py-6 sm:px-8">
+    <div className="min-h-screen bg-[#D3E2E2] rounded-2xl px-4 py-10 sm:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 bg-[#2E5F5C]/50 p-5 rounded-xl shadow mb-6 border border-[#1C4B4B]/10">
@@ -89,19 +85,19 @@ export default function ProfileSummary() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-gray-800">
               <p><strong>Name:</strong> {resumeData?.structured_resume?.name}</p>
               <p><strong>Email:</strong> {resumeData?.structured_resume?.email}</p>
-              <p><strong>Phone:</strong> {profile.phone}</p>
-              <p><strong>Country:</strong> {profile.country}</p>
-              <p><strong>City:</strong> {profile.city}</p>
-              <p><strong>Pincode:</strong> {profile.pincode}</p>
+              <p><strong>Phone:</strong>{resumeData?.structured_resume?.phone} </p>
+              <p><strong>Country:</strong>{resumeData?.structured_resume?.email} </p>
+              <p><strong>City:</strong>{resumeData?.structured_resume?.email} </p>
+              <p><strong>Pincode:</strong>{resumeData?.structured_resume?.email} </p>
             </div>
           </SectionCard>
 
           {/* Experience Info */}
           <SectionCard title="Experience">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-800">
-              {experiences.map((exp, idx) => (
+              {experienceEntries.map((exp:any, idx:number) => (
                 <div key={idx}>
-                  <p><strong>Role:</strong> {exp.title}</p>
+                  <p><strong>Role:</strong> {exp.role}</p>
                   <p><strong>Company:</strong> {exp.company}</p>
                   <p><strong>Location:</strong> {exp.location}</p>
                 </div>
@@ -112,10 +108,10 @@ export default function ProfileSummary() {
           {/* Education Info */}
           <SectionCard title="Education">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm text-gray-800">
-              {education.map((edu, idx) => (
+              {educationEntries.map((edu:any, idx:number) => (
                 <div key={idx}>
-                  <p><strong>Course:</strong> {edu.course}</p>
-                  <p><strong>Institute:</strong> {edu.institute}</p>
+                  <p><strong>Course:</strong> {edu.degree}</p>
+                  <p><strong>Institute:</strong> {edu.institution}</p>
                 </div>
               ))}
             </div>

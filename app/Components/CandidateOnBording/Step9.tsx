@@ -37,10 +37,10 @@ const SkillsForm = () => {
   );
 
   return (
-    <div className="min-h-screen md:w-[50%]  w-full flex items-start justify-center rounded-md md:shadow-md px-4 md:px-8 py-6 md:py-8">
+    <div className="min-h-screen md:w-[50%]  w-full flex items-start justify-center ">
       <div className="w-full max-w-5xl ">
         {/* Profile Header */}
-        <div className="flex items-center mb-6 ">
+        <div className="flex items-center mb-6 p-2 ">
           <div className="w-12 h-12 rounded-full overflow-hidden ">
           <img
               src={resumeData?.profile_image_url || "/images/profile.svg"}

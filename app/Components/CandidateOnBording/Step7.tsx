@@ -10,13 +10,13 @@ import { RootState } from '@/app/redux/store';
 const EducationSection = () => {
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
 
-  const experienceEntries = resumeData?.structured_resume?.experience || [];
+  const educationEntries = resumeData?.structured_resume?.education || [];
   const name = resumeData?.structured_resume?.name || 'No Name';
   const email = resumeData?.structured_resume?.email || 'No Email';
 
   return (
-    <div className="w-full  flex justify-center p-4">
-      <div className="w-full max-w-4xl bg-white rounded-lg shadow-md p-6 sm:p-8">
+    <div className="w-full  flex justify-center p-2 mt-9">
+      <div className="w-full max-w-4xl sm:p-8">
         {/* Profile Header */}
         <div className="flex flex-col sm:flex-row items-center gap-4 ">
           <div className="w-16 h-16 rounded-full overflow-hidden">
@@ -47,14 +47,14 @@ const EducationSection = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {experienceEntries.map((entry: any, index: number) => (
+            {educationEntries.map((entry: any, index: number) => (
               <div
                 key={index}
                 className="border border-[#DA6B64] rounded-lg p-4 shadow-sm relative bg-white"
               >
-                <p className="font-semibold text-gray-800">{entry.role}</p>
-                <p className="text-sm text-gray-600">{entry.company}</p>
-                <p className="text-sm text-gray-600">{entry.duration}</p>
+                <p className="font-semibold text-gray-800">{entry.degree}</p>
+                <p className="text-sm text-gray-600">{entry.institution}</p>
+                <p className="text-sm text-gray-600">{entry.year}</p>
                 <button className="absolute top-4 right-4 text-[#DA6B64] hover:text-[#c95a56]">
                   <FontAwesomeIcon icon={faPen} className="w-4 h-4" />
                 </button>

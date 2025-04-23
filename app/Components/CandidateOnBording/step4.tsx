@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import OnboardingCard from "./OnboardingCard"; // Import OnboardingCard
+import OnboardingCard from "./OnboardingCard";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
-// Define the Country type
 interface Country {
   cca2: string;
   name: {
@@ -13,7 +14,6 @@ interface Country {
   };
 }
 
-// Static array of countries
 const countriesList: Country[] = [
   { cca2: "AE", name: { common: "United Arab Emirates" } },
   { cca2: "US", name: { common: "United States" } },
@@ -35,7 +35,6 @@ const countriesList: Country[] = [
   { cca2: "SE", name: { common: "Sweden" } },
   { cca2: "CH", name: { common: "Switzerland" } },
   { cca2: "SG", name: { common: "Singapore" } },
-  // Add more countries as needed
 ];
 
 export default function ProfileForm() {
@@ -43,52 +42,53 @@ export default function ProfileForm() {
     fullName: "",
     lastName: "",
     city: "",
-    country: "", // Changed to empty string to enforce selection
+    country: "",
+    nativeCountry: "",
     pincode: "",
     phone: "",
     email: "",
   });
-  const [countries, setCountries] = useState<Country[]>(countriesList); // Initialize with static list
+  const [countries, setCountries] = useState<Country[]>(countriesList);
   const [error, setError] = useState<string | null>(null);
 
-  // Handle form field changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (name === "country") setError(null); // Clear error when country is selected
-  };
 
-  // Handle Continue button click
+    if (name === "country") setError(null); // keep error clear for main country
+  };
   const handleContinue = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!formData.country) {
-      e.preventDefault(); // Prevent navigation
+      e.preventDefault();
       setError("Please select a country");
       return;
     }
-    setError(null); // Clear error if valid
+    setError(null);
   };
 
+  const resumeData = useSelector((state: RootState) => state.resume.parsedData);
+  const userNameRaw = resumeData?.structured_resume?.name || "Candidate";
+  const userName = userNameRaw.replace(/\s+/g, " ").trim();
+  const PhoneNumber = resumeData?.structured_resume?.phone || "No Phone Number";
+  const userEmail = resumeData?.structured_resume?.email || "No Email";
+
   return (
-    <div className="min-h-screen flex justify-center items-center">
+    <div className="min-h-screen flex justify-center items-center p-3">
       <OnboardingCard>
-        {/* Header Section */}
         <div className="mb-6">
-          <div className="bg-[#f6fafa] rounded-xl shadow-sm px-4 py-5">
+          <div className="bg-[#f6fafa] rounded-xl shadow-sm px-4 py-3">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-y-4">
-              {/* Welcome Text */}
               <p className="text-sm text-gray-500 font-medium">
-                Welcome, <span className="text-gray-800">Amanda</span>
+                Welcome, <span className="text-gray-800">{userName.split(" ")[0]}</span>
               </p>
-              {/* Date */}
               <p className="text-sm text-gray-400">Tue, 07 June 2022</p>
             </div>
 
             <div className="flex flex-col sm:flex-row justify-between items-center mt-4 gap-4">
-              {/* Profile Image */}
               <div className="flex items-center gap-4">
                 <div className="relative w-16 h-16">
                   <Image
-                    src="/images/profile.svg" // Fallback image since resumeData is unused
+                    src="/images/profile.svg"
                     alt="User Profile"
                     width={64}
                     height={64}
@@ -96,11 +96,10 @@ export default function ProfileForm() {
                   />
                 </div>
                 <div>
-                  <h2 className="text-base font-medium text-gray-800">Amanda Rawles</h2>
+                  <h2 className="text-base font-medium text-gray-800">{userName.split(" ")[0]}</h2>
                   <p className="text-sm text-gray-500">alexarawles@gmail.com</p>
                 </div>
               </div>
-              {/* Change Photo Button */}
               <button className="text-sm text-emerald-600 hover:text-emerald-700 border border-emerald-600 px-4 py-1.5 rounded-md">
                 Change photo
               </button>
@@ -108,49 +107,50 @@ export default function ProfileForm() {
           </div>
         </div>
 
-        {/* Form Section */}
         <form className="space-y-6">
-          {/* Name Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <label className="block text-sm font-medium mb-1 text-gray-700">Full Name</label>
               <input
                 type="text"
                 name="fullName"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                placeholder={userName.split(" ")[0]}
+                className="w-full px-3 py-2  placeholder-black border rounded-md"
                 value={formData.fullName}
                 onChange={handleChange}
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+              <label className="block text-sm font-medium mb-1 text-gray-700">Last Name</label>
               <input
                 type="text"
                 name="lastName"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                placeholder={userName.split(" ")[1]}
+                className="w-full px-3 py-2  placeholder-black border border-gray-300 rounded-md"
                 value={formData.lastName}
                 onChange={handleChange}
               />
             </div>
           </div>
 
-          {/* Location Fields */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">City</label>
+              <label className="block text-sm font-medium mb-1 text-gray-700">City</label>
               <input
                 type="text"
                 name="city"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                placeholder="City"
+                className="w-full px-3 py-2 placeholder-black border border-gray-300 rounded-md"
                 value={formData.city}
                 onChange={handleChange}
               />
             </div>
+
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Country</label>
+              <label className="block text-sm font-medium mb-1 text-gray-700">Country</label>
               <select
                 name="country"
-                className={`w-full px-3 py-2 border rounded-md bg-white text-black ${error ? "border-red-500" : "border-gray-300"}`}
+                className={`w-full px-3 py-2 border rounded-md text-black bg-white ${error ? "border-red-500" : "border-gray-300"}`}
                 value={formData.country}
                 onChange={handleChange}
               >
@@ -158,50 +158,71 @@ export default function ProfileForm() {
                   Select country
                 </option>
                 {countries.map((country) => (
-                  <option key={country.cca2} value={country.name.common} className="py-2 text-black">
+                  <option key={country.cca2} value={country.name.common} className="text-black">
                     {country.name.common}
                   </option>
                 ))}
               </select>
               {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
             </div>
+
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Pincode</label>
+              <label className="block text-sm font-medium mb-1 text-gray-700">Native Country</label>
+              <select
+                name="nativeCountry"
+                className="w-full px-3 py-2 border rounded-md text-black bg-white border-gray-300"
+                value={formData.nativeCountry}
+                onChange={handleChange}
+              >
+                <option value="" disabled>
+                  Select country
+                </option>
+                {countries.map((country) => (
+                  <option key={country.cca2} value={country.name.common} className="text-black">
+                    {country.name.common}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-1 text-gray-700">Pincode</label>
               <input
                 type="text"
                 name="pincode"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                placeholder="Pincode"
+                className="w-full px-3 py-2 placeholder-black border border-gray-300 rounded-md"
                 value={formData.pincode}
                 onChange={handleChange}
               />
             </div>
           </div>
 
-          {/* Contact Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <label className="block text-sm font-medium mb-1 text-gray-700">Phone Number</label>
               <input
                 type="tel"
                 name="phone"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                placeholder={PhoneNumber}
+                className="w-full px-3 py-2 text-black placeholder-black border border-gray-300 rounded-md"
                 value={formData.phone}
                 onChange={handleChange}
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <label className="block text-sm font-medium mb-1 text-gray-700">Email</label>
               <input
                 type="email"
                 name="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                placeholder={userEmail}
+                className="w-full px-3 py-2  placeholder-black border border-gray-300 rounded-md"
                 value={formData.email}
                 onChange={handleChange}
               />
             </div>
           </div>
 
-          {/* Navigation Buttons */}
           <div className="flex justify-between mt-6">
             <Link href="/CandidateBoarding/Step3">
               <button className="border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
