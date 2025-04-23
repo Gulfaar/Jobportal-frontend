@@ -72,7 +72,7 @@ export default function ProfileSummary() {
                 e.currentTarget.src = "/images/profile.svg";
               }}
               alt="User Profile"
-              className="w-full h-full object-cover"
+              className="w-28 h-30 object-cover"
             />
           <div className="text-center sm:text-left">
             <h1 className="text-xl font-bold text-[#1C4B4B]">

@@ -91,7 +91,7 @@ const CandidateOnboardingSteps2 = () => {
           1m+ Job vacancis waiting for you
           </h3>
           <p className="text-gray-600 mt-3 text-sm sm:text-base">
-          1m+ Job vacancis waiting for you.
+          Over 1 million job vacancies are available now, offering incredible opportunities across various industries and skill levels.
           </p>
 
           {/* Buttons */}

@@ -103,7 +103,7 @@ const ExperienceSection = () => {
               Back
             </button>
           </Link>
-          <Link href="/CandidateBoarding/Step6">
+          <Link href="/CandidateBoarding/Step7">
             <button className="w-full md:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
               Continue
             </button>
