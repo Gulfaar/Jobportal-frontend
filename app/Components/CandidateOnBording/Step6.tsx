@@ -31,9 +31,9 @@ const AddExperienceForm = () => {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-8 ">
       <OnboardingCard  >
-        <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Reflect on your experience</h2>
+        <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Add more experinece</h2>
         <p className="text-sm sm:text-base text-gray-600 mt-1">
-          Make edits as necessary. We offer expert samples to help guide and inspire you.
+        Make edits as necessary.
         </p>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-5">
@@ -132,7 +132,7 @@ const AddExperienceForm = () => {
                 Back
               </button>
             </Link>
-            <Link href="/CandidateBoarding/Step7">
+            <Link href="/CandidateBoarding/Step5">
               <button
                 type="submit"
                 className="w-full sm:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition"

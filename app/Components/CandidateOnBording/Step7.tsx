@@ -70,7 +70,7 @@ const EducationSection = () => {
               Back
             </button>
           </Link>
-          <Link href="/CandidateBoarding/Step8" className="w-full sm:w-auto">
+          <Link href="/CandidateBoarding/Step9" className="w-full sm:w-auto">
             <button className="w-full sm:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
               Continue
             </button>

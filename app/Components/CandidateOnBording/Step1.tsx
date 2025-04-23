@@ -131,7 +131,7 @@ const CandidateOnboardingSteps1 = () => {
             value={selectedCountry}
             onChange={handleCountryChange}
             className={`text-black w-full px-10 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black pr-8 ${
-              error ? "border-red-500" : "border-gray-300"
+              error ? "" : "border-gray-300"
             }`}
           >
             <option value="" disabled>
@@ -146,11 +146,9 @@ const CandidateOnboardingSteps1 = () => {
           <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#2E5F5C]">
             🌍
           </span>
-          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-            ▼
-          </span>
-          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+          
         </div>
+        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         <button
           className="bg-[#D67268] text-white px-10 py-3 rounded-lg"
           onClick={handleContinue}
