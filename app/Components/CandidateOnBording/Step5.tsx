@@ -11,7 +11,7 @@ const ExperienceSection = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-start">
-      <div className="w-full max-w-6xl shadow rounded-xl md:p-8">
+      <div className="w-full max-w-6xl bg-white md:p-8">
         <h2 className="text-lg md:text-xl font-semibold text-gray-900">Add more experience.</h2>
         <p className="text-sm text-gray-600 mt-1">Make edits as necessary.</p>
 
