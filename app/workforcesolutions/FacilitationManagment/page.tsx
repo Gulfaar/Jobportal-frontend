@@ -2,17 +2,17 @@ import Head from "next/head";
 import Header from '../../Components/Header/Header'
 
 import Footer from "../../Components/Home/Footer";
-import InfrastructureSection from "../../Components/FacilitationManagment/InfrastructureSection";
-import ComprehensiveServices from "../../Components/FacilitationManagment/ComprehensiveServices";
-import SectorServices from "../../Components/FacilitationManagment/SectorServices";
-import RopeAccess from "@/app/Components/FacilitationManagment/RopeAccess";
-import WhyGulfaaar from "@/app/Components/FacilitationManagment/WhyGulfaaar";
-import Inspection from "@/app/Components/FacilitationManagment/Inspection";
-import UtilityWorks from "@/app/Components/FacilitationManagment/UtilityWorks";
-import Cleaning from "@/app/Components/FacilitationManagment/Cleaning";
-import TechBPOSection from "@/app/Components/FacilitationManagment/TechBPOSection";
-import WorkforceDeployment from "@/app/Components/FacilitationManagment/WorkforceDeployment";
-import HighlightsSection from "@/app/Components/FacilitationManagment/HighlightsSection";
+import InfrastructureSection from "../../Components/FacilitationManagmentold/InfrastructureSection";
+import ComprehensiveServices from "../../Components/FacilitationManagmentold/ComprehensiveServices";
+import SectorServices from "../../Components/FacilitationManagmentold/SectorServices";
+import RopeAccess from "@/app/Components/FacilitationManagmentold/RopeAccess";
+import WhyGulfaaar from "@/app/Components/FacilitationManagmentold/WhyGulfaaar1";
+import Inspection from "@/app/Components/FacilitationManagmentold/Inspection";
+import UtilityWorks from "@/app/Components/FacilitationManagmentold/UtilityWorks";
+import Cleaning from "@/app/Components/FacilitationManagmentold/Cleaning";
+import TechBPOSection from "@/app/Components/FacilitationManagmentold/TechBPOSection";
+import WorkforceDeployment from "@/app/Components/FacilitationManagmentold/WorkforceDeployment";
+import HighlightsSection from "@/app/Components/FacilitationManagmentold/HighlightsSection";
 
 
 
