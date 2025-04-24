@@ -15,7 +15,10 @@ const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const BaseApi = process.env.NEXT_PUBLIC_BASE_API_URL;
+  const BaseApi = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent default form submission
@@ -24,7 +27,7 @@ const LoginPage: React.FC = () => {
 
     if (result.success) {
       toast.success("Login Successful! Redirecting...");
-      router.push("/CandidateBoarding"); // Redirect using Next.js router
+      router.push("/CandidateBoarding");
     } else {
       toast.error(result.message || "Login failed. Please try again.");
     }
@@ -33,6 +36,10 @@ const LoginPage: React.FC = () => {
   const googleAuth = () => {
     window.open(`${BaseApi}/auth/google`,);
   }
+
+  const linkedinAuth = () => {
+    window.open(`${BaseApi}/auth/linkedin`,);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white px-4 py-8">
@@ -75,9 +82,13 @@ const LoginPage: React.FC = () => {
             </div>
 
             <div className="flex justify-center space-x-6 mt-4">
-              <a href="#" className="text-[#2e6b66] text-2xl md:text-3xl hover:text-[#255a58]">
+              {/* <button
+                type="button"
+                onClick={linkedinAuth}
+                className="text-[#2e6b66] cursor-pointer text-2xl md:text-3xl hover:text-[#255a58] focus:outline-none"
+              >
                 <FaLinkedinIn />
-              </a>
+              </button> */}
               <button
                 type="button"
                 onClick={googleAuth}
@@ -86,55 +97,55 @@ const LoginPage: React.FC = () => {
               >
                 <FaGoogle />
               </button>
-              <a href="#" className="text-[#2e6b66] text-2xl md:text-3xl hover:text-[#255a58]">
+              {/* <a href="#" className="text-[#2e6b66] text-2xl md:text-3xl hover:text-[#255a58]">
                 <FaFacebookF />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
 
-      {/* Register Section */}
-      <div className="bg-[#D6655A] ml-10  text-white p-4 md:p-6 lg:p-8 rounded-2xl shadow-md flex flex-col md:justify-between  mt-0 md:mt-0  md:ml-14 w-[72%]">
-        <div className=" ">
-          <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-4 md:mb-6 text-center">Register</h3>
-          <ul className="space-y-2 md:space-y-4 text-sm md:text-base text-white/90">
-  <li className="flex items-start gap-2">
-    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
-    <span className="text-sm md:text-base">
-    Create a free account then upload or  manually enter  your  CV.
-    </span>
-  </li>
-  <li className="flex items-start gap-2">
-    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
-    <span className="text-sm md:text-base">
-      Let our AI-powered platform highlight your strengths and boost your visibility to employers.
-    </span>
-  </li>
-  <li className="flex items-start gap-2">
-    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
-    <span className="text-sm md:text-base">
-      Add your skills, experience, and preferred job sectors to get matched faster.
-    </span>
-  </li>
-  <li className="flex items-start gap-2">
-    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
-    <span className="text-sm md:text-base">
-      Our AI finds the best job opportunities based on your profile — no endless searching.
-    </span>
-  </li>
-  <li className="flex items-start gap-2">
-    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
-    <span className="text-sm md:text-base">
-      Apply for verified positions across 22+ countries with trusted employers.
-    </span>
-  </li>
-  <li className="flex items-start gap-2">
-    <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
-    <span className="text-sm md:text-base">
-      Get certified, interview-ready, and deployed with end-to-end career assistance from Gulfaar.
-    </span>
-  </li>
-</ul>
+        {/* Register Section */}
+        <div className="bg-[#D6655A] ml-10  text-white p-4 md:p-6 lg:p-8 rounded-2xl shadow-md flex flex-col md:justify-between  mt-0 md:mt-0  md:ml-14 w-[72%]">
+          <div className=" ">
+            <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-4 md:mb-6 text-center">Register</h3>
+            <ul className="space-y-2 md:space-y-4 text-sm md:text-base text-white/90">
+              <li className="flex items-start gap-2">
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <span className="text-sm md:text-base">
+                  Create a free account then upload or  manually enter  your  CV.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <span className="text-sm md:text-base">
+                  Let our AI-powered platform highlight your strengths and boost your visibility to employers.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <span className="text-sm md:text-base">
+                  Add your skills, experience, and preferred job sectors to get matched faster.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <span className="text-sm md:text-base">
+                  Our AI finds the best job opportunities based on your profile — no endless searching.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <span className="text-sm md:text-base">
+                  Apply for verified positions across 22+ countries with trusted employers.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <span className="text-sm md:text-base">
+                  Get certified, interview-ready, and deployed with end-to-end career assistance from Gulfaar.
+                </span>
+              </li>
+            </ul>
 
           </div>
 
