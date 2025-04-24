@@ -189,10 +189,10 @@ export default function ProfileForm() {
               <label className="block text-sm font-medium mb-1 text-gray-700">Pincode</label>
               <input
                 type="text"
-                name="pincode"
+                name="fullName"
                 placeholder="Pincode"
-                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
-                value=""
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border rounded-md"
+                value={formData.fullName}
                 onChange={handleChange}
               />
             </div>
@@ -223,18 +223,18 @@ export default function ProfileForm() {
             </div>
           </div>
 
-          <div className="flex justify-between mt-6">
-            <Link href="/CandidateBoarding/Step3">
-              <button className="border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
-                Back
-              </button>
-            </Link>
-            <Link href="/CandidateBoarding/Step5">
-              <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
-                Continue
-              </button>
-            </Link>
-          </div>
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 w-full p-5">
+          <Link href="/CandidateBoarding/Step3" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto border border-[#FF6F61] text-[#DA6B64] px-5 py-2 rounded-lg text-sm sm:text-base hover:bg-[#FFEBE8] transition">
+              Back
+            </button>
+          </Link>
+          <Link href="/CandidateBoarding/Step5" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto bg-[#DA6B64] text-white px-5 py-2 rounded-lg text-sm sm:text-base hover:bg-[#c65751] transition">
+              Continue
+            </button>
+          </Link>
+        </div>
         </form>
       </OnboardingCard>
     </div>
