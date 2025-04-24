@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface ResumeState {
-  parsedData: any | null; // Store parsed resume response
+  parsedData: any | null;
+  parsedAt: string | null; // Store date when resume was parsed
 }
 
 const initialState: ResumeState = {
   parsedData: null,
+  parsedAt: null,
 };
 
 const resumeSlice = createSlice({
@@ -14,9 +16,11 @@ const resumeSlice = createSlice({
   reducers: {
     setParsedResumeData: (state, action: PayloadAction<any>) => {
       state.parsedData = action.payload;
+      state.parsedAt = new Date().toISOString(); // Store the current date
     },
     clearResumeData: (state) => {
       state.parsedData = null;
+      state.parsedAt = null;
     },
   },
 });

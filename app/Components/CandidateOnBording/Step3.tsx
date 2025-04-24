@@ -69,7 +69,7 @@ const WelcomeSection = () => {
                 </div>
                 <button
 
-                  className="self-start px-5 py-2 bg-[#2E3A56] text-white rounded-lg hover:bg-[#1f2a3b] transition-colors duration-300"
+                  className="self-start px-5 py-2 bg-[#DA6B64] text-white rounded-lg hover:bg-[#1f2a3b] transition-colors duration-300"
                 >
                   Apply Now
                 </button>
@@ -91,7 +91,7 @@ const WelcomeSection = () => {
                 className="group bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transform transition-all duration-300 cursor-pointer"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 bg-[#2E3A56] text-white p-3 rounded-full text-lg font-semibold w-12 h-12 flex items-center justify-center">
+                  <div className="flex-shrink-0 bg-[#DA6B64] text-white p-3 rounded-full text-lg font-semibold w-12 h-12 flex items-center justify-center">
                     {courseName[0]}
                   </div>
                   <div className="flex-1">

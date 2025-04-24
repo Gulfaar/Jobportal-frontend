@@ -72,6 +72,17 @@ export default function ProfileForm() {
   const PhoneNumber = resumeData?.structured_resume?.phone || "No Phone Number";
   const userEmail = resumeData?.structured_resume?.email || "No Email";
 
+  const parsedAt = useSelector((state: RootState) => state.resume.parsedAt);
+
+  const formattedDate = parsedAt
+    ? new Date(parsedAt).toLocaleDateString("en-US", {
+        weekday: "short",
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+      })
+    : null;
+
   return (
     <div className="min-h-screen flex justify-center items-center p-3">
       <OnboardingCard>
@@ -81,7 +92,7 @@ export default function ProfileForm() {
               <p className="text-sm text-gray-500 font-medium">
                 Welcome, <span className="text-gray-800">{userName.split(" ")[0]}</span>
               </p>
-              <p className="text-sm text-gray-400">Tue, 07 June 2022</p>
+              <p className="text-sm text-gray-400"> {formattedDate ? `${formattedDate}` : "No resume uploaded"}</p>
             </div>
 
             <div className="flex flex-col sm:flex-row justify-between items-center mt-4 gap-4">
@@ -97,7 +108,7 @@ export default function ProfileForm() {
                 </div>
                 <div>
                   <h2 className="text-base font-medium text-gray-800">{userName.split(" ")[0]}</h2>
-                  <p className="text-sm text-gray-500">alexarawles@gmail.com</p>
+                  <p className="text-sm text-gray-500">{userEmail}</p>
                 </div>
               </div>
               <button className="text-sm text-emerald-600 hover:text-emerald-700 border border-emerald-600 px-4 py-1.5 rounded-md">
