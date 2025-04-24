@@ -29,7 +29,7 @@ const AddExperienceForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-8 ">
+    <div className="min-h-screen flex items-center justify-center sm:px-6  ">
       <OnboardingCard  >
         <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Add more experinece</h2>
         <p className="text-sm sm:text-base text-gray-600 mt-1">

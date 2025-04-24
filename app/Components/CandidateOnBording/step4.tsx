@@ -7,6 +7,7 @@ import OnboardingCard from "./OnboardingCard";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 
+
 interface Country {
   cca2: string;
   name: {
@@ -54,23 +55,28 @@ export default function ProfileForm() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === "country") setError(null);
+  };
 
-    if (name === "country") setError(null); // keep error clear for main country
-  };
-  const handleContinue = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!formData.country) {
-      e.preventDefault();
-      setError("Please select a country");
-      return;
-    }
-    setError(null);
-  };
+
 
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
   const userNameRaw = resumeData?.structured_resume?.name || "Candidate";
   const userName = userNameRaw.replace(/\s+/g, " ").trim();
   const PhoneNumber = resumeData?.structured_resume?.phone || "No Phone Number";
   const userEmail = resumeData?.structured_resume?.email || "No Email";
+
+  const parsedAt = useSelector((state: RootState) => state.resume.parsedAt);
+  const country = useSelector((state: RootState) => state.resume.selectedCountry);
+
+  const formattedDate = parsedAt
+    ? new Date(parsedAt).toLocaleDateString("en-US", {
+        weekday: "short",
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+      })
+    : null;
 
   return (
     <div className="min-h-screen flex justify-center items-center p-3">
@@ -81,7 +87,9 @@ export default function ProfileForm() {
               <p className="text-sm text-gray-500 font-medium">
                 Welcome, <span className="text-gray-800">{userName.split(" ")[0]}</span>
               </p>
-              <p className="text-sm text-gray-400">Tue, 07 June 2022</p>
+              <p className="text-sm text-gray-400">
+                {formattedDate ? `${formattedDate}` : "No resume uploaded"}
+              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row justify-between items-center mt-4 gap-4">
@@ -97,7 +105,7 @@ export default function ProfileForm() {
                 </div>
                 <div>
                   <h2 className="text-base font-medium text-gray-800">{userName.split(" ")[0]}</h2>
-                  <p className="text-sm text-gray-500">alexarawles@gmail.com</p>
+                  <p className="text-sm text-gray-500">{userEmail}</p>
                 </div>
               </div>
               <button className="text-sm text-emerald-600 hover:text-emerald-700 border border-emerald-600 px-4 py-1.5 rounded-md">
@@ -115,7 +123,7 @@ export default function ProfileForm() {
                 type="text"
                 name="fullName"
                 placeholder={userName.split(" ")[0]}
-                className="w-full px-3 py-2  placeholder-black border rounded-md"
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border rounded-md"
                 value={formData.fullName}
                 onChange={handleChange}
               />
@@ -126,7 +134,7 @@ export default function ProfileForm() {
                 type="text"
                 name="lastName"
                 placeholder={userName.split(" ")[1]}
-                className="w-full px-3 py-2  placeholder-black border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
                 value={formData.lastName}
                 onChange={handleChange}
               />
@@ -140,37 +148,29 @@ export default function ProfileForm() {
                 type="text"
                 name="city"
                 placeholder="City"
-                className="w-full px-3 py-2 placeholder-black border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
                 value={formData.city}
                 onChange={handleChange}
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1 text-gray-700">Country</label>
-              <select
+              <label className="block text-sm font-medium mb-1 text-gray-700">Current Country</label>
+              <input
+                type="text"
                 name="country"
-                className={`w-full px-3 py-2 border rounded-md text-black bg-white ${error ? "border-red-500" : "border-gray-300"}`}
-                value={formData.country}
+                placeholder={formData.country || country || ""}
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
+                value={formData.country || country || ""}
                 onChange={handleChange}
-              >
-                <option value="" disabled>
-                  Select country
-                </option>
-                {countries.map((country) => (
-                  <option key={country.cca2} value={country.name.common} className="text-black">
-                    {country.name.common}
-                  </option>
-                ))}
-              </select>
-              {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+              />
             </div>
 
             <div>
               <label className="block text-sm font-medium mb-1 text-gray-700">Native Country</label>
               <select
                 name="nativeCountry"
-                className="w-full px-3 py-2 border rounded-md text-black bg-white border-gray-300"
+                className="w-full px-3 py-2 text-black bg-white border border-gray-300 rounded-md"
                 value={formData.nativeCountry}
                 onChange={handleChange}
               >
@@ -178,7 +178,7 @@ export default function ProfileForm() {
                   Select country
                 </option>
                 {countries.map((country) => (
-                  <option key={country.cca2} value={country.name.common} className="text-black">
+                  <option key={country.cca2} value={country.name.common}>
                     {country.name.common}
                   </option>
                 ))}
@@ -191,8 +191,8 @@ export default function ProfileForm() {
                 type="text"
                 name="pincode"
                 placeholder="Pincode"
-                className="w-full px-3 py-2 placeholder-black border border-gray-300 rounded-md"
-                value={formData.pincode}
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
+                value=""
                 onChange={handleChange}
               />
             </div>
@@ -205,7 +205,7 @@ export default function ProfileForm() {
                 type="tel"
                 name="phone"
                 placeholder={PhoneNumber}
-                className="w-full px-3 py-2 text-black placeholder-black border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -216,7 +216,7 @@ export default function ProfileForm() {
                 type="email"
                 name="email"
                 placeholder={userEmail}
-                className="w-full px-3 py-2  placeholder-black border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -229,7 +229,7 @@ export default function ProfileForm() {
                 Back
               </button>
             </Link>
-            <Link href="/CandidateBoarding/Step5" onClick={handleContinue}>
+            <Link href="/CandidateBoarding/Step5">
               <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition">
                 Continue
               </button>
@@ -240,3 +240,7 @@ export default function ProfileForm() {
     </div>
   );
 }
+function dispatch(arg0: { payload: string; type: "resume/setPincode"; }) {
+  throw new Error("Function not implemented.");
+}
+

@@ -137,7 +137,7 @@ const SkillsForm = () => {
 
           {/* Navigation Buttons */}
           <div className="flex flex-col md:flex-row justify-between mt-6 gap-4">
-            <Link href="/CandidateBoarding/Step8" className="w-full md:w-auto">
+            <Link href="/CandidateBoarding/Step7" className="w-full md:w-auto">
               <button className="w-full md:w-auto border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
                 Back
               </button>
