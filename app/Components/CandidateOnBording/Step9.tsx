@@ -37,10 +37,10 @@ const SkillsForm = () => {
   );
 
   return (
-    <div className="min-h-screen md:w-[50%]  w-full flex items-start justify-center rounded-md md:shadow-md px-4 md:px-8 py-6 md:py-8">
+    <div className="min-h-screen md:w-[50%]  w-full flex items-start justify-center ">
       <div className="w-full max-w-5xl ">
         {/* Profile Header */}
-        <div className="flex items-center mb-6 ">
+        <div className="flex items-center mb-6 p-2 ">
           <div className="w-12 h-12 rounded-full overflow-hidden ">
           <img
               src={resumeData?.profile_image_url || "/images/profile.svg"}
@@ -137,7 +137,7 @@ const SkillsForm = () => {
 
           {/* Navigation Buttons */}
           <div className="flex flex-col md:flex-row justify-between mt-6 gap-4">
-            <Link href="/CandidateBoarding/Step8" className="w-full md:w-auto">
+            <Link href="/CandidateBoarding/Step7" className="w-full md:w-auto">
               <button className="w-full md:w-auto border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
                 Back
               </button>

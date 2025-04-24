@@ -1,49 +1,15 @@
 "use client";
+
 import { RootState } from "@/app/redux/store";
-import Image from "next/image";
 import Link from "next/link";
 import { FaRegEdit } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 export default function ProfileSummary() {
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
-
-  const profile = {
-    name: "Sneha S",
-    email: "wwdjgst@gmail.com",
-    phone: "38494849",
-    country: "India",
-    city: "Ernakulam",
-    pincode: "682001",
-  };
-
-  const experiences = [
-    {
-      title: "UI/UX Designer",
-      company: "Oxpyn Technologies",
-      location: "Kochi, Kerala",
-    },
-    {
-      title: "Frontend Developer",
-      company: "ABC Pvt Ltd",
-      location: "Bangalore, India",
-    },
-  ];
-
-  const education = [
-    {
-      course: "UI/UX Internship",
-      institute: "Zoople Technologies",
-    },
-    {
-      course: "React Developer Training",
-      institute: "TechMaster Academy",
-    },
-    {
-      course: "Web Design Certification",
-      institute: "Design School",
-    },
-  ];
+  const educationEntries = resumeData?.structured_resume?.education || [];
+  const experienceEntries = resumeData?.structured_resume?.experience || [];
+    const country = useSelector((state: RootState) => state.resume.selectedCountry);
 
   const SectionCard = ({
     title,
@@ -52,9 +18,9 @@ export default function ProfileSummary() {
     title: string;
     children: React.ReactNode;
   }) => (
-    <div className="bg-[#2E5F5C]/50 p-4 rounded-xl shadow-sm relative border border-[#1C4B4B]/10">
-      <h2 className="text-[#1C4B4B] font-semibold text-lg mb-3">{title}</h2>
-      <button className="absolute top-4 right-4 text-[#1C4B4B] text-lg hover:text-[#DA6B64] transition">
+    <div className="bg-white p-5 rounded-2xl shadow-md border border-[#1C4B4B]/10 relative">
+      <h2 className="text-[#1C4B4B] font-semibold text-lg mb-4">{title}</h2>
+      <button className="absolute top-5 right-5 text-[#1C4B4B] hover:text-[#DA6B64] transition">
         <FaRegEdit />
       </button>
       {children}
@@ -62,46 +28,50 @@ export default function ProfileSummary() {
   );
 
   return (
-    <div className="min-h-screen bg-[#D3E2E2] rounded-2xl px-4 py-6 sm:px-8">
+    <div className="min-h-screen bg-[#D3E2E2] px-4 py-10 sm:px-8 rounded-2xl">
       <div className="max-w-5xl mx-auto">
+
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 bg-[#2E5F5C]/50 p-5 rounded-xl shadow mb-6 border border-[#1C4B4B]/10">
-        <img
+        <div className="flex flex-col sm:flex-row items-center gap-6 bg-white p-6 rounded-2xl shadow-md mb-8 border border-[#1C4B4B]/10">
+          <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-[#1C4B4B]">
+            <img
               src={resumeData?.profile_image_url || "/images/profile.svg"}
               onError={(e) => {
                 e.currentTarget.src = "/images/profile.svg";
               }}
               alt="User Profile"
-              className="w-28 h-30 object-cover"
+              className="w-full h-full object-cover"
             />
+          </div>
           <div className="text-center sm:text-left">
-            <h1 className="text-xl font-bold text-[#1C4B4B]">
-              {resumeData?.structured_resume?.name}
+            <h1 className="text-2xl font-bold text-[#1C4B4B]">
+              {resumeData?.structured_resume?.name || "John Doe"}
             </h1>
-            <p className="text-sm text-gray-600">{resumeData?.structured_resume?.email}</p>
+            <p className="text-sm text-gray-600">{resumeData?.structured_resume?.email || "johndoe@email.com"}</p>
           </div>
         </div>
 
         {/* Profile Sections */}
         <div className="space-y-6">
+
           {/* Profile Info */}
           <SectionCard title="Profile">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-gray-800">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-800 ">
               <p><strong>Name:</strong> {resumeData?.structured_resume?.name}</p>
               <p><strong>Email:</strong> {resumeData?.structured_resume?.email}</p>
-              <p><strong>Phone:</strong> {profile.phone}</p>
-              <p><strong>Country:</strong> {profile.country}</p>
-              <p><strong>City:</strong> {profile.city}</p>
-              <p><strong>Pincode:</strong> {profile.pincode}</p>
+              <p><strong>Phone:</strong> {resumeData?.structured_resume?.phone}</p>
+              <p><strong>Country:</strong> {country || country || ""}</p>
+              <p><strong>City:</strong> {resumeData?.structured_resume?.city}</p>
+              <p><strong>Pincode:</strong> {resumeData?.structured_resume?.pincode}</p>
             </div>
           </SectionCard>
 
           {/* Experience Info */}
           <SectionCard title="Experience">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-800">
-              {experiences.map((exp, idx) => (
+              {experienceEntries.map((exp: any, idx: number) => (
                 <div key={idx}>
-                  <p><strong>Role:</strong> {exp.title}</p>
+                  <p><strong>Role:</strong> {exp.role}</p>
                   <p><strong>Company:</strong> {exp.company}</p>
                   <p><strong>Location:</strong> {exp.location}</p>
                 </div>
@@ -112,10 +82,10 @@ export default function ProfileSummary() {
           {/* Education Info */}
           <SectionCard title="Education">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm text-gray-800">
-              {education.map((edu, idx) => (
+              {educationEntries.map((edu: any, idx: number) => (
                 <div key={idx}>
-                  <p><strong>Course:</strong> {edu.course}</p>
-                  <p><strong>Institute:</strong> {edu.institute}</p>
+                  <p><strong>Course:</strong> {edu.degree}</p>
+                  <p><strong>Institute:</strong> {edu.institution}</p>
                 </div>
               ))}
             </div>
@@ -123,14 +93,14 @@ export default function ProfileSummary() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex flex-col sm:flex-row justify-between mt-8 gap-4">
+        <div className="flex flex-col sm:flex-row justify-between mt-10 gap-4">
           <Link href="/CandidateBoarding/Step9">
-            <button className="w-full sm:w-auto border border-[#DA6B64] text-[#DA6B64] px-6 py-2 rounded-md hover:bg-[#fdf1f0] transition">
+            <button className="w-full sm:w-auto border border-[#DA6B64] text-[#DA6B64] px-6 py-2 rounded-lg hover:bg-[#fdf1f0] transition">
               Back
             </button>
           </Link>
           <Link href="/CandidateBoarding/Step12">
-            <button className="w-full sm:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-md hover:bg-[#c3554f] transition">
+            <button className="w-full sm:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg hover:bg-[#c3554f] transition">
               Continue
             </button>
           </Link>

@@ -45,11 +45,11 @@ const PositionForm = () => {
   if (!isMounted) return null;
 
   return (
-    <div className="min-h-screen md:w-[52%] w-full flex flex-col items-center justify-center px-4 py-12">
+    <div className="min-h-screen md:w-[52%] w-full flex flex-col items-center justify-center mt-5">
   <div className="w-full max-w-5xl">
     {/* Profile Header */}
     <div className="flex items-center mb-6 flex-col md:flex-row text-center md:text-left">
-      <div className="w-12 h-12 rounded-full overflow-hidden mb-2 md:mb-0">
+      <div className="w-12 h-12 rounded-full overflow-hidden mb-2 md:mb-0 ">
       <img
               src={resumeData?.profile_image_url || "/images/profile.svg"}
               onError={(e) => {
