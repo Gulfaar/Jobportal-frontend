@@ -65,7 +65,7 @@ const EducationSection = () => {
 
         {/* Navigation Buttons */}
         <div className="flex flex-col sm:flex-row justify-between gap-3 mt-8">
-          <Link href="/CandidateBoarding/Step6" className="w-full sm:w-auto">
+          <Link href="/CandidateBoarding/Step5" className="w-full sm:w-auto">
             <button className="w-full sm:w-auto border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition">
               Back
             </button>

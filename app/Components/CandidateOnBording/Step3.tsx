@@ -51,39 +51,9 @@ const WelcomeSection = () => {
           </div>
         </section>
 
-
-
-        {/* Jobs Section */}
-        <div className="mt-10 w-full p-5">
-          <h3 className="text-xl font-semibold text-[#2E3A56] mb-4">Jobs</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {resumeData?.common_jobs?.recommended_jobs?.slice(0, 4).map((jobTitle: any, index: any) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="mb-4">
-                  <h4 className="text-xl font-semibold text-[#2E3A56] mb-1 transition-colors duration-300 group-hover:text-[#1f2a3b]">
-                    {jobTitle}
-                  </h4>
-                </div>
-                <button
-
-                  className="self-start px-5 py-2 bg-[#DA6B64] text-white rounded-lg hover:bg-[#1f2a3b] transition-colors duration-300"
-                >
-                  Apply Now
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-
-
-
-
         {/* Courses Section */}
         <div className="mt-10 w-full p-5">
-          <h3 className="text-xl font-semibold text-[#2E3A56] mb-6">Courses</h3>
+          <h3 className="text-xl font-semibold text-[#2E3A56] mb-6">Courses Recommended for you</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {resumeData?.courses?.recommended_courses?.slice(0, 6).map((courseName: any, index: any) => (
               <div
@@ -106,6 +76,31 @@ const WelcomeSection = () => {
           </div>
         </div>
 
+
+        {/* Jobs Section */}
+        <div className="mt-10 w-full p-5">
+          <h3 className="text-xl font-semibold text-[#2E3A56] mb-4">Jobs You can Apply</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {resumeData?.common_jobs?.recommended_jobs?.slice(0, 4).map((jobTitle: any, index: any) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-[#2E3A56] mb-1 transition-colors duration-300 group-hover:text-[#1f2a3b]">
+                    {jobTitle}
+                  </h4>
+                </div>
+                <button
+
+                  className="self-start px-5 py-2 bg-[#DA6B64] text-white rounded-lg hover:bg-[#1f2a3b] transition-colors duration-300"
+                >
+                  Apply Now
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 w-full p-5">
