@@ -2,6 +2,9 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedCountry } from "@/app/redux/slices/resumeSlice"; 
+import { RootState } from "@/app/redux/store";
 
 // Define the Country type
 interface Country {
@@ -38,16 +41,26 @@ const countriesList: Country[] = [
 
 const CandidateOnboardingSteps1 = () => {
   const router = useRouter();
-  const [countries, setCountries] = useState<Country[]>(countriesList); // Initialize with static list
-  const [selectedCountry, setSelectedCountry] = useState<string>("");
+  const dispatch = useDispatch();
+  const selectedCountry = useSelector(
+    (state: RootState) => state.resume.selectedCountry
+  );
   const [error, setError] = useState<string | null>(null);
 
-  // Handle country selection
   const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCountry(e.target.value);
-    setError(null); // Clear error when a country is selected
+    const country = e.target.value;
+    dispatch(setSelectedCountry(country));
+    setError(null); // Clear error
   };
 
+  const handleContinue = () => {
+    if (!selectedCountry) {
+      setError("Please select a country");
+      return;
+    }
+    setError(null);
+    router.push("/CandidateBoarding/Step2");
+  };
   // Define the Step type for the steps array
   interface Step {
     id: number;
@@ -88,15 +101,7 @@ const CandidateOnboardingSteps1 = () => {
     },
   ];
 
-  // Handle Continue button click
-  const handleContinue = () => {
-    if (!selectedCountry) {
-      setError("Please select a country");
-      return;
-    }
-    setError(null);
-    router.push("/CandidateBoarding/Step2");
-  };
+
 
   return (
     <section className="py-16 w-[80%] mx-auto text-center">
@@ -128,7 +133,7 @@ const CandidateOnboardingSteps1 = () => {
       <div className="mt-18 md:mt-10 flex flex-col items-center gap-4">
         <div className="relative w-[250px]">
           <select
-            value={selectedCountry}
+            value={selectedCountry || ""}
             onChange={handleCountryChange}
             className={`text-black w-full px-10 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black pr-8 ${
               error ? "" : "border-gray-300"
@@ -137,7 +142,7 @@ const CandidateOnboardingSteps1 = () => {
             <option value="" disabled>
               Select country
             </option>
-            {countries.map((country) => (
+            {countriesList.map((country:any) => (
               <option key={country.cca2} value={country.name.common} className="py-2 text-black">
                 {country.name.common}
               </option>
