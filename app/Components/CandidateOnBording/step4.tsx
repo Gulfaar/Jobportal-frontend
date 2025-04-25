@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import OnboardingCard from "./OnboardingCard";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/app/redux/store";
-
+import { setPincode } from "@/app/redux/slices/resumeSlice";
+import { useRouter } from "next/navigation";
 
 interface Country {
   cca2: string;
@@ -39,6 +40,10 @@ const countriesList: Country[] = [
 ];
 
 export default function ProfileForm() {
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const [hydrated, setHydrated] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     lastName: "",
@@ -49,16 +54,9 @@ export default function ProfileForm() {
     phone: "",
     email: "",
   });
-  const [countries, setCountries] = useState<Country[]>(countriesList);
-  const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    if (name === "country") setError(null);
-  };
-
-
+  const [countries] = useState<Country[]>(countriesList);
+  const [formattedDate, setFormattedDate] = useState<string | null>(null);
 
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
   const userNameRaw = resumeData?.structured_resume?.name || "Candidate";
@@ -69,14 +67,30 @@ export default function ProfileForm() {
   const parsedAt = useSelector((state: RootState) => state.resume.parsedAt);
   const country = useSelector((state: RootState) => state.resume.selectedCountry);
 
-  const formattedDate = parsedAt
-    ? new Date(parsedAt).toLocaleDateString("en-US", {
+  useEffect(() => {
+    setHydrated(true);
+    if (parsedAt) {
+      const date = new Date(parsedAt).toLocaleDateString("en-US", {
         weekday: "short",
         day: "2-digit",
         month: "long",
         year: "numeric",
-      })
-    : null;
+      });
+      setFormattedDate(date);
+    }
+  }, [parsedAt]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleContinue = () => {
+    if (formData.pincode) {
+      dispatch(setPincode(formData.pincode));
+    }
+    router.push("/CandidateBoarding/Step5");
+  };
 
   return (
     <div className="min-h-screen flex justify-center items-center p-3">
@@ -88,7 +102,7 @@ export default function ProfileForm() {
                 Welcome, <span className="text-gray-800">{userName.split(" ")[0]}</span>
               </p>
               <p className="text-sm text-gray-400">
-                {formattedDate ? `${formattedDate}` : "No resume uploaded"}
+                {hydrated && formattedDate ? formattedDate : "No resume uploaded"}
               </p>
             </div>
 
@@ -134,7 +148,7 @@ export default function ProfileForm() {
                 type="text"
                 name="lastName"
                 placeholder={userName.split(" ")[1]}
-                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border rounded-md"
                 value={formData.lastName}
                 onChange={handleChange}
               />
@@ -148,7 +162,7 @@ export default function ProfileForm() {
                 type="text"
                 name="city"
                 placeholder="City"
-                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border rounded-md"
                 value={formData.city}
                 onChange={handleChange}
               />
@@ -160,7 +174,7 @@ export default function ProfileForm() {
                 type="text"
                 name="country"
                 placeholder={formData.country || country || ""}
-                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border rounded-md"
                 value={formData.country || country || ""}
                 onChange={handleChange}
               />
@@ -189,10 +203,10 @@ export default function ProfileForm() {
               <label className="block text-sm font-medium mb-1 text-gray-700">Pincode</label>
               <input
                 type="text"
-                name="fullName"
+                name="pincode"
                 placeholder="Pincode"
                 className="w-full px-3 py-2 placeholder-gray-500 text-black border rounded-md"
-                value={formData.fullName}
+                value={formData.pincode}
                 onChange={handleChange}
               />
             </div>
@@ -205,7 +219,7 @@ export default function ProfileForm() {
                 type="tel"
                 name="phone"
                 placeholder={PhoneNumber}
-                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border rounded-md"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -216,31 +230,29 @@ export default function ProfileForm() {
                 type="email"
                 name="email"
                 placeholder={userEmail}
-                className="w-full px-3 py-2 placeholder-gray-500 text-black border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 placeholder-gray-500 text-black border rounded-md"
                 value={formData.email}
                 onChange={handleChange}
               />
             </div>
           </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 w-full p-5">
-          <Link href="/CandidateBoarding/Step3" className="w-full sm:w-auto">
-            <button className="w-full sm:w-auto border border-[#FF6F61] text-[#DA6B64] px-5 py-2 rounded-lg text-sm sm:text-base hover:bg-[#FFEBE8] transition">
-              Back
-            </button>
-          </Link>
-          <Link href="/CandidateBoarding/Step5" className="w-full sm:w-auto">
-            <button className="w-full sm:w-auto bg-[#DA6B64] text-white px-5 py-2 rounded-lg text-sm sm:text-base hover:bg-[#c65751] transition">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 w-full p-5">
+            <Link href="/CandidateBoarding/Step3" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto border border-[#FF6F61] text-[#DA6B64] px-5 py-2 rounded-lg text-sm sm:text-base hover:bg-[#FFEBE8] transition">
+                Back
+              </button>
+            </Link>
+            <button
+              type="button"
+              onClick={handleContinue}
+              className="w-full sm:w-auto bg-[#DA6B64] text-white px-5 py-2 rounded-lg text-sm sm:text-base hover:bg-[#c65751] transition"
+            >
               Continue
             </button>
-          </Link>
-        </div>
+          </div>
         </form>
       </OnboardingCard>
     </div>
   );
 }
-function dispatch(arg0: { payload: string; type: "resume/setPincode"; }) {
-  throw new Error("Function not implemented.");
-}
-

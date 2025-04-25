@@ -9,7 +9,11 @@ export default function ProfileSummary() {
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
   const educationEntries = resumeData?.structured_resume?.education || [];
   const experienceEntries = resumeData?.structured_resume?.experience || [];
-    const country = useSelector((state: RootState) => state.resume.selectedCountry);
+  const country = useSelector((state: RootState) => state.resume.selectedCountry);
+  const pincode = useSelector((state: RootState) => state.resume.pincode);
+
+  console.log(pincode, "pincode");
+  
 
   const SectionCard = ({
     title,
@@ -62,7 +66,7 @@ export default function ProfileSummary() {
               <p><strong>Phone:</strong> {resumeData?.structured_resume?.phone}</p>
               <p><strong>Country:</strong> {country || country || ""}</p>
               <p><strong>City:</strong> {resumeData?.structured_resume?.city}</p>
-              <p><strong>Pincode:</strong> {resumeData?.structured_resume?.pincode}</p>
+              <p><strong>Pincode:</strong> {pincode}</p>
             </div>
           </SectionCard>
 

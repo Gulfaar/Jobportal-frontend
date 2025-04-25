@@ -10,6 +10,7 @@
   import HireExperts from "../Components/TaskSpecific/HireExpert";
   import Footer from "../Components/Home/Footer";
   import dynamic from 'next/dynamic';
+import { Fm } from "../Components/TaskSpecific/Fm";
   
   const GulfaarFeatures = dynamic(() => import('../Components/TaskSpecific/GulfaarFeatures'), {
     ssr: false, // disables server-side rendering
@@ -31,6 +32,7 @@
               <BenefitsOfHiring />
               <GulfaarFeatures />
               <HireExperts />
+              <Fm/>
               <Footer />
             </div>
           </div>
