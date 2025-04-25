@@ -12,69 +12,96 @@ const EnvironmentalHealthPage = () => {
                 "We conduct comprehensive audits and implement tracking tools to ensure full compliance with Saudi Aramco, national, and international environmental, health, and safety regulations.",
             points: [
                 "Facility and EHS system audits",
-                "Aligned with project specifications",
-                "Supports accurate on-site fabrication",
-                "Ensures seamless component assembly",
-                "Reduces field errors and rework",
+                "Compliance with local and global standards",
+                "Risk identification and prevention planning",
+                "Performance metrics for continuous improvement",
+                "Tracks regulatory gaps and deviations",
             ],
-            image: "/Fabrication/Fabric-1.png",
+            image: "/Environmental/Environment-1.png",
         },
         {
-            title: "Fabrication of Whole Jackets and Appurtenances",
+            title: "Environmental Monitoring and Risk Assessment",
             description:
-                "We fabricate complete offshore jackets and support components to serve as durable foundations for oil and gas platforms and subsea facilities.",
+                "From pollution detection to brownfield investigations, we assess contamination risks and offer remediation strategies tailored to complex industrial environments.",
             points: [
-                "Full offshore jacket fabrication",
-                "Appurtenances for structural integrity",
-                "Designed for marine load conditions",
-                "Built to international standards",
-                "Supports offshore and subsea structures",
+                "Monitors air and water pollution",
+                "Assesses soil and groundwater contamination",
+                "Conducts brownfield investigations",
+                "Supports waste management systems",
+                "Recommends corrective environmental actions",
             ],
-            image: "/Fabrication/Fabric-2.png",
+            image: "/Environmental/Environment-2.png",
         },
         {
-            title: "Fabrication of Structures and Piping",
+            title: "Health and Safety Training and Consulting",
             description:
-                "High-precision fabrication of steel frameworks and process piping systems to meet the operational demands of industrial and offshore environments.",
+                "We provide targeted health and risk training, including ICRA and RF Radiation modules, along with site-specific health protocols for high-risk environments.",
             points: [
-                "Steel structure and pipeline fabrication",
-                "High-tolerance production accuracy",
-                "Suitable for oil and gas applications",
-                "Conforms to Saudi Aramco standards",
-                "Long-lasting and corrosion-resistant builds",
+                "Infectious Control Risk Assessment (ICRA) training",
+                "RF radiation safety training",
+                "Worker health protocol implementation",
+                "Preventive environmental safety programs",
+                "Safety culture enhancement consulting",
             ],
-            image: "/Fabrication/Fabric-3.png",
+            image: "/Environmental/Environment-3.png",
         },
         {
-            title: "Blasting and Painting",
+            title: "Indoor Air Quality (IAQ) Investigation",
             description:
-                "We provide surface preparation and protective coating services to ensure corrosion resistance and long-term performance of fabricated components in extreme offshore conditions.",
+                "Our IAQ models and sampling programs assess indoor environments to ensure safe air quality in commercial, industrial, and public facilities.",
             points: [
-                "Surface blasting for preparation",
-                "Anti-corrosion coating application",
-                "Suited for marine environments",
-                "Enhances durability of components",
-                "Compliant with offshore standards",
+                "Indoor air quality testing and modeling",
+                "Applies to offices and public spaces",
+                "Sample-based IAQ research programs",
+                "Recommends ventilation improvements",
+                "Identifies airborne pollutant risks",
             ],
-            image: "/Fabrication/Fabric-4.png",
+            image: "/Environmental/Environment-4.png",
         },
+        {
+            title: "Environmental Impact and Mitigation Strategies",
+            description:
+                "We develop impact assessments and mitigation plans, including emission reduction, wastewater treatment, and chemical usage reduction for industrial compliance and sustainability.",
+            points: [
+                "Creates environmental impact statements",
+                "Suggests emission control methods",
+                "Recommends water treatment systems",
+                "Chemical usage reduction advice",
+                "Supports ESG compliance efforts",
+            ],
+            image: "/Environmental/Environment-5.png",
+        },
+        {
+            title: "Specialized Investigations",
+            description:
+                "We conduct biohazard sampling and environmental investigations in high-risk environments such as refineries and industrial zones to safeguard health and safety.",
+            points: [
+                "Anthrax and biological hazard sampling",
+                "Investigates industrial contamination risks",
+                "Applies to refineries and petrochemical sites",
+                "Reports with actionable safety measures",
+                "Suitable for high-risk environments",
+            ],
+            image: "/Environmental/Environment-6.png",
+        },
+
         
     ];
 
     const efficiencyPoints = [
         {
-            title: "Supporting Vision",
-            description: "Our fabrication services align with Saudi Arabia’s drive for sustainable energy, contributing to infrastructure development and long-term energy goals.",
+            title: "Health & Safety Assurance",
+            description: "We prioritize worker well-being through robust safety protocols, risk assessments, and compliance with industry standards.",
             icon: "/efficiencyicon1.svg",
         },
         {
-            title: "Reliable Infrastructure Solutions",
-            description: "We deliver high-quality, precision-engineered components that enhance the durability and performance of critical oil and gas assets.",
+            title: "Environmental Protection",
+            description: "Our services help minimize environmental impact through pollution monitoring, waste management, and sustainable practices.",
             icon: "/efficiencyicon2.svg",
         },
         {
-            title: "Efficiency in Execution",
-            description: "From design to delivery, our streamlined fabrication process ensures timely, compliant solutions for both onshore and offshore projects.",
+            title: "Regulatory Compliance",
+            description: "We ensure full alignment with Saudi regulations, supporting safe, legal, and efficient operations across the oil and petrochemical sectors.",
             icon: "/efficiencyicon3.svg",
         },
     ];
@@ -289,7 +316,7 @@ const EnvironmentalHealthPage = () => {
         <div className="flex gap-4 sm:gap-6 items-center animate-marquee">
             {Array.from({ length: 94 }).map((_, index) => {
                 const actualIndex = index % 47;
-                const image = `/Fabrication/Fabrication-${String(actualIndex + 1).padStart(3, '0')}.png`;
+                const image = `/Environmental/Environmentels-${String(actualIndex + 1).padStart(3, '0')}.png`;
                 return (
                     <div
                         key={index}
