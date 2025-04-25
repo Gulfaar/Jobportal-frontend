@@ -10,7 +10,7 @@ import OurWorks from '../Components/OilGas/OurWorks'
 const page = () => {
   return (
     <div>
-              <Header title='Oil & Gas Sector Capabilities' subtitle=''/>
+            <Header title='Oil Tank Cleaning & Disposal Services' subtitle=''/>
            <OilTankCleaningComponent/>
           <Efficiency/>
           <Benefits/>

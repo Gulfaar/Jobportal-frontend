@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 const SubseaInspections = () => {
     const services = [
         {
-            title: "Offshore Installation Services",
+            title: "Subsea Inspection, Maintenance Repair, and Installation",
             description:
                 "Comprehensive offshore installation for fixed/floating platforms, mooring systems, and subsea production units—executed with precision in deep and shallow waters",
             points: [
@@ -204,7 +204,7 @@ const SubseaInspections = () => {
 
     return (
         <div className="flex flex-col w-full min-h-screen bg-white">
-            <Header title="Subsea Inspection " subtitle="" />
+            <Header title="Subsea Inspection Management" subtitle="" />
 
             {/* Hero Section */}
             <section className="w-full bg-white">

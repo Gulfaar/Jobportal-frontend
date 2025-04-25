@@ -150,7 +150,7 @@ const EnvironmentalHealthPage = () => {
 
     return (
         <div className="flex flex-col w-full min-h-screen bg-white">
-            <Header title="Environmental Health" subtitle="" />
+           <Header title="Environmental, Health and safety" subtitle="" />
 
             {/* Hero Section */}
             <section className="w-full bg-white">
