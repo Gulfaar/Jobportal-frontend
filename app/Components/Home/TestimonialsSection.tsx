@@ -176,7 +176,7 @@ const TestimonialsSection = () => {
       >
         
         {Array.from({ length: Math.ceil(testimonials.length / cardsPerView) }).map((_, index) => (
-          <div key={index} className="grid grid-cols-1 md:grid-cols-3  w-full flex-shrink-0">
+          <div key={index} className="grid grid-cols-1 md:grid-cols-3   w-full flex-shrink-0">
             {testimonials.slice(index * cardsPerView, (index + 1) * cardsPerView).map((testimonial, idx) => (
               <TestimonialCard key={idx} {...testimonial} />
             ))}

@@ -12,7 +12,7 @@ const StatCard: React.FC<StatCardProps> = ({ number, title, description }) => {
       <h3 className="text-3xl font-bold text-teal-900">{number}</h3>
       <h4 className="mt-2 text-xl font-semibold text-black">{title}</h4>
       {/* Truncates text and ensures same height */}
-      <p className="mt-2 text-gray-600 text-sm line-clamp-3 min-h-[60px]">
+      <p className="mt-2 text-gray-600 text-left text-sm line-clamp-3 min-h-[60px]">
         {description}
       </p>
     </div>

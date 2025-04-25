@@ -41,6 +41,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
             },
           }
         );
+        Cookies.remove('jwt')
         return response.data;
       } catch (error: any) {
         console.error("Logout error:", error.response?.data || error.message);
@@ -63,15 +64,15 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content Wrapper */}
-      <div className="relative z-10 flex flex-col  h-full px-5 py-10 md:px-2  md:py-9">
+      <div className="relative z-10 flex flex-col  h-full px-8 py-10 md:px-2  md:py-9">
         
         {/* Top Row: Logo on the left, buttons on the right, burger menu on mobile */}
         <div className="flex mt-[-20px] md:mt-[-40px] items-center justify-between">
           {/* Logo - Larger size */}
-          <div className="relative  w-[155px] md:w-[250px]">
+          <div className="relative  mt-5  md:mt-12 w-[125px] md:w-[188px]">
             <Link href="/" >
             <Image
-              src="/newlogo.png" // Replace with your actual logo
+              src="/secondhead.png" // Replace with your actual logo
               alt="Gulfaar Logo"
               width={260} // Set appropriate width
               height={10} 
@@ -84,7 +85,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
           {/* Right Side: Buttons + Burger */}
           <div className="flex items-center">
             {/* Action Buttons - Smaller size */}
-            <div className="hidden w-full justify-end mt-[-20px] md:flex gap-2 md:gap-4">
+            <div className="hidden w-full justify-end mt-[2px]  md:flex gap-2 md:gap-4">
             
               <Link href="/jobseeker/login">
               <button className="md:px-2 py-2  cursor-pointer rounded-lg text-white text-sm md:text-base">
@@ -113,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
             <div className="flex justify-end mt-[2px] px-4 gap-2 md:hidden lg:hidden">
                     
                     <button
-                      className="text-white text-2xl"
+                      className="text-white mt-3 text-2xl"
                       onClick={toggleMenu}
                     >
                       <FaBars />
@@ -128,12 +129,12 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
 
           <div className="fixed top-10 left-8 z-50 h-10 w-auto">
             <Image
-              src="/logomob.png"
+              src="/blacklogo.png"
               alt="Company Logo"
               width={120}
               height={50}
               priority
-              className="filter invert"
+              className=" "
             />
           </div>
 
@@ -358,7 +359,7 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
       )}
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <div className="hidden md:flex  gap-4  text-white font-[20px] md:mt-[-34px] w-full justify-end  relative  pr-2">
+        <div className="hidden md:flex  gap-4  text-white font-[20px] md:mt-[-12px] w-full justify-end  relative  pr-2">
   <Link href="/" className="hover:text-[#dae470]">
     Home
   </Link>
