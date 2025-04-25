@@ -1,8 +1,10 @@
+"use client"
+
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
+import React, { useState } from 'react';
 
 const BrownfieldAndPlatformSolutions = () => {
-
 
     const services = [
         {
@@ -17,6 +19,7 @@ const BrownfieldAndPlatformSolutions = () => {
                 "Turnkey support from design to execution ",
             ],
             image: "/BrownfieldAndPlatformSolutionscover2.png",
+            video: "https://www.youtube.com/embed/placeholder7",
         },
         {
             title: " Platform Installation and Modifications ",
@@ -30,8 +33,12 @@ const BrownfieldAndPlatformSolutions = () => {
                 "Boosts platform life and production capacity ",
             ],
             image: "/BrownfieldAndPlatformSolutionscover3.png",
+            video: "https://www.youtube.com/embed/placeholder8",
         },
     ];
+
+    const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
     return (
         <div className="flex flex-col w-full min-h-screen bg-white">
            
@@ -69,7 +76,10 @@ const BrownfieldAndPlatformSolutions = () => {
                                     priority
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <button className="bg-[#2E5F5C] text-white rounded-full w-20 h-20 flex items-center justify-center hover:bg-teal-700 transition-colors">
+                                    <button 
+                                      className="bg-[#2E5F5C] text-white rounded-full w-20 h-20 flex items-center justify-center hover:bg-teal-700 transition-colors"
+                                      onClick={() => setActiveVideo(services[0].video)}
+                                    >
                                         <FaPlay className="w-10 h-10" />
                                     </button>
                                 </div>
@@ -100,7 +110,10 @@ const BrownfieldAndPlatformSolutions = () => {
                                         priority={index < 3}
                                     />
                                     <div className="absolute bottom-4 right-4">
-                                        <button className="flex items-center bg-[#2E5F5C] text-white rounded-full pr-4 pl-2 py-2 hover:bg-teal-700 transition-colors text-sm shadow-lg">
+                                        <button 
+                                            className="flex items-center bg-[#2E5F5C] text-white rounded-full pr-4 pl-2 py-2 hover:bg-teal-700 transition-colors text-sm shadow-lg"
+                                            onClick={() => setActiveVideo(service.video)}
+                                        >
                                             <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center mr-3">
                                                 <FaPlay className="text-[#2E5F5C] w-3 h-3" />
                                             </div>
@@ -156,7 +169,7 @@ const BrownfieldAndPlatformSolutions = () => {
     <div className="pl-4 md:pl-8 flex items-center text-sm md:text-base">
       <p>
         Our Oil Tank Cleaning and Disposal Services meet the vital operational demands of
-        Saudi Arabia’s oil industry. They are aligned with the nation’s environmental goals
+        Saudi Arabia's oil industry. They are aligned with the nation's environmental goals
         under Vision 2030. We deliver solutions that boost efficiency, ensure compliance, and
         support sustainable practices.
       </p>
@@ -164,7 +177,29 @@ const BrownfieldAndPlatformSolutions = () => {
   </div>
 </section>
 
-
+            {/* Video Modal */}
+            {activeVideo && (
+                <div
+                  className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+                  onClick={() => setActiveVideo(null)}
+                >
+                  <div className="relative w-full max-w-4xl aspect-video" onClick={e => e.stopPropagation()}>
+                    <iframe
+                      className="w-full h-full rounded-xl"
+                      src={`${activeVideo}?autoplay=1`}
+                      title="Service Video"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    />
+                    <button 
+                      className="absolute -top-2 -right-2 bg-white text-black rounded-full p-2 leading-none w-8 h-8 flex items-center justify-center shadow-lg"
+                      onClick={() => setActiveVideo(null)}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </div>
+            )}
 
         </div>
     );

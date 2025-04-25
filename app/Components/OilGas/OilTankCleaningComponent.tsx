@@ -1,8 +1,10 @@
+"use client"
+
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
+import React, { useState } from 'react';
 
 const OilTankCleaningComponent = () => {
-
 
     const services = [
         {
@@ -15,7 +17,8 @@ const OilTankCleaningComponent = () => {
                 "Environmentally compliant waste handling and disposal",
                 "Support for both routine and turnaround operations",
             ],
-            image: "/service-1.png",
+            image: "/service-2.png",
+            video: "https://www.youtube.com/embed/5I2TlX18VcQ",
         },
         {
             title: "Hazardous Waste Disposal",
@@ -27,7 +30,8 @@ const OilTankCleaningComponent = () => {
                 "Full compliance with Saudi Arabian environmental regulations",
                 "Support for regulatory reporting and documentation",
             ],
-            image: "/service-2.png",
+            image: "/service-3.png",
+            video: "https://www.youtube.com/embed/6oxbydMnpuv",
         },
         {
             title: "Environmentally Sustainable Solutions",
@@ -39,7 +43,8 @@ const OilTankCleaningComponent = () => {
                 "Reduction of environmental footprint during cleaning operations",
                 "Enhanced operational efficiency through sustainable methods",
             ],
-            image: "/service-3.png",
+            image: "/service-4.png",
+            video: "https://www.youtube.com/embed/fnMc9QGz8IY",
         },
         {
             title: "Automated and Manual Cleaning Methods",
@@ -51,7 +56,8 @@ const OilTankCleaningComponent = () => {
                 "Compliance with Saudi Aramco and industry standards",
                 "Minimized downtime through efficient scheduling",
             ],
-            image: "/service-4.png",
+            image: "/service-5.png",
+            video: "https://www.youtube.com/embed/hBmR0Ze04Yf",
         },
         {
             title: "Tank Degassing and Vapor Control",
@@ -63,7 +69,8 @@ const OilTankCleaningComponent = () => {
                 "Coordination with regulatory bodies for compliance",
                 "Post-incident reporting and documentation support",
             ],
-            image: "/service-5.png",
+            image: "/service-6.png",
+            video: "https://www.youtube.com/embed/hBmR0Ze04Yf",
         },
         {
             title: "Inspection-Ready Cleaning   ",
@@ -75,9 +82,13 @@ const OilTankCleaningComponent = () => {
                 "Environmentally safe recycling processes",
                 "Support for corporate sustainability goals",
             ],
-            image: "/service-6.png",
+            image: "/service-7.png",
+            video: "https://www.youtube.com/embed/MGpd64-WdVx",
         },
     ];
+
+    const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
     return (
         <div className="flex flex-col w-full min-h-screen bg-white">
            
@@ -116,7 +127,10 @@ const OilTankCleaningComponent = () => {
                                     priority
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <button className="bg-[#2E5F5C] text-white rounded-full w-20 h-20 flex items-center justify-center hover:bg-teal-700 transition-colors">
+                                    <button 
+                                      className="bg-[#2E5F5C] text-white rounded-full w-20 h-20 flex items-center justify-center hover:bg-teal-700 transition-colors"
+                                      onClick={() => setActiveVideo(services[0].video)}
+                                    >
                                         <FaPlay className="w-10 h-10" />
                                     </button>
                                 </div>
@@ -147,7 +161,10 @@ const OilTankCleaningComponent = () => {
                                         priority={index < 3}
                                     />
                                     <div className="absolute bottom-4 right-4">
-                                        <button className="flex items-center bg-[#2E5F5C] text-white rounded-full pr-4 pl-2 py-2 hover:bg-teal-700 transition-colors text-sm shadow-lg">
+                                        <button 
+                                            className="flex items-center bg-[#2E5F5C] text-white rounded-full pr-4 pl-2 py-2 hover:bg-teal-700 transition-colors text-sm shadow-lg"
+                                            onClick={() => setActiveVideo(service.video)}
+                                        >
                                             <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center mr-3">
                                                 <FaPlay className="text-[#2E5F5C] w-3 h-3" />
                                             </div>
@@ -203,7 +220,7 @@ const OilTankCleaningComponent = () => {
     <div className="pl-4 md:pl-8 flex items-center text-sm md:text-base">
       <p>
         Our Oil Tank Cleaning and Disposal Services meet the vital operational demands of
-        Saudi Arabia’s oil industry. They are aligned with the nation’s environmental goals
+        Saudi Arabia's oil industry. They are aligned with the nation's environmental goals
         under Vision 2030. We deliver solutions that boost efficiency, ensure compliance, and
         support sustainable practices.
       </p>
@@ -211,7 +228,29 @@ const OilTankCleaningComponent = () => {
   </div>
 </section>
 
-
+            {/* Video Modal */}
+            {activeVideo && (
+                <div
+                  className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+                  onClick={() => setActiveVideo(null)}
+                >
+                  <div className="relative w-full max-w-4xl aspect-video" onClick={e => e.stopPropagation()}>
+                    <iframe
+                      className="w-full h-full rounded-xl"
+                      src={`${activeVideo}?autoplay=1`}
+                      title="Service Video"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    />
+                    <button 
+                      className="absolute -top-2 -right-2 bg-white text-black rounded-full p-2 leading-none w-8 h-8 flex items-center justify-center shadow-lg"
+                      onClick={() => setActiveVideo(null)}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </div>
+            )}
 
         </div>
     );
