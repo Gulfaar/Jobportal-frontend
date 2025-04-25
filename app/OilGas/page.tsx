@@ -5,7 +5,7 @@ import Efficiency from '../Components/OilGas/Efficiency'
 import Benefits from '../Components/OilGas/Benefits'
 
 import OilTankCleaningComponent from '../Components/OilGas/OilTankCleaningComponent'
-import OurProjects from '../Components/OilGas/OurWorks'
+import OurWorks from '../Components/OilGas/OurWorks'
 
 const page = () => {
   return (
@@ -14,7 +14,7 @@ const page = () => {
            <OilTankCleaningComponent/>
           <Efficiency/>
           <Benefits/>
-          <OurProjects/>
+          <OurWorks/>
          
 
 

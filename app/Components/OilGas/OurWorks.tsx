@@ -3,8 +3,8 @@
 import Image from 'next/image'
 import React from 'react'
 
-const OurProjects = () => {
-  const projects = Array.from({ length: 47 }, (_, i) => ({
+const OurWorks = () => {
+  const projects = Array.from({ length: 10}, (_, i) => ({
     image: `/oilgaspage1/oilgasproject-${String(i + 1).padStart(3, '0')}.png`,
   }))
 
@@ -51,5 +51,5 @@ const OurProjects = () => {
   )
 }
 
-export default OurProjects
+export default OurWorks
 

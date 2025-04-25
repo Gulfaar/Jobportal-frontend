@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
 
-const OilTankCleaningComponent = () => {
+const BrownfieldAndPlatformSolutions = () => {
 
 
     const services = [
@@ -170,4 +170,4 @@ const OilTankCleaningComponent = () => {
     );
 };
 
-export default OilTankCleaningComponent;
+export default BrownfieldAndPlatformSolutions;

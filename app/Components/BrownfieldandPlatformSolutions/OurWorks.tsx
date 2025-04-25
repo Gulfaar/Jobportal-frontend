@@ -3,9 +3,9 @@
 import Image from 'next/image'
 import React from 'react'
 
-const OurProjects = () => {
-  const projects = Array.from({ length: 47 }, (_, i) => ({
-    image: `/oilgaspage1/oilgasproject-${String(i + 1).padStart(3, '0')}.png`,
+const OurWorks = () => {
+  const projects = Array.from({ length: 7}, (_, i) => ({
+    image: `/BrownfieldandPlatformSolutions/BrownfieldandPlatformSolutions-${String(i + 1).padStart(3, '0')}.png`,
   }))
 
   // Duplicate for seamless looping
@@ -51,5 +51,5 @@ const OurProjects = () => {
   )
 }
 
-export default OurProjects
+export default OurWorks
 
