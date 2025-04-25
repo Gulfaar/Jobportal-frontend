@@ -3,6 +3,7 @@
 import Header from "../Components/Header/Header";
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
+import React, { useState } from 'react';
 
 const AssetsAndIntegrity = () => {
     const services = [
@@ -18,6 +19,7 @@ const AssetsAndIntegrity = () => {
                 "Supports operational quality and safety goals",
             ],
             image: "/Asset-intgrity-1.png",
+            video: "https://www.youtube.com/embed/NVmmwEGIZDk",
         },
         {
             title: "Pipeline Integrity",
@@ -31,6 +33,7 @@ const AssetsAndIntegrity = () => {
                 "Supports regulatory and performance compliance",
             ],
             image: "/Asset-intgrity-2.png",
+            video: "https://www.youtube.com/embed/NVmmwEGIZDk",
         },
         {
             title: "Umbilical/Underwater Inspection Services",
@@ -44,6 +47,7 @@ const AssetsAndIntegrity = () => {
                 "Ensures safety and production continuity",
             ],
             image: "/Asset-intgrity-3.png",
+            video: "https://www.youtube.com/embed/NVmmwEGIZDk",
         },
         {
             title: "Electrical and Instrumentation Inspection Services",
@@ -57,6 +61,7 @@ const AssetsAndIntegrity = () => {
                 "Ideal for complex industrial installations",
             ],
             image: "/Asset-intgrity-4.png",
+            video: "https://www.youtube.com/embed/NVmmwEGIZDk",
         },
         {
             title: "Mechanical and Civil Inspection Services",
@@ -70,6 +75,7 @@ const AssetsAndIntegrity = () => {
                 "Ensures long-term operational integrity",
             ],
             image: "/Asset-intgrity-5.png",
+            video: "https://www.youtube.com/embed/NVmmwEGIZDk",
         },
         {
             title: "Painting, Welding, and Coating Inspection Services",
@@ -83,6 +89,7 @@ const AssetsAndIntegrity = () => {
                 "Supports long-term asset protection",
             ],
             image: "/Asset-intgrity-6.png",
+            video: "https://www.youtube.com/embed/NVmmwEGIZDk",
         },
         {
             title: "Fabrication Integrity Services",
@@ -96,6 +103,7 @@ const AssetsAndIntegrity = () => {
                 "Supports EPC and industrial projects",
             ],
             image: "/Asset-intgrity-7.png",
+            video: "https://www.youtube.com/embed/NVmmwEGIZDk",
         },
         {
             title: "Pigging Inspection Services",
@@ -109,6 +117,7 @@ const AssetsAndIntegrity = () => {
                 "Essential for oil and gas pipelines",
             ],
             image: "/Asset-intgrity-8.png",
+            video: "https://www.youtube.com/embed/NVmmwEGIZDk",
         },
         {
             title: "Non-Destructive Testing (NDT) Inspection Services",
@@ -122,6 +131,7 @@ const AssetsAndIntegrity = () => {
                 "Ideal for critical asset evaluation",
             ],
             image: "/Asset-intgrity-9.png",
+            video: "https://www.youtube.com/embed/NVmmwEGIZDk",
         },
         {
             title: "Geophysical and Geotechnical Inspection Services",
@@ -135,6 +145,7 @@ const AssetsAndIntegrity = () => {
                 "Reduces geotechnical risks and surprises",
             ],
             image: "/Asset-intgrity-10.png",
+            video: "https://www.youtube.com/embed/NVmmwEGIZDk",
         },
     ];
 
@@ -189,9 +200,11 @@ const AssetsAndIntegrity = () => {
         },
     ];
 
+    const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
     return (
         <div className="flex flex-col w-full min-h-screen bg-white">
-            <Header title="Oil & Gas Sector Capabilities" subtitle="" />
+            <Header title="Asset Integrity Solutions" subtitle="" />
 
             {/* Hero Section */}
             <section className="w-full bg-white">
@@ -218,6 +231,7 @@ const AssetsAndIntegrity = () => {
                                     <button
                                         className="bg-[#2E5F5C] text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center hover:bg-teal-700 transition-colors"
                                         aria-label="Play Video"
+                                        onClick={() => setActiveVideo("https://www.youtube.com/embed/NVmmwEGIZDk")}
                                     >
                                         <FaPlay className="w-6 h-6 sm:w-8 sm:h-8" />
                                     </button>
@@ -246,7 +260,10 @@ const AssetsAndIntegrity = () => {
                                         priority={index < 3}
                                     />
                                     <div className="absolute bottom-4 right-4">
-                                        <button className="flex items-center bg-[#2E5F5C] text-white rounded-full px-3 py-2 hover:bg-teal-700 transition-colors text-xs sm:text-sm shadow-lg">
+                                        <button 
+                                            className="flex items-center bg-[#2E5F5C] text-white rounded-full px-3 py-2 hover:bg-teal-700 transition-colors text-xs sm:text-sm shadow-lg"
+                                            onClick={() => setActiveVideo(service.video)}
+                                        >
                                             <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center mr-2 sm:mr-3">
                                                 <FaPlay className="text-[#2E5F5C] w-3 h-3 sm:w-4 sm:h-4" />
                                             </div>
@@ -288,7 +305,7 @@ const AssetsAndIntegrity = () => {
                     </div>
                     <div className="pl-0 sm:pl-4 lg:pl-8 flex items-center text-sm sm:text-base">
                         <p>
-                            Our Oil Tank Cleaning and Disposal Services meet the vital operational demands of Saudi Arabia’s oil industry. They are aligned with the nation’s environmental goals under Vision 2030. We deliver solutions that boost efficiency, ensure compliance, and support sustainable practices.
+                            Our Oil Tank Cleaning and Disposal Services meet the vital operational demands of Saudi Arabia's oil industry. They are aligned with the nation's environmental goals under Vision 2030. We deliver solutions that boost efficiency, ensure compliance, and support sustainable practices.
                         </p>
                     </div>
                 </div>
@@ -407,6 +424,31 @@ const AssetsAndIntegrity = () => {
                     }
                 `}</style>
             </section>
+
+            {/* Video Modal */}
+            {activeVideo && (
+                <div
+                  className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+                  onClick={() => setActiveVideo(null)}
+                >
+                  <div className="relative w-full max-w-4xl aspect-video" onClick={e => e.stopPropagation()}>
+                    <iframe
+                      className="w-full h-full rounded-xl"
+                      src={`${activeVideo}?autoplay=1`}
+                      title="Service Video"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    />
+                    <button 
+                      className="absolute -top-2 -right-2 bg-white text-black rounded-full p-2 leading-none w-8 h-8 flex items-center justify-center shadow-lg"
+                      onClick={() => setActiveVideo(null)}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </div>
+            )}
+
         </div>
     );
 };

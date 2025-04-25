@@ -18,7 +18,7 @@ const OilTankCleaningComponent = () => {
                 "Support for both routine and turnaround operations",
             ],
             image: "/service-2.png",
-            video: "https://www.youtube.com/embed/5I2TlX18VcQ",
+            video: "https://www.youtube.com/embed/3hJZ4jqS8EQ",
         },
         {
             title: "Hazardous Waste Disposal",
@@ -31,7 +31,7 @@ const OilTankCleaningComponent = () => {
                 "Support for regulatory reporting and documentation",
             ],
             image: "/service-3.png",
-            video: "https://www.youtube.com/embed/6oxbydMnpuv",
+            video: "https://www.youtube.com/embed/3hJZ4jqS8EQ",
         },
         {
             title: "Environmentally Sustainable Solutions",
@@ -44,7 +44,7 @@ const OilTankCleaningComponent = () => {
                 "Enhanced operational efficiency through sustainable methods",
             ],
             image: "/service-4.png",
-            video: "https://www.youtube.com/embed/fnMc9QGz8IY",
+            video: "https://www.youtube.com/embed/3hJZ4jqS8EQ",
         },
         {
             title: "Automated and Manual Cleaning Methods",
@@ -57,7 +57,7 @@ const OilTankCleaningComponent = () => {
                 "Minimized downtime through efficient scheduling",
             ],
             image: "/service-5.png",
-            video: "https://www.youtube.com/embed/hBmR0Ze04Yf",
+            video: "https://www.youtube.com/embed/3hJZ4jqS8EQ",
         },
         {
             title: "Tank Degassing and Vapor Control",
@@ -70,7 +70,7 @@ const OilTankCleaningComponent = () => {
                 "Post-incident reporting and documentation support",
             ],
             image: "/service-6.png",
-            video: "https://www.youtube.com/embed/hBmR0Ze04Yf",
+            video: "https://www.youtube.com/embed/3hJZ4jqS8EQ",
         },
         {
             title: "Inspection-Ready Cleaning   ",
@@ -83,7 +83,7 @@ const OilTankCleaningComponent = () => {
                 "Support for corporate sustainability goals",
             ],
             image: "/service-7.png",
-            video: "https://www.youtube.com/embed/MGpd64-WdVx",
+            video: "https://www.youtube.com/embed/3hJZ4jqS8EQ",
         },
     ];
 
@@ -129,7 +129,7 @@ const OilTankCleaningComponent = () => {
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <button 
                                       className="bg-[#2E5F5C] text-white rounded-full w-20 h-20 flex items-center justify-center hover:bg-teal-700 transition-colors"
-                                      onClick={() => setActiveVideo(services[0].video)}
+                                      onClick={() => setActiveVideo("https://www.youtube.com/embed/3hJZ4jqS8EQ")}
                                     >
                                         <FaPlay className="w-10 h-10" />
                                     </button>

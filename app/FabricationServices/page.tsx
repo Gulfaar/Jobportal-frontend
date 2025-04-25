@@ -3,6 +3,7 @@
 import Header from "../Components/Header/Header";
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
+import React, { useState } from 'react';
 
 const FabricationServicesPage = () => {
     const services = [
@@ -18,6 +19,7 @@ const FabricationServicesPage = () => {
                 "Reduces field errors and rework",
             ],
             image: "/Fabrication/Fabric-1.png",
+            video: "https://www.youtube.com/embed/w8w_FaMmalA",
         },
         {
             title: "Fabrication of Whole Jackets and Appurtenances",
@@ -31,6 +33,7 @@ const FabricationServicesPage = () => {
                 "Supports offshore and subsea structures",
             ],
             image: "/Fabrication/Fabric-2.png",
+            video: "https://www.youtube.com/embed/w8w_FaMmalA",
         },
         {
             title: "Fabrication of Structures and Piping",
@@ -44,6 +47,7 @@ const FabricationServicesPage = () => {
                 "Long-lasting and corrosion-resistant builds",
             ],
             image: "/Fabrication/Fabric-3.png",
+            video: "https://www.youtube.com/embed/w8w_FaMmalA",
         },
         {
             title: "Blasting and Painting",
@@ -57,6 +61,7 @@ const FabricationServicesPage = () => {
                 "Compliant with offshore standards",
             ],
             image: "/Fabrication/Fabric-4.png",
+            video: "https://www.youtube.com/embed/w8w_FaMmalA",
         },
         
     ];
@@ -64,7 +69,7 @@ const FabricationServicesPage = () => {
     const efficiencyPoints = [
         {
             title: "Supporting Vision",
-            description: "Our fabrication services align with Saudi Arabia’s drive for sustainable energy, contributing to infrastructure development and long-term energy goals.",
+            description: "Our fabrication services align with Saudi Arabia's drive for sustainable energy, contributing to infrastructure development and long-term energy goals.",
             icon: "/efficiencyicon1.svg",
         },
         {
@@ -112,9 +117,11 @@ const FabricationServicesPage = () => {
         },
     ];
 
+    const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
     return (
         <div className="flex flex-col w-full min-h-screen bg-white">
-            <Header title="Oil & Gas Sector Capabilities" subtitle="" />
+            <Header title="Fabrication Services" subtitle="" />
 
             {/* Hero Section */}
             <section className="w-full bg-white">
@@ -132,7 +139,7 @@ const FabricationServicesPage = () => {
                             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
                                 <Image
                                     src="/Fabrication/fabric-bg.png"
-                                    alt="Subsea Inspections"
+                                    alt="Fabrication Services"
                                     fill
                                     className="object-cover"
                                     priority
@@ -141,6 +148,7 @@ const FabricationServicesPage = () => {
                                     <button
                                         className="bg-[#2E5F5C] text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center hover:bg-teal-700 transition-colors"
                                         aria-label="Play Video"
+                                        onClick={() => setActiveVideo("https://www.youtube.com/embed/w8w_FaMmalA")}
                                     >
                                         <FaPlay className="w-6 h-6 sm:w-8 sm:h-8" />
                                     </button>
@@ -169,7 +177,10 @@ const FabricationServicesPage = () => {
                                         priority={index < 3}
                                     />
                                     <div className="absolute bottom-4 right-4">
-                                        <button className="flex items-center bg-[#2E5F5C] text-white rounded-full px-3 py-2 hover:bg-teal-700 transition-colors text-xs sm:text-sm shadow-lg">
+                                        <button 
+                                            className="flex items-center bg-[#2E5F5C] text-white rounded-full px-3 py-2 hover:bg-teal-700 transition-colors text-xs sm:text-sm shadow-lg"
+                                            onClick={() => setActiveVideo(service.video)}
+                                        >
                                             <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center mr-2 sm:mr-3">
                                                 <FaPlay className="text-[#2E5F5C] w-3 h-3 sm:w-4 sm:h-4" />
                                             </div>
@@ -211,7 +222,7 @@ const FabricationServicesPage = () => {
                     </div>
                     <div className="pl-0 sm:pl-4 lg:pl-8 flex items-center text-sm sm:text-base">
                         <p>
-                            Our Oil Tank Cleaning and Disposal Services meet the vital operational demands of Saudi Arabia’s oil industry. They are aligned with the nation’s environmental goals under Vision 2030. We deliver solutions that boost efficiency, ensure compliance, and support sustainable practices.
+                            Our Oil Tank Cleaning and Disposal Services meet the vital operational demands of Saudi Arabia's oil industry. They are aligned with the nation's environmental goals under Vision 2030. We deliver solutions that boost efficiency, ensure compliance, and support sustainable practices.
                         </p>
                     </div>
                 </div>
@@ -331,6 +342,30 @@ const FabricationServicesPage = () => {
         }
     `}</style>
 </section>
+
+            {/* Video Modal */}
+            {activeVideo && (
+                <div
+                  className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+                  onClick={() => setActiveVideo(null)}
+                >
+                  <div className="relative w-full max-w-4xl aspect-video" onClick={e => e.stopPropagation()}>
+                    <iframe
+                      className="w-full h-full rounded-xl"
+                      src={`${activeVideo}?autoplay=1`}
+                      title="Service Video"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    />
+                    <button 
+                      className="absolute -top-2 -right-2 bg-white text-black rounded-full p-2 leading-none w-8 h-8 flex items-center justify-center shadow-lg"
+                      onClick={() => setActiveVideo(null)}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </div>
+            )}
         </div>
     );
 };

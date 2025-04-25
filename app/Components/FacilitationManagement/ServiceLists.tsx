@@ -18,35 +18,35 @@ const ServiceLists = () => {
       description: "We provide AIM solutions to ensure safe, reliable oil and gas operations.",
       image: "/fmservice2.png",
       video: "https://www.youtube.com/embed/NVmmwEGIZDk",
-      route: "/OilGas/asset-integrity"
+      route: "/AssetsAndIntegrity"
     },
     {
       title: "Subsea Inspection, Maintenance, Repair, and Installation",
       description: "We offer subsea IMRI services for the oil and gas sector.",
       image: "/fmservice3.png",
       video: "https://www.youtube.com/embed/ChwyuV-12VQ",
-      route: "/OilGas/subsea-inspection"
+      route: "/SubseaInspection"
     },
     {
       title: "Brownfield and Platform Solutions",
       description: "Comprehensive industrial cleaning solutions for safety standards.",
       image: "/fmservice4.png",
       video: "https://www.youtube.com/embed/IE53VOUcfUQ",
-      route: "/OilGas/brownfield-platform"
+      route: "/BrownfieldAndPlatformSolutions"
     },
     {
       title: "Fabrication Services",
       description: "Environmentally-friendly waste management and disposal services.",
       image: "/fmservice5.png",
       video: "https://www.youtube.com/embed/w8w_FaMmalA",
-      route: "/OilGas/fabrication-services"
+      route: "/FabricationServices"
     },
     {
       title: "Environmental, Health, and Safety (EHS) Management",
       description: "Specialized equipment available for industrial operations.",
       image: "/fmservice6.png",
       video: "https://www.youtube.com/embed/5I2TlX18VcQ",
-      route: "/OilGas/ehs-management"
+      route: "/EnvironmentalHealth"
     }
   ];
 

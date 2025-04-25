@@ -3,6 +3,7 @@
 import Header from "../Components/Header/Header";
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
+import React, { useState } from 'react';
 
 const EnvironmentalHealthPage = () => {
     const services = [
@@ -18,6 +19,7 @@ const EnvironmentalHealthPage = () => {
                 "Tracks regulatory gaps and deviations",
             ],
             image: "/Environmental/Environment-1.png",
+            video: "https://www.youtube.com/embed/5I2TlX18VcQ",
         },
         {
             title: "Environmental Monitoring and Risk Assessment",
@@ -31,6 +33,7 @@ const EnvironmentalHealthPage = () => {
                 "Recommends corrective environmental actions",
             ],
             image: "/Environmental/Environment-2.png",
+            video: "https://www.youtube.com/embed/5I2TlX18VcQ",
         },
         {
             title: "Health and Safety Training and Consulting",
@@ -44,6 +47,7 @@ const EnvironmentalHealthPage = () => {
                 "Safety culture enhancement consulting",
             ],
             image: "/Environmental/Environment-3.png",
+            video: "https://www.youtube.com/embed/5I2TlX18VcQ",
         },
         {
             title: "Indoor Air Quality (IAQ) Investigation",
@@ -57,6 +61,7 @@ const EnvironmentalHealthPage = () => {
                 "Identifies airborne pollutant risks",
             ],
             image: "/Environmental/Environment-4.png",
+            video: "https://www.youtube.com/embed/5I2TlX18VcQ",
         },
         {
             title: "Environmental Impact and Mitigation Strategies",
@@ -70,6 +75,7 @@ const EnvironmentalHealthPage = () => {
                 "Supports ESG compliance efforts",
             ],
             image: "/Environmental/Environment-5.png",
+            video: "https://www.youtube.com/embed/5I2TlX18VcQ",
         },
         {
             title: "Specialized Investigations",
@@ -83,6 +89,7 @@ const EnvironmentalHealthPage = () => {
                 "Suitable for high-risk environments",
             ],
             image: "/Environmental/Environment-6.png",
+            video: "https://www.youtube.com/embed/5I2TlX18VcQ",
         },
 
         
@@ -139,9 +146,11 @@ const EnvironmentalHealthPage = () => {
         },
     ];
 
+    const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
     return (
         <div className="flex flex-col w-full min-h-screen bg-white">
-            <Header title="Oil & Gas Sector Capabilities" subtitle="" />
+            <Header title="Environmental Health" subtitle="" />
 
             {/* Hero Section */}
             <section className="w-full bg-white">
@@ -168,6 +177,7 @@ const EnvironmentalHealthPage = () => {
                                     <button
                                         className="bg-[#2E5F5C] text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center hover:bg-teal-700 transition-colors"
                                         aria-label="Play Video"
+                                        onClick={() => setActiveVideo("https://www.youtube.com/embed/5I2TlX18VcQ")}
                                     >
                                         <FaPlay className="w-6 h-6 sm:w-8 sm:h-8" />
                                     </button>
@@ -196,7 +206,10 @@ const EnvironmentalHealthPage = () => {
                                         priority={index < 3}
                                     />
                                     <div className="absolute bottom-4 right-4">
-                                        <button className="flex items-center bg-[#2E5F5C] text-white rounded-full px-3 py-2 hover:bg-teal-700 transition-colors text-xs sm:text-sm shadow-lg">
+                                        <button 
+                                            className="flex items-center bg-[#2E5F5C] text-white rounded-full px-3 py-2 hover:bg-teal-700 transition-colors text-xs sm:text-sm shadow-lg"
+                                            onClick={() => setActiveVideo(service.video)}
+                                        >
                                             <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center mr-2 sm:mr-3">
                                                 <FaPlay className="text-[#2E5F5C] w-3 h-3 sm:w-4 sm:h-4" />
                                             </div>
@@ -238,7 +251,7 @@ const EnvironmentalHealthPage = () => {
                     </div>
                     <div className="pl-0 sm:pl-4 lg:pl-8 flex items-center text-sm sm:text-base">
                         <p>
-                            Our Oil Tank Cleaning and Disposal Services meet the vital operational demands of Saudi Arabia’s oil industry. They are aligned with the nation’s environmental goals under Vision 2030. We deliver solutions that boost efficiency, ensure compliance, and support sustainable practices.
+                            Our Oil Tank Cleaning and Disposal Services meet the vital operational demands of Saudi Arabia's oil industry. They are aligned with the nation's environmental goals under Vision 2030. We deliver solutions that boost efficiency, ensure compliance, and support sustainable practices.
                         </p>
                     </div>
                 </div>
@@ -357,6 +370,31 @@ const EnvironmentalHealthPage = () => {
                     }
                 `}</style>
 </section>
+
+            {/* Video Modal */}
+            {activeVideo && (
+                <div
+                  className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+                  onClick={() => setActiveVideo(null)}
+                >
+                  <div className="relative w-full max-w-4xl aspect-video" onClick={e => e.stopPropagation()}>
+                    <iframe
+                      className="w-full h-full rounded-xl"
+                      src={`${activeVideo}?autoplay=1`}
+                      title="Service Video"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    />
+                    <button 
+                      className="absolute -top-2 -right-2 bg-white text-black rounded-full p-2 leading-none w-8 h-8 flex items-center justify-center shadow-lg"
+                      onClick={() => setActiveVideo(null)}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </div>
+            )}
+
         </div>
     );
 };

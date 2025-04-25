@@ -19,7 +19,7 @@ const BrownfieldAndPlatformSolutions = () => {
                 "Turnkey support from design to execution ",
             ],
             image: "/BrownfieldAndPlatformSolutionscover2.png",
-            video: "https://www.youtube.com/embed/placeholder7",
+            video: "https://www.youtube.com/embed/IE53VOUcfUQ",
         },
         {
             title: " Platform Installation and Modifications ",
@@ -33,7 +33,7 @@ const BrownfieldAndPlatformSolutions = () => {
                 "Boosts platform life and production capacity ",
             ],
             image: "/BrownfieldAndPlatformSolutionscover3.png",
-            video: "https://www.youtube.com/embed/placeholder8",
+            video: "https://www.youtube.com/embed/IE53VOUcfUQ",
         },
     ];
 
@@ -78,7 +78,7 @@ const BrownfieldAndPlatformSolutions = () => {
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <button 
                                       className="bg-[#2E5F5C] text-white rounded-full w-20 h-20 flex items-center justify-center hover:bg-teal-700 transition-colors"
-                                      onClick={() => setActiveVideo(services[0].video)}
+                                      onClick={() => setActiveVideo("https://www.youtube.com/embed/IE53VOUcfUQ")}
                                     >
                                         <FaPlay className="w-10 h-10" />
                                     </button>
