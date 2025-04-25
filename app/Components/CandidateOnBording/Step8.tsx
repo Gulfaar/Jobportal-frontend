@@ -1,9 +1,10 @@
 'use client';
 import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/app/redux/store';
+import { addEducation } from '@/app/redux/slices/resumeSlice';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const AddEducationForm = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,9 @@ const AddEducationForm = () => {
     graduationYear: '',
     stillStudying: false,
   });
+
+  const dispatch = useDispatch();
+  const router = useRouter();
 
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
   const name = resumeData?.structured_resume?.name || 'No Name';
@@ -28,18 +32,17 @@ const AddEducationForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
+    dispatch(addEducation(formData));
+    router.push('/CandidateBoarding/Step7');
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center  sm:py-6">
+    <div className="min-h-screen w-full flex items-center justify-center sm:py-6">
       <div className="relative w-full max-w-3xl">
         <div className="w-full shadow-md rounded-xl p-6 sm:p-8">
           {/* Profile Header */}
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Add more Education</h2>
-        <p className="text-sm sm:text-base text-gray-600 mt-1">
-        Make Edits as necessary
-        </p>
+          <p className="text-sm sm:text-base text-gray-600 mt-1">Make Edits as necessary</p>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="mt-6">
@@ -121,14 +124,13 @@ const AddEducationForm = () => {
                   Back
                 </button>
               </Link>
-              <Link href="/CandidateBoarding/Step7" className="w-full sm:w-auto">
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition"
-                >
-                  Continue
-                </button>
-              </Link>
+
+              <button
+                type="submit"
+                className="w-full sm:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition"
+              >
+                Continue
+              </button>
             </div>
           </form>
         </div>
