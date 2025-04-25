@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { toast } from "react-toastify";
@@ -15,6 +15,17 @@ interface Job {
 }
 
 const JobCard = ({ job }: { job: Job }) => {
+  const [hasApplied, setHasApplied] = useState(false);
+
+  const handleApply = () => {
+    if (!hasApplied) {
+      toast.success("Applied");
+      setHasApplied(true);
+    } else {
+      toast.info("You've already applied to this job.");
+    }
+  };
+
   return (
     <article className="w-[90%] md:w-full mx-auto">
       <div className="bg-transparent border border-gray-200 shadow-lg rounded-lg px-8 py-5 md:p-6 w-full">
@@ -57,15 +68,20 @@ const JobCard = ({ job }: { job: Job }) => {
 
         {/* Action Buttons */}
         <div className="flex gap-4 mt-4">
-         
-            <button onClick={() => toast.success("Applied")} className="px-4 py-2 bg-red-400 hover:bg-red-900 text-white rounded text-sm">
-              Apply now
-           </button>
-          
-          <Link href={'/jobseeker/joblisting'}>
-          <button className="px-4 py-2 border border-white text-white hover:text-amber-200 cursor-pointer rounded text-sm">
-            Learn more
+          <button
+            onClick={handleApply}
+            className={`px-4 py-2 ${
+              hasApplied ? "bg-gray-400 cursor-not-allowed" : "bg-red-400 hover:bg-red-900"
+            } text-white rounded text-sm`}
+            disabled={hasApplied}
+          >
+            {hasApplied ? "Applied" : "Apply now"}
           </button>
+
+          <Link href="/jobseeker/joblisting">
+            <button className="px-4 py-2 border border-white text-white hover:text-amber-200 cursor-pointer rounded text-sm">
+              Learn more
+            </button>
           </Link>
         </div>
       </div>
