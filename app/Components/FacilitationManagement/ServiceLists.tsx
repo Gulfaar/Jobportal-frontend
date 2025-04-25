@@ -9,37 +9,37 @@ const ServiceLists = () => {
       title: "Oil Tank Cleaning & Disposal Services",
       description: "Cleaning of crude, product, and storage tanks with degassing and sludge removal.",
       image: "/fmservice1.png",
-      video: "https://www.youtube.com/embed/ysz5S6PUM-U",
+      video: "https://www.youtube.com/embed/3hJZ4jqS8EQ",
     },
     {
       title: "Asset Integrity Solutions",
       description: "We provide AIM solutions to ensure safe, reliable oil and gas operations.",
       image: "/fmservice2.png",
-      video: "https://www.youtube.com/embed/ScMzIvxBSi4",
+      video: "https://www.youtube.com/embed/NVmmwEGIZDk",
     },
     {
       title: "Subsea Inspection, Maintenance, Repair, and Installation",
       description: "We offer subsea IMRI services for the oil and gas sector.",
       image: "/fmservice3.png",
-      video: "https://www.youtube.com/embed/tgbNymZ7vqY",
+      video: "https://www.youtube.com/embed/ChwyuV-12VQ",
     },
     {
-      title: "Industrial Cleaning Services",
+      title: "Brownfield and Platform Solutions",
       description: "Comprehensive industrial cleaning solutions for safety standards.",
       image: "/fmservice4.png",
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      video: "https://www.youtube.com/embed/IE53VOUcfUQ",
     },
     {
-      title: "Waste Management Solutions",
+      title: "Fabrication Services",
       description: "Environmentally-friendly waste management and disposal services.",
       image: "/fmservice5.png",
-      video: "https://www.youtube.com/embed/oHg5SJYRHA0",
+      video: "https://www.youtube.com/embed/w8w_FaMmalA",
     },
     {
-      title: "Equipment Rental Services",
+      title: "Environmental, Health, and Safety (EHS) Management",
       description: "Specialized equipment available for industrial operations.",
       image: "/fmservice6.png",
-      video: "https://www.youtube.com/embed/lXMskKTw3Bc",
+      video: "https://www.youtube.com/embed/5I2TlX18VcQ",
     }
   ];
 

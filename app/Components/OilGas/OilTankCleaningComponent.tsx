@@ -109,7 +109,7 @@ const OilTankCleaningComponent = () => {
                         <div className="flex-1 w-full">
                             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
                                 <Image
-                                    src="/service-1.png"
+                                    src="/oil-gas.png"
                                     alt="Skill Development"
                                     fill
                                     className="object-cover"
