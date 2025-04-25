@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedCountry } from "@/app/redux/slices/resumeSlice"; 
+import { setSelectedCountry } from "@/app/redux/slices/resumeSlice";
 import { RootState } from "@/app/redux/store";
 
 // Define the Country type
@@ -47,10 +47,14 @@ const CandidateOnboardingSteps1 = () => {
   );
   const [error, setError] = useState<string | null>(null);
 
+  useEffect(() => {
+    console.log("Selected country from Redux:", selectedCountry);
+  }, [selectedCountry]); // Log the selected country to ensure it's updating
+
   const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const country = e.target.value;
     dispatch(setSelectedCountry(country));
-    setError(null); // Clear error
+    setError(null); // Clear error when the user selects a country
   };
 
   const handleContinue = () => {
@@ -61,6 +65,7 @@ const CandidateOnboardingSteps1 = () => {
     setError(null);
     router.push("/CandidateBoarding/Step2");
   };
+
   // Define the Step type for the steps array
   interface Step {
     id: number;
@@ -101,8 +106,6 @@ const CandidateOnboardingSteps1 = () => {
     },
   ];
 
-
-
   return (
     <section className="py-16 w-[80%] mx-auto text-center">
       <h2 className="text-[#2E5F5C] text-lg font-semibold mb-8">
@@ -142,8 +145,12 @@ const CandidateOnboardingSteps1 = () => {
             <option value="" disabled>
               Select country
             </option>
-            {countriesList.map((country:any) => (
-              <option key={country.cca2} value={country.name.common} className="py-2 text-black">
+            {countriesList.map((country) => (
+              <option
+                key={country.cca2}
+                value={country.name.common}
+                className="py-2 text-black"
+              >
                 {country.name.common}
               </option>
             ))}
@@ -151,7 +158,6 @@ const CandidateOnboardingSteps1 = () => {
           <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#2E5F5C]">
             🌍
           </span>
-          
         </div>
         {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         <button

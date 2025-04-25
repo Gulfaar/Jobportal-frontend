@@ -64,14 +64,14 @@ const EducationSection = () => {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between items-center">
-          <Link href="/CandidateBoarding/Step5">
-            <button className="border border-[#DA6B64] text-[#DA6B64] px-6 py-2 rounded-md hover:bg-[#FFEBE8] text-sm">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 w-full p-5">
+          <Link href="/CandidateBoarding/Step9" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto border border-[#FF6F61] text-[#DA6B64] px-5 py-2 rounded-lg text-sm sm:text-base hover:bg-[#FFEBE8] transition">
               Back
             </button>
           </Link>
-          <Link href="/CandidateBoarding/Step9">
-            <button className="bg-[#DA6B64] text-white px-6 py-2 rounded-md hover:bg-[#c65751] text-sm">
+          <Link href="/CandidateBoarding/Step9" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto bg-[#DA6B64] text-white px-5 py-2 rounded-lg text-sm sm:text-base hover:bg-[#c65751] transition">
               Continue
             </button>
           </Link>
