@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
+import Link from 'next/link'
 
 const ServiceLists = () => {
   const services = [
@@ -10,36 +11,42 @@ const ServiceLists = () => {
       description: "Cleaning of crude, product, and storage tanks with degassing and sludge removal.",
       image: "/fmservice1.png",
       video: "https://www.youtube.com/embed/3hJZ4jqS8EQ",
+      route: "/OilGas" 
     },
     {
       title: "Asset Integrity Solutions",
       description: "We provide AIM solutions to ensure safe, reliable oil and gas operations.",
       image: "/fmservice2.png",
       video: "https://www.youtube.com/embed/NVmmwEGIZDk",
+      route: "/OilGas/asset-integrity"
     },
     {
       title: "Subsea Inspection, Maintenance, Repair, and Installation",
       description: "We offer subsea IMRI services for the oil and gas sector.",
       image: "/fmservice3.png",
       video: "https://www.youtube.com/embed/ChwyuV-12VQ",
+      route: "/OilGas/subsea-inspection"
     },
     {
       title: "Brownfield and Platform Solutions",
       description: "Comprehensive industrial cleaning solutions for safety standards.",
       image: "/fmservice4.png",
       video: "https://www.youtube.com/embed/IE53VOUcfUQ",
+      route: "/OilGas/brownfield-platform"
     },
     {
       title: "Fabrication Services",
       description: "Environmentally-friendly waste management and disposal services.",
       image: "/fmservice5.png",
       video: "https://www.youtube.com/embed/w8w_FaMmalA",
+      route: "/OilGas/fabrication-services"
     },
     {
       title: "Environmental, Health, and Safety (EHS) Management",
       description: "Specialized equipment available for industrial operations.",
       image: "/fmservice6.png",
       video: "https://www.youtube.com/embed/5I2TlX18VcQ",
+      route: "/OilGas/ehs-management"
     }
   ];
 
@@ -89,9 +96,11 @@ const ServiceLists = () => {
                 {service.description}
               </p>
               <div className="flex justify-center w-full">
-                <button className="bg-gradient-to-r from-[#2E5F5C] to-[#619390] hover:from-[#28524F] hover:to-[#4E7472] text-white text-[18px] px-8 py-3 rounded-[14px] border-2 border-white/80 transition-all">
-                  View Details
-                </button>
+                <Link href={service.route}>
+                  <button className="bg-gradient-to-r from-[#2E5F5C] to-[#619390] hover:from-[#28524F] hover:to-[#4E7472] text-white text-[18px] px-8 py-3 rounded-[14px] border-2 border-white/80 transition-all">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -109,7 +118,6 @@ const ServiceLists = () => {
               className="w-full h-full rounded-xl"
               src={`${activeVideo}?autoplay=1`}
               title="Service Video"
-              
               allow="autoplay; encrypted-media"
               allowFullScreen
             />
