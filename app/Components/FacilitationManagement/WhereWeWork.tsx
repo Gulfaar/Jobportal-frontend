@@ -118,18 +118,18 @@ const WhereWeWork = () => {
   ]
 
   return (
-    <div className="px-15 py-16">
-      <h1 className="text-[#2E5F5C] text-5xl font-semibold mb-12">Where We Work</h1>
+    <div className="px-4 md:px-15 py-8 md:py-16 sm:px-10">
+      <h1 className="text-[#2E5F5C] text-3xl md:text-5xl font-semibold mb-6 md:mb-12 text-center md:text-left">Where We Work</h1>
 
       <div 
         ref={scrollContainerRef}
-        className="flex gap-6 overflow-x-auto pb-8 scrollbar-hide"
+        className="flex gap-4 md:gap-6 overflow-x-auto pb-8 scrollbar-hide"
       >
         {workplaces.map((workplace, index) => (
-          <div key={index} className="w-[380px] h-[520px] flex-shrink-0">
-            <div className="h-full rounded-[32px] p-[10px] bg-gradient-to-r from-[#2E5F5C] to-[#00A651]">
-              <div className="h-full rounded-2xl overflow-hidden bg-gradient-to-r from-[#2E5F5C] to-[#00A651]">
-                <div className="relative w-full h-[300px]">
+          <div key={index} className="w-[380px] h-[520px] flex-shrink-0 max-md:w-[280px] max-md:h-[420px]">
+            <div className="h-full rounded-[32px] p-[10px] bg-gradient-to-r from-[#2E5F5C] to-[#00A651] max-md:rounded-[24px] max-md:p-[8px]">
+              <div className="h-full rounded-2xl overflow-hidden bg-gradient-to-r from-[#2E5F5C] to-[#00A651] max-md:rounded-xl">
+                <div className="relative w-full h-[300px] max-md:h-[200px]">
                   <Image
                     src={workplace.image}
                     alt={workplace.title}
@@ -138,11 +138,11 @@ const WhereWeWork = () => {
                     priority
                   />
                 </div>
-                <div className="p-6">
-                  <h2 className="text-white text-2xl font-bold mb-3 text-center">
+                <div className="p-6 max-md:p-4">
+                  <h2 className="text-white text-2xl font-bold mb-3 text-center max-md:text-xl max-md:mb-2">
                     {workplace.title}
                   </h2>
-                  <p className="text-white text-base leading-relaxed text-center">
+                  <p className="text-white text-base leading-relaxed text-center max-md:text-sm max-md:leading-snug">
                     {workplace.description}
                   </p>
                 </div>

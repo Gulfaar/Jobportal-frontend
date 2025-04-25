@@ -17,7 +17,9 @@ const page = () => {
               <HeroSection/>
               <ServiceLists/>
               <WhyGulfaar/>
+             <div className='px-2 md:px-0'>
               <CustomerCare/>
+              </div>
               <WhereWeWork/>
               <OurProjects/>
 

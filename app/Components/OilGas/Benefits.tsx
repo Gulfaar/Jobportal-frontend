@@ -53,7 +53,7 @@ const Benefits = () => {
       {/* Content */}
       <div className="relative container mx-auto px-4 py-16 max-w-7xl z-10">
         {/* Header */}
-        <h2 className="text-center text-[#2E5F5C] text-[48px] font-semibold mb-12 leading-tight max-w-4xl mx-auto">
+        <h2 className="text-center text-[#2E5F5C] text-[28px] sm:text-[36px] md:text-[48px] font-semibold mb-8 md:mb-12 leading-tight max-w-4xl mx-auto px-4">
           Key Benefits of Our Oil Tank Cleaning & Disposal Services
         </h2>
 
