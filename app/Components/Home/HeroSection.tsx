@@ -27,6 +27,8 @@ const Logout = async () => {
         },
       }
     );
+   
+    Cookies.remove('jwt'); 
     return response.data;
   } catch (error: any) {
     console.error("Logout error:", error.response?.data || error.message);
@@ -114,21 +116,21 @@ const NavBar = () => {
 
   return (
     <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-8 py-10 md:px-10 md:py-7">
-      <div className="flex items-center mt-[-40px]">
+      <div className="flex  items-center mt-[-40px]">
         <Image
-          src="/logomob.png"
+          src="/blacklogo.png"
           alt="Gulfaar Mobile Logo"
           width={120}
           height={50}
-          className="py-10 md:py-0 h-auto block md:hidden"
+          className="py-10 md:py-0 h-auto block md:hidden filter invert"
         />
 
         <Image
-          src="/newlogo.png"
+          src="/secondhead.png"
           alt="Gulfaar Logo"
-          width={315}
+          width={215}
           height={80}
-          className="hidden md:block lg:block w-[120px] md:w-[315px] h-auto"
+          className="hidden md:block lg:block  md:mt-14 w-[120px] md:w-[215px] h-auto"
         />
       </div>
 
@@ -147,12 +149,11 @@ const NavBar = () => {
 
           <div className="fixed top-10 left-8 z-50 h-10 w-auto">
             <Image
-              src="/logomob.png"
+              src="/blacklogo.png"
               alt="Company Logo"
               width={120}
               height={50}
               priority
-              className="filter invert"
             />
           </div>
 
@@ -353,7 +354,7 @@ const NavBar = () => {
             >
               Partner with us
             </Link>
-            <div className="w-full flex flex-col space-y-3 px-10">
+            <div className="w-full flex flex-col space-y-3  px-10">
               <Link href="/jobseeker/login" onClick={() => setIsModalOpen(false)}>
                 <button className="w-full bg-[#2E5F5C] px-4 py-2 mt-2 rounded-lg text-white text-xl hover:opacity-90 transition">
                   Jobseeker
@@ -376,7 +377,7 @@ const NavBar = () => {
         </div>
       )}
 
-      <div className="hidden w-full justify-end mt-[-50px] md:flex gap-2 md:gap-4">
+      <div className="hidden w-full justify-end mt-[-30px] md:flex gap-2 md:gap-4">
         <Link href="/jobseeker/login">
           <button className="cursor-pointer md:px-2 py-2 rounded-lg text-white text-sm md:text-base">
             Jobseeker
