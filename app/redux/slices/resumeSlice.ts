@@ -11,7 +11,7 @@ const initialState: ResumeState = {
   parsedData: null,
   parsedAt: null,
   selectedCountry: null,
-  pincode: null, // Initialize as null
+  pincode: null,
 };
 
 const resumeSlice = createSlice({

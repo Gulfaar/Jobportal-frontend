@@ -6,6 +6,8 @@ import Link from "next/link";
 import OnboardingCard from "./OnboardingCard";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
+import { useDispatch } from "react-redux";
+import { setPincode } from "@/app/redux/slices/resumeSlice";
 
 
 interface Country {
@@ -59,6 +61,7 @@ export default function ProfileForm() {
   };
 
 
+  const dispatch = useDispatch();
 
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
   const userNameRaw = resumeData?.structured_resume?.name || "Candidate";
@@ -189,10 +192,10 @@ export default function ProfileForm() {
               <label className="block text-sm font-medium mb-1 text-gray-700">Pincode</label>
               <input
                 type="text"
-                name="fullName"
+                name="pincode"
                 placeholder="Pincode"
                 className="w-full px-3 py-2 placeholder-gray-500 text-black border rounded-md"
-                value={formData.fullName}
+                value={formData.pincode}
                 onChange={handleChange}
               />
             </div>
