@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 export const Fm: React.FC = () => {
@@ -38,6 +39,7 @@ export const Fm: React.FC = () => {
       </div>
       
     </div>
+    <Link href={"/FacilitationManagement"}>
     <button
                 className="flex gap-3 px-8 py-4 mt-[-90px] text-sm leading-tight text-center text-white uppercase bg-teal-800 hover:bg-teal-900 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
                 aria-label="Get Started"
@@ -49,6 +51,7 @@ export const Fm: React.FC = () => {
                   alt="Arrow icon"
                 />
               </button>
+              </Link>
   </section>
 
   )
