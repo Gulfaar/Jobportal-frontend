@@ -221,7 +221,7 @@ const SubseaInspections = () => {
                         <div className="w-full lg:w-1/2">
                             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
                                 <Image
-                                    src="/Asset-intgriti.png"
+                                    src="/sub.jpeg"
                                     alt="Subsea Inspections"
                                     fill
                                     className="object-cover"
