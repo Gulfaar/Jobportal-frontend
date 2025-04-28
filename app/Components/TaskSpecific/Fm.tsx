@@ -40,9 +40,10 @@ export const Fm: React.FC = () => {
 </div>
       
     </div>
+    <div>
     <Link href={"/FacilitationManagement"}>
     <button
-                className="flex gap-3 px-8 py-4 mt-[-50px] text-sm leading-tight text-center text-white uppercase bg-teal-800 hover:bg-teal-900 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
+                className="flex gap-3 px-8 py-4 mt-5 text-sm leading-tight text-center text-white uppercase bg-teal-800 hover:bg-teal-900 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
                 aria-label="Get Started"
               >
                 <span className="grow my-auto">Learn more</span>
@@ -53,6 +54,7 @@ export const Fm: React.FC = () => {
                 />
               </button>
               </Link>
+              </div>
   </section>
 
   )
