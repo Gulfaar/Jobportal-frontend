@@ -85,7 +85,7 @@ const EnvironmentalHealthPage = () => {
             image: "/Environmental/Environment-6.png",
         },
 
-        
+
     ];
 
     const efficiencyPoints = [
@@ -149,7 +149,7 @@ const EnvironmentalHealthPage = () => {
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <h1 className="text-[#2E5F5C] text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-4">
-                            Environmental, Health, and Safety (EHS) Management
+                                Environmental, Health, and Safety (EHS) Management
                             </h1>
                             <p className="text-[#2E5F5C] text-base sm:text-lg lg:text-xl leading-relaxed mb-6 lg:mb-10 max-w-[650px]">
                                 We provide end-to-end Oil Tank Cleaning and Disposal Services that prioritize safety, efficiency, and environmental compliance. Our advanced techniques support both onshore and offshore operations across the Saudi oil sector. Each solution is tailored to meet stringent regulatory and operational standards, including those of Saudi Aramco. By reducing downtime and extending asset life, we help ensure long-term operational continuity.
@@ -195,14 +195,17 @@ const EnvironmentalHealthPage = () => {
                                         className="object-cover"
                                         priority={index < 3}
                                     />
-                                    <div className="absolute bottom-4 right-4">
-                                        <button className="flex items-center bg-[#2E5F5C] text-white rounded-full px-3 py-2 hover:bg-teal-700 transition-colors text-xs sm:text-sm shadow-lg">
-                                            <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center mr-2 sm:mr-3">
-                                                <FaPlay className="text-[#2E5F5C] w-3 h-3 sm:w-4 sm:h-4" />
+                                    <div className="absolute bottom-4 right-0">
+                                        <button className="flex items-center bg-[#2E5F5C] text-white rounded-l-full rounded-r-none px-4 sm:px-6 py-3 transition-colors text-sm sm:text-base shadow-lg">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white flex items-center justify-center mr-3">
+                                                <FaPlay className="text-white w-4 h-4 sm:w-5 sm:h-5" />
                                             </div>
-                                            <span className="whitespace-nowrap">Want to Watch How We Work</span>
+                                            <span className="text-left leading-tight text-sm sm:text-base font-semibold">
+                                                Want to Watch <br /> How We Work
+                                            </span>
                                         </button>
                                     </div>
+
                                 </div>
                             </div>
                             <div className="w-full lg:w-1/2">
@@ -311,34 +314,34 @@ const EnvironmentalHealthPage = () => {
 
             {/* Our Work Section */}
             <section className="px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-16 bg-white">
-    <h1 className="text-[#2E5F5C] text-3xl sm:text-4xl lg:text-5xl font-semibold mb-8 sm:mb-12">Our Projects</h1>
-    <div className="overflow-hidden w-full">
-        <div className="flex gap-4 sm:gap-6 items-center animate-marquee">
-            {Array.from({ length: 94 }).map((_, index) => {
-                const actualIndex = index % 47;
-                const image = `/Environmental/Environmentels-${String(actualIndex + 1).padStart(3, '0')}.png`;
-                return (
-                    <div
-                        key={index}
-                        className="min-w-[200px] sm:min-w-[250px] lg:min-w-[300px] flex-shrink-0 transform transition-all duration-300"
-                    >
-                        <div className="bg-gray-200 rounded-[16px] sm:rounded-[24px] p-[8px] sm:p-[12px]">
-                            <div className="relative w-full h-[180px] sm:h-[240px] lg:h-[280px] rounded-[12px] sm:rounded-[16px] overflow-hidden">
-                                <Image
-                                    src={image}
-                                    alt={`Project ${actualIndex + 1}`}
-                                    fill
-                                    className="object-cover"
-                                    priority={index < 8}
-                                />
-                            </div>
-                        </div>
+                <h1 className="text-[#2E5F5C] text-3xl sm:text-4xl lg:text-5xl font-semibold mb-8 sm:mb-12">Our Projects</h1>
+                <div className="overflow-hidden w-full">
+                    <div className="flex gap-4 sm:gap-6 items-center animate-marquee">
+                        {Array.from({ length: 94 }).map((_, index) => {
+                            const actualIndex = index % 47;
+                            const image = `/Environmental/Environmentels-${String(actualIndex + 1).padStart(3, '0')}.png`;
+                            return (
+                                <div
+                                    key={index}
+                                    className="min-w-[200px] sm:min-w-[250px] lg:min-w-[300px] flex-shrink-0 transform transition-all duration-300"
+                                >
+                                    <div className="bg-gray-200 rounded-[16px] sm:rounded-[24px] p-[8px] sm:p-[12px]">
+                                        <div className="relative w-full h-[180px] sm:h-[240px] lg:h-[280px] rounded-[12px] sm:rounded-[16px] overflow-hidden">
+                                            <Image
+                                                src={image}
+                                                alt={`Project ${actualIndex + 1}`}
+                                                fill
+                                                className="object-cover"
+                                                priority={index < 8}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
-                );
-            })}
-        </div>
-    </div>
-    <style jsx>{`
+                </div>
+                <style jsx>{`
                     @keyframes marquee {
                         0% {
                             transform: translateX(0);
@@ -356,7 +359,7 @@ const EnvironmentalHealthPage = () => {
                         }
                     }
                 `}</style>
-</section>
+            </section>
         </div>
     );
 };
