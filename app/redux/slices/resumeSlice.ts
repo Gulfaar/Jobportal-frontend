@@ -4,7 +4,27 @@ interface ResumeState {
   parsedData: any | null;
   parsedAt: string | null; // Store date when resume was parsed
   selectedCountry: string | null;
-  pincode: string | null;  // Add selected country
+  pincode: string | null; 
+  experiences: Experience[];
+  education: Education[]; // Add selected country
+}
+
+interface Experience {
+  jobTitle: string;
+  companyName: string;
+  country: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  currentlyWorking: boolean;
+}
+
+interface Education {
+  collegeName: string;
+  fieldOfStudy: string;
+  graduationMonth: string;
+  graduationYear: string;
+  stillStudying: boolean;
 }
 
 const initialState: ResumeState = {
@@ -12,6 +32,8 @@ const initialState: ResumeState = {
   parsedAt: null,
   selectedCountry: null,
   pincode: null,
+  experiences: [],
+  education: [],
 };
 
 const resumeSlice = createSlice({
@@ -36,6 +58,12 @@ const resumeSlice = createSlice({
     setPincode: (state, action: PayloadAction<string>) => {
       state.pincode = action.payload; // 👈 Add this reducer
     },
+    addExperience: (state, action: PayloadAction<Experience>) => {
+      state.experiences.push(action.payload); // 👈 Store the experience
+    },
+    addEducation: (state, action: PayloadAction<Education>) => {
+      state.education.push(action.payload);
+    },
   },
 });
 
@@ -45,5 +73,7 @@ export const {
   setSelectedCountry,
   clearSelectedCountry,
   setPincode,
+  addExperience,
+  addEducation,
 } = resumeSlice.actions;
 export default resumeSlice.reducer;

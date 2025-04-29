@@ -8,15 +8,18 @@ import { RootState } from '@/app/redux/store';
 
 const EducationSection = () => {
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
+  const addedEducation = useSelector((state: RootState) => state.resume.education);
 
-  const educationEntries = resumeData?.structured_resume?.education || [];
+  const parsedEducation = resumeData?.structured_resume?.education || [];
+  const combinedEducation = [...parsedEducation, ...addedEducation];
+
   const name = resumeData?.structured_resume?.name || 'No Name';
   const email = resumeData?.structured_resume?.email || 'No Email';
 
   return (
-    <div className="w-full flex justify-center px-2  ">
+    <div className="w-full flex justify-center px-2">
       <div className="w-full max-w-5xl space-y-6">
-        
+
         {/* Profile Card */}
         <div className="bg-white rounded-lg shadow p-4 flex items-center gap-4">
           <div className="w-16 h-16 rounded-full overflow-hidden border border-gray-300">
@@ -47,14 +50,18 @@ const EducationSection = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {educationEntries.map((entry: any, index: number) => (
-              <div
-                key={index}
-                className="bg-white rounded-md shadow-md p-6 relative"
-              >
-                <p className="font-medium text-gray-800">{entry.degree}</p>
-                <p className="text-sm text-gray-600">{entry.institution}</p>
-                <p className="text-sm text-gray-600">{entry.year}</p>
+            {combinedEducation.map((entry: any, index: number) => (
+              <div key={index} className="bg-white rounded-md shadow-md p-6 relative">
+                <p className="font-medium text-gray-800">
+                  {entry.degree || entry.fieldOfStudy || 'N/A'}
+                </p>
+                <p className="text-sm text-gray-600">
+                  {entry.institution || entry.collegeName || 'N/A'}
+                </p>
+                <p className="text-sm text-gray-600">
+                  {entry.year ||
+                    `${entry.graduationMonth || ''} ${entry.graduationYear || ''}`.trim()}
+                </p>
                 <button className="absolute bottom-4 right-4 text-[#DA6B64] hover:text-[#c95a56]">
                   <FontAwesomeIcon icon={faPen} className="w-4 h-4" />
                 </button>

@@ -168,7 +168,7 @@ const TestimonialsSection = () => {
 
       <div
         ref={trackRef}
-        className="flex transition-transform ml-10 duration-1000 ease-in-out"
+        className="flex  transition-transform  duration-1000 ease-in-out"
         style={{
           transform: `translateX(-${currentIndex * 100}%)`,
           width: `${(testimonials.length / cardsPerView) * 100}%`,
@@ -176,7 +176,7 @@ const TestimonialsSection = () => {
       >
         
         {Array.from({ length: Math.ceil(testimonials.length / cardsPerView) }).map((_, index) => (
-          <div key={index} className="grid grid-cols-1 md:grid-cols-3   w-full flex-shrink-0">
+          <div key={index} className="grid grid-cols-1 md:grid-cols-3 w-full flex-shrink-0">
             {testimonials.slice(index * cardsPerView, (index + 1) * cardsPerView).map((testimonial, idx) => (
               <TestimonialCard key={idx} {...testimonial} />
             ))}
@@ -214,7 +214,7 @@ const TestimonialsSection = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="flex-shrink-0 px-10"
+            className="flex-shrink-0  px-10"
             style={{ width: `${100 / testimonials.length}%` }}
           >
             <TestimonialCard {...testimonial} />

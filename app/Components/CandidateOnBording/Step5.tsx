@@ -6,8 +6,26 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/app/redux/store';
 
 const ExperienceSection = () => {
-  const resumeData = useSelector((state: RootState) => state.resume.parsedData);
-  const experiences = resumeData?.structured_resume?.experience || [];
+  const parsedExperiences = useSelector((state: RootState) => state.resume.parsedData?.structured_resume?.experience || []);
+  const addedExperiences = useSelector((state: RootState) => state.resume.experiences);
+
+  // Combine both experiences
+  const allExperiences = [
+    ...parsedExperiences.map((exp: any) => ({
+      role: exp.role,
+      company: exp.company,
+      duration: exp.duration || '',
+      description: '',
+      isParsed: true,
+    })),
+    ...addedExperiences.map((exp: any) => ({
+      role: exp.jobTitle,
+      company: exp.companyName,
+      duration: `${exp.startDate} - ${exp.currentlyWorking ? 'Present' : exp.endDate}`,
+      description: exp.description,
+      isParsed: false,
+    }))
+  ];
 
   return (
     <div className="min-h-screen flex justify-center items-start">
@@ -28,10 +46,10 @@ const ExperienceSection = () => {
         <h3 className="text-[#DA6B64] font-semibold mt-6 text-sm">Experience</h3>
 
         <div className="mt-4 space-y-4">
-          {experiences.length === 0 ? (
+          {allExperiences.length === 0 ? (
             <p className="text-gray-500 text-sm">No experience data available.</p>
           ) : (
-            experiences.map((exp: any, index: number) => (
+            allExperiences.map((exp, index) => (
               <div
                 key={index}
                 className="border border-[#DA6B64] rounded-lg p-4 w-full relative flex flex-col md:flex-row gap-4"
@@ -43,29 +61,36 @@ const ExperienceSection = () => {
                 </div>
 
                 <div className="md:w-2/3">
-                  {/* Add description/details if available in future */}
-                  <p className="text-sm text-gray-600 italic">No further details provided.</p>
+                  <p className="text-sm text-gray-600 italic">
+                    {exp.description ? exp.description : 'No further details provided.'}
+                  </p>
                 </div>
 
                 {/* Desktop Icons */}
                 <div className="absolute top-1 right-1 hidden md:flex flex-col items-center gap-1">
-                  <button className="p-2 text-[#DA6B64] hover:text-[#c95a56]">
-                    <FontAwesomeIcon icon={faPen} className="w-4 h-4" />
-                  </button>
-                  <button className="p-2 text-[#DA6B64] hover:text-[#c95a56]">
-                    <FontAwesomeIcon icon={faTrash} className="w-4 h-4" />
-                  </button>
+                  {!exp.isParsed && (
+                    <>
+                      <button className="p-2 text-[#DA6B64] hover:text-[#c95a56]">
+                        <FontAwesomeIcon icon={faPen} className="w-4 h-4" />
+                      </button>
+                      <button className="p-2 text-[#DA6B64] hover:text-[#c95a56]">
+                        <FontAwesomeIcon icon={faTrash} className="w-4 h-4" />
+                      </button>
+                    </>
+                  )}
                 </div>
 
                 {/* Mobile Buttons */}
-                <div className="flex justify-end gap-2 mt-2 md:hidden">
-                  <button className="border border-[#DA6B64] text-[#DA6B64] px-3 py-1 rounded text-sm">
-                    Edit
-                  </button>
-                  <button className="border border-[#DA6B64] text-[#DA6B64] px-3 py-1 rounded text-sm">
-                    Delete
-                  </button>
-                </div>
+                {!exp.isParsed && (
+                  <div className="flex justify-end gap-2 mt-2 md:hidden">
+                    <button className="border border-[#DA6B64] text-[#DA6B64] px-3 py-1 rounded text-sm">
+                      Edit
+                    </button>
+                    <button className="border border-[#DA6B64] text-[#DA6B64] px-3 py-1 rounded text-sm">
+                      Delete
+                    </button>
+                  </div>
+                )}
               </div>
             ))
           )}

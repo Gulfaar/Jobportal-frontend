@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 export const Fm: React.FC = () => {
@@ -29,17 +30,20 @@ export const Fm: React.FC = () => {
 
       {/* Image Section */}
       <div className="w-full md:w-[37%] md:h-[55%] flex items-center">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/928cdaf2e24e4e0f8ced4d57597d6970/c6c59f9f64f3d931e65c3207dc47edd4bcc02e16?placeholderIfAbsent=true"
-          alt="Career development illustration"
-          className="w-full h-[80%] object-cover rounded-3xl max-h-[400px] md:max-h-full"
-        />
-        
-      </div>
+  
+  
+  <img
+    src="/Asset-intgrity-2.png"
+    alt="Asset integrity illustration"
+    className="w-full h-[80%] object-cover rounded-3xl max-h-[400px] md:max-h-full"
+  />
+</div>
       
     </div>
+    <div>
+    <Link href={"/FacilitationManagement"}>
     <button
-                className="flex gap-3 px-8 py-4 mt-[-90px] text-sm leading-tight text-center text-white uppercase bg-teal-800 hover:bg-teal-900 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
+                className="flex gap-3 px-8 py-4 mt-5 text-sm leading-tight text-center text-white uppercase bg-teal-800 hover:bg-teal-900 rounded-[50px] tracking-[3px] max-md:px-5 max-md:mt-10"
                 aria-label="Get Started"
               >
                 <span className="grow my-auto">Learn more</span>
@@ -49,6 +53,8 @@ export const Fm: React.FC = () => {
                   alt="Arrow icon"
                 />
               </button>
+              </Link>
+              </div>
   </section>
 
   )

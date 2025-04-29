@@ -1,9 +1,14 @@
 'use client';
-import Link from 'next/link';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/navigation';
+import { addExperience } from '@/app/redux/slices/resumeSlice'; // ✅ adjust this path if needed
 import OnboardingCard from './OnboardingCard';
 
 const AddExperienceForm = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     jobTitle: '',
     companyName: '',
@@ -25,15 +30,20 @@ const AddExperienceForm = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
+
+    // Dispatch the form data to Redux
+    dispatch(addExperience(formData));
+
+    // Navigate to the next onboarding step
+    router.push('/CandidateBoarding/Step5');
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center sm:px-6  ">
-      <OnboardingCard  >
-        <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Add more experinece</h2>
+    <div className="min-h-screen flex items-center justify-center sm:px-6">
+      <OnboardingCard>
+        <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Add more experience</h2>
         <p className="text-sm sm:text-base text-gray-600 mt-1">
-        Make edits as necessary.
+          Make edits as necessary.
         </p>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-5">
@@ -124,22 +134,20 @@ const AddExperienceForm = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-0 mt-6">
-            <Link href="/CandidateBoarding/Step5">
-              <button
-                type="button"
-                className="w-full sm:w-auto border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition"
-              >
-                Back
-              </button>
-            </Link>
-            <Link href="/CandidateBoarding/Step5">
-              <button
-                type="submit"
-                className="w-full sm:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition"
-              >
-                Continue
-              </button>
-            </Link>
+            <button
+              type="button"
+              onClick={() => router.push('/CandidateBoarding/Step5')}
+              className="w-full sm:w-auto border border-[#FF6F61] text-[#DA6B64] px-6 py-2 rounded-lg text-base hover:bg-[#FFEBE8] transition"
+            >
+              Back
+            </button>
+
+            <button
+              type="submit"
+              className="w-full sm:w-auto bg-[#DA6B64] text-white px-6 py-2 rounded-lg text-base hover:bg-[#c65751] transition"
+            >
+              Continue
+            </button>
           </div>
         </form>
       </OnboardingCard>
