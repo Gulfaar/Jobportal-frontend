@@ -99,13 +99,13 @@ const OilTankCleaningComponent = () => {
                     <div className="flex items-center justify-between gap-24 max-lg:flex-col max-lg:gap-16">
                         {/* Text Content */}
                         <div className="flex-1 w-full">
-                            <h1 className="text-[#2E5F5C] text-[42px] font-semibold leading-[1.2] mb-4 max-md:text-3xl max-sm:text-2xl">
+                            <h1 className="text-[#2E5F5C] text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-4">
                                 <span className="text-3xl md:text-3xl">
                                     Oil Tank Cleaning & Disposal Services
                                 </span>
                             </h1>
 
-                            <p className="text-[23px] text-[#2E5F5C] leading-[1.8] mb-10 max-w-[650px]">
+                            <p className="text-[#2E5F5C] text-base sm:text-lg mt-8 lg:text-xl leading-relaxed mb-6 lg:mb-10 max-w-[650px]">
                                 We provide end-to-end Oil Tank Cleaning and Disposal Services that
                                 prioritize safety, efficiency, and environmental compliance.Our
                                 advanced techniques support both onshore and offshore operations

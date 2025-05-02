@@ -520,9 +520,9 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
         */}
         <div className="flex flex-col items-center justify-center flex-grow text-center text-white px-4 py-8 md:py-12">
           {/* Headline */}
-          <h1 className="font-bold uppercase tracking-wide mb-5">
+          <h1 className="tracking-wide mb-5">
             {/* Mobile (2 lines) */}
-            <span className="block md:hidden text-3xl leading-tight">
+            <span className="block md:hidden text-[34px]  leading-tight">
               {title}
             </span>
             {/* Desktop (1 line) */}
