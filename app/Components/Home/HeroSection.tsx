@@ -533,6 +533,8 @@ const NavLinks = () => {
               className="px-4 py-2 inline-flex whitespace-nowrap w-full hover:text-[#dae470] hover:bg-[#3e5f5e] rounded relative flex items-center justify-between cursor-pointer"
               onMouseEnter={() => setIsOutsourcingOpen(true)}
               onMouseLeave={() => setIsOutsourcingOpen(false)}
+
+              
             >
               <span>Outsourcing solutions</span>
               {isOutsourcingOpen ? <FiChevronLeft /> : <FiChevronRight />}
