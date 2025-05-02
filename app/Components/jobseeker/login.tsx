@@ -26,6 +26,8 @@ const LoginPage: React.FC = () => {
     e.preventDefault(); // Prevent default form submission
 
     const result = await loginUser(email, password);
+    console.log(result.data._id,'Backend');
+    
 
     if (result.success) {
       Cookies.set('jwt', result.token, {

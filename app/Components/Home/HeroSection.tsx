@@ -9,7 +9,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Cookies from 'js-cookie';
-
 import { FiChevronDown, FiChevronLeft, FiChevronRight, FiChevronUp } from "react-icons/fi";
 
 
@@ -27,14 +26,14 @@ const Logout = async () => {
         },
       }
     );
-   
-    Cookies.remove('jwt'); 
+
+    Cookies.remove('jwt');
     return response.data;
   } catch (error: any) {
     console.error("Logout error:", error.response?.data || error.message);
     return { success: false, message: error.response?.data?.message || "Something went wrong" };
   }
-}; 
+};
 
 
 
@@ -42,12 +41,8 @@ const HeroSection = () => {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
 
-  
+
   const token = Cookies.get('token');
-  
-
-  
-
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,7 +106,7 @@ const NavBar = () => {
   const [isOutsourcingOpen, setIsOutsourcingOpen] = useState(false);
 
   const token = Cookies.get('jwt');
- 
+
 
 
   return (
@@ -361,16 +356,16 @@ const NavBar = () => {
                 </button>
               </Link>
               <Link href="/employer/signup" onClick={() => setIsModalOpen(false)}>
-                <button className="w-full bg-[#2E5F5C] px-4 py-2 mt-2 rounded-lg text-white text-xl hover:opacity-90 transition">
+                <button className="w-full bg-[#2E5F5C]  corsou px-4 py-2 mt-2 rounded-lg text-white text-xl hover:opacity-90 transition">
                   Employer
                 </button>
               </Link>
               {token && (
-              <Link href="/jobseeker/login" onClick={Logout}>
-                <button className="w-full bg-[#2E5F5C] px-4 py-2 mt-2 rounded-lg text-white text-xl hover:opacity-90 transition">
-                  Logout
-                </button>
-              </Link>
+                <Link href="/jobseeker/login" onClick={Logout}>
+                  <button className="w-full bg-[#2E5F5C] px-4 py-2 mt-2 rounded-lg text-white text-xl hover:opacity-90 transition">
+                    Logout
+                  </button>
+                </Link>
               )}
             </div>
           </div>
@@ -389,17 +384,14 @@ const NavBar = () => {
           </button>
         </Link>
 
-         
+
         {token && (
-      <Link href="/jobseeker/login">
-        <button onClick={Logout} className="cursor-pointer md:px-2 py-2 rounded-lg text-white text-sm md:text-base">
-          Logout
-        </button>
-      </Link>
-    )}
-
-        
-
+          <Link href="/jobseeker/login">
+            <button onClick={Logout} className="cursor-pointer md:px-2 py-2 rounded-lg text-white text-sm md:text-base">
+              Logout
+            </button>
+          </Link>
+        )}
       </div>
     </nav>
   );

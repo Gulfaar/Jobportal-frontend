@@ -214,7 +214,7 @@ const TestimonialsSection = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="flex-shrink-0  px-10"
+            className="flex-shrink-0  px-5 md:px-10"
             style={{ width: `${100 / testimonials.length}%` }}
           >
             <TestimonialCard {...testimonial} />

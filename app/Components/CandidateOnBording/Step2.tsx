@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { setParsedResumeData } from "@/app/redux/slices/resumeSlice";
 import { useDispatch } from "react-redux";
+import { updateUserService } from "../Services/jobseekeer/Onboarding";
 
 const CandidateOnboardingSteps2 = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -32,6 +33,33 @@ const CandidateOnboardingSteps2 = () => {
 
 
       if (response.status === 200) {
+
+        const parsedData = response.data;
+
+        console.log(parsedData,'pasredData');
+
+
+        const updatePayload = {
+          username: parsedData?.structured_resume?.name || "N/A",
+          email: parsedData?.structured_resume?.email || "N/A",
+          phone: parsedData?.structured_resume?.phone || "N/A",
+          skills: parsedData?.structured_resume?.skills || [],
+          experience: parsedData?.structured_resume?.experience || [],
+          education: parsedData?.structured_resume?.education || [],
+          certifications: parsedData?.structured_resume?.certifications || [],
+        }
+
+        console.log(updatePayload,'updatePayload');
+        
+
+
+        const userId = localStorage.getItem("userId") || "defaultUserId"; 
+
+        if(userId) {
+          await updateUserService(userId, updatePayload)
+        }
+        
+
         dispatch(setParsedResumeData(response.data));
         console.log("datafrompython",response.data);
         

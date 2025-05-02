@@ -3,7 +3,7 @@ import React from 'react'
 
 const HeroSection = () => {
   return (
-    <div className="container mx-4 md:mx-24 px-4 py-12 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-18 md:mr-2">
+    <div className="container   px-10 py-12 flex flex-col md:flex-row items-center justify-between gap-10  md:mr-2">
       <div className="flex-1 max-w-4xl">
         <h1 className="text-[#2E5F5C] text-[32px] md:text-[48px] font-bold leading-tight mb-6 whitespace-normal md:whitespace-nowrap">
           Global Solutions, Delivered Locally
