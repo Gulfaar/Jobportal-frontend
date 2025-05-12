@@ -8,12 +8,18 @@ import { useSelector } from "react-redux";
 export default function ProfileSummary() {
   const resumeData = useSelector((state: RootState) => state.resume.parsedData);
   const educationEntries = resumeData?.structured_resume?.education || [];
+  const addeducationEntries = useSelector((state: RootState) => state.resume.education);
   const experienceEntries = resumeData?.structured_resume?.experience || [];
+  const addedexperienceEntries = useSelector((state: RootState) => state.resume.experiences);
   const country = useSelector((state: RootState) => state.resume.selectedCountry);
+  
   const pincode = useSelector((state: RootState) => state.resume.pincode);
 
   console.log(pincode, "pincode");
+
+  console.log(addedexperienceEntries,"addedexperienceEntries");
   
+
 
   const SectionCard = ({
     title,
@@ -83,7 +89,26 @@ export default function ProfileSummary() {
             </div>
           </SectionCard>
 
+
           {/* Education Info */}
+
+          {
+
+            addedexperienceEntries.length > 0 &&
+
+            <SectionCard title="Experience">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-800">
+                {addedexperienceEntries.map((exp: any, idx: number) => (
+                  <div key={idx}>
+                    <p><strong>Role:</strong> {exp.jobTitle}</p>
+                    <p><strong>Company:</strong> {exp.companyName}</p>
+                    <p><strong>Location:</strong> {exp.country}</p>
+                  </div>
+                ))}
+              </div>
+            </SectionCard>
+
+          }
           <SectionCard title="Education">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm text-gray-800">
               {educationEntries.map((edu: any, idx: number) => (
@@ -94,6 +119,25 @@ export default function ProfileSummary() {
               ))}
             </div>
           </SectionCard>
+
+
+
+          {
+            addeducationEntries.length > 0 &&
+
+            <SectionCard title="Education">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm text-gray-800">
+                {educationEntries.map((edu: any, idx: number) => (
+                  <div key={idx}>
+                    <p><strong>Course:</strong> {edu.degree}</p>
+                    <p><strong>Institute:</strong> {edu.institution}</p>
+                  </div>
+                ))}
+              </div>
+            </SectionCard>
+
+          }
+
         </div>
 
         {/* Navigation Buttons */}

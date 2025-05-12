@@ -77,3 +77,5 @@ export const {
   addEducation,
 } = resumeSlice.actions;
 export default resumeSlice.reducer;
+
+

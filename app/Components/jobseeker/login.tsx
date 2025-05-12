@@ -26,12 +26,12 @@ const LoginPage: React.FC = () => {
     e.preventDefault(); // Prevent default form submission
 
     const result = await loginUser(email, password);
-    console.log(result.data._id,'Backend');
-    
+    console.log(result.data._id, 'Backend');
+
 
     if (result.success) {
       Cookies.set('jwt', result.token, {
-        expires: 1, 
+        expires: 1,
         path: '/',
         sameSite: 'Strict'
       });
@@ -53,7 +53,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white px-4 py-8">
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 px-3 gap-8">
         {/* Login Section */}
         <div className="flex items-center justify-center bg-white px-4">
           <div className="w-full max-w-sm">
@@ -125,48 +125,47 @@ const LoginPage: React.FC = () => {
         </div>
 
         {/* Register Section */}
-        <div className="bg-[#D6655A] ml-10  text-white p-4 md:p-6 lg:p-8 rounded-2xl shadow-md flex flex-col md:justify-between  mt-0 md:mt-0  md:ml-14 w-[72%]">
-          <div className=" ">
+        <div className="bg-[#D6655A]     text-white p-4 md:p-6 lg:p-8 rounded-2xl shadow-md flex flex-col justify-center items-center   mt-0 md:mt-0  md:ml-14 ">
+          <div className="  ">
             <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-4 md:mb-6 text-center">Register</h3>
             <ul className="space-y-2 md:space-y-4 text-sm md:text-base text-white/90">
               <li className="flex items-start gap-2">
-                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <Circle className="w-3 md:w-3 lg:w-5 h-3 md:h-3 lg:h-3 mt-1 text-white" />
                 <span className="text-sm md:text-base">
                   Create a free account then upload or  manually enter  your  CV.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-3 mt-1 text-white" />
                 <span className="text-sm md:text-base">
                   Let our AI-powered platform highlight your strengths and boost your visibility to employers.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-3 mt-1 text-white" />
                 <span className="text-sm md:text-base">
                   Add your skills, experience, and preferred job sectors to get matched faster.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-3 mt-1 text-white" />
                 <span className="text-sm md:text-base">
                   Our AI finds the best job opportunities based on your profile, no endless searching.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-3 mt-1 text-white" />
                 <span className="text-sm md:text-base">
                   Apply for verified positions across 22+ countries with trusted employers.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 mt-1 text-white" />
+                <Circle className="w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-3 mt-1 text-white" />
                 <span className="text-sm md:text-base">
                   Get certified, interview-ready, and deployed with end-to-end career assistance from Gulfaar.
                 </span>
               </li>
             </ul>
-
           </div>
 
           <div className="mt-4 md:mt-6 text-center">
