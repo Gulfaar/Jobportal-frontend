@@ -11,16 +11,17 @@ import OurProjects from '../Components/FacilitationManagement/OurProjects'
 
 const page = () => {
   return (
-    <div>
+    <div className=' overflow-x-hidden'>
             <Header title='Facilitation Management' subtitle='Where Infrastructure Meets Intelligence '/>
 
               <HeroSection/>
               <ServiceLists/>
               <WhyGulfaar/>
-             <div className='px-2 md:px-0'>
+             
+              <WhereWeWork/>
+              <div className='px-2 md:px-0'>
               <CustomerCare/>
               </div>
-              <WhereWeWork/>
               <OurProjects/>
 
          <Footer/> 

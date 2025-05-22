@@ -76,7 +76,7 @@ const LoginPage: React.FC = () => {
               />
 
               <div className="flex justify-end">
-                <a href="#" className="text-sm md:text-base text-[#2e6b66] hover:underline">Forget password</a>
+                <a href="/PasswordReset" className="text-sm md:text-base text-[#2e6b66] hover:underline">Forget password</a>
               </div>
 
               <button

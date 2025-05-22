@@ -13,7 +13,7 @@ const OurProjects = () => {
 
   return (
     <div className="px-4 md:px-16 py-8 md:py-16 sm:px-10 bg-white">
-      <h1 className="text-[#2E5F5C] text-3xl md:text-5xl font-semibold mb-6 md:mb-12 text-center md:text-left">Our Projects</h1>
+      
 
       <div className="overflow-hidden w-full">
         <div className="flex gap-4 md:gap-6 items-center animate-marquee">
@@ -44,7 +44,7 @@ const OurProjects = () => {
           100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-          animation: marquee 30s linear infinite;
+          animation: marquee 5s linear infinite;
         }
       `}</style>
     </div>

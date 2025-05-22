@@ -1,21 +1,37 @@
 "use client"
 
 import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const WhereWeWork = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number>(0);
   const scrollPositionRef = useRef(0);
+  const touchStartRef = useRef(0);
+  const [isTouching, setIsTouching] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
 
     const scroll = () => {
-      if (!scrollContainer) return;
+      if (!scrollContainer || isTouching) return;
       
-      scrollPositionRef.current += 1;
+      // Slower scroll speed on mobile
+      const scrollSpeed = isMobile ? 0.3 : 1;
+      scrollPositionRef.current += scrollSpeed;
       
       if (scrollPositionRef.current >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
         scrollPositionRef.current = 0;
@@ -25,29 +41,61 @@ const WhereWeWork = () => {
       animationFrameRef.current = requestAnimationFrame(scroll);
     };
 
+    // Start auto-scroll for both mobile and desktop
     animationFrameRef.current = requestAnimationFrame(scroll);
-
-    const handleMouseEnter = () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-
-    const handleMouseLeave = () => {
-      animationFrameRef.current = requestAnimationFrame(scroll);
-    };
-
-    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
-    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
-      scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
-      scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []);
+  }, [isMobile, isTouching]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsTouching(true);
+    touchStartRef.current = e.touches[0].clientX;
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsTouching(false);
+    // Resume auto-scroll after touch ends
+    if (scrollContainerRef.current) {
+      scrollPositionRef.current = scrollContainerRef.current.scrollLeft;
+      animationFrameRef.current = requestAnimationFrame(() => {
+        if (scrollContainerRef.current) {
+          const scroll = () => {
+            if (!scrollContainerRef.current || isTouching) return;
+            const scrollSpeed = isMobile ? 0.3 : 1;
+            scrollPositionRef.current += scrollSpeed;
+            if (scrollPositionRef.current >= scrollContainerRef.current!.scrollWidth - scrollContainerRef.current!.clientWidth) {
+              scrollPositionRef.current = 0;
+            }
+            scrollContainerRef.current!.scrollLeft = scrollPositionRef.current;
+            animationFrameRef.current = requestAnimationFrame(scroll);
+          };
+          scroll();
+        }
+      });
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!scrollContainerRef.current || !isTouching) return;
+    
+    const touchDelta = touchStartRef.current - e.touches[0].clientX;
+    scrollContainerRef.current.scrollLeft += touchDelta;
+    touchStartRef.current = e.touches[0].clientX;
+  };
+
+  const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
+    if (scrollContainerRef.current) {
+      e.preventDefault();
+      scrollContainerRef.current.scrollLeft += e.deltaY;
+    }
+  };
 
   const workplaces = [
     {
@@ -123,10 +171,17 @@ const WhereWeWork = () => {
 
       <div 
         ref={scrollContainerRef}
-        className="flex gap-4 md:gap-6 overflow-x-auto pb-8 scrollbar-hide"
+        className="flex gap-4 md:gap-6 overflow-x-auto pb-8 scrollbar-hide touch-pan-x"
+        onWheel={handleScroll}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         {workplaces.map((workplace, index) => (
-          <div key={index} className="w-[380px] h-[520px] flex-shrink-0 max-md:w-[280px] max-md:h-[420px]">
+          <div 
+            key={index} 
+            className="w-[380px] h-[520px] flex-shrink-0 max-md:w-[280px] max-md:h-[420px] select-none"
+          >
             <div className="h-full rounded-[32px] p-[10px] bg-gradient-to-r from-[#2E5F5C] to-[#00A651] max-md:rounded-[24px] max-md:p-[8px]">
               <div className="h-full rounded-2xl overflow-hidden bg-gradient-to-r from-[#2E5F5C] to-[#00A651] max-md:rounded-xl">
                 <div className="relative w-full h-[300px] max-md:h-[200px]">
@@ -136,6 +191,7 @@ const WhereWeWork = () => {
                     fill
                     className="object-cover"
                     priority
+                    draggable={false}
                   />
                 </div>
                 <div className="p-6 max-md:p-4">
