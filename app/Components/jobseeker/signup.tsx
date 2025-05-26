@@ -196,12 +196,12 @@ const EmployerSignupPage: React.FC = () => {
           {/* Login link */}
           <p className="text-sm text-gray-600 text-center ">
             Already have an account?{" "}
-            <Link href="/employer/login" className="text-teal-600 hover:underline">
+            <Link href="/jobseeker/login" className="text-teal-600 hover:underline">
               Login
             </Link>
           </p>
         </form>
-
+    
         {/* Paper Plane Graphic */}
         <div className="absolute bottom-0 right-0 pr-6 pb-4 hidden md:block">
           <Image src="/letter_send.svg" alt="Paper Plane" width={200} height={200} />

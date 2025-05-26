@@ -82,7 +82,7 @@ const LoginPage: React.FC = () => {
                   <span className="ml-2">Remember me</span>
                 </label>
 
-                <a href="#" className="text-sm md:text-base text-[#2e6b66] hover:underline">
+                <a href="/PasswordReset" className="text-sm md:text-base text-[#2e6b66] hover:underline">
                   Forget password
                 </a>
               </div>
@@ -156,7 +156,7 @@ const LoginPage: React.FC = () => {
           </div>
 
           <div className="mt-4 md:mt-6 text-center">
-            <Link href={'/jobseeker/signup'}>
+            <Link href={'/employer/signup'}>
               <button className="bg-[#2E5F5C] text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-[#244a47] transition text-sm md:text-base">
                 Create free account
               </button>

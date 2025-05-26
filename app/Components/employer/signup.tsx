@@ -220,12 +220,12 @@ const EmployerSignupPage: React.FC = () => {
           </button>
 
           {/* Login Link */}
-          {/* <p className="text-sm text-gray-600 mt-2">
+          <p className="text-sm text-gray-600 mt-1 ml-22">
             Already have an account?{" "}
             <Link href="/employer/login" className="text-teal-600 hover:underline">
               Login
             </Link>
-          </p> */}
+          </p>
         </form>
       </div>
     </div>
