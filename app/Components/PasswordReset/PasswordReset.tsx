@@ -33,7 +33,7 @@ const ResetPasswordPage = () => {
   return (
     <div className="flex h-screen">
       {/* Left Image Side */}
-      <div className="w-1/2 bg-cover bg-center hidden md:block" style={{ backgroundImage: `url('/reset-password.jpg')` }} />
+      <div className="w-1/2 bg-cover bg-center hidden md:block" style={{ backgroundImage: `url('/forgotpassword.jpg')` }} />
 
       {/* Right Form Side */}
       <div className="w-full md:w-1/2 flex items-center justify-center p-10">
